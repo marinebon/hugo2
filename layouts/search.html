@@ -1,0 +1,20 @@
+{{ define "main" }}
+<main>
+  <section class="page-header">
+    <div class="page-header__inner">
+      <h1>Search</h1>
+      <p class="page-header__lead">Find network nodes, products, news, and more.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container" style="max-width:720px;">
+      <div id="search"></div>
+    </div>
+  </section>
+</main>
+{{ end }}
+{{ define "scripts" }}
+<link  href="{{ "pagefind/pagefind-ui.css" | relURL }}" rel="stylesheet">
+<script src="{{ "pagefind/pagefind-ui.js"  | relURL }}"></script>
+<script>new PagefindUI({ element: "#search", showSubResults: true });</script>
+{{ end }}

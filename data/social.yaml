@@ -1,6 +1,6 @@
 # Social channels — edit here to add, remove, or reorder icons site-wide.
 # icon: any Font Awesome 6 class (fas/fab + icon name)
-contact: https://marinebon.org/contact/
+contact: /contact/
 channels:
   - label: GitHub
     url:   https://github.com/marinebon

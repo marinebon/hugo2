@@ -34,6 +34,10 @@ enableEmoji = false
     name = "News"
     pageRef = "/news"
     weight = 4
+  [[menu.main]]
+    name = "About"
+    pageRef = "/about"
+    weight = 5
 
 [taxonomies]
   tag = "tags"

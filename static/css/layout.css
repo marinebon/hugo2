@@ -78,6 +78,13 @@
 .filter-count{ font-family:var(--font-mono); font-size:var(--text-xs); color:var(--text-muted); letter-spacing:.04em; }
 @media (max-width:680px){ .filter-group{ flex-direction:column; align-items:flex-start; } .filter-group__label{ flex-basis:auto; } }
 
+/* ---- People grid (About page) ----------------------------------------- */
+.people-grid{ display:flex; flex-wrap:wrap; gap:var(--space-6); margin:var(--space-5) 0; }
+.person-card{ display:flex; flex-direction:column; align-items:center; text-align:center; gap:var(--space-2); width:160px; }
+.person-card img{ width:120px; height:120px; object-fit:cover; border-radius:50%; border:2px solid var(--border); margin:0; }
+.person-card strong{ font-size:var(--text-sm); color:var(--text-heading); }
+.person-card p, .person-card span{ font-size:var(--text-xs); color:var(--text-muted); margin:0; }
+
 /* ---- Article ---------------------------------------------------------- */
 .article{ max-width:720px; margin:0 auto; padding:var(--space-8) var(--space-6) 0; }
 .article__meta{ display:flex; align-items:center; gap:var(--space-4); flex-wrap:wrap; padding-bottom:var(--space-5); border-bottom:1px solid var(--divider); margin-bottom:var(--space-6); font-family:var(--font-mono); font-size:var(--text-xs); text-transform:uppercase; letter-spacing:var(--ls-wide); color:var(--text-muted); }
