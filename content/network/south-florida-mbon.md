@@ -1,16 +1,16 @@
 +++
-title = "South Florida MBON"
+title = "Southeast US MBON"
 kind_node = "regional"
 lat = 24.6
 lng = -81.8
 footprint = 6
 since = "2014"
-summary = "Florida Keys sanctuary, integrating ground and satellite observations."
+summary = "Southeastern United States, integrating fieldwork and satellite observations."
 banner = "img/photos/ocean-blue.jpg"
 tags = ["regional"]
 +++
 
-Florida Keys sanctuary, integrating ground and satellite observations.
+Southeastern United States sanctuary, integrating ground and satellite observations.
 
 ## Objectives
 
