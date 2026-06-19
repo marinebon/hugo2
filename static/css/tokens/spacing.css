@@ -20,7 +20,7 @@
   --container:    1200px;
   --container-wide:1380px;
   --gutter:       var(--space-5);
-  --section-y:    var(--space-9);
+  --section-y:    var(--space-7);
 
   /* ---- Radii — restrained; the wordmark is sharp & geometric ----------- */
   --radius-xs: 3px;
