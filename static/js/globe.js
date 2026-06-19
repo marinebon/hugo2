@@ -88,7 +88,7 @@
           var dlt = st.target - st.rot;
           while (dlt > 180) dlt -= 360; while (dlt < -180) dlt += 360;
           if (Math.abs(dlt) < 0.3) { st.rot = st.target; st.target = null; } else st.rot += dlt * 0.08;
-        } else st.rot += 0.085;
+        } else if (!drag.on) st.rot += 0.085;
         if (st.rot > 180) st.rot -= 360; if (st.rot < -180) st.rot += 360;
 
         var proj = d3.geoOrthographic().translate([cx, cy]).scale(R).clipAngle(90).rotate([-st.rot, -tilt]);
@@ -179,8 +179,32 @@
         });
         return found;
       }
-      canvas.addEventListener('mousemove', function (ev) { var f = hit(ev); st.hot = f ? f.id : null; canvas.style.cursor = f ? 'pointer' : 'grab'; });
-      canvas.addEventListener('click', function (ev) { var f = hit(ev); if (f) setActive(f.id, true); });
+
+      var drag = { on: false, x0: 0, rot0: 0, moved: false };
+
+      canvas.addEventListener('mousedown', function (ev) {
+        drag.on = true; drag.x0 = ev.clientX; drag.rot0 = st.rot; drag.moved = false;
+        st.target = null;
+        canvas.style.cursor = 'grabbing';
+      });
+      canvas.addEventListener('mousemove', function (ev) {
+        if (drag.on) {
+          var dx = ev.clientX - drag.x0;
+          if (Math.abs(dx) > 3) drag.moved = true;
+          var R = Math.min(st.w, st.h) / 2 - Math.min(st.w, st.h) * 0.07;
+          st.rot = drag.rot0 + dx * 90 / R;
+          st.hot = null;
+          canvas.style.cursor = 'grabbing';
+        } else {
+          var f = hit(ev); st.hot = f ? f.id : null; canvas.style.cursor = f ? 'pointer' : 'grab';
+        }
+      });
+      canvas.addEventListener('mouseup', function (ev) {
+        if (drag.on && !drag.moved) { var f = hit(ev); if (f) setActive(f.id, true); }
+        drag.on = false;
+        canvas.style.cursor = 'grab';
+      });
+      canvas.addEventListener('mouseleave', function () { drag.on = false; });
     }).catch(function () { /* offline: leave loading text */ });
   }
 
