@@ -27,6 +27,7 @@
     var dataEl = document.getElementById('mbon-regions');
     if (!dataEl) return;
     var regions = JSON.parse(dataEl.textContent);
+    if (typeof regions === 'string') regions = JSON.parse(regions);
     var canvas = root.querySelector('canvas');
     var loading = root.querySelector('.globe-loading');
     var ctx = canvas.getContext('2d');

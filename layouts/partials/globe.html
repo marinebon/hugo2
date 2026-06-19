@@ -30,5 +30,5 @@
       </div>
     </div>
   </div>
-  <script id="mbon-regions" type="application/json">{{ $nodes | jsonify }}</script>
+  <script id="mbon-regions" type="application/json">{{ $nodes | jsonify | safeHTML }}</script>
 </section>
