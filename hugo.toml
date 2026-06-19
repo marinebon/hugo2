@@ -28,8 +28,8 @@ enableEmoji = false
     pageRef = "/"
     weight = 1
   [[menu.main]]
-    name = "The Network"
-    pageRef = "/network"
+    name = "Network"
+    pageRef = "/regions"
     weight = 2
   [[menu.main]]
     name = "Products"

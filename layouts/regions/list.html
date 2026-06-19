@@ -16,7 +16,7 @@
   {{ $regional := where (where site.RegularPages "Section" "regions") "Params.kind_node" "regional" }}
   {{ $thematic := where (where site.RegularPages "Section" "regions") "Params.kind_node" "thematic" }}
 
-  <section class="section">
+  <section id="regional" class="section">
     <div class="container">
       <span class="eyebrow eyebrow--rule">Regional MBONs</span>
       <h2 style="margin:var(--space-2) 0 var(--space-6);">{{ len $regional }} regional networks</h2>
@@ -31,7 +31,7 @@
     </div>
   </section>
 
-  <section class="section section--tint">
+  <section id="thematic" class="section section--tint">
     <div class="container">
       <span class="eyebrow eyebrow--rule">Thematic MBONs</span>
       <h2 style="margin:var(--space-2) 0 var(--space-6);">Cross-cutting by method</h2>
@@ -46,6 +46,32 @@
             </div>
           </div>
         {{ end }}
+      </div>
+    </div>
+  </section>
+  <section id="join" class="section">
+    <div class="container" style="max-width:760px;">
+      <span class="eyebrow eyebrow--rule">Get involved</span>
+      <h2 style="margin:var(--space-2) 0 var(--space-4);">Join the MBON network</h2>
+      <p style="font-size:var(--text-lg);color:var(--text-body);margin-bottom:var(--space-6);">MBON is an open community of practice — scientists, resource managers, data providers, and end-users all contribute and benefit. Whether you run a long-term observing program, develop data products, or manage marine resources, there is a role for you in the network.</p>
+      <div class="grid-3" style="margin-bottom:var(--space-7);">
+        <div>
+          <h3 style="font-size:var(--text-base);margin:0 0 var(--space-2);">Contribute observations</h3>
+          <p style="font-size:var(--text-sm);color:var(--text-muted);margin:0;">Publish biodiversity data to OBIS following MBON standard protocols. Regional nodes welcome new data providers who can commit to FAIR data sharing.</p>
+        </div>
+        <div>
+          <h3 style="font-size:var(--text-base);margin:0 0 var(--space-2);">Join a working group</h3>
+          <p style="font-size:var(--text-sm);color:var(--text-muted);margin:0;">Active working groups cover eDNA, remote sensing, BioTrack, BioSound, indicators, and data management. Meetings are open; contact the working group lead to join.</p>
+        </div>
+        <div>
+          <h3 style="font-size:var(--text-base);margin:0 0 var(--space-2);">Partner at the global level</h3>
+          <p style="font-size:var(--text-sm);color:var(--text-muted);margin:0;">MBON is a thematic node of GEO BON and leads the Marine Life 2030 programme of the UN Ocean Decade. International organizations can partner through the MBON Secretariat (AIR Centre, Azores).</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;">
+        <a class="btn btn--action" href="https://marinebon.org/contact-us/" target="_blank" rel="noopener">Contact us <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        <a class="btn btn--outline" href="https://marinelife2030.org/" target="_blank" rel="noopener">Marine Life 2030</a>
+        <a class="btn btn--outline" href="https://obis.org" target="_blank" rel="noopener">Publish to OBIS</a>
       </div>
     </div>
   </section>
