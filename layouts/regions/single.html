@@ -1,0 +1,58 @@
+{{ define "main" }}
+{{ $lat := .Params.lat }}{{ $lng := .Params.lng }}
+<main>
+  <section class="page-header">
+    <div class="page-header__inner">
+      <a href="{{ "network" | relURL }}" style="display:inline-flex;gap:8px;align-items:center;color:var(--teal-300);font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:var(--ls-wide);text-transform:uppercase;text-decoration:none;margin-bottom:var(--space-5);"><i class="fas fa-arrow-left"></i> The network</a>
+      <div style="display:flex;gap:var(--space-3);align-items:center;margin-bottom:var(--space-3);">
+        <span class="badge badge--ok"><span class="badge__dot"></span>{{ if eq .Params.kind_node "thematic" }}Thematic node{{ else }}Active node{{ end }}</span>
+        <span class="node-card__coord">{{ printf "%.1f&deg; %s &middot; %.1f&deg; %s" (math.Abs $lat) (cond (ge $lat 0.0) "N" "S") (math.Abs $lng) (cond (ge $lng 0.0) "E" "W") | safeHTML }}</span>
+      </div>
+      <h1>{{ .Title }}</h1>
+      <p class="page-header__lead">{{ .Params.summary }}</p>
+      <div class="stat-strip">
+        <div class="stat stat--ondark"><div class="stat__value">{{ .Params.since }}</div><div class="stat__label">Observing since</div></div>
+        <div class="stat stat--ondark"><div class="stat__value">FAIR</div><div class="stat__label">Open data</div></div>
+        <div class="stat stat--ondark"><div class="stat__value">{{ if eq .Params.kind_node "thematic" }}Thematic{{ else }}Regional{{ end }}</div><div class="stat__label">Node type</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="display:grid;grid-template-columns:1.5fr 1fr;gap:var(--space-8);align-items:start;">
+      <div style="max-width:62ch;">{{ .Content }}</div>
+      <aside>
+        {{ with .Params.banner }}
+          <div style="border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);margin-bottom:var(--space-5);">
+            <img src="{{ . | relURL }}" alt="" style="width:100%;height:200px;object-fit:cover;">
+          </div>
+        {{ end }}
+        <div class="card__tags" style="margin-bottom:var(--space-5);">
+          <span class="tag tag--region"><span class="tag__dot"></span>{{ replace .Title " MBON" "" }}</span>
+          <span class="tag tag--tool">Seascapes</span>
+          <span class="tag tag--type">eDNA</span>
+          <span class="tag tag--org">NOAA IEA</span>
+        </div>
+        <a class="btn btn--action btn--full" href="{{ "products" | relURL }}">View related products <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      </aside>
+    </div>
+  </section>
+
+  {{ $others := first 4 (where (where site.RegularPages "Section" "regions") "Params.kind_node" "regional") }}
+  <section class="section section--tint">
+    <div class="container">
+      <span class="eyebrow eyebrow--rule">Connected nodes</span>
+      <h2 style="margin:var(--space-2) 0 var(--space-6);">Explore nearby networks</h2>
+      <div class="grid-auto">
+        {{ range $others }}
+          {{ if ne .File.ContentBaseName $.File.ContentBaseName }}
+            <a class="node-link" href="{{ .RelPermalink }}">
+              <div class="node-link__title"><span class="dot"></span><strong>{{ .Title }}</strong></div>
+            </a>
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </section>
+</main>
+{{ end }}

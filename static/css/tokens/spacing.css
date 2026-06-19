@@ -1,0 +1,62 @@
+/* ============================================================================
+   MBON · SPACING, RADII, SHADOW & MOTION TOKENS
+   ========================================================================== */
+
+:root {
+  /* ---- Spacing scale (4px base) ---------------------------------------- */
+  --space-0:  0;
+  --space-1:  0.25rem;  /*  4 */
+  --space-2:  0.5rem;   /*  8 */
+  --space-3:  0.75rem;  /* 12 */
+  --space-4:  1rem;     /* 16 */
+  --space-5:  1.5rem;   /* 24 */
+  --space-6:  2rem;     /* 32 */
+  --space-7:  3rem;     /* 48 */
+  --space-8:  4rem;     /* 64 */
+  --space-9:  6rem;     /* 96 */
+  --space-10: 8rem;     /*128 */
+
+  /* ---- Layout ---------------------------------------------------------- */
+  --container:    1200px;
+  --container-wide:1380px;
+  --gutter:       var(--space-5);
+  --section-y:    var(--space-9);
+
+  /* ---- Radii — restrained; the wordmark is sharp & geometric ----------- */
+  --radius-xs: 3px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  /* ---- Borders --------------------------------------------------------- */
+  --border-width: 1px;  /* @kind spacing */
+  --border-thick: 2px;  /* @kind spacing */
+
+  /* ---- Shadows — cool, low, like light through water ------------------- */
+  --shadow-xs: 0 1px 2px rgba(8, 35, 54, 0.06);
+  --shadow-sm: 0 2px 6px rgba(8, 35, 54, 0.07);
+  --shadow-md: 0 6px 18px rgba(8, 35, 54, 0.10);
+  --shadow-lg: 0 14px 38px rgba(8, 35, 54, 0.14);
+  --shadow-xl: 0 28px 64px rgba(4, 19, 31, 0.22);
+  /* tinted glow for interactive emphasis */
+  --shadow-teal: 0 8px 24px rgba(28, 145, 171, 0.28);
+  --shadow-focus: 0 0 0 3px rgba(63, 116, 214, 0.35);
+
+  /* ---- Motion ---------------------------------------------------------- */
+  --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);   /* @kind other */
+  --ease-in-out:cubic-bezier(0.65, 0, 0.35, 1);  /* @kind other */
+  --dur-fast:   120ms;  /* @kind other */
+  --dur-base:   200ms;  /* @kind other */
+  --dur-slow:   400ms;  /* @kind other */
+  --dur-slower: 700ms;  /* @kind other */
+
+  /* ---- Z-index --------------------------------------------------------- */
+  --z-base: 1;       /* @kind other */
+  --z-sticky: 100;   /* @kind other */
+  --z-nav: 200;      /* @kind other */
+  --z-overlay: 800;  /* @kind other */
+  --z-modal: 900;    /* @kind other */
+  --z-toast: 1000;   /* @kind other */
+}

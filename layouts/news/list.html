@@ -1,0 +1,20 @@
+{{ define "main" }}
+<main>
+  <section class="page-header">
+    <div class="page-header__inner">
+      <span class="eyebrow eyebrow--rule eyebrow--ondark">News &amp; updates</span>
+      <h1>{{ .Title }}</h1>
+      <p class="page-header__lead">{{ .Params.summary }}</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="grid-3">
+        {{ range .Pages.ByDate.Reverse }}
+          {{ partial "card-news.html" . }}
+        {{ end }}
+      </div>
+    </div>
+  </section>
+</main>
+{{ end }}

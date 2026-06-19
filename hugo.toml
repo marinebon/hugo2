@@ -1,0 +1,48 @@
+baseURL = "https://marinebon.github.io/"
+languageCode = "en-us"
+title = "Marine Biodiversity Observation Network"
+
+# Pretty URLs and a sensible summary length
+summaryLength = 40
+enableEmoji = false
+
+[pagination]
+  pagerSize = 9
+
+[params]
+  description = "A global collaborative initiative contributing to the effective management of marine biodiversity and ecosystem services. A thematic node of GEO BON."
+  tagline = "Global ocean observing · GEO BON node"
+  # Hero (home). Image path is under /img/.
+  heroImage = "img/photos/reef-sunlight.jpg"
+  heroHeadline = "Observing life in the sea, from satellites to surveys to DNA."
+  heroLead = "MBON integrates long-term programs into a connected, FAIR record of marine biodiversity — turning observations into products that inform conservation and policy worldwide."
+  # Social links shown in the footer
+  github = "https://github.com/marinebon"
+  twitter = "https://x.com/MarineBON1"
+  youtube = "https://www.youtube.com/channel/UCiXkc3xHhl9bOHYdE3LtWMg"
+
+# Top navigation. Add/remove items here.
+[menu]
+  [[menu.main]]
+    name = "Home"
+    pageRef = "/"
+    weight = 1
+  [[menu.main]]
+    name = "The Network"
+    pageRef = "/network"
+    weight = 2
+  [[menu.main]]
+    name = "Products"
+    pageRef = "/products"
+    weight = 3
+  [[menu.main]]
+    name = "News"
+    pageRef = "/news"
+    weight = 4
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[markup.goldmark.renderer]
+  unsafe = true   # allow raw HTML (iframes/figures) inside Markdown

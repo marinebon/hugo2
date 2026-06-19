@@ -1,0 +1,15 @@
+{{/* News card. Call with a Page (.) */}}
+<a class="card" href="{{ .RelPermalink }}">
+  {{ with .Params.banner }}
+    <div class="card__media">
+      <img src="{{ . | relURL }}" alt="{{ $.Title }}">
+      <div class="card__badge"><span class="badge badge--solid badge--accent">{{ $.Date.Format "Jan 2, 2006" }}</span></div>
+    </div>
+  {{ end }}
+  <div class="card__body">
+    {{ with .Params.tags }}<div class="card__tags"><span class="tag">{{ humanize (index . 0) }}</span></div>{{ end }}
+    <h3 class="card__title">{{ .Title }}</h3>
+    <p class="card__summary">{{ .Params.summary | default .Summary }}</p>
+    <span class="card__foot">Read story <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+  </div>
+</a>

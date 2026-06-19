@@ -1,0 +1,52 @@
+<footer class="site-footer">
+  <div class="footer-partners">
+    <div class="footer-partners__inner">
+      <span class="eyebrow eyebrow--rule eyebrow--ondark">Strategic collaborators</span>
+      <div class="partner-strip">
+        {{ range site.Data.partners }}
+          <a class="partner-chip" href="{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener">
+            <img src="{{ .logo | relURL }}" alt="{{ .name }}">
+          </a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+  <div class="footer-main">
+    <div>
+      <img class="wordmark" src="{{ "img/logos/mbon-logo.png" | relURL }}" alt="MBON">
+      <p>{{ site.Params.description }}</p>
+      <div class="footer-social">
+        {{ with site.Params.github }}<a href="{{ . }}" aria-label="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>{{ end }}
+        {{ with site.Params.twitter }}<a href="{{ . }}" aria-label="X" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>{{ end }}
+        {{ with site.Params.youtube }}<a href="{{ . }}" aria-label="YouTube" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>{{ end }}
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>The Network</h4>
+      <a href="{{ "network" | relURL }}">Regional MBONs</a>
+      <a href="{{ "network" | relURL }}">Thematic MBONs</a>
+      <a href="{{ "network" | relURL }}">Our partners</a>
+      <a href="{{ "network" | relURL }}">Join MBON</a>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <a href="{{ "products" | relURL }}">All products</a>
+      <a href="{{ "products" | relURL }}">Dashboards</a>
+      <a href="{{ "products" | relURL }}">Infographics</a>
+      <a href="https://obis.org" target="_blank" rel="noopener">Open data (OBIS)</a>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <a href="{{ "news" | relURL }}">News</a>
+      <a href="#">Mission &amp; vision</a>
+      <a href="#">People</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+  <div class="footer-colophon">
+    <div class="footer-colophon__inner">
+      <span>MARINE BIODIVERSITY OBSERVATION NETWORK</span>
+      <span>FAIR &middot; OPEN &middot; GLOBAL &middot; {{ now.Year }}</span>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,9 @@
+# Headline figures shown in the home hero stat strip. Edit freely.
+- value: "13"
+  label: "Regional networks"
+- value: "2.4M"
+  label: "Open observations"
+- value: "40+"
+  label: "Partner institutions"
+- value: "FAIR"
+  label: "Data principles"

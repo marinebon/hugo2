@@ -1,0 +1,93 @@
+/* ============================================================================
+   MBON · COLOR TOKENS
+   An ocean palette: deep-sea navies, the cobalt of the wordmark, living-reef
+   teal, and warm coral drawn from the biodiversity imagery. Facet colors
+   encode the four ways MBON content interrelates (Region / Tool / Org / Type).
+   ========================================================================== */
+
+:root {
+  /* ---- Deep water: structural darks (headers, hero, footer) ------------- */
+  --abyss-900: #04131f;   /* near-black blue — deepest backgrounds          */
+  --abyss-800: #082336;   /* deep panels over photography                   */
+  --navy-700:  #01375f;   /* deep sea — primary dark surface (facet: Region)*/
+  --navy-600:  #0a4f7a;
+  --navy-500:  #136a96;
+
+  /* ---- Cobalt: the MBON wordmark blue, primary brand -------------------- */
+  --cobalt-600: #1c44a0;
+  --cobalt-500: #2456b8;  /* logo blue — primary brand / buttons            */
+  --cobalt-400: #3f74d6;
+  --cobalt-300: #79a3e8;
+
+  /* ---- Current: living-reef teal, the interactive accent ---------------- */
+  --teal-600: #15788f;
+  --teal-500: #1c91ab;
+  --teal-400: #38a7bb;    /* legacy products accent — links, active state   */
+  --teal-300: #74c8d6;
+  --aqua-200: #aee2ea;
+  --aqua-100: #d9f1f5;
+
+  /* ---- Coral & sun: warm highlights from the reef imagery --------------- */
+  --coral-600: #d24a2e;
+  --coral-500: #f2683f;   /* primary warm accent — CTAs, emphasis           */
+  --coral-300: #f7a98c;
+  --sun-400:   #f5b53f;   /* sunlight / data highlight                      */
+
+  /* ---- Ink & neutrals: cool greys with a blue cast ---------------------- */
+  --ink-900: #0f2230;     /* darkest text on light                          */
+  --ink-700: #1f3947;     /* headings (legacy products heading)             */
+  --ink-500: #44606e;     /* body text                                      */
+  --ink-400: #5b6b74;     /* secondary text                                 */
+  --ink-300: #8499a3;     /* muted / captions                               */
+  --line-300: #c6d4db;    /* strong borders                                 */
+  --line-200: #dbe5ea;    /* default borders                                */
+  --line-100: #e9f0f3;    /* hairlines / dividers                           */
+  --foam-100: #f1f7f9;    /* tinted surface                                 */
+  --foam-50:  #f6fafb;    /* page background                                */
+  --white:    #ffffff;
+
+  /* ---- Facet colors: the four interrelating taxonomies ------------------ */
+  /* Carried from www_marinebon2 product_viewer_colorize.js for continuity.  */
+  --facet-region:  #01375f;  /* navy   — places / regional MBONs            */
+  --facet-tool:    #b5651d;  /* amber  — tools, dashboards, infographics    */
+  --facet-org:     #1a7a4e;  /* kelp   — organizations / partners           */
+  --facet-type:    #9c2150;  /* coral-deep — product types / topics         */
+  /* darker source variants, for borders/text on tints */
+  --facet-tool-deep: #884501;
+  --facet-org-deep:  #015f37;
+  --facet-type-deep: #5f012b;
+
+  /* ---- Semantic status -------------------------------------------------- */
+  --ok:   #1a7a4e;
+  --warn: #c9821f;
+  --err:  #c23b34;
+  --info: #2456b8;
+
+  /* ============ SEMANTIC ALIASES — prefer these in components ============ */
+  --bg-page:        var(--foam-50);
+  --bg-surface:     var(--white);
+  --bg-tint:        var(--foam-100);
+  --bg-inverse:     var(--navy-700);
+  --bg-abyss:       var(--abyss-900);
+
+  --text-strong:    var(--ink-900);
+  --text-heading:   var(--ink-700);
+  --text-body:      var(--ink-500);
+  --text-muted:     var(--ink-300);
+  --text-on-dark:   #eaf3f7;
+  --text-on-dark-muted: #9db9c7;
+
+  --brand:          var(--cobalt-500);
+  --brand-hover:    var(--cobalt-600);
+  --accent:         var(--teal-400);
+  --accent-hover:   var(--teal-600);
+  --action:         var(--coral-500);
+  --action-hover:   var(--coral-600);
+  --link:           var(--teal-600);
+
+  --border:         var(--line-200);
+  --border-strong:  var(--line-300);
+  --divider:        var(--line-100);
+
+  --focus-ring:     var(--cobalt-400);
+}

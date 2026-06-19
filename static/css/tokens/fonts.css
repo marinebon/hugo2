@@ -1,0 +1,10 @@
+/* MBON webfonts.
+   Display: Space Grotesk — geometric, scientific, a touch editorial.
+   Body/UI: IBM Plex Sans — humanist, scientific heritage, highly legible.
+   Data:    IBM Plex Mono — coordinates, station codes, taxonomy tags, captions.
+
+   NOTE: The original marinebon.org Hugo theme shipped no brand typeface
+   (Bootstrap defaults). This trio is a deliberate MBON choice. Loaded from
+   Google Fonts here; self-host the .woff2 files for production. */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap');

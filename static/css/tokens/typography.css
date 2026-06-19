@@ -1,0 +1,52 @@
+/* ============================================================================
+   MBON · TYPOGRAPHY TOKENS
+   Space Grotesk (display) · IBM Plex Sans (body/UI) · IBM Plex Mono (data)
+   ========================================================================== */
+
+:root {
+  /* ---- Families -------------------------------------------------------- */
+  --font-display: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif;
+  --font-sans:    'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono:    'IBM Plex Mono', 'SFMono-Regular', ui-monospace, monospace;
+
+  /* ---- Weights ----------------------------------------- @kind font ---- */
+  --fw-regular: 400;  /* @kind font */
+  --fw-medium:  500;  /* @kind font */
+  --fw-semibold:600;  /* @kind font */
+  --fw-bold:    700;  /* @kind font */
+
+  /* ---- Type scale (1.20 minor-third, 16px base) ------------------------ */
+  --text-xs:   0.75rem;   /* 12 — mono labels, captions       */
+  --text-sm:   0.875rem;  /* 14 — secondary, meta             */
+  --text-base: 1rem;      /* 16 — body                        */
+  --text-md:   1.125rem;  /* 18 — lead body                   */
+  --text-lg:   1.375rem;  /* 22 — card titles                 */
+  --text-xl:   1.75rem;   /* 28 — section subheads            */
+  --text-2xl:  2.25rem;   /* 36 — section heads               */
+  --text-3xl:  3rem;      /* 48 — page titles                 */
+  --text-4xl:  4rem;      /* 64 — hero                        */
+  --text-5xl:  5.25rem;   /* 84 — display / numerals          */
+
+  /* ---- Line heights ---------------------------------------------------- */
+  --lh-tight:  1.05;  /* @kind font */
+  --lh-snug:   1.2;   /* @kind font */
+  --lh-normal: 1.5;   /* @kind font */
+  --lh-relaxed:1.65;  /* @kind font */
+
+  /* ---- Letter spacing -------------------------------------------------- */
+  --ls-tight:  -0.02em;  /* @kind font */
+  --ls-normal: 0;        /* @kind font */
+  --ls-wide:   0.02em;   /* @kind font */
+  --ls-label:  0.14em;   /* @kind font */
+
+  /* ============ SEMANTIC TYPE ROLES ============ */
+  --type-hero:    var(--fw-bold) var(--text-4xl)/var(--lh-tight) var(--font-display);
+  --type-title:   var(--fw-bold) var(--text-3xl)/var(--lh-snug)  var(--font-display);
+  --type-h2:      var(--fw-semibold) var(--text-2xl)/var(--lh-snug) var(--font-display);
+  --type-h3:      var(--fw-semibold) var(--text-xl)/var(--lh-snug)  var(--font-display);
+  --type-card:    var(--fw-semibold) var(--text-lg)/var(--lh-snug)  var(--font-display);
+  --type-lead:    var(--fw-regular) var(--text-md)/var(--lh-relaxed) var(--font-sans);
+  --type-body:    var(--fw-regular) var(--text-base)/var(--lh-normal) var(--font-sans);
+  --type-small:   var(--fw-regular) var(--text-sm)/var(--lh-normal) var(--font-sans);
+  --type-label:   var(--fw-medium) var(--text-xs)/1 var(--font-mono);
+}

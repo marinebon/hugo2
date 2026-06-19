@@ -1,0 +1,26 @@
+{{ define "main" }}
+<main>
+  <section class="page-header">
+    <div class="page-header__inner">
+      <span class="eyebrow eyebrow--rule eyebrow--ondark">Data &amp; product</span>
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.tags }}<div class="card__tags" style="margin-top:var(--space-3);">{{ range . }}{{ partial "tag.html" . }}{{ end }}</div>{{ end }}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width:840px;">
+      {{ with .Params.image }}
+        <img src="{{ . | relURL }}" alt="{{ $.Title }}" style="width:100%;max-height:420px;object-fit:cover;border-radius:var(--radius-lg);border:1px solid var(--border);margin-bottom:var(--space-6);">
+      {{ end }}
+      {{ with .Params.links }}
+        <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;margin-bottom:var(--space-6);">
+          {{ range . }}<a class="btn {{ if .primary }}btn--action{{ else }}btn--outline{{ end }}" href="{{ .url }}">{{ .label }}</a>{{ end }}
+        </div>
+      {{ end }}
+      <div style="max-width:64ch;">{{ .Content }}</div>
+      <p style="margin-top:var(--space-7);"><a href="{{ "products" | relURL }}" class="btn btn--ghost"><i class="fas fa-arrow-left" aria-hidden="true"></i> All products</a></p>
+    </div>
+  </section>
+</main>
+{{ end }}

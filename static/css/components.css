@@ -1,0 +1,98 @@
+/* ============================================================================
+   MBON · COMPONENTS  (class-based versions of the design-system primitives)
+   Mirrors the React components in the design system. Style tweaks live here.
+   ========================================================================== */
+
+/* ---- Eyebrow: mono overline ------------------------------------------- */
+.eyebrow{
+  display:inline-flex; align-items:center; gap:.6em;
+  font-family:var(--font-mono); font-size:var(--text-xs); font-weight:var(--fw-medium);
+  text-transform:uppercase; letter-spacing:var(--ls-label); line-height:1;
+  color:var(--accent-hover);
+}
+.eyebrow--rule::before{ content:""; width:1.75em; height:2px; border-radius:2px; background:currentColor; opacity:.8; }
+.eyebrow--ondark{ color:var(--teal-300); }
+
+/* ---- Button ----------------------------------------------------------- */
+.btn{
+  --_bg:var(--brand); --_fg:#fff; --_bd:transparent;
+  display:inline-flex; align-items:center; justify-content:center; gap:.55em;
+  font-family:var(--font-sans); font-weight:var(--fw-semibold); font-size:var(--text-base); line-height:1;
+  padding:.65em 1.15em; border:1px solid var(--_bd); background:var(--_bg); color:var(--_fg);
+  border-radius:var(--radius-sm); cursor:pointer; text-decoration:none; white-space:nowrap;
+  transition:filter var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out);
+}
+.btn:hover{ filter:brightness(.94); text-decoration:none; color:var(--_fg); }
+.btn:active{ transform:translateY(1px); }
+.btn:focus-visible{ outline:none; box-shadow:var(--shadow-focus); }
+.btn--sm{ font-size:var(--text-sm); padding:.5em .9em; }
+.btn--lg{ font-size:var(--text-md); padding:.8em 1.5em; }
+.btn--accent{ --_bg:var(--accent); }
+.btn--action{ --_bg:var(--action); }
+.btn--outline{ --_bg:transparent; --_fg:var(--brand); --_bd:var(--border-strong); }
+.btn--outline:hover{ filter:none; background:var(--foam-100); border-color:var(--brand); }
+.btn--ghost{ --_bg:transparent; --_fg:var(--text-heading); }
+.btn--ghost:hover{ filter:none; background:var(--foam-100); }
+.btn--on-photo{ --_bg:rgba(255,255,255,0.08); --_fg:#fff; --_bd:rgba(255,255,255,0.5); }
+.btn--on-photo:hover{ filter:none; background:rgba(255,255,255,0.16); }
+.btn--full{ width:100%; }
+
+/* ---- Tag: faceted taxonomy chip --------------------------------------- */
+.tag{
+  --_c:var(--ink-500);
+  display:inline-flex; align-items:center; gap:.45em;
+  font-family:var(--font-mono); font-size:var(--text-xs); font-weight:var(--fw-medium);
+  letter-spacing:var(--ls-wide); line-height:1; padding:.4em .75em; border-radius:var(--radius-pill);
+  border:1px solid color-mix(in srgb, var(--_c) 35%, transparent);
+  color:var(--_c); background:color-mix(in srgb, var(--_c) 8%, var(--white));
+  cursor:default; transition:background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+.tag--region{ --_c:var(--facet-region); }
+.tag--tool{   --_c:var(--facet-tool); }
+.tag--org{    --_c:var(--facet-org); }
+.tag--type{   --_c:var(--facet-type); }
+button.tag{ cursor:pointer; }
+button.tag:hover{ background:color-mix(in srgb, var(--_c) 16%, var(--white)); }
+.tag.is-active{ background:var(--_c); color:#fff; border-color:var(--_c); }
+.tag__dot{ width:.5em; height:.5em; border-radius:50%; background:currentColor; }
+
+/* ---- Badge ------------------------------------------------------------ */
+.badge{
+  --_c:var(--info);
+  display:inline-flex; align-items:center; gap:.4em;
+  font-family:var(--font-mono); font-size:var(--text-xs); font-weight:var(--fw-semibold);
+  text-transform:uppercase; letter-spacing:var(--ls-wide); line-height:1;
+  padding:.35em .6em; border-radius:var(--radius-xs);
+  color:var(--_c); background:color-mix(in srgb, var(--_c) 12%, var(--white));
+}
+.badge--solid{ color:#fff; background:var(--_c); }
+.badge--ok{ --_c:var(--ok); }
+.badge--accent{ --_c:var(--teal-600); }
+.badge__dot{ width:.5em; height:.5em; border-radius:50%; background:currentColor; }
+
+/* ---- Stat ------------------------------------------------------------- */
+.stat{ display:flex; flex-direction:column; gap:.15em; }
+.stat__value{ font-family:var(--font-mono); font-weight:var(--fw-semibold); line-height:1; color:var(--cobalt-500); font-size:var(--text-2xl); }
+.stat__label{ font-family:var(--font-mono); font-size:var(--text-xs); font-weight:var(--fw-medium); text-transform:uppercase; letter-spacing:var(--ls-label); color:var(--text-muted); }
+.stat--ondark .stat__value{ color:#fff; }
+.stat--ondark .stat__label{ color:var(--teal-300); }
+
+/* ---- Card: content / product / news ----------------------------------- */
+.card{
+  display:flex; flex-direction:column; background:var(--bg-surface);
+  border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden;
+  text-decoration:none; color:inherit; height:100%;
+  transition:transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out);
+}
+a.card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-lg); border-color:var(--teal-300); text-decoration:none; color:inherit; }
+.card__media{ position:relative; aspect-ratio:16/10; background:var(--foam-100); overflow:hidden; }
+.card__media img{ width:100%; height:100%; object-fit:cover; transition:transform var(--dur-slow) var(--ease-out); }
+a.card:hover .card__media img{ transform:scale(1.04); }
+.card__badge{ position:absolute; top:var(--space-3); left:var(--space-3); }
+.card__body{ display:flex; flex-direction:column; gap:var(--space-3); padding:var(--space-5); flex:1; }
+.card__tags{ display:flex; flex-wrap:wrap; gap:var(--space-2); }
+.card__title{ font:var(--type-card); color:var(--text-heading); letter-spacing:var(--ls-tight); margin:0; }
+.card__summary{ font:var(--type-small); color:var(--text-body); margin:0; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+.card__foot{ margin-top:auto; display:flex; align-items:center; gap:.5em; font-family:var(--font-mono); font-size:var(--text-xs); font-weight:var(--fw-semibold); text-transform:uppercase; letter-spacing:var(--ls-label); color:var(--accent-hover); }
+.card__foot i{ transition:transform var(--dur-fast) var(--ease-out); }
+a.card:hover .card__foot i{ transform:translateX(3px); }

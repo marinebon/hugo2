@@ -1,0 +1,16 @@
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-header__logo" href="{{ "" | relURL }}">
+      <img src="{{ "img/logos/mbon-logo.png" | relURL }}" alt="MBON — Marine Biodiversity Observation Network">
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">&#9776;</button>
+    <nav class="site-nav">
+      {{ range site.Menus.main }}
+        <a href="{{ .URL }}"{{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }} class="is-active"{{ end }}>{{ .Name }}</a>
+      {{ end }}
+      <span class="site-nav__sep"></span>
+      <a href="#" aria-label="Search"><i class="fas fa-magnifying-glass" aria-hidden="true"></i></a>
+      <a class="btn btn--action btn--sm" href="{{ "network" | relURL }}">Join the network <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+    </nav>
+  </div>
+</header>

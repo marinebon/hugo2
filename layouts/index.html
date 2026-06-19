@@ -1,0 +1,65 @@
+{{ define "main" }}
+<main>
+  {{/* ===== HERO ===== */}}
+  <section class="hero">
+    <img class="hero__img" src="{{ site.Params.heroImage | relURL }}" alt="">
+    <div class="hero__scrim"></div>
+    <div class="hero__inner">
+      <span class="eyebrow eyebrow--rule eyebrow--ondark">{{ site.Params.tagline }}</span>
+      <h1>{{ site.Params.heroHeadline }}</h1>
+      <p class="hero__lead">{{ site.Params.heroLead }}</p>
+      <div class="hero__actions">
+        <a class="btn btn--action btn--lg" href="{{ "network" | relURL }}">Explore the network <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        <a class="btn btn--lg btn--on-photo" href="{{ "products" | relURL }}">View data products</a>
+      </div>
+      <div class="stat-strip">
+        {{ range site.Data.stats }}
+          <div class="stat stat--ondark"><div class="stat__value">{{ .value }}</div><div class="stat__label">{{ .label }}</div></div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  {{/* ===== NETWORK GLOBE ===== */}}
+  {{ partial "globe.html" (dict
+      "eyebrow" "A network of networks"
+      "heading" "Regional & thematic nodes, one shared standard."
+      "lead" "From the Arctic to the Antarctic, each node observes its own waters and publishes to common standards. Select a node to spin the globe.") }}
+
+  {{/* ===== FEATURED PRODUCTS ===== */}}
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow eyebrow--rule">Data &amp; products</span>
+          <h2>Tools that connect observations to decisions</h2>
+        </div>
+        <a class="btn btn--outline" href="{{ "products" | relURL }}">Browse all products <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="grid-3">
+        {{ range first 3 (sort (where site.RegularPages "Section" "products") "Params.weight") }}
+          {{ partial "card-product.html" . }}
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  {{/* ===== LATEST NEWS ===== */}}
+  <section class="section section--tint">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow eyebrow--rule">Latest news &amp; updates</span>
+          <h2>From around the global network</h2>
+        </div>
+        <a class="btn btn--ghost" href="{{ "news" | relURL }}">All news <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="grid-3">
+        {{ range first 3 ((where site.RegularPages "Section" "news").ByDate.Reverse) }}
+          {{ partial "card-news.html" . }}
+        {{ end }}
+      </div>
+    </div>
+  </section>
+</main>
+{{ end }}

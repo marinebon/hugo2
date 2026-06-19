@@ -1,0 +1,72 @@
+/* ============================================================================
+   MBON · BASE ELEMENTS
+   Light resets + element defaults that consume the tokens. Components stay
+   self-contained; this gives raw HTML (cards, docs) a correct baseline.
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font: var(--type-body);
+  color: var(--text-body);
+  background: var(--bg-page);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  margin: 0 0 0.5em;
+  color: var(--text-heading);
+  font-family: var(--font-display);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-tight);
+  text-wrap: balance;
+}
+h1 { font-size: var(--text-3xl); font-weight: var(--fw-bold); }
+h2 { font-size: var(--text-2xl); }
+h3 { font-size: var(--text-xl); }
+h4 { font-size: var(--text-lg); }
+
+p { margin: 0 0 1em; line-height: var(--lh-relaxed); text-wrap: pretty; }
+
+a { color: var(--link); text-decoration: none; transition: color var(--dur-fast) var(--ease-out); }
+a:hover { color: var(--accent-hover); text-decoration: underline; text-underline-offset: 2px; }
+
+strong { font-weight: var(--fw-semibold); color: var(--text-heading); }
+
+code, kbd, samp {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  background: var(--foam-100);
+  padding: 0.1em 0.35em;
+  border-radius: var(--radius-xs);
+}
+
+hr { border: 0; border-top: 1px solid var(--divider); margin: var(--space-6) 0; }
+
+img { max-width: 100%; display: block; }
+
+::selection { background: var(--aqua-200); color: var(--ink-900); }
+
+:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+
+/* ---- Reusable primitives ------------------------------------------------ */
+
+/* mono eyebrow / overline label — pervasive in the MBON system */
+.mbon-eyebrow {
+  font: var(--type-label);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-label);
+  color: var(--accent-hover);
+}
+
+.mbon-container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}

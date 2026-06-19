@@ -1,0 +1,29 @@
+# Strategic collaborator logos for the footer. Drop a logo in
+# static/img/partners/ and add an entry here. Order = display order.
+- name: GEO BON
+  logo: img/partners/geobon.jpg
+  url: https://geobon.org
+- name: OBIS
+  logo: img/partners/obis.png
+  url: https://obis.org
+- name: GOOS
+  logo: img/partners/goos.png
+  url: https://goosocean.org
+- name: IOOS
+  logo: img/partners/ioos.jpg
+  url: https://ioos.noaa.gov
+- name: GEO
+  logo: img/partners/geo.png
+  url: https://earthobservations.org
+- name: MarineGEO
+  logo: img/partners/marinegeo.png
+  url: https://marinegeo.si.edu
+- name: SCAR
+  logo: img/partners/scar.png
+  url: https://scar.org
+- name: LifeWatch
+  logo: img/partners/lifewatch.png
+  url: https://www.lifewatch.eu
+- name: GCRMN
+  logo: img/partners/gcrmn.png
+  url: https://gcrmn.net

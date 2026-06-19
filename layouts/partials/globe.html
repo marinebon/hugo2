@@ -1,0 +1,34 @@
+{{/* MBON network globe band. Call with a dict:
+      (dict "eyebrow" "…" "heading" "…" "lead" "…")
+     Node data is built from every page in the /regions section. */}}
+{{ $nodes := slice }}
+{{ range (where site.RegularPages "Section" "regions") }}
+  {{ $n := dict "id" .File.ContentBaseName "name" .Title "lat" .Params.lat "lng" .Params.lng "footprint" .Params.footprint "blurb" .Params.summary "url" .RelPermalink "kind" .Params.kind_node }}
+  {{ with .Params.fcenter }}{{ $n = merge $n (dict "fcenter" .) }}{{ end }}
+  {{ $nodes = $nodes | append $n }}
+{{ end }}
+<section class="globe-band">
+  <div class="globe-band__inner">
+    <div class="globe-stage" data-mbon-globe>
+      <canvas></canvas>
+      <div class="globe-loading">Loading globe&hellip;</div>
+    </div>
+    <div>
+      <span class="eyebrow eyebrow--rule eyebrow--ondark">{{ .eyebrow }}</span>
+      <h2 style="font:var(--type-h2);font-size:clamp(2rem,3vw,2.75rem);color:#fff;margin:var(--space-3) 0 var(--space-4);">{{ .heading }}</h2>
+      <p style="color:var(--text-on-dark-muted);max-width:46ch;margin-bottom:var(--space-5);">{{ .lead }}</p>
+      <div class="node-chips">
+        {{ range (where site.RegularPages "Section" "regions") }}
+          <button class="node-chip" data-node-id="{{ .File.ContentBaseName }}">{{ replace .Title " MBON" "" }}</button>
+        {{ end }}
+      </div>
+      <div class="node-card" data-node-card>
+        <div class="node-card__coord" data-node-field="coord"></div>
+        <h3 data-node-field="name" style="font:var(--type-h3);color:#fff;margin:var(--space-2) 0 var(--space-3);"></h3>
+        <p data-node-field="blurb" style="color:var(--text-on-dark-muted);font-size:var(--text-base);margin:0 0 var(--space-5);"></p>
+        <a class="btn btn--action" data-node-link href="#">Open this region <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+  <script id="mbon-regions" type="application/json">{{ $nodes | jsonify }}</script>
+</section>

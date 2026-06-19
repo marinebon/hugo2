@@ -1,0 +1,27 @@
+# Facets that interrelate products. Each product's front matter lists
+# `tags` as "facet:value" tokens; these buttons filter on them.
+# Add a value here AND use it in a product's front matter to wire it up.
+- facet: region
+  label: Region
+  values:
+    - { value: global,         name: Global }
+    - { value: north-atlantic, name: "N. Atlantic" }
+    - { value: south-fl,       name: "South FL" }
+- facet: tool
+  label: Tool
+  values:
+    - { value: dashboard,   name: Dashboard }
+    - { value: infographic, name: Infographic }
+- facet: org
+  label: Organization
+  values:
+    - { value: noaa-iea, name: "NOAA IEA" }
+    - { value: nms,      name: NMS }
+    - { value: fwri,     name: FWRI }
+    - { value: obis,     name: OBIS }
+- facet: type
+  label: Product type
+  values:
+    - { value: tool,     name: Tool }
+    - { value: data,     name: Data }
+    - { value: instance, name: Instance }

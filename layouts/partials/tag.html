@@ -1,0 +1,12 @@
+{{/* Faceted tag from a "facet:value" string (.). Looks up a friendly label
+     from data/product_filters.yaml; falls back to a humanized value. */}}
+{{ $parts := split . ":" }}
+{{ if eq (len $parts) 2 }}
+  {{ $facet := index $parts 0 }}
+  {{ $value := index $parts 1 }}
+  {{ $label := humanize $value }}
+  {{ range site.Data.product_filters }}{{ if eq .facet $facet }}{{ range .values }}{{ if eq .value $value }}{{ $label = .name }}{{ end }}{{ end }}{{ end }}{{ end }}
+  <span class="tag tag--{{ $facet }}">{{ $label }}</span>
+{{ else }}
+  <span class="tag">{{ humanize . }}</span>
+{{ end }}

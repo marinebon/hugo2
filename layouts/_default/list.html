@@ -1,0 +1,22 @@
+{{ define "main" }}
+<main>
+  <section class="page-header">
+    <div class="page-header__inner">
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.summary }}<p class="page-header__lead">{{ . }}</p>{{ end }}
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="grid-auto">
+        {{ range .Pages }}
+          <a class="node-link" href="{{ .RelPermalink }}">
+            <div class="node-link__title"><strong>{{ .Title }}</strong></div>
+            <p>{{ .Params.summary | default .Summary }}</p>
+          </a>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+</main>
+{{ end }}
