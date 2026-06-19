@@ -95,9 +95,9 @@
 .site-footer{ background:var(--abyss-900); color:var(--text-on-dark); margin-top:var(--section-y); }
 .footer-partners{ border-bottom:1px solid rgba(255,255,255,0.08); }
 .footer-partners__inner{ max-width:var(--container-wide); margin:0 auto; padding:var(--space-6); }
-.partner-strip{ display:flex; flex-wrap:wrap; gap:var(--space-4); align-items:center; margin-top:var(--space-5); }
-.partner-chip{ display:inline-flex; align-items:center; justify-content:center; background:#fff; border-radius:var(--radius-sm); padding:10px 14px; height:52px; box-sizing:border-box; }
-.partner-chip img{ max-height:32px; max-width:110px; object-fit:contain; display:block; }
+.partner-strip{ display:flex; flex-wrap:wrap; gap:var(--space-4); align-items:stretch; margin-top:var(--space-5); }
+.partner-chip{ display:inline-flex; align-items:center; justify-content:center; background:#fff; border-radius:var(--radius-sm); padding:14px 18px; height:72px; box-sizing:border-box; flex:1; }
+.partner-chip img{ max-height:44px; max-width:140px; object-fit:contain; display:block; }
 .footer-main{ max-width:var(--container-wide); margin:0 auto; padding:var(--space-8) var(--space-6); display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:var(--space-7); }
 .footer-main img.wordmark{ height:32px; filter:brightness(0) invert(1); margin-bottom:var(--space-4); }
 .footer-main p{ color:var(--text-on-dark-muted); font-size:var(--text-sm); max-width:34ch; line-height:1.6; }
