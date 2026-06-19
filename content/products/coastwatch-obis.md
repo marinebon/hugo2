@@ -1,7 +1,7 @@
 +++
 title   = "CoastWatch OBIS Indicator Explorer"
 weight  = 8
-image   = "img/photos/ocean-blue.jpg"
+image   = "img/products/coastwatch-obis.png"
 summary = "Server-side tool that co-locates satellite remote sensing products, gridded model outputs, and OBIS field observations to generate biodiversity indicators for any polygon."
 tags    = ["region:global", "tool:dashboard", "type:tool"]
 links   = [

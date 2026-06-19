@@ -1,6 +1,8 @@
 +++
 title   = "Biodiversity Monitoring Best Practices"
 date    = "2022-06-01"
+summary = "Collaborative effort to establish and disseminate best practices for marine biodiversity monitoring, ensuring interoperability and long-term usability of observation data."
+banner  = "img/photos/reef-sunlight.jpg"
 tags    = ["best-practices", "monitoring", "training"]
 +++
 

@@ -1,6 +1,8 @@
 +++
 title   = "Genetic Monitoring for Non-Indigenous Species"
 date    = "2021-01-01"
+summary = "A continental-scale ARMS network across European marine sanctuaries and ports uses genetic methods to detect non-indigenous species far earlier than conventional sampling."
+banner  = "img/photos/reef-sunlight.jpg"
 tags    = ["genetic-monitoring", "invasive-species", "early-detection"]
 +++
 

@@ -1,6 +1,7 @@
 +++
 title   = "Essential Ocean Variables and Standards"
 date    = "2020-06-19"
+banner  = "img/photos/ocean-blue.jpg"
 tags    = ["essential-ocean-variables", "standards", "interoperability"]
 +++
 

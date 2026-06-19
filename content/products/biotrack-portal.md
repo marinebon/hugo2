@@ -1,7 +1,7 @@
 +++
 title   = "BioTrack Telemetry Portal"
 weight  = 1
-image   = "img/photos/sunfish.jpg"
+image   = "img/products/biotrack-portal.png"
 summary = "Interactive map of satellite and acoustic marine animal tracks that identifies biodiversity hotspots and their overlap with human-use areas."
 tags    = ["region:north-atlantic", "tool:dashboard", "type:tool"]
 links   = [

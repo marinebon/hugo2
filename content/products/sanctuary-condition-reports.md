@@ -1,7 +1,7 @@
 +++
 title   = "Sanctuary Watch"
 weight  = 4
-image   = "img/photos/reef-sunlight.jpg"
+image   = "img/products/sanctuary-condition-reports.png"
 summary = "Web-based interactive tools for tracking ecosystem conditions, human connections, and management impacts across U.S. National Marine Sanctuaries."
 tags    = ["org:nms", "tool:dashboard", "region:us"]
 links   = [

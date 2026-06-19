@@ -1,6 +1,7 @@
 +++
 title   = "FWRI FK Water Quality Story Map"
 weight  = 14
+image   = "img/products/storymap-fk-fwri-water-quality.png"
 summary = "ArcGIS Story Map for water quality in the Florida Keys, developed by FWRI."
 tags    = ["region:us", "region:south-fl", "org:fwri", "type:instance"]
 links   = [

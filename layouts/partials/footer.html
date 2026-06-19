@@ -3,7 +3,7 @@
     <div class="footer-partners__inner">
       <span class="eyebrow eyebrow--rule eyebrow--ondark">Strategic collaborators</span>
       <div class="partner-strip">
-        {{ range site.Data.partners }}
+        {{ range hugo.Data.partners }}
           <a class="partner-chip" href="{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener">
             <img src="{{ .logo | relURL }}" alt="{{ .name }}">
           </a>

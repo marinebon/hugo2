@@ -1,6 +1,8 @@
 +++
 title   = "Dr. Frank Muller-Karger TOS Fellow Award"
 date    = "2024-02-06"
+summary = "Frank Muller-Karger, co-chair of MBON and professor at the University of South Florida, is named a 2024 TOS Fellow by The Oceanography Society."
+banner  = "img/news/muller-karger-portrait.jpg"
 tags    = ["muller-karger", "award"]
 +++
 

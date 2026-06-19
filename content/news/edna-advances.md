@@ -1,6 +1,7 @@
 +++
 title   = "Advances in Molecular eDNA Techniques"
 date    = "2022-01-01"
+banner  = "img/photos/edna.jpg"
 tags    = ["edna", "research", "biodiversity"]
 +++
 

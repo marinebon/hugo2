@@ -1,6 +1,7 @@
 +++
 title   = "Satellite-Based Hurricane Damage Assessment"
 date    = "2020-09-01"
+banner  = "img/photos/ocean-blue.jpg"
 tags    = ["hurricanes", "satellite", "coastal"]
 +++
 

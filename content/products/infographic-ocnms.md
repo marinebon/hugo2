@@ -1,6 +1,7 @@
 +++
 title   = "Olympic Coast NMS Infographics"
 weight  = 10
+image   = "img/products/infographic-ocnms.png"
 summary = "Interactive ecosystem infographics for the Olympic Coast National Marine Sanctuary."
 tags    = ["region:us", "tool:infographic", "org:nms", "type:instance"]
 links   = [

@@ -1,7 +1,7 @@
 +++
 title   = "MBON Pole to Pole Data Atlas"
 weight  = 6
-image   = "img/photos/pole-to-pole-map.png"
+image   = "img/products/pole-to-pole-atlas.png"
 summary = "Harmonized rocky-shore and sandy-beach biodiversity observations from Canada to Patagonia, standardized for cross-regional comparison and open access via OBIS."
 tags    = ["region:americas", "type:data", "org:obis"]
 links   = [

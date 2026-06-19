@@ -13,7 +13,7 @@
         <a class="btn btn--lg btn--on-photo" href="{{ "products" | relURL }}">View data products</a>
       </div>
       <div class="stat-strip">
-        {{ range site.Data.stats }}
+        {{ range hugo.Data.stats }}
           <div class="stat stat--ondark"><div class="stat__value">{{ .value }}</div><div class="stat__label">{{ .label }}</div></div>
         {{ end }}
       </div>

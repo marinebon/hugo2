@@ -1,6 +1,8 @@
 +++
 title   = "MBON Partnership with Seabed2030"
 date    = "2023-07-01"
+summary = "MBON and Seabed 2030 renew partnership to integrate biodiversity observations with bathymetric data, improving understanding of deep-sea ecosystems and their inhabitants."
+banner  = "img/news/seabed2030-partnership.png"
 tags    = ["seabed2030", "marine-life-2030", "partnership"]
 +++
 

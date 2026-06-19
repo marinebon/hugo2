@@ -1,6 +1,7 @@
 +++
 title   = "Florida Keys ESR Infographic"
 weight  = 8
+image   = "img/products/infographic-florida-keys-esr.png"
 summary = "Conceptual diagram as interactive infographic for the Florida Keys Sanctuary associated with Ecosystem Status Report (ESR)."
 tags    = ["region:us", "region:south-fl", "tool:infographic", "org:noaa-iea", "type:instance"]
 links   = [

@@ -1,6 +1,8 @@
 +++
 title   = "MBON and SCAR Antarctic Partnership"
 date    = "2022-03-01"
+summary = "MBON, SCAR, and the SCAR Antarctic Biodiversity Portal formalise a cooperation to reinforce ocean biodiversity observing capacity in the Southern Ocean and beyond."
+banner  = "img/photos/ocean-blue.jpg"
 tags    = ["antarctic", "partnership", "collaboration"]
 +++
 

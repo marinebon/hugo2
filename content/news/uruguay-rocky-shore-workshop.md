@@ -1,6 +1,8 @@
 +++
 title   = "Uruguay Rocky Shore Monitoring Workshop"
 date    = "2024-10-01"
+summary = "MBON Pole to Pole partners gather in Uruguay for a hands-on workshop on rocky shore monitoring protocols, advancing standardised intertidal biodiversity surveys across the Americas."
+banner  = "img/news/uruguay-rocky-shore.jpeg"
 tags    = ["workshop", "rocky-shore", "pole-to-pole", "uruguay"]
 +++
 

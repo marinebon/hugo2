@@ -1,6 +1,8 @@
 +++
 title   = "All-Atlantic Ocean Research Alliance Forum"
 date    = "2022-07-14"
+summary = "MBON, OBPS, OBIS, and GOOS co-hosted a virtual side event at the All-Atlantic Forum in Brasilia to advance co-design of biology and ecosystem observations across ocean basins."
+banner  = "img/news/all-atlantic-session.png"
 tags    = ["all-atlantic", "research", "partnership"]
 +++
 

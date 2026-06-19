@@ -1,6 +1,7 @@
 +++
 title   = "US and Global MBON Partnership: MBON Seascapes on NOAA CoastWatch"
 date    = "2020-01-01"
+banner  = "img/photos/seascapes.jpg"
 tags    = ["partnership", "seascapes", "ioos"]
 +++
 

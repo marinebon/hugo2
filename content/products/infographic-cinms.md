@@ -1,6 +1,7 @@
 +++
 title   = "CINMS Infographics"
 weight  = 7
+image   = "img/products/infographic-cinms.png"
 summary = "Interactive ecosystem infographics for Channel Islands National Marine Sanctuary."
 tags    = ["region:us", "tool:infographic", "org:nms", "type:instance"]
 links   = [

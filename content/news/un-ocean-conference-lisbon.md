@@ -1,6 +1,8 @@
 +++
 title   = "UN Ocean Conference Lisbon 2022"
 date    = "2022-07-01"
+summary = "MBON joined partners at UNOC Lisbon 2022 for a side event on integrating marine life observations into indicators for conservation, restoration, and sustainable development."
+banner  = "img/news/unoc-ocean-decade-forum.jpg"
 tags    = ["un", "conference", "lisbon", "marine-life-2030"]
 +++
 

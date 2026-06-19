@@ -1,6 +1,7 @@
 +++
 title   = "Sanctuaries Climate Dashboard"
 weight  = 17
+image   = "img/products/climate-dashboard.png"
 summary = "Static flexdashboard rendering climate indicators — sea surface temperature, chlorophyll-a, pH, sea-level rise — for each U.S. National Marine Sanctuary."
 tags    = ["region:us", "tool:dashboard", "org:nms", "type:instance"]
 links   = [

@@ -1,6 +1,7 @@
 +++
 title   = "seascapeR"
 weight  = 13
+image   = "img/products/seascapr.png"
 summary = "An R package and prototype interface to explore Seascapes in different marine regions, including U.S. National Marine Sanctuaries."
 tags    = ["region:global", "type:tool"]
 links   = [

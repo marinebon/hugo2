@@ -1,6 +1,7 @@
 +++
 title   = "Bering and Chukchi Seas Research"
 date    = "2020-11-01"
+banner  = "img/photos/ocean-blue.jpg"
 tags    = ["arctic", "bering-sea", "research"]
 +++
 

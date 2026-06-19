@@ -1,6 +1,8 @@
 +++
 title   = "GOOS and BioEcoOcean Special Session Webinar Series"
 date    = "2025-07-01"
+summary = "GOOS, BioEcoOcean, MBON, and the AIR Centre co-host a webinar series on Biology and Ecosystems Essential Ocean Variables (BioEco EOVs)."
+banner  = "img/photos/ocean-blue.jpg"
 tags    = ["goos", "essential-ocean-variables", "webinar"]
 +++
 

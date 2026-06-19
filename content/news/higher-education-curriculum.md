@@ -1,6 +1,8 @@
 +++
 title   = "Higher Education Curriculum Development"
 date    = "2024-06-01"
+summary = "An initiative to embed marine biodiversity observation methods and open data practices into higher education curricula, building the next generation of ocean scientists."
+banner  = "img/photos/ocean-blue.jpg"
 tags    = ["education", "curriculum", "capacity-development"]
 +++
 

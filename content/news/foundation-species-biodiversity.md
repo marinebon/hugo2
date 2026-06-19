@@ -1,6 +1,7 @@
 +++
 title   = "Marine Foundation Species and Biodiversity"
 date    = "2022-01-01"
+banner  = "img/photos/kelp.jpg"
 tags    = ["kelp", "biodiversity", "science"]
 +++
 

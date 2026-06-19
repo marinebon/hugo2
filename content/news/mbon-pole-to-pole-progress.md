@@ -1,6 +1,8 @@
 +++
 title   = "MBON Pole to Pole Progress Report"
 date    = "2021-09-09"
+summary = "Enrique Montes presented on the MBON Pole to Pole network's progress coordinating standardised biodiversity data across the Americas in support of the 2030 Agenda and CBD."
+banner  = "img/photos/pole-to-pole-map.png"
 tags    = ["pole-to-pole", "americas", "progress"]
 +++
 

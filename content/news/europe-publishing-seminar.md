@@ -1,6 +1,8 @@
 +++
 title   = "MBON Europe Data Publishing Seminar"
 date    = "2023-12-18"
+summary = "A seminar for European marine data holders on mobilising biological datasets to open repositories, applying Darwin Core standards, and publishing through OBIS."
+banner  = "img/news/europe-publishing-seminar.jpg"
 tags    = ["europe", "data-publishing", "seminar", "obis"]
 +++
 

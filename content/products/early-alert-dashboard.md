@@ -1,7 +1,7 @@
 +++
 title   = "Florida Keys NMS Alert Dashboard"
 weight  = 5
-image   = "img/photos/ocean-blue.jpg"
+image   = "img/products/early-alert-dashboard.png"
 summary = "Early-warning dashboard combining satellite and buoy data to detect harmful algal blooms and anoxic conditions in the Florida Keys National Marine Sanctuary."
 tags    = ["tool:dashboard", "org:nms", "region:south-fl"]
 links   = [

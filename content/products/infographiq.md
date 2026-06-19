@@ -1,7 +1,7 @@
 +++
 title   = "Infographiq"
 weight  = 7
-image   = "img/photos/reef-sunlight.jpg"
+image   = "img/products/infographiq.png"
 summary = "JavaScript and R method for producing clickable scientific art that acts as an interface for users to explore marine biodiversity data."
 tags    = ["region:global", "tool:infographic", "type:tool"]
 links   = [

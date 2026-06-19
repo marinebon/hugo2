@@ -1,6 +1,8 @@
 +++
 title   = "NOAA and Partner Agencies New Awards"
 date    = "2022-01-01"
+summary = "NOAA and partner agencies recognise outstanding contributions to marine biodiversity science and the development of operational ocean observation programmes."
+banner  = "img/photos/ocean-blue.jpg"
 tags    = ["noaa", "awards", "funding"]
 +++
 

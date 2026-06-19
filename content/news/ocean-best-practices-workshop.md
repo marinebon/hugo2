@@ -1,6 +1,8 @@
 +++
 title   = "Ocean Best Practices Workshop"
 date    = "2022-10-15"
+summary = "A workshop bringing together practitioners to document, share, and align best practices for marine biodiversity observation across instruments, regions, and disciplines."
+banner  = "img/photos/ocean-blue.jpg"
 tags    = ["workshop", "best-practices", "data", "marine-life-2030"]
 +++
 

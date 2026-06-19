@@ -1,6 +1,8 @@
 +++
 title   = "Global Network for Marine Biodiversity"
 date    = "2022-01-01"
+summary = "Announcement of expanded global MBON network coordination, connecting regional programmes into a unified, interoperable system for tracking marine biodiversity worldwide."
+banner  = "img/photos/ocean-blue.jpg"
 tags    = ["network", "global"]
 +++
 

@@ -1,6 +1,8 @@
 +++
 title   = "International Women's Day Celebration"
 date    = "2022-03-04"
+summary = "An early celebration of International Women's Day — part of the AIR Centre Networking Fridays webinar series on March 4, 2022."
+banner  = "img/photos/reef-sunlight.jpg"
 tags    = ["community"]
 +++
 

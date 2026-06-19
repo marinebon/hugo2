@@ -1,6 +1,7 @@
 +++
 title   = "Watching for Changes in Marine Biodiversity"
 date    = "2022-01-01"
+banner  = "img/photos/ocean-blue.jpg"
 tags    = ["biodiversity", "monitoring", "indicators"]
 +++
 

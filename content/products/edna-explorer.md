@@ -1,7 +1,7 @@
 +++
 title   = "MBON Data Portal"
 weight  = 3
-image   = "img/photos/edna.jpg"
+image   = "img/products/edna-explorer.png"
 summary = "Search, download, visualize, and analyze real-time, delayed-mode, and historical MBON biological observations alongside physical and chemical data."
 tags    = ["region:global", "type:data", "tool:portal"]
 links   = [

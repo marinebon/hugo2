@@ -1,6 +1,7 @@
 +++
 title   = "Monterey Bay Sanctuary Analysis Tools"
 date    = "2019-04-01"
+banner  = "img/photos/reef-sunlight.jpg"
 tags    = ["tools", "sanctuaries", "monterey-bay"]
 +++
 

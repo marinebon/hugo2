@@ -1,11 +1,11 @@
 {{/* News card. Call with a Page (.) */}}
 <a class="card" href="{{ .RelPermalink }}">
-  {{ with .Params.banner }}
-    <div class="card__media">
+  <div class="card__media{{ if not .Params.banner }} card__media--placeholder{{ end }}">
+    {{ with .Params.banner }}
       <img src="{{ . | relURL }}" alt="{{ $.Title }}">
-      <div class="card__badge"><span class="badge badge--solid badge--accent">{{ $.Date.Format "Jan 2, 2006" }}</span></div>
-    </div>
-  {{ end }}
+    {{ end }}
+    <div class="card__badge"><span class="badge badge--solid badge--accent">{{ .Date.Format "Jan 2006" }}</span></div>
+  </div>
   <div class="card__body">
     {{ with .Params.tags }}<div class="card__tags"><span class="tag">{{ humanize (index . 0) }}</span></div>{{ end }}
     <h3 class="card__title">{{ .Title }}</h3>

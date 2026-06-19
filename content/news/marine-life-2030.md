@@ -1,6 +1,7 @@
 +++
 title   = "Marine Life 2030"
 date    = "2021-01-01"
+banner  = "img/photos/ocean-blue.jpg"
 tags    = ["marine-life-2030", "un-ocean-decade", "global"]
 +++
 

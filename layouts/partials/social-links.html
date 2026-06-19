@@ -6,11 +6,11 @@
 {{ $showContact := default false .showContact }}
 <div class="{{ $class }}">
   {{ if $showContact }}
-    {{ with site.Data.social.contact }}
+    {{ with hugo.Data.social.contact }}
       <a href="{{ . }}" aria-label="Contact" target="_blank" rel="noopener" class="social-contact">Contact</a>
     {{ end }}
   {{ end }}
-  {{ range site.Data.social.channels }}
+  {{ range hugo.Data.social.channels }}
     <a href="{{ .url }}" aria-label="{{ .label }}" target="_blank" rel="noopener"><i class="{{ .icon }}"></i></a>
   {{ end }}
 </div>

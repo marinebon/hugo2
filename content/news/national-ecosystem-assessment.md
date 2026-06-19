@@ -1,6 +1,8 @@
 +++
 title   = "National Ecosystem Assessment Initiative"
 date    = "2021-09-01"
+summary = "UNEP-WCMC's National Ecosystem Assessment Initiative launches an online platform hosting resources, case studies, and guidance to support countries undertaking ecosystem assessments."
+banner  = "img/photos/ocean-blue.jpg"
 tags    = ["ecosystem-assessment", "unep"]
 +++
 

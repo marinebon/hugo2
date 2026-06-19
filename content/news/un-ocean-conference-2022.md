@@ -1,6 +1,8 @@
 +++
 title   = "UN Ocean Conference 2022"
 date    = "2022-06-27"
+summary = "MBON participated in events surrounding the UN Ocean Conference 2022, advancing Marine Life 2030 and ocean decade commitments for global biodiversity observation."
+banner  = "img/news/unoc-side-event.jpg"
 tags    = ["un", "conference", "ocean"]
 +++
 

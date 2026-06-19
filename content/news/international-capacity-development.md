@@ -1,6 +1,8 @@
 +++
 title   = "International Capacity Development Collaboration"
 date    = "2022-09-01"
+summary = "MBON works to build biodiversity monitoring capacity across nations, sharing methods, tools, and training to ensure global participation in ocean observation."
+banner  = "img/photos/ocean-blue.jpg"
 tags    = ["capacity-development", "collaboration", "marine-protected-areas"]
 +++
 

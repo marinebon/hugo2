@@ -1,7 +1,7 @@
 +++
 title   = "Seascapes Viewer"
 weight  = 2
-image   = "img/photos/seascapes.jpg"
+image   = "img/products/seascapes-viewer.png"
 summary = "Interactive Shiny application for visualizing global Seascape Classes in time and space across U.S. National Marine Sanctuaries."
 tags    = ["region:global", "tool:dashboard", "org:nms"]
 links   = [

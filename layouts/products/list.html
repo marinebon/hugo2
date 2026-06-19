@@ -11,7 +11,7 @@
   <section class="section">
     <div class="container">
       <div class="filter-bar" data-product-filter>
-        {{ range site.Data.product_filters }}
+        {{ range hugo.Data.product_filters }}
           {{ $facet := .facet }}
           <div class="filter-group">
             <span class="filter-group__label" style="color:var(--facet-{{ $facet }});">{{ .label }}</span>

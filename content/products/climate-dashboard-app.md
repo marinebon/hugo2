@@ -1,6 +1,7 @@
 +++
 title   = "Climate Change for Sanctuaries"
 weight  = 18
+image   = "img/products/climate-dashboard-app.png"
 summary = "Shiny application with a swipeable \"then vs. now\" map comparing climatological reference periods to the present for each U.S. National Marine Sanctuary."
 tags    = ["region:us", "tool:dashboard", "org:nms", "type:instance"]
 links   = [
