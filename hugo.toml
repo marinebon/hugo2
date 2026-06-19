@@ -23,25 +23,22 @@ enableEmoji = false
     pageRef = "/"
     weight = 1
   [[menu.main]]
-    name = "Network"
-    pageRef = "/network"
-    weight = 2
-  [[menu.main]]
-    name = "Working Groups"
-    pageRef = "/working-groups"
-    weight = 3
+    name       = "Network"
+    identifier = "network"
+    pageRef    = "/network"
+    weight     = 2
   [[menu.main]]
     name = "Products"
     pageRef = "/products"
-    weight = 4
+    weight = 3
   [[menu.main]]
     name = "News"
     pageRef = "/news"
-    weight = 5
+    weight = 4
   [[menu.main]]
     name = "About"
     pageRef = "/about"
-    weight = 6
+    weight = 5
 
 [taxonomies]
   tag = "tags"

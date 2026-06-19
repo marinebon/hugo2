@@ -6,7 +6,31 @@
     <button class="nav-toggle" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">&#9776;</button>
     <nav class="site-nav">
       {{ range site.Menus.main }}
-        <a href="{{ .URL }}"{{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }} class="is-active"{{ end }}>{{ .Name }}</a>
+        {{ if eq .Identifier "network" }}
+          {{ $regional := where (where site.RegularPages "Section" "network") "Params.kind_node" "regional" }}
+          {{ $thematic := where (where site.RegularPages "Section" "network") "Params.kind_node" "thematic" }}
+          <div class="nav-dropdown">
+            <a href="{{ .URL }}"{{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }} class="is-active"{{ end }}>
+              {{ .Name }}<i class="fas fa-chevron-down nav-dropdown__caret" aria-hidden="true"></i>
+            </a>
+            <div class="nav-dropdown__panel">
+              <div class="nav-dropdown__col">
+                <span class="nav-dropdown__label">Regional MBONs</span>
+                {{ range $regional.ByTitle }}
+                  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                {{ end }}
+              </div>
+              <div class="nav-dropdown__col">
+                <span class="nav-dropdown__label">Thematic</span>
+                {{ range $thematic.ByTitle }}
+                  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                {{ end }}
+              </div>
+            </div>
+          </div>
+        {{ else }}
+          <a href="{{ .URL }}"{{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }} class="is-active"{{ end }}>{{ .Name }}</a>
+        {{ end }}
       {{ end }}
       <span class="site-nav__sep"></span>
       <form class="nav-search" action="{{ "search" | relURL }}" method="get" role="search">
