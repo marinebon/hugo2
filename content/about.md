@@ -67,4 +67,4 @@ We, the **MBON** members, are international and strive to nurture a global commu
 
 Values and principles regarding how we work with others, engage with society, and how our work and methods impact life and nature.
 
-[Read the MBON Code of Conduct (PDF)](https://marinebon.org/media/storage/storage/2023/03/A.code_.of_.conduct_2023.Feb_.pdf)
+[Read the MBON Code of Conduct (PDF)](docs/mbon-code-of-conduct-2023.pdf)

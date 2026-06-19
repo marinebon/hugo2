@@ -5,6 +5,7 @@
   label: Region
   values:
     - { value: global,         name: Global }
+    - { value: us,             name: "U.S." }
     - { value: north-atlantic, name: "N. Atlantic" }
     - { value: south-fl,       name: "South FL" }
 - facet: tool
