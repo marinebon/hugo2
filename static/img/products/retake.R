@@ -9,7 +9,8 @@ retakes <- list(
   list(slug = "pole-to-pole-atlas",   url = "https://marinebon.org/p2p/",                delay = 8),
   list(slug = "seascapes-viewer",     url = "https://shiny.marinebon.app/seascapes",     delay = 120),
   list(slug = "climate-dashboard-app",url = "https://shiny.marinebon.app/nms-cc/",       delay = 120),
-  list(slug = "biotrack-portal",      url = "https://portal.atn.ioos.us/",               delay = 120)
+  list(slug = "biotrack-portal",      url = "https://portal.atn.ioos.us/",               delay = 120),
+  list(slug = "storymap-fk-fwri-water-quality", url = "https://storymaps.arcgis.com/stories/52a114b2d89d4e60ac3fd75d713d90f7", delay = 120)
 )
 
 for (p in retakes) {

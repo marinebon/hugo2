@@ -22,7 +22,7 @@ products <- list(
   list(slug = "infographic-florida-keys-esr",url = "https://noaa-iea.github.io/fk-esr-info/infographic.html",                            delay = 6),
   list(slug = "infographic-iea-alaska",     url = "https://noaa-iea.github.io/ak-info/",                                                  delay = 6),
   list(slug = "infographic-ocnms",          url = "https://noaa-onms.github.io/ocnms/index.html",                                         delay = 6),
-  list(slug = "storymap-fk-fwri-water-quality", url = "https://storymaps.arcgis.com/stories/52a114b2d89d4e60ac3fd75d713d90f7",           delay = 10)
+  list(slug = "storymap-fk-fwri-water-quality", url = "https://storymaps.arcgis.com/stories/52a114b2d89d4e60ac3fd75d713d90f7",           delay = 120)
 )
 
 for (p in products) {
