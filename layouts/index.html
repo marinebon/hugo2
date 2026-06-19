@@ -26,24 +26,6 @@
       "heading" "Regional & thematic nodes, one shared standard."
       "lead" "From the Arctic to the Antarctic, each node observes its own waters and publishes to common standards. Select a node to spin the globe.") }}
 
-  {{/* ===== FEATURED PRODUCTS ===== */}}
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow eyebrow--rule">Data &amp; products</span>
-          <h2>Tools that connect observations to decisions</h2>
-        </div>
-        <a class="btn btn--outline" href="{{ "products" | relURL }}">Browse all products <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-      </div>
-      <div class="grid-3">
-        {{ range first 3 (sort (where site.RegularPages "Section" "products") "Params.weight") }}
-          {{ partial "card-product.html" . }}
-        {{ end }}
-      </div>
-    </div>
-  </section>
-
   {{/* ===== LATEST NEWS ===== */}}
   <section class="section section--tint">
     <div class="container">
@@ -58,6 +40,24 @@
       <div class="grid-3">
         {{ range first 3 ((where site.RegularPages "Section" "news").ByDate.Reverse) }}
           {{ partial "card-news.html" . }}
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  {{/* ===== FEATURED PRODUCTS ===== */}}
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow eyebrow--rule">Data &amp; products</span>
+          <h2>Tools that connect observations to decisions</h2>
+        </div>
+        <a class="btn btn--outline" href="{{ "products" | relURL }}">Browse all products <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="grid-3">
+        {{ range first 3 (sort (where site.RegularPages "Section" "products") "Params.weight") }}
+          {{ partial "card-product.html" . }}
         {{ end }}
       </div>
     </div>
