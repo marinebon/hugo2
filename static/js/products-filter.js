@@ -22,9 +22,11 @@
         var tags = (card.getAttribute('data-tags') || '').split(/\s+/);
         var ok = Object.keys(sel).every(function (facet) {
           if (!sel[facet] || sel[facet].size === 0) return true;
-          return Array.prototype.some.call(sel[facet], function (val) {
-            return tags.indexOf(facet + ':' + val) !== -1;
+          var matched = false;
+          sel[facet].forEach(function (val) {
+            if (tags.indexOf(facet + ':' + val) !== -1) matched = true;
           });
+          return matched;
         });
         card.style.display = ok ? '' : 'none';
         if (ok) shown++;
