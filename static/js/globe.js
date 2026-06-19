@@ -192,7 +192,7 @@
           var dx = ev.clientX - drag.x0;
           if (Math.abs(dx) > 3) drag.moved = true;
           var R = Math.min(st.w, st.h) / 2 - Math.min(st.w, st.h) * 0.07;
-          st.rot = drag.rot0 + dx * 90 / R;
+          st.rot = drag.rot0 - dx * 90 / R;
           st.hot = null;
           canvas.style.cursor = 'grabbing';
         } else {
