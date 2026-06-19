@@ -29,7 +29,7 @@ enableEmoji = false
     weight = 1
   [[menu.main]]
     name = "Network"
-    pageRef = "/regions"
+    pageRef = "/network"
     weight = 2
   [[menu.main]]
     name = "Products"

@@ -13,8 +13,8 @@
       "heading" "Regional & thematic networks"
       "lead" "Each node monitors its own waters; thematic nodes cut across regions by method. All publish to shared standards so the data interconnects. Select a node to spin the globe.") }}
 
-  {{ $regional := where (where site.RegularPages "Section" "regions") "Params.kind_node" "regional" }}
-  {{ $thematic := where (where site.RegularPages "Section" "regions") "Params.kind_node" "thematic" }}
+  {{ $regional := where (where site.RegularPages "Section" "network") "Params.kind_node" "regional" }}
+  {{ $thematic := where (where site.RegularPages "Section" "network") "Params.kind_node" "thematic" }}
 
   <section id="regional" class="section">
     <div class="container">
