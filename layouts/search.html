@@ -16,5 +16,19 @@
 {{ define "scripts" }}
 <link  href="{{ "pagefind/pagefind-ui.css" | relURL }}" rel="stylesheet">
 <script src="{{ "pagefind/pagefind-ui.js"  | relURL }}"></script>
-<script>new PagefindUI({ element: "#search", showSubResults: true });</script>
+<script>
+  const pf = new PagefindUI({ element: "#search", showSubResults: true });
+  const q = new URLSearchParams(window.location.search).get('q');
+  if (q) {
+    // PagefindUI renders async — wait for its input to mount then trigger search
+    const poll = setInterval(() => {
+      const input = document.querySelector('#search input[type=text]');
+      if (input) {
+        clearInterval(poll);
+        input.value = q;
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+    }, 50);
+  }
+</script>
 {{ end }}

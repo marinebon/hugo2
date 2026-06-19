@@ -20,12 +20,18 @@
 .site-nav a:hover{ background:var(--foam-100); text-decoration:none; }
 .site-nav a.is-active{ color:var(--brand); background:var(--foam-100); }
 .site-nav__sep{ width:1px; height:24px; background:var(--border); margin:0 6px; }
+.nav-search{ position:relative; display:flex; align-items:center; }
+.nav-search__icon{ position:absolute; left:10px; font-size:12px; color:var(--text-muted); pointer-events:none; }
+.nav-search input{ height:32px; padding:0 var(--space-3) 0 28px; border:1px solid var(--border); border-radius:var(--radius-pill); font-size:var(--text-sm); background:var(--foam-100); color:var(--text-heading); width:148px; outline:none; transition:width .2s, border-color .2s; }
+.nav-search input:focus{ border-color:var(--accent); width:200px; }
+.nav-search input::placeholder{ color:var(--text-muted); }
 .nav-toggle{ display:none; }
 @media (max-width:780px){
   .site-nav{ display:none; }
   .site-header:focus-within .site-nav,
   .site-nav.open{ display:flex; position:absolute; top:72px; left:0; right:0; flex-direction:column; align-items:stretch; background:#fff; border-bottom:1px solid var(--border); padding:var(--space-3); }
   .nav-toggle{ display:inline-flex; margin-left:auto; background:none; border:none; font-size:22px; color:var(--text-heading); cursor:pointer; }
+  .nav-search input{ width:100%; }
 }
 
 /* ---- Hero ------------------------------------------------------------- */

@@ -9,7 +9,10 @@
         <a href="{{ .URL }}"{{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }} class="is-active"{{ end }}>{{ .Name }}</a>
       {{ end }}
       <span class="site-nav__sep"></span>
-      <a href="{{ "search" | relURL }}" aria-label="Search"><i class="fas fa-magnifying-glass" aria-hidden="true"></i></a>
+      <form class="nav-search" action="{{ "search" | relURL }}" method="get" role="search">
+        <i class="fas fa-magnifying-glass nav-search__icon" aria-hidden="true"></i>
+        <input type="search" name="q" placeholder="Search…" aria-label="Search">
+      </form>
       <a class="btn btn--action btn--sm" href="{{ "network/#join" | relURL }}">Join <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
     </nav>
   </div>
