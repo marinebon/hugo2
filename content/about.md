@@ -41,6 +41,8 @@ As a global network that strives to contribute to a sustainable world where peop
 
 We, the **MBON** members, are international and strive to nurture a global community. We strive for the finest science, open knowledge, respect for each other, and the generation of FAIR data about life in the sea. We collaborate and communicate the value of preserving marine biodiversity, valuing knowledge, and informing action.
 
+![MBON network infographic](img/about/mbon-infographic.png)
+
 ---
 
 ## People
@@ -48,31 +50,15 @@ We, the **MBON** members, are international and strive to nurture a global commu
 ### MBON Co-Chairs
 
 <div class="people-grid">
-<div class="person-card">
-<img src="/img/about/frank-muller-karger.png" alt="Frank Muller-Karger">
-<strong>Frank Muller-Karger</strong>
-University of South Florida, USA
-</div>
-<div class="person-card">
-<img src="/img/about/isabel-sousa-pinto.png" alt="Isabel Sousa Pinto">
-<strong>Isabel Sousa Pinto</strong>
-University of Porto, Portugal
-</div>
-<div class="person-card">
-<img src="/img/about/masahiro-nakaoka.jpeg" alt="Masahiro Nakaoka">
-<strong>Masahiro Nakaoka</strong>
-Hokkaido University, Japan
-</div>
+{{< person img="img/about/frank-muller-karger.png"    name="Frank Muller-Karger" org="University of South Florida, USA" >}}
+{{< person img="img/about/isabel-sousa-pinto.png"     name="Isabel Sousa Pinto"  org="University of Porto, Portugal" >}}
+{{< person img="img/about/masahiro-nakaoka.jpeg"      name="Masahiro Nakaoka"    org="Hokkaido University, Japan" >}}
 </div>
 
 ### MBON Executive Secretary
 
 <div class="people-grid">
-<div class="person-card">
-<img src="/img/about/headshot_Joana_Soares.jpeg" alt="Joana Soares">
-<strong>Joana Soares</strong>
-GEO BON / MBON Secretariat
-</div>
+{{< person img="img/about/headshot_Joana_Soares.jpeg" name="Joana Soares" org="GEO BON / MBON Secretariat" >}}
 </div>
 
 ---

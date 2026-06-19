@@ -1,0 +1,5 @@
+<div class="person-card">
+  <img src="{{ .Get "img" | relURL }}" alt="{{ .Get "name" }}">
+  <strong>{{ .Get "name" }}</strong>
+  {{ with .Get "org" }}<span>{{ . }}</span>{{ end }}
+</div>
