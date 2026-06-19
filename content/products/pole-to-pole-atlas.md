@@ -5,8 +5,8 @@ image   = "img/products/pole-to-pole-atlas.png"
 summary = "Harmonized rocky-shore and sandy-beach biodiversity observations from Canada to Patagonia, standardized for cross-regional comparison and open access via OBIS."
 tags    = ["region:americas", "type:data", "org:obis"]
 links   = [
-  { label = "Explore data on OBIS", url = "https://obis.org/institute/23070", primary = true },
-  { label = "About the network", url = "https://marinebon.org/bons/pole-to-pole-americas-mbon/" },
+  { label = "Open Pole to Pole atlas", url = "https://marinebon.org/p2p/", primary = true },
+  { label = "Explore data on OBIS", url = "https://obis.org/institute/23070" },
   { label = "Protocols & methods", url = "https://marinebon.org/p2p/about.html" },
 ]
 +++

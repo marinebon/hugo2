@@ -5,7 +5,7 @@ image   = "img/products/seascapr.png"
 summary = "An R package and prototype interface to explore Seascapes in different marine regions, including U.S. National Marine Sanctuaries."
 tags    = ["region:global", "type:tool"]
 links   = [
-  { label = "Open Seascapes explorer", url = "https://shiny.marinebon.app/seascapes/", primary = true },
+  { label = "Open seascapeR docs", url = "https://marinebon.org/seascapeR/", primary = true },
   { label = "Source code", url = "https://github.com/marinebon/seascapeR" },
 ]
 +++
