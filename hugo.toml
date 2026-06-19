@@ -15,7 +15,7 @@ enableEmoji = false
   # Hero (home). Image path is under /img/.
   heroImage = "img/photos/reef-sunlight.jpg"
   heroHeadline = "Observing life in the sea, across instruments and the globe"
-  heroLead = "MBON integrates long-term programs into a connected, FAIR record of marine biodiversity — turning observations into products that inform conservation and policy worldwide."
+  heroLead = "MBON integrates long-term programs into a connected, open and interoperable record of marine biodiversity — turning observations into products that inform conservation and policy worldwide."
   # Social links shown in the footer
   github = "https://github.com/marinebon"
   twitter = "https://x.com/MarineBON1"
