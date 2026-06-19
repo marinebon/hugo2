@@ -17,7 +17,7 @@
               <div class="nav-dropdown__col">
                 <span class="nav-dropdown__label">Regional MBONs</span>
                 {{ range $regional.ByTitle }}
-                  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                  <a href="{{ .RelPermalink }}">{{ .Title | strings.TrimSuffix " MBON" }}</a>
                 {{ end }}
               </div>
               <div class="nav-dropdown__col">
