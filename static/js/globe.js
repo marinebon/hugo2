@@ -110,12 +110,13 @@
 
         regions.forEach(function (reg) {
           var isA = reg.id === st.active;
+          var isHot = reg.id === st.hot;
           var cen = (reg.fcenter && reg.fcenter.length === 2) ? reg.fcenter : [reg.lng, reg.lat];
           var circle = d3.geoCircle().center(cen).radius(reg.footprint || 7)();
           ctx.beginPath(); path(circle);
-          ctx.fillStyle = isA ? 'rgba(242,104,63,0.20)' : 'rgba(56,167,187,0.12)'; ctx.fill();
-          ctx.lineWidth = isA ? 1.4 : 1;
-          ctx.strokeStyle = isA ? 'rgba(242,104,63,0.65)' : 'rgba(116,200,214,0.32)'; ctx.stroke();
+          ctx.fillStyle = isA ? 'rgba(242,104,63,0.20)' : isHot ? 'rgba(255,220,50,0.18)' : 'rgba(56,167,187,0.12)'; ctx.fill();
+          ctx.lineWidth = (isA || isHot) ? 1.4 : 1;
+          ctx.strokeStyle = isA ? 'rgba(242,104,63,0.65)' : isHot ? 'rgba(255,220,50,0.75)' : 'rgba(116,200,214,0.32)'; ctx.stroke();
         });
 
         ctx.beginPath(); path({ type: 'Sphere' }); ctx.lineWidth = 1.4; ctx.strokeStyle = 'rgba(174,226,234,0.5)'; ctx.stroke();
@@ -128,7 +129,7 @@
           var p = proj([reg.lng, reg.lat]); if (!p) return;
           var isA = reg.id === st.active, isHot = reg.id === st.hot;
           var a = 0.35 + 0.65 * Math.cos(dist);
-          var color = isA ? '242,104,63' : '255,255,255';
+          var color = isA ? '242,104,63' : isHot ? '255,220,50' : '255,255,255';
           var rad = (isA || isHot) ? 5 : 3.2;
           if (isA) {
             var pulse = (Math.sin(t * 3) + 1) / 2;
@@ -141,9 +142,20 @@
           reg._sx = p[0]; reg._sy = p[1];
         });
 
+        ctx.font = '600 12px "IBM Plex Mono", monospace';
+        var hot = regions.find(function (r) { return r.id === st.hot && r.id !== st.active; });
+        if (hot && hot._sx != null) {
+          var hlabel = hot.name.toUpperCase();
+          var htw = ctx.measureText(hlabel).width;
+          var hlx = hot._sx + 12, hly = hot._sy - 12;
+          ctx.beginPath(); ctx.moveTo(hot._sx, hot._sy); ctx.lineTo(hlx, hly - 4);
+          ctx.strokeStyle = 'rgba(255,220,50,0.6)'; ctx.lineWidth = 1; ctx.stroke();
+          ctx.fillStyle = 'rgba(4,19,31,0.82)'; ctx.beginPath(); ctx.roundRect(hlx - 4, hly - 15, htw + 22, 22, 5); ctx.fill();
+          ctx.fillStyle = '#ffdc32'; ctx.beginPath(); ctx.arc(hlx + 4, hly - 4, 3, 0, 7); ctx.fill();
+          ctx.fillStyle = '#ffdc32'; ctx.fillText(hlabel, hlx + 12, hly);
+        }
         var act = regions.find(function (r) { return r.id === st.active; });
         if (act && act._sx != null) {
-          ctx.font = '600 12px "IBM Plex Mono", monospace';
           var label = act.name.toUpperCase();
           var tw = ctx.measureText(label).width;
           var lx = act._sx + 12, ly = act._sy - 12;
