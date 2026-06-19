@@ -49,17 +49,17 @@ We, the **MBON** members, are international and strive to nurture a global commu
 
 <div class="people-grid">
 <div class="person-card">
-<img src="/img/about-us/frank-muller-karger.png" alt="Frank Muller-Karger">
+<img src="/img/about/frank-muller-karger.png" alt="Frank Muller-Karger">
 <strong>Frank Muller-Karger</strong>
 University of South Florida, USA
 </div>
 <div class="person-card">
-<img src="/img/about-us/isabel-sousa-pinto.png" alt="Isabel Sousa Pinto">
+<img src="/img/about/isabel-sousa-pinto.png" alt="Isabel Sousa Pinto">
 <strong>Isabel Sousa Pinto</strong>
 University of Porto, Portugal
 </div>
 <div class="person-card">
-<img src="/img/about-us/masahiro-nakaoka.jpeg" alt="Masahiro Nakaoka">
+<img src="/img/about/masahiro-nakaoka.jpeg" alt="Masahiro Nakaoka">
 <strong>Masahiro Nakaoka</strong>
 Hokkaido University, Japan
 </div>
@@ -69,7 +69,7 @@ Hokkaido University, Japan
 
 <div class="people-grid">
 <div class="person-card">
-<img src="/img/about-us/headshot_Joana_Soares.jpeg" alt="Joana Soares">
+<img src="/img/about/headshot_Joana_Soares.jpeg" alt="Joana Soares">
 <strong>Joana Soares</strong>
 GEO BON / MBON Secretariat
 </div>
