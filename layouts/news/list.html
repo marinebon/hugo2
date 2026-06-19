@@ -5,6 +5,7 @@
       <span class="eyebrow eyebrow--rule eyebrow--ondark">News &amp; updates</span>
       <h1>{{ .Title }}</h1>
       <p class="page-header__lead">{{ .Params.summary }}</p>
+      {{ partial "social-links.html" (dict "class" "page-header-social") }}
     </div>
   </section>
   <section class="section">

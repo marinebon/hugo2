@@ -1,0 +1,13 @@
+{{/* Social icon links. Reads github/linkedin/youtube/twitter from site.Params.
+     Optional params (pass as dict):
+       class       — CSS class on the wrapper div (default: "footer-social")
+       showContact — set to true to prepend a "Contact" text link */}}
+{{ $class       := default "footer-social" .class }}
+{{ $showContact := default false .showContact }}
+<div class="{{ $class }}">
+  {{ if $showContact }}<a href="https://marinebon.org/contact/" aria-label="Contact" target="_blank" rel="noopener" class="social-contact">Contact</a>{{ end }}
+  {{ with site.Params.github   }}<a href="{{ . }}" aria-label="GitHub"    target="_blank" rel="noopener"><i class="fab fa-github"></i></a>{{ end }}
+  {{ with site.Params.linkedin }}<a href="{{ . }}" aria-label="LinkedIn"  target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>{{ end }}
+  {{ with site.Params.youtube  }}<a href="{{ . }}" aria-label="YouTube"   target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>{{ end }}
+  {{ with site.Params.twitter  }}<a href="{{ . }}" aria-label="X / Twitter" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>{{ end }}
+</div>

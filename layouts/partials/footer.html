@@ -39,12 +39,7 @@
   <div class="footer-colophon">
     <div class="footer-colophon__inner">
       <span>MARINE BIODIVERSITY OBSERVATION NETWORK &middot; FAIR &middot; OPEN &middot; GLOBAL &middot; {{ now.Year }}</span>
-      <div class="footer-social">
-        <a href="https://marinebon.org/contact/" aria-label="Contact" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--text-on-dark-muted);">Contact</a>
-        {{ with site.Params.github }}<a href="{{ . }}" aria-label="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>{{ end }}
-        {{ with site.Params.youtube }}<a href="{{ . }}" aria-label="YouTube" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>{{ end }}
-        {{ with site.Params.twitter }}<a href="{{ . }}" aria-label="X / Twitter" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>{{ end }}
-      </div>
+      {{ partial "social-links.html" (dict "class" "footer-social" "showContact" true) }}
     </div>
   </div>
 </footer>
