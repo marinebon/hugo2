@@ -104,8 +104,8 @@
 .footer-col h4{ font-family:var(--font-mono); font-size:var(--text-xs); text-transform:uppercase; letter-spacing:var(--ls-label); color:var(--teal-300); margin:0 0 var(--space-4); }
 .footer-col a{ display:block; color:var(--text-on-dark-muted); font-size:var(--text-sm); text-decoration:none; margin-bottom:var(--space-3); }
 .footer-col a:hover{ color:#fff; }
-.footer-social{ display:flex; gap:var(--space-4); margin-top:var(--space-5); font-size:20px; color:var(--teal-300); }
-.footer-social a{ color:inherit; }
+.footer-social{ display:flex; align-items:center; gap:var(--space-4); margin-top:0; font-size:20px; color:var(--teal-300); }
+.footer-social a{ color:inherit; display:inline; margin-bottom:0; }
 .footer-colophon{ border-top:1px solid rgba(255,255,255,0.08); }
 .footer-colophon__inner{ max-width:var(--container-wide); margin:0 auto; padding:var(--space-4) var(--space-6); display:flex; justify-content:space-between; flex-wrap:wrap; gap:var(--space-3); font-family:var(--font-mono); font-size:var(--text-xs); color:var(--text-on-dark-muted); letter-spacing:.04em; }
 @media (max-width:860px){ .footer-main{ grid-template-columns:1fr 1fr; } }
