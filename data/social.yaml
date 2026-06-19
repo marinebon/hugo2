@@ -1,0 +1,16 @@
+# Social channels — edit here to add, remove, or reorder icons site-wide.
+# icon: any Font Awesome 6 class (fas/fab + icon name)
+contact: https://marinebon.org/contact/
+channels:
+  - label: GitHub
+    url:   https://github.com/marinebon
+    icon:  fab fa-github
+  - label: LinkedIn
+    url:   https://www.linkedin.com/company/u-s-marine-biodiversity-observation-network-mbon
+    icon:  fab fa-linkedin-in
+  - label: YouTube
+    url:   https://www.youtube.com/channel/UCiXkc3xHhl9bOHYdE3LtWMg
+    icon:  fab fa-youtube
+  - label: X / Twitter
+    url:   https://x.com/MarineBON1
+    icon:  fab fa-x-twitter

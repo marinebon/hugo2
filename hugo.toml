@@ -16,12 +16,6 @@ enableEmoji = false
   heroImage = "img/photos/reef-sunlight.jpg"
   heroHeadline = "Observing life in the sea, across instruments and the globe"
   heroLead = "MBON integrates long-term programs into a connected, open and interoperable record of marine biodiversity — turning observations into products that inform conservation and policy worldwide."
-  # Social links
-  github   = "https://github.com/marinebon"
-  linkedin = "https://www.linkedin.com/company/u-s-marine-biodiversity-observation-network-mbon"
-  youtube  = "https://www.youtube.com/channel/UCiXkc3xHhl9bOHYdE3LtWMg"
-  twitter  = "https://x.com/MarineBON1"
-
 # Top navigation. Add/remove items here.
 [menu]
   [[menu.main]]
