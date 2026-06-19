@@ -1,15 +1,26 @@
 +++
-title = "Early Alert Dashboard"
-weight = 5
-image = "img/photos/ocean-blue.jpg"
-summary = "Near-real-time indicators flagging anomalous ecosystem conditions for managers."
-tags = ["tool:dashboard", "org:fwri", "region:south-fl"]
-links = [
-  { label = "Open product", url = "#", primary = true },
-  { label = "Documentation", url = "#" },
+title   = "Florida Keys NMS Alert Dashboard"
+weight  = 5
+image   = "img/photos/ocean-blue.jpg"
+summary = "Early-warning dashboard combining satellite and buoy data to detect harmful algal blooms and anoxic conditions in the Florida Keys National Marine Sanctuary."
+tags    = ["tool:dashboard", "org:nms", "region:south-fl"]
+links   = [
+  { label = "Open dashboard", url = "https://mbon-dashboards.marine.usf.edu", primary = true },
+  { label = "Source code", url = "https://github.com/marinebon/mbon-dashboard-server" },
 ]
 +++
 
-Near-real-time indicators flagging anomalous ecosystem conditions for managers.
+The Florida Keys NMS Alert Dashboard combines satellite-derived products with near-real-time buoy observations to provide early warning of anomalous ecosystem conditions in the Florida Keys National Marine Sanctuary. It flags signals associated with harmful algal blooms and anoxic (low-oxygen) events so resource managers can respond before impacts cascade through the reef system.
 
-This product is maintained by the MBON network and published openly. Replace this paragraph with a full description, screenshots, and links to the live tool, the data source (OBIS/ERDDAP), and any related publications.
+The dashboard draws on VIIRS and MODIS satellite data processed by the MBON Dashboard Server — a Docker-based stack that ingests and serves products for multiple MBON observing sites, including the Florida Keys NMS, Flower Garden Banks NMS, and data layers for the Florida Fish and Wildlife Conservation Commission (FWC).
+
+## Data products displayed
+
+- Sea surface temperature (SST) anomalies from VIIRS and MODIS
+- Chlorophyll-a concentration and bloom indices
+- Colored dissolved organic matter (CDOM)
+- In situ buoy records (dissolved oxygen, salinity, temperature)
+
+## Deployment
+
+The server stack is containerized with Docker Compose, making it reproducible and deployable by other MBON nodes. See the [GitHub repository](https://github.com/marinebon/mbon-dashboard-server) for full deployment documentation.
