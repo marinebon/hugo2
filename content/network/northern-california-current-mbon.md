@@ -1,14 +1,15 @@
-+++
-title = "N. California Current MBON"
-kind_node = "regional"
-lat = 44
-lng = -124
-footprint = 7
-since = "2014"
-summary = "Upwelling-driven productivity off Oregon and Washington."
-banner = "img/photos/ocean-blue.jpg"
-tags = ["regional"]
-+++
+---
+banner: img/photos/ocean-blue.jpg
+footprint: 7
+kind_node: regional
+lat: 44
+lng: -124
+since: '2014'
+summary: Upwelling-driven productivity off Oregon and Washington.
+tags:
+- regional
+title: N. California Current MBON
+---
 
 Upwelling-driven productivity off Oregon and Washington.
 

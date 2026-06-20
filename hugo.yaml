@@ -1,0 +1,43 @@
+baseURL: https://marinebon.github.io/
+locale: en-us
+title: Marine Biodiversity Observation Network
+summaryLength: 40
+enableEmoji: false
+
+pagination:
+  pagerSize: 9
+
+params:
+  description: A global collaborative initiative contributing to the effective management of marine biodiversity and ecosystem services. A thematic node of GEO BON.
+  tagline: Global ocean observing · GEO BON node
+  heroImage: img/photos/reef-sunlight.jpg
+  heroHeadline: Observing life in the sea, across instruments and the globe
+  heroLead: MBON integrates long-term programs into a connected, open and interoperable record of marine biodiversity — turning observations into products that inform conservation and policy worldwide.
+
+menu:
+  main:
+    - name: Home
+      pageRef: /
+      weight: 1
+    - name: Network
+      identifier: network
+      pageRef: /network
+      weight: 2
+    - name: Products
+      pageRef: /products
+      weight: 3
+    - name: News
+      pageRef: /news
+      weight: 4
+    - name: About
+      pageRef: /about
+      weight: 5
+
+taxonomies:
+  tag: tags
+  category: categories
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

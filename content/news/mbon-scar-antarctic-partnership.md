@@ -1,10 +1,13 @@
-+++
-title   = "MBON and SCAR Antarctic Partnership"
-date    = "2022-03-01"
-summary = "MBON, SCAR, and the SCAR Antarctic Biodiversity Portal formalise a cooperation to reinforce ocean biodiversity observing capacity in the Southern Ocean and beyond."
-banner  = "img/photos/ocean-blue.jpg"
-tags    = ["antarctic", "partnership", "collaboration"]
-+++
+---
+banner: img/photos/ocean-blue.jpg
+date: '2022-03-01'
+summary: MBON, SCAR, and the SCAR Antarctic Biodiversity Portal formalise a cooperation to reinforce ocean biodiversity observing capacity in the Southern Ocean and beyond.
+tags:
+- antarctic
+- partnership
+- collaboration
+title: MBON and SCAR Antarctic Partnership
+---
 
 The Marine Biodiversity Observation Network (MBON) of the Group on Earth Observations Biodiversity Observation Network (GEO BON), the Scientific Committee on Antarctic Research (SCAR), and the SCAR Antarctic Biodiversity Portal share a common vision on the building and coordination of a global ocean biodiversity observation system. The common goal is to systematically assess the state and trends in the ocean's biodiversity, including biological resources and ecosystems and how these will change in the future.
 

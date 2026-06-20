@@ -1,14 +1,15 @@
-+++
-title = "Central California MBON"
-kind_node = "regional"
-lat = 36.6
-lng = -122
-footprint = 6
-since = "2014"
-summary = "Monterey Bay sanctuary observing and Seascapes."
-banner = "img/photos/ocean-blue.jpg"
-tags = ["regional"]
-+++
+---
+banner: img/photos/ocean-blue.jpg
+footprint: 6
+kind_node: regional
+lat: 36.6
+lng: -122
+since: '2014'
+summary: Monterey Bay sanctuary observing and Seascapes.
+tags:
+- regional
+title: Central California MBON
+---
 
 Monterey Bay sanctuary observing and Seascapes.
 

@@ -1,9 +1,12 @@
-+++
-title   = "Marine Foundation Species and Biodiversity"
-date    = "2022-01-01"
-banner  = "img/photos/kelp.jpg"
-tags    = ["kelp", "biodiversity", "science"]
-+++
+---
+banner: img/photos/kelp.jpg
+date: '2022-01-01'
+tags:
+- kelp
+- biodiversity
+- science
+title: Marine Foundation Species and Biodiversity
+---
 
 Marine foundation species like giant kelp, seagrass, and corals harbor great reservoirs of biodiversity in coastal oceans. Now the Santa Barbara Channel MBON team, supported in part by NOAA, has shown the extent to which one of these species, giant kelp, supports coastal ecosystems. MBON work has revealed that kelp positively affects reef biodiversity, especially predators and sessile invertebrates that form the base of the food web. Stability of giant kelp forests, moreover, stabilize the community, dampening fluctuations in populations of many other species. Long-term kelp manipulation experiments show that when giant kelp is frequently disturbed, species that depend on it decline.
 

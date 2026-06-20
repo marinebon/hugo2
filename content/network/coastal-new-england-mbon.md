@@ -1,14 +1,15 @@
-+++
-title = "Coastal New England MBON"
-kind_node = "regional"
-lat = 41.4
-lng = -70.6
-footprint = 5
-since = "2018"
-summary = "Nearshore observing from Long Island to Cape Cod."
-banner = "img/photos/ocean-blue.jpg"
-tags = ["regional"]
-+++
+---
+banner: img/photos/ocean-blue.jpg
+footprint: 5
+kind_node: regional
+lat: 41.4
+lng: -70.6
+since: '2018'
+summary: Nearshore observing from Long Island to Cape Cod.
+tags:
+- regional
+title: Coastal New England MBON
+---
 
 Nearshore observing from Long Island to Cape Cod.
 

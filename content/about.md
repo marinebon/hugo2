@@ -1,7 +1,7 @@
-+++
-title   = "About MBON"
-summary = "Mission, vision, goals, and the people behind the Marine Biodiversity Observation Network."
-+++
+---
+summary: Mission, vision, goals, and the people behind the Marine Biodiversity Observation Network.
+title: About MBON
+---
 
 The Marine Biodiversity Observation Network (MBON) is a thematic node of the Group on Earth Observations Biodiversity Observation Network (GEO BON). MBON is a global collaborative initiative that contributes to the effective management of marine biodiversity and ecosystem services.
 

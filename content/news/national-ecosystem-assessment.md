@@ -1,10 +1,12 @@
-+++
-title   = "National Ecosystem Assessment Initiative"
-date    = "2021-09-01"
-summary = "UNEP-WCMC's National Ecosystem Assessment Initiative launches an online platform hosting resources, case studies, and guidance to support countries undertaking ecosystem assessments."
-banner  = "img/photos/ocean-blue.jpg"
-tags    = ["ecosystem-assessment", "unep"]
-+++
+---
+banner: img/photos/ocean-blue.jpg
+date: '2021-09-01'
+summary: UNEP-WCMC's National Ecosystem Assessment Initiative launches an online platform hosting resources, case studies, and guidance to support countries undertaking ecosystem assessments.
+tags:
+- ecosystem-assessment
+- unep
+title: National Ecosystem Assessment Initiative
+---
 
 The National Ecosystem Assessment Initiative (NEA Initiative) at UNEP-WCMC launched a new website to support countries undertaking ecosystem assessments. The new online platform hosts a range of resources produced by the NEA Initiative and its partners, including webinars, guidance documents, reports, case studies and lessons learned seeking to present and promote the national ecosystem assessment process.
 

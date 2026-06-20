@@ -1,15 +1,18 @@
-+++
-title = "Europe MBON"
-kind_node = "regional"
-lat = 43
-lng = -8
-footprint = 26
-fcenter = [12, 52]
-since = "2018"
-summary = "EuroSea and EMODnet-linked observing across European seas."
-banner = "img/photos/ocean-blue.jpg"
-tags = ["regional"]
-+++
+---
+banner: img/photos/ocean-blue.jpg
+fcenter:
+- 12
+- 52
+footprint: 26
+kind_node: regional
+lat: 43
+lng: -8
+since: '2018'
+summary: EuroSea and EMODnet-linked observing across European seas.
+tags:
+- regional
+title: Europe MBON
+---
 
 EuroSea and EMODnet-linked observing across European seas.
 

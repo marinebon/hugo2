@@ -1,11 +1,13 @@
-+++
-title  = "Letters to the Sea"
-date   = "2024-08-01"
-author = "MBON Communications"
-banner = "img/news/2024-08-letters-to-the-sea.jpg"
-summary = "Somos OceanoS — a Marine Life 2030 affiliated project — invites youth aged 3–22 from around the world to submit letters for an art exhibition at the 2025 UN Ocean Conference."
-tags   = ["marine-life-2030", "outreach"]
-+++
+---
+author: MBON Communications
+banner: img/news/2024-08-letters-to-the-sea.jpg
+date: '2024-08-01'
+summary: Somos OceanoS — a Marine Life 2030 affiliated project — invites youth aged 3–22 from around the world to submit letters for an art exhibition at the 2025 UN Ocean Conference.
+tags:
+- marine-life-2030
+- outreach
+title: Letters to the Sea
+---
 
 Over 2.15 billion people live close to the coast, with 898 million in low-lying areas. For these communities, the sea is central to their lives, work, culture, emotions, and spirituality.
 

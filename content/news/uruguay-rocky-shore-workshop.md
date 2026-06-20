@@ -1,10 +1,14 @@
-+++
-title   = "Uruguay Rocky Shore Monitoring Workshop"
-date    = "2024-10-01"
-summary = "MBON Pole to Pole partners gather in Uruguay for a hands-on workshop on rocky shore monitoring protocols, advancing standardised intertidal biodiversity surveys across the Americas."
-banner  = "img/news/uruguay-rocky-shore.jpeg"
-tags    = ["workshop", "rocky-shore", "pole-to-pole", "uruguay"]
-+++
+---
+banner: img/news/uruguay-rocky-shore.jpeg
+date: '2024-10-01'
+summary: MBON Pole to Pole partners gather in Uruguay for a hands-on workshop on rocky shore monitoring protocols, advancing standardised intertidal biodiversity surveys across the Americas.
+tags:
+- workshop
+- rocky-shore
+- pole-to-pole
+- uruguay
+title: Uruguay Rocky Shore Monitoring Workshop
+---
 
 An MBON Pole to Pole Workshop for Rocky Shore Monitoring in Uruguay was held during 1–4 October 2024, organized by the Forum for the Conservation of the Patagonian Sea and Areas of Influence, during a course coordinated by Karumbé and Vida Silvestre Uruguay at Santa Teresa National Park.
 

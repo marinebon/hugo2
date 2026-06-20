@@ -1,14 +1,15 @@
-+++
-title = "Gulf of Maine MBON"
-kind_node = "regional"
-lat = 43.5
-lng = -68.5
-footprint = 6
-since = "2016"
-summary = "Cold-water shelf ecosystem and fisheries."
-banner = "img/photos/ocean-blue.jpg"
-tags = ["regional"]
-+++
+---
+banner: img/photos/ocean-blue.jpg
+footprint: 6
+kind_node: regional
+lat: 43.5
+lng: -68.5
+since: '2016'
+summary: Cold-water shelf ecosystem and fisheries.
+tags:
+- regional
+title: Gulf of Maine MBON
+---
 
 Cold-water shelf ecosystem and fisheries.
 

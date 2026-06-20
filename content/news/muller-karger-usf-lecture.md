@@ -1,10 +1,12 @@
-+++
-title   = "Dr. Frank Muller-Karger USF Distinguished Lecture"
-date    = "2024-01-17"
-summary = "Frank Muller-Karger delivers a public lecture at USF on ocean biodiversity, remote sensing, and the future of global marine observation networks."
-banner  = "img/news/muller-karger-dpu.jpg"
-tags    = ["muller-karger", "lecture"]
-+++
+---
+banner: img/news/muller-karger-dpu.jpg
+date: '2024-01-17'
+summary: Frank Muller-Karger delivers a public lecture at USF on ocean biodiversity, remote sensing, and the future of global marine observation networks.
+tags:
+- muller-karger
+- lecture
+title: Dr. Frank Muller-Karger USF Distinguished Lecture
+---
 
 On 17th January 2024, MBON co-chair Dr. Frank Muller-Karger gave a presentation as part of the Distinguished University Professors Lecture (DPU) series at the University of South Florida (USF).
 

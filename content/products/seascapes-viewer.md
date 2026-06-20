@@ -1,15 +1,21 @@
-+++
-title   = "Seascapes Viewer"
-weight  = 2
-image   = "img/products/seascapes-viewer.png"
-summary = "Interactive Shiny application for visualizing global Seascape Classes in time and space across U.S. National Marine Sanctuaries."
-tags    = ["region:global", "tool:dashboard", "org:nms"]
-links   = [
-  { label = "Open Seascapes Viewer", url = "https://shiny.marinebon.app/seascapes", primary = true },
-  { label = "Source code", url = "https://github.com/marinebon/seascape_app" },
-  { label = "seascapeR package", url = "https://github.com/marinebon/seascapeR" },
-]
-+++
+---
+image: img/products/seascapes-viewer.png
+links:
+- label: Open Seascapes Viewer
+  primary: true
+  url: https://shiny.marinebon.app/seascapes
+- label: Source code
+  url: https://github.com/marinebon/seascape_app
+- label: seascapeR package
+  url: https://github.com/marinebon/seascapeR
+summary: Interactive Shiny application for visualizing global Seascape Classes in time and space across U.S. National Marine Sanctuaries.
+tags:
+- region:global
+- tool:dashboard
+- org:nms
+title: Seascapes Viewer
+weight: 2
+---
 
 Seascapes are dynamic classes of water masses defined by surface properties obtained via satellite — sea surface temperature, salinity, chlorophyll-a, colored dissolved organic matter (CDOM), and others — combined with an ordination statistical process (Kavanaugh et al. 2016). Each class represents a distinct ocean habitat type that shifts in space and time as water masses move, making Seascapes a powerful proxy predictor for species distributions.
 

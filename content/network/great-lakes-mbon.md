@@ -1,14 +1,15 @@
-+++
-title = "Great Lakes MBON"
-kind_node = "regional"
-lat = 44.5
-lng = -84
-footprint = 7
-since = "2020"
-summary = "Freshwater biodiversity at continental scale."
-banner = "img/photos/ocean-blue.jpg"
-tags = ["regional"]
-+++
+---
+banner: img/photos/ocean-blue.jpg
+footprint: 7
+kind_node: regional
+lat: 44.5
+lng: -84
+since: '2020'
+summary: Freshwater biodiversity at continental scale.
+tags:
+- regional
+title: Great Lakes MBON
+---
 
 Freshwater biodiversity at continental scale.
 

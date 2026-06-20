@@ -1,10 +1,14 @@
-+++
-title   = "OBIS and UNESCO Marine World Heritage Sites"
-date    = "2021-10-18"
-summary = "OBIS and UNESCO launch a two-year eDNA project to monitor fish biodiversity across marine World Heritage sites, providing globally standardised data on climate vulnerability."
-banner  = "img/photos/reef-sunlight.jpg"
-tags    = ["obis", "unesco", "world-heritage", "edna"]
-+++
+---
+banner: img/photos/reef-sunlight.jpg
+date: '2021-10-18'
+summary: OBIS and UNESCO launch a two-year eDNA project to monitor fish biodiversity across marine World Heritage sites, providing globally standardised data on climate vulnerability.
+tags:
+- obis
+- unesco
+- world-heritage
+- edna
+title: OBIS and UNESCO Marine World Heritage Sites
+---
 
 OBIS partnered with UNESCO's Marine World Heritage sites in a global project to study biodiversity. A two-year project using environmental DNA (eDNA) to study biodiversity across selected marine World Heritage sites by local citizens guided by expert support, to monitor fish as well as species red-listed by the International Union for Conservation of Nature (IUCN) was launched on the 18th of October 2021. OBIS will play a major role in developing standard protocols for sampling and data management using eDNA for ocean monitoring and data collection.
 

@@ -1,10 +1,13 @@
-+++
-title   = "Genetic Monitoring for Non-Indigenous Species"
-date    = "2021-01-01"
-summary = "A continental-scale ARMS network across European marine sanctuaries and ports uses genetic methods to detect non-indigenous species far earlier than conventional sampling."
-banner  = "img/photos/reef-sunlight.jpg"
-tags    = ["genetic-monitoring", "invasive-species", "early-detection"]
-+++
+---
+banner: img/photos/reef-sunlight.jpg
+date: '2021-01-01'
+summary: A continental-scale ARMS network across European marine sanctuaries and ports uses genetic methods to detect non-indigenous species far earlier than conventional sampling.
+tags:
+- genetic-monitoring
+- invasive-species
+- early-detection
+title: Genetic Monitoring for Non-Indigenous Species
+---
 
 As part of a global initiative originally developed by the Smithsonian Institute, a marine biodiversity observation network (MBON) has deployed more than 130 Autonomous Reef Monitoring Structures (ARMS) in the vicinity of marine sanctuaries as well as industrial locations (e.g. ports, and marinas) in Europe and the polar regions. This network is supported by the EU funded ASSEMBLE Plus project, the European Marine Biological Resource Centre (EMBRC), the Interreg program GEANS, and the Swedish Agency for Marine and Water Management (SwAM). The aim of the network is to monitor changes in hard-bottom habitats on a continental scale, provide data about the impact of climate change and human activities in these environments, and ensure that this information is globally available via the Ocean Biodiversity Information System (OBIS).
 

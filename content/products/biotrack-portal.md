@@ -1,14 +1,19 @@
-+++
-title   = "BioTrack Telemetry Portal"
-weight  = 1
-image   = "img/products/biotrack-portal.png"
-summary = "Interactive map of satellite and acoustic marine animal tracks that identifies biodiversity hotspots and their overlap with human-use areas."
-tags    = ["region:north-atlantic", "tool:dashboard", "type:tool"]
-links   = [
-  { label = "Open ATN portal", url = "https://portal.atn.ioos.us/", primary = true },
-  { label = "About BioTrack", url = "https://marinebon.org/bons_thematic/biotrack/" },
-]
-+++
+---
+image: img/products/biotrack-portal.png
+links:
+- label: Open ATN portal
+  primary: true
+  url: https://portal.atn.ioos.us/
+- label: About BioTrack
+  url: https://marinebon.org/bons_thematic/biotrack/
+summary: Interactive map of satellite and acoustic marine animal tracks that identifies biodiversity hotspots and their overlap with human-use areas.
+tags:
+- region:north-atlantic
+- tool:dashboard
+- type:tool
+title: BioTrack Telemetry Portal
+weight: 1
+---
 
 BioTrack is a collaborative MBON project led by Dr. Neil Hammerschlag (University of Miami / Shark Research Foundation) and supported by NOAA's [Animal Telemetry Network](https://ioos.noaa.gov/project/atn/) (ATN). It combines satellite and acoustic tracking of marine animals with environmental data and modeling to identify, monitor, and predict changes in marine biodiversity hotspots — then delivers those insights as practical products for decision-makers.
 

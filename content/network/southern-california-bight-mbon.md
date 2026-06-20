@@ -1,14 +1,15 @@
-+++
-title = "S. California Bight MBON"
-kind_node = "regional"
-lat = 33.2
-lng = -118.5
-footprint = 6
-since = "2015"
-summary = "CalCOFI-anchored monitoring of the Bight."
-banner = "img/photos/ocean-blue.jpg"
-tags = ["regional"]
-+++
+---
+banner: img/photos/ocean-blue.jpg
+footprint: 6
+kind_node: regional
+lat: 33.2
+lng: -118.5
+since: '2015'
+summary: CalCOFI-anchored monitoring of the Bight.
+tags:
+- regional
+title: S. California Bight MBON
+---
 
 CalCOFI-anchored monitoring of the Bight.
 

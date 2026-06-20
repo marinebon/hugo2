@@ -1,14 +1,15 @@
-+++
-title = "Southeast US MBON"
-kind_node = "regional"
-lat = 24.6
-lng = -81.8
-footprint = 6
-since = "2014"
-summary = "Southeastern United States, integrating fieldwork and satellite observations."
-banner = "img/photos/ocean-blue.jpg"
-tags = ["regional"]
-+++
+---
+banner: img/photos/ocean-blue.jpg
+footprint: 6
+kind_node: regional
+lat: 24.6
+lng: -81.8
+since: '2014'
+summary: Southeastern United States, integrating fieldwork and satellite observations.
+tags:
+- regional
+title: Southeast US MBON
+---
 
 Southeastern United States sanctuary, integrating ground and satellite observations.
 

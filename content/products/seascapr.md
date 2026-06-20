@@ -1,14 +1,18 @@
-+++
-title   = "seascapeR"
-weight  = 13
-image   = "img/products/seascapr.png"
-summary = "An R package and prototype interface to explore Seascapes in different marine regions, including U.S. National Marine Sanctuaries."
-tags    = ["region:global", "type:tool"]
-links   = [
-  { label = "Open seascapeR docs", url = "https://marinebon.org/seascapeR/", primary = true },
-  { label = "Source code", url = "https://github.com/marinebon/seascapeR" },
-]
-+++
+---
+image: img/products/seascapr.png
+links:
+- label: Open seascapeR docs
+  primary: true
+  url: https://marinebon.org/seascapeR/
+- label: Source code
+  url: https://github.com/marinebon/seascapeR
+summary: An R package and prototype interface to explore Seascapes in different marine regions, including U.S. National Marine Sanctuaries.
+tags:
+- region:global
+- type:tool
+title: seascapeR
+weight: 13
+---
 
 The seascapeR package provides functions for fetching, analyzing and visualizing Seascapes — a global and regional dynamic seawater classification product derived from satellite imagery by Maria Kavanaugh (OSU).
 

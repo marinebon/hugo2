@@ -1,14 +1,15 @@
-+++
-title = "Mid-Atlantic MBON"
-kind_node = "regional"
-lat = 38
-lng = -74
-footprint = 6
-since = "2019"
-summary = "Wind-energy planning and shelf biodiversity."
-banner = "img/photos/ocean-blue.jpg"
-tags = ["regional"]
-+++
+---
+banner: img/photos/ocean-blue.jpg
+footprint: 6
+kind_node: regional
+lat: 38
+lng: -74
+since: '2019'
+summary: Wind-energy planning and shelf biodiversity.
+tags:
+- regional
+title: Mid-Atlantic MBON
+---
 
 Wind-energy planning and shelf biodiversity.
 

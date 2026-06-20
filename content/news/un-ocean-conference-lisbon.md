@@ -1,10 +1,14 @@
-+++
-title   = "UN Ocean Conference Lisbon 2022"
-date    = "2022-07-01"
-summary = "MBON joined partners at UNOC Lisbon 2022 for a side event on integrating marine life observations into indicators for conservation, restoration, and sustainable development."
-banner  = "img/news/unoc-ocean-decade-forum.jpg"
-tags    = ["un", "conference", "lisbon", "marine-life-2030"]
-+++
+---
+banner: img/news/unoc-ocean-decade-forum.jpg
+date: '2022-07-01'
+summary: MBON joined partners at UNOC Lisbon 2022 for a side event on integrating marine life observations into indicators for conservation, restoration, and sustainable development.
+tags:
+- un
+- conference
+- lisbon
+- marine-life-2030
+title: UN Ocean Conference Lisbon 2022
+---
 
 The [UN Ocean Conference (UNOC)](https://www.un.org/en/conferences/ocean2022), held in Lisbon from 27 June to 1 July 2022, joined Heads of State and Government, thousands of experts, business leaders, scientists, and civil society representatives together, providing a space for meaningful dialogue and seeking collaborations to conserve and conduct responsible use of the oceans for sustainable development (SDG14).
 

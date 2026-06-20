@@ -1,14 +1,20 @@
-+++
-title   = "Climate Change for Sanctuaries"
-weight  = 18
-image   = "img/products/climate-dashboard-app.png"
-summary = "Shiny application with a swipeable \"then vs. now\" map comparing climatological reference periods to the present for each U.S. National Marine Sanctuary."
-tags    = ["region:us", "tool:dashboard", "org:nms", "type:instance"]
-links   = [
-  { label = "Open app", url = "https://shiny.marinebon.app/nms-cc/", primary = true },
-  { label = "Source code", url = "https://github.com/noaa-onms/climate-dashboard-app" },
-]
-+++
+---
+image: img/products/climate-dashboard-app.png
+links:
+- label: Open app
+  primary: true
+  url: https://shiny.marinebon.app/nms-cc/
+- label: Source code
+  url: https://github.com/noaa-onms/climate-dashboard-app
+summary: Shiny application with a swipeable "then vs. now" map comparing climatological reference periods to the present for each U.S. National Marine Sanctuary.
+tags:
+- region:us
+- tool:dashboard
+- org:nms
+- type:instance
+title: Climate Change for Sanctuaries
+weight: 18
+---
 
 Extends the static [Sanctuaries Climate Dashboard](/products/climate-dashboard/) with an interactive Shiny interface. The signature view is a swipeable map comparing climatological "then" (1985–2005 reference) to "now" (most recent day-of-year) for each sanctuary; a lower slider steps the comparison through the calendar year. Sanctuary and variable are selectable from the left-hand panel.
 

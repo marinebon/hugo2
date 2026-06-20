@@ -1,13 +1,18 @@
-+++
-title   = "CINMS Infographics"
-weight  = 7
-image   = "img/products/infographic-cinms.png"
-summary = "Interactive ecosystem infographics for Channel Islands National Marine Sanctuary."
-tags    = ["region:us", "tool:infographic", "org:nms", "type:instance"]
-links   = [
-  { label = "Open infographic", url = "https://noaa-onms.github.io/cinms/", primary = true },
-]
-+++
+---
+image: img/products/infographic-cinms.png
+links:
+- label: Open infographic
+  primary: true
+  url: https://noaa-onms.github.io/cinms/
+summary: Interactive ecosystem infographics for Channel Islands National Marine Sanctuary.
+tags:
+- region:us
+- tool:infographic
+- org:nms
+- type:instance
+title: CINMS Infographics
+weight: 7
+---
 
 Interactive ecosystem infographics for the Channel Islands National Marine Sanctuary.
 

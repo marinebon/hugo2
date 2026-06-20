@@ -1,10 +1,13 @@
-+++
-title   = "North Atlantic Right Whale Monitoring"
-date    = "2020-09-01"
-summary = "Over 30 regional experts met virtually to coordinate U.S.–Canada approaches to understanding North Atlantic right whale foraging habitat, linking zooplankton science to conservation strategy."
-banner  = "img/photos/sunfish.jpg"
-tags    = ["right-whales", "monitoring", "conservation"]
-+++
+---
+banner: img/photos/sunfish.jpg
+date: '2020-09-01'
+summary: Over 30 regional experts met virtually to coordinate U.S.–Canada approaches to understanding North Atlantic right whale foraging habitat, linking zooplankton science to conservation strategy.
+tags:
+- right-whales
+- monitoring
+- conservation
+title: North Atlantic Right Whale Monitoring
+---
 
 *Convened by Chris Orphanides, NEFSC Protected Species Branch, NOAA Fisheries; Catherine Johnson, Bedford Institute of Oceanography, Canada DFO; Jeffrey Runge, University of Maine, MBON.*
 

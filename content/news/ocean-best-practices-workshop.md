@@ -1,10 +1,14 @@
-+++
-title   = "Ocean Best Practices Workshop"
-date    = "2022-10-15"
-summary = "A workshop bringing together practitioners to document, share, and align best practices for marine biodiversity observation across instruments, regions, and disciplines."
-banner  = "img/photos/ocean-blue.jpg"
-tags    = ["workshop", "best-practices", "data", "marine-life-2030"]
-+++
+---
+banner: img/photos/ocean-blue.jpg
+date: '2022-10-15'
+summary: A workshop bringing together practitioners to document, share, and align best practices for marine biodiversity observation across instruments, regions, and disciplines.
+tags:
+- workshop
+- best-practices
+- data
+- marine-life-2030
+title: Ocean Best Practices Workshop
+---
 
 MBON, Marine Life 2030, GOOS and the AIR Centre hosted two special sessions at the VIII Ocean Best Practices (OBPS) workshop, bringing together the communities contributing to Biology and Ecosystem (BioEco) ocean observation and forecasting.
 

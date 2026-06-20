@@ -1,7 +1,7 @@
-+++
-title   = "Contact"
-summary = "Get in touch with the MBON team."
-+++
+---
+summary: Get in touch with the MBON team.
+title: Contact
+---
 
 | Name | Role |
 |---|---|

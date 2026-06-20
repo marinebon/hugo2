@@ -1,7 +1,7 @@
-+++
-title   = "Events"
-summary = "Presentations, meetings, and working group sessions from across the MBON community."
-+++
+---
+summary: Presentations, meetings, and working group sessions from across the MBON community.
+title: Events
+---
 
 ## [National MBON Meeting](https://www.iode.org/conf2022)
 #### November 1–4, 2022 · Monterey, CA

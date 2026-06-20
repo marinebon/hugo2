@@ -1,11 +1,13 @@
-+++
-title  = "Tracking Ocean Sunfish to Map Marine Biodiversity Hotspots"
-date   = "2026-01-15"
-author = "Emily Davenport"
-banner = "img/news/2026-01-tracking-mola.jpg"
-summary = "By combining satellite and acoustic tracking of marine species like the ocean sunfish, BioTrack is uncovering key patterns in biodiversity and making animal-movement data accessible to resource managers."
-tags   = ["biotrack", "tracking"]
-+++
+---
+author: Emily Davenport
+banner: img/news/2026-01-tracking-mola.jpg
+date: '2026-01-15'
+summary: By combining satellite and acoustic tracking of marine species like the ocean sunfish, BioTrack is uncovering key patterns in biodiversity and making animal-movement data accessible to resource managers.
+tags:
+- biotrack
+- tracking
+title: Tracking Ocean Sunfish to Map Marine Biodiversity Hotspots
+---
 
 *By tracking marine species like the ocean sunfish (Mola mola), [BioTrack](https://marinebon.org/bons_thematic/biotrack) — a project of the Marine Biodiversity Observation Network (MBON) — is uncovering key patterns in biodiversity and making marine animal movement data accessible to stakeholders. Photo Credit: Dr. Austin Gallagher – Beneath The Waves.*
 

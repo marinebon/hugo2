@@ -1,15 +1,18 @@
-+++
-title = "Pole to Pole Americas"
-kind_node = "regional"
-lat = -12
-lng = -60
-footprint = 62
-fcenter = [-80, 8]
-since = "2017"
-summary = "A network of networks spanning the Americas."
-banner = "img/photos/ocean-blue.jpg"
-tags = ["regional"]
-+++
+---
+banner: img/photos/ocean-blue.jpg
+fcenter:
+- -80
+- 8
+footprint: 62
+kind_node: regional
+lat: -12
+lng: -60
+since: '2017'
+summary: A network of networks spanning the Americas.
+tags:
+- regional
+title: Pole to Pole Americas
+---
 
 A network of networks spanning the Americas.
 

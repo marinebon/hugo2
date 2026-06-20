@@ -1,11 +1,13 @@
-+++
-title  = "Plankton Perfect: Using Imagery to Document Microscopic Marine Life"
-date   = "2025-12-10"
-author = "MBON Communications"
-banner = "img/news/2026-01-plankton-perfect-ctd.png"
-summary = "Dr. Enrique Montes uses a CPICS underwater microscope to capture high-resolution images of plankton in South Florida waters, building a new window into marine biodiversity."
-tags   = ["south-florida", "science"]
-+++
+---
+author: MBON Communications
+banner: img/news/2026-01-plankton-perfect-ctd.png
+date: '2025-12-10'
+summary: Dr. Enrique Montes uses a CPICS underwater microscope to capture high-resolution images of plankton in South Florida waters, building a new window into marine biodiversity.
+tags:
+- south-florida
+- science
+title: 'Plankton Perfect: Using Imagery to Document Microscopic Marine Life'
+---
 
 *Pictured: Students operate a Conductivity, Temperature, and Depth (CTD) Rosette with an underwater microscope attached to capture photos of plankton. Clockwise from top left: starfish larva, jellyfish larva, crab/shrimp/lobster larva.*
 

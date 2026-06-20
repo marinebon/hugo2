@@ -1,14 +1,19 @@
-+++
-title   = "Florida Keys NMS Alert Dashboard"
-weight  = 5
-image   = "img/products/early-alert-dashboard.png"
-summary = "Early-warning dashboard combining satellite and buoy data to detect harmful algal blooms and anoxic conditions in the Florida Keys National Marine Sanctuary."
-tags    = ["tool:dashboard", "org:nms", "region:south-fl"]
-links   = [
-  { label = "Open dashboard", url = "https://mbon-dashboards.marine.usf.edu", primary = true },
-  { label = "Source code", url = "https://github.com/marinebon/mbon-dashboard-server" },
-]
-+++
+---
+image: img/products/early-alert-dashboard.png
+links:
+- label: Open dashboard
+  primary: true
+  url: https://mbon-dashboards.marine.usf.edu
+- label: Source code
+  url: https://github.com/marinebon/mbon-dashboard-server
+summary: Early-warning dashboard combining satellite and buoy data to detect harmful algal blooms and anoxic conditions in the Florida Keys National Marine Sanctuary.
+tags:
+- tool:dashboard
+- org:nms
+- region:south-fl
+title: Florida Keys NMS Alert Dashboard
+weight: 5
+---
 
 The Florida Keys NMS Alert Dashboard combines satellite-derived products with near-real-time buoy observations to provide early warning of anomalous ecosystem conditions in the Florida Keys National Marine Sanctuary. It flags signals associated with harmful algal blooms and anoxic (low-oxygen) events so resource managers can respond before impacts cascade through the reef system.
 

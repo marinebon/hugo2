@@ -1,13 +1,17 @@
-+++
-title   = "MBON Data Portal"
-weight  = 3
-image   = "img/products/edna-explorer.png"
-summary = "Search, download, visualize, and analyze real-time, delayed-mode, and historical MBON biological observations alongside physical and chemical data."
-tags    = ["region:global", "type:data", "tool:portal"]
-links   = [
-  { label = "Open MBON Data Portal", url = "https://mbon.ioos.us/", primary = true },
-]
-+++
+---
+image: img/products/edna-explorer.png
+links:
+- label: Open MBON Data Portal
+  primary: true
+  url: https://mbon.ioos.us/
+summary: Search, download, visualize, and analyze real-time, delayed-mode, and historical MBON biological observations alongside physical and chemical data.
+tags:
+- region:global
+- type:data
+- tool:portal
+title: MBON Data Portal
+weight: 3
+---
 
 The MBON Data Portal — developed and managed by [Axiom Data Science](https://www.axiomdatascience.com/) — provides easy access to the full breadth of MBON data holdings. The portal combines a searchable data catalog with a feature-rich mapping interface.
 

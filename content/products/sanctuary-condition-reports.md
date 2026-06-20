@@ -1,14 +1,19 @@
-+++
-title   = "Sanctuary Watch"
-weight  = 4
-image   = "img/products/sanctuary-condition-reports.png"
-summary = "Web-based interactive tools for tracking ecosystem conditions, human connections, and management impacts across U.S. National Marine Sanctuaries."
-tags    = ["org:nms", "tool:dashboard", "region:us"]
-links   = [
-  { label = "Open Sanctuary Watch", url = "https://sanctuarywatch.ioos.us", primary = true },
-  { label = "About the project", url = "https://sanctuarywatch.ioos.us/about" },
-]
-+++
+---
+image: img/products/sanctuary-condition-reports.png
+links:
+- label: Open Sanctuary Watch
+  primary: true
+  url: https://sanctuarywatch.ioos.us
+- label: About the project
+  url: https://sanctuarywatch.ioos.us/about
+summary: Web-based interactive tools for tracking ecosystem conditions, human connections, and management impacts across U.S. National Marine Sanctuaries.
+tags:
+- org:nms
+- tool:dashboard
+- region:us
+title: Sanctuary Watch
+weight: 4
+---
 
 Easy access to information for tracking ecosystem conditions, human connections, and management impacts is critical to timely, effective, community-based resource management. Sanctuary Watch brings that information to the fingertips of resource managers, scientists, educators, and the public through [web-based, interactive tools](https://sanctuarywatch.ioos.us).
 

@@ -1,16 +1,21 @@
-+++
-title      = "BioSound"
-kind_node  = "thematic"
-lat        = 36
-lng        = -122
-footprint  = 8
-since      = "2021"
-logo       = "img/logos/biosound.jpg"
-summary    = "Listening to the ocean — advancing passive acoustic monitoring as an indicator of marine biodiversity."
-banner     = "img/working-groups/biosound-hero.jpg"
-tags       = ["thematic"]
-aliases    = ["/BioSound", "/biosound", "/bons_thematic/biosound", "/working-groups/biosound"]
-+++
+---
+aliases:
+- /BioSound
+- /biosound
+- /bons_thematic/biosound
+- /working-groups/biosound
+banner: img/working-groups/biosound-hero.jpg
+footprint: 8
+kind_node: thematic
+lat: 36
+lng: -122
+logo: img/logos/biosound.jpg
+since: '2021'
+summary: Listening to the ocean — advancing passive acoustic monitoring as an indicator of marine biodiversity.
+tags:
+- thematic
+title: BioSound
+---
 
 ![BioSound — underwater acoustic monitoring](img/working-groups/biosound-hero.jpg)
 

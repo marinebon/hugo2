@@ -1,11 +1,14 @@
-+++
-title  = "User Story: Bringing Steinbeck & Ricketts into the MBON Era"
-date   = "2026-02-26"
-author = "Rebecca Trinh"
-banner = "img/news/2026-02-sea-of-cortez/fieldwork.jpg"
-summary = "Over 85 years after Steinbeck and Ricketts documented life in the Sea of Cortez tidepools, a binational team retraces their expedition using MBON Pole-to-Pole protocols and eDNA to measure decades of biodiversity change."
-tags   = ["pole-to-pole", "edna", "fieldwork"]
-+++
+---
+author: Rebecca Trinh
+banner: img/news/2026-02-sea-of-cortez/fieldwork.jpg
+date: '2026-02-26'
+summary: Over 85 years after Steinbeck and Ricketts documented life in the Sea of Cortez tidepools, a binational team retraces their expedition using MBON Pole-to-Pole protocols and eDNA to measure decades of biodiversity change.
+tags:
+- pole-to-pole
+- edna
+- fieldwork
+title: 'User Story: Bringing Steinbeck & Ricketts into the MBON Era'
+---
 
 Over 85 years ago, author John Steinbeck and marine biologist Ed Ricketts set out for the Sea of Cortez as friends chasing curiosity, connection, and adventure. Their book *Sea of Cortez* became both a landmark biodiversity record and a meditation on humanity's relationship with nature. Today, as climate change and coastal development reshape the ocean, their tidepool observations offer a rare window into long-term ecological change — and their reflections on the human spirit feel more relevant than ever.
 

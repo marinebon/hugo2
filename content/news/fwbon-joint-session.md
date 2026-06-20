@@ -1,10 +1,14 @@
-+++
-title   = "MBON and FWBON Joint Session at GEO BON Conference"
-date    = "2023-10-12"
-summary = "MBON and FWBON held a joint session at the GEO BON Global Conference 2023 in Montreal, exploring how marine and freshwater biodiversity monitoring can be aligned with terrestrial approaches."
-banner  = "img/news/fwbon-joint-session.jpg"
-tags    = ["fwbon", "freshwater", "geobon", "essential-ocean-variables"]
-+++
+---
+banner: img/news/fwbon-joint-session.jpg
+date: '2023-10-12'
+summary: MBON and FWBON held a joint session at the GEO BON Global Conference 2023 in Montreal, exploring how marine and freshwater biodiversity monitoring can be aligned with terrestrial approaches.
+tags:
+- fwbon
+- freshwater
+- geobon
+- essential-ocean-variables
+title: MBON and FWBON Joint Session at GEO BON Conference
+---
 
 On October 12th, 2023, the Marine Biodiversity Observation Network (MBON) and the Fresh Water Biodiversity Observation Network (FWBON) brought together their members in a joint session at the GEO BON Global Conference 2023 in Montreal.
 

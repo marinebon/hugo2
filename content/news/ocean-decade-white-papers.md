@@ -1,11 +1,13 @@
-+++
-title  = "Publication of Ocean Decade Vision 2030 White Papers"
-date   = "2024-06-14"
-author = "MBON Communications"
-banner = "img/news/2024-06-ocean-decade-white-papers.png"
-summary = "The UN Ocean Decade Vision 2030 white papers have been published. MBON and Marine Life 2030 lead Challenge 2 on protecting and restoring ecosystems and biodiversity."
-tags   = ["un-ocean-decade", "policy"]
-+++
+---
+author: MBON Communications
+banner: img/news/2024-06-ocean-decade-white-papers.png
+date: '2024-06-14'
+summary: The UN Ocean Decade Vision 2030 white papers have been published. MBON and Marine Life 2030 lead Challenge 2 on protecting and restoring ecosystems and biodiversity.
+tags:
+- un-ocean-decade
+- policy
+title: Publication of Ocean Decade Vision 2030 White Papers
+---
 
 We are excited to share that the [United Nations Ocean Decade](https://oceandecade.org/) Vision 2030 White Papers have been officially published. Structured around the 10 Ocean Decade Challenges, the [Vision 2030](https://oceandecade.org/news/vision-2030-ocean-decade-launches-new-global-ambition-setting-process/) process aimed to set a tailored and specific strategic ambition, and associated milestones, for each of the Challenges, ensuring their road to success by 2030.
 

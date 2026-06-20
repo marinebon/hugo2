@@ -1,10 +1,12 @@
-+++
-title   = "Dr. Frank Muller-Karger TOS Fellow Award"
-date    = "2024-02-06"
-summary = "Frank Muller-Karger, co-chair of MBON and professor at the University of South Florida, is named a 2024 TOS Fellow by The Oceanography Society."
-banner  = "img/news/muller-karger-portrait.jpg"
-tags    = ["muller-karger", "award"]
-+++
+---
+banner: img/news/muller-karger-portrait.jpg
+date: '2024-02-06'
+summary: Frank Muller-Karger, co-chair of MBON and professor at the University of South Florida, is named a 2024 TOS Fellow by The Oceanography Society.
+tags:
+- muller-karger
+- award
+title: Dr. Frank Muller-Karger TOS Fellow Award
+---
 
 The MBON is pleased to announce that Dr. Frank Muller-Karger, MBON co-chair, was recognized by The Oceanography Society (TOS) 2024 Honors as a Fellow for his exceptional achievement and contributions to ocean sciences.
 

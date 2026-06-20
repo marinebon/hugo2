@@ -1,15 +1,18 @@
-+++
-title = "Asia-Pacific MBON"
-kind_node = "regional"
-lat = 35
-lng = 140
-footprint = 44
-fcenter = [150, 10]
-since = "2019"
-summary = "Coral, kelp and seagrass monitoring across the Pacific rim."
-banner = "img/photos/ocean-blue.jpg"
-tags = ["regional"]
-+++
+---
+banner: img/photos/ocean-blue.jpg
+fcenter:
+- 150
+- 10
+footprint: 44
+kind_node: regional
+lat: 35
+lng: 140
+since: '2019'
+summary: Coral, kelp and seagrass monitoring across the Pacific rim.
+tags:
+- regional
+title: Asia-Pacific MBON
+---
 
 Coral, kelp and seagrass monitoring across the Pacific rim.
 

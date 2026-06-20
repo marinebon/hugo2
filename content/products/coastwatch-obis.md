@@ -1,13 +1,17 @@
-+++
-title   = "CoastWatch OBIS Indicator Explorer"
-weight  = 8
-image   = "img/products/coastwatch-obis.png"
-summary = "Server-side tool that co-locates satellite remote sensing products, gridded model outputs, and OBIS field observations to generate biodiversity indicators for any polygon."
-tags    = ["region:global", "tool:dashboard", "type:tool"]
-links   = [
-  { label = "Open CoastWatch OBIS Explorer", url = "https://cwcgom.aoml.noaa.gov/OBIS/", primary = true },
-]
-+++
+---
+image: img/products/coastwatch-obis.png
+links:
+- label: Open CoastWatch OBIS Explorer
+  primary: true
+  url: https://cwcgom.aoml.noaa.gov/OBIS/
+summary: Server-side tool that co-locates satellite remote sensing products, gridded model outputs, and OBIS field observations to generate biodiversity indicators for any polygon.
+tags:
+- region:global
+- tool:dashboard
+- type:tool
+title: CoastWatch OBIS Indicator Explorer
+weight: 8
+---
 
 The CoastWatch OBIS Indicator Explorer (developed by J. Trinanes, NOAA CoastWatch) provides a server-side approach for extracting co-located satellite remote sensing products, gridded numerical model results, and field observations — including records from OBIS, NCEI, and Seascapes — for any user-defined polygon.
 

@@ -1,14 +1,15 @@
-+++
-title = "Arctic MBON"
-kind_node = "regional"
-lat = 71
-lng = -150
-footprint = 22
-since = "2019"
-summary = "Pan-Arctic biodiversity observing across a rapidly changing ocean."
-banner = "img/photos/ocean-blue.jpg"
-tags = ["regional"]
-+++
+---
+banner: img/photos/ocean-blue.jpg
+footprint: 22
+kind_node: regional
+lat: 71
+lng: -150
+since: '2019'
+summary: Pan-Arctic biodiversity observing across a rapidly changing ocean.
+tags:
+- regional
+title: Arctic MBON
+---
 
 Pan-Arctic biodiversity observing across a rapidly changing ocean.
 

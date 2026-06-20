@@ -1,10 +1,13 @@
-+++
-title   = "Marine Biodiversity Networking on Coral Reefs"
-date    = "2022-04-08"
-summary = "Marine Biodiversity Networking Friday webinar on IOC/WESTPAC and coral reef survey and recovery activities, hosted by the AIR Centre."
-banner  = "img/photos/reef-sunlight.jpg"
-tags    = ["coral-reef", "networking", "webinar"]
-+++
+---
+banner: img/photos/reef-sunlight.jpg
+date: '2022-04-08'
+summary: Marine Biodiversity Networking Friday webinar on IOC/WESTPAC and coral reef survey and recovery activities, hosted by the AIR Centre.
+tags:
+- coral-reef
+- networking
+- webinar
+title: Marine Biodiversity Networking on Coral Reefs
+---
 
 Marine Biodiversity Networking Friday on IOC/WESTPAC and coral reef survey and recovery activities.
 

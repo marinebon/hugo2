@@ -1,10 +1,13 @@
-+++
-title   = "Higher Education Curriculum Development"
-date    = "2024-06-01"
-summary = "An initiative to embed marine biodiversity observation methods and open data practices into higher education curricula, building the next generation of ocean scientists."
-banner  = "img/photos/ocean-blue.jpg"
-tags    = ["education", "curriculum", "capacity-development"]
-+++
+---
+banner: img/photos/ocean-blue.jpg
+date: '2024-06-01'
+summary: An initiative to embed marine biodiversity observation methods and open data practices into higher education curricula, building the next generation of ocean scientists.
+tags:
+- education
+- curriculum
+- capacity-development
+title: Higher Education Curriculum Development
+---
 
 The Marine Biodiversity Observation Network (MBON), the Atlantic International Research Centre (AIR Centre), and the World Maritime University-Sasakawa Global Ocean Institute (WMU) have joined forces to develop a higher-education curriculum on Ocean-Biodiversity Observing and Capacity Development (OBCaD). The primary aim is to develop a curriculum focused on interoperable ocean data and information management to be integrated into universities and other institutes.
 

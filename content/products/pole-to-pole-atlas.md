@@ -1,15 +1,21 @@
-+++
-title   = "MBON Pole to Pole Data Atlas"
-weight  = 6
-image   = "img/products/pole-to-pole-atlas.png"
-summary = "Harmonized rocky-shore and sandy-beach biodiversity observations from Canada to Patagonia, standardized for cross-regional comparison and open access via OBIS."
-tags    = ["region:americas", "type:data", "org:obis"]
-links   = [
-  { label = "Open Pole to Pole atlas", url = "https://marinebon.org/p2p/", primary = true },
-  { label = "Explore data on OBIS", url = "https://obis.org/institute/23070" },
-  { label = "Protocols & methods", url = "https://marinebon.org/p2p/about.html" },
-]
-+++
+---
+image: img/products/pole-to-pole-atlas.png
+links:
+- label: Open Pole to Pole atlas
+  primary: true
+  url: https://marinebon.org/p2p/
+- label: Explore data on OBIS
+  url: https://obis.org/institute/23070
+- label: Protocols & methods
+  url: https://marinebon.org/p2p/about.html
+summary: Harmonized rocky-shore and sandy-beach biodiversity observations from Canada to Patagonia, standardized for cross-regional comparison and open access via OBIS.
+tags:
+- region:americas
+- type:data
+- org:obis
+title: MBON Pole to Pole Data Atlas
+weight: 6
+---
 
 The MBON Pole to Pole of the Americas network spans from the Arctic to Patagonia, linking regional biodiversity observing programs along both Atlantic and Pacific coasts of the Western Hemisphere. The network collects standardized rocky intertidal and sandy beach biodiversity data, making those observations directly comparable across thousands of kilometers of coastline.
 

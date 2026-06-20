@@ -1,14 +1,19 @@
-+++
-title   = "Infographiq"
-weight  = 7
-image   = "img/products/infographiq.png"
-summary = "JavaScript and R method for producing clickable scientific art that acts as an interface for users to explore marine biodiversity data."
-tags    = ["region:global", "tool:infographic", "type:tool"]
-links   = [
-  { label = "Open Infographiq docs", url = "https://marinebon.org/infographiq/", primary = true },
-  { label = "Source code", url = "https://github.com/marinebon/infographiq" },
-]
-+++
+---
+image: img/products/infographiq.png
+links:
+- label: Open Infographiq docs
+  primary: true
+  url: https://marinebon.org/infographiq/
+- label: Source code
+  url: https://github.com/marinebon/infographiq
+summary: JavaScript and R method for producing clickable scientific art that acts as an interface for users to explore marine biodiversity data.
+tags:
+- region:global
+- tool:infographic
+- type:tool
+title: Infographiq
+weight: 7
+---
 
 Infographiq combines JavaScript and R to produce clickable illustrated diagrams — "infographics" in the ecological sense — that serve as intuitive interfaces for exploring scientific data. Each element in the illustration is linked to a data popup, allowing end users (managers, educators, the public) to explore ecosystem indicators by clicking on species or habitat features they already recognize visually.
 

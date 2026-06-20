@@ -1,10 +1,13 @@
-+++
-title   = "MBON Partnership with Seabed2030"
-date    = "2023-07-01"
-summary = "MBON and Seabed 2030 renew partnership to integrate biodiversity observations with bathymetric data, improving understanding of deep-sea ecosystems and their inhabitants."
-banner  = "img/news/seabed2030-partnership.png"
-tags    = ["seabed2030", "marine-life-2030", "partnership"]
-+++
+---
+banner: img/news/seabed2030-partnership.png
+date: '2023-07-01'
+summary: MBON and Seabed 2030 renew partnership to integrate biodiversity observations with bathymetric data, improving understanding of deep-sea ecosystems and their inhabitants.
+tags:
+- seabed2030
+- marine-life-2030
+- partnership
+title: MBON Partnership with Seabed2030
+---
 
 A new partnership has been announced between the Marine Biodiversity Observation Network (MBON), Marine Life 2030 and the Nippon Foundation-GEBCO Seabed 2030 Project. The memorandum of understanding signed by the parties outlines their commitment to advancing the field of ocean exploration, with a particular focus on the observation of marine life.
 

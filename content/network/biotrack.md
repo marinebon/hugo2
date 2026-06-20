@@ -1,16 +1,21 @@
-+++
-title      = "BioTrack"
-kind_node  = "thematic"
-lat        = 38
-lng        = -70
-footprint  = 10
-since      = "2021"
-logo       = "img/logos/biotrack.png"
-summary    = "Mapping marine biodiversity hotspots by integrating satellite and acoustic animal tracking with remotely sensed environmental data."
-banner     = "img/working-groups/biotrack-logo.jpg"
-tags       = ["thematic"]
-aliases    = ["/BioTrack", "/biotrack", "/bons_thematic/biotrack", "/working-groups/biotrack"]
-+++
+---
+aliases:
+- /BioTrack
+- /biotrack
+- /bons_thematic/biotrack
+- /working-groups/biotrack
+banner: img/working-groups/biotrack-logo.jpg
+footprint: 10
+kind_node: thematic
+lat: 38
+lng: -70
+logo: img/logos/biotrack.png
+since: '2021'
+summary: Mapping marine biodiversity hotspots by integrating satellite and acoustic animal tracking with remotely sensed environmental data.
+tags:
+- thematic
+title: BioTrack
+---
 
 ![BioTrack logo](img/working-groups/biotrack-logo.jpg)
 

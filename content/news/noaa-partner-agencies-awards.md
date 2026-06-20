@@ -1,10 +1,13 @@
-+++
-title   = "NOAA and Partner Agencies New Awards"
-date    = "2022-01-01"
-summary = "NOAA and partner agencies recognise outstanding contributions to marine biodiversity science and the development of operational ocean observation programmes."
-banner  = "img/photos/ocean-blue.jpg"
-tags    = ["noaa", "awards", "funding"]
-+++
+---
+banner: img/photos/ocean-blue.jpg
+date: '2022-01-01'
+summary: NOAA and partner agencies recognise outstanding contributions to marine biodiversity science and the development of operational ocean observation programmes.
+tags:
+- noaa
+- awards
+- funding
+title: NOAA and Partner Agencies New Awards
+---
 
 On behalf of the [National Oceanographic Partnership Program](https://nopp.org/), NOAA and partner agencies, including [NASA](https://www.nasa.gov/), the [Bureau of Ocean Energy Management](https://www.boem.gov/), and the [Office of Naval Research](https://www.nre.navy.mil/) have awarded several new proposals that:
 
