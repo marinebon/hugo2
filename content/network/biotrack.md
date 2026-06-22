@@ -14,7 +14,7 @@ since: '2021'
 summary: Mapping marine biodiversity hotspots by integrating satellite and acoustic
   animal tracking with remotely sensed environmental data.
 tags:
-- topic.thematic
+- topic.Working-Group
 title: BioTrack
 ---
 

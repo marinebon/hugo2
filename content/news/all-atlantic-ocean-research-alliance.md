@@ -5,9 +5,9 @@ summary: MBON, OBPS, OBIS, and GOOS co-hosted a virtual side event at the All-At
   Forum in Brasilia to advance co-design of biology and ecosystem observations across
   ocean basins.
 tags:
-- topic.all-atlantic
-- topic.research
-- topic.partnership
+- topic.All-Atlantic
+- topic.Research
+- topic.Partnership
 title: All-Atlantic Ocean Research Alliance Forum
 ---
 

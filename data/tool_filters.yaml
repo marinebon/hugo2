@@ -3,33 +3,33 @@
 - facet: place
   label: Region
   values:
-    - { value: global,          name: Global }
-    - { value: us,              name: "U.S." }
-    - { value: americas,        name: Americas }
-    - { value: north-atlantic,  name: "N. Atlantic" }
-    - { value: south-florida,   name: "South FL" }
+    - { value: Global,        name: Global }
+    - { value: US,            name: "U.S." }
+    - { value: Americas,      name: Americas }
+    - { value: North-Atlantic,name: "N. Atlantic" }
+    - { value: South-Florida, name: "South FL" }
 - facet: type
   label: Tool type
   values:
-    - { value: dashboard,   name: Dashboard }
-    - { value: infographic, name: Infographic }
-    - { value: portal,      name: Portal }
-    - { value: tool,        name: Tool }
-    - { value: data,        name: Data }
-    - { value: instance,    name: Instance }
+    - { value: Dashboard,   name: Dashboard }
+    - { value: Infographic, name: Infographic }
+    - { value: Portal,      name: Portal }
+    - { value: Tool,        name: Tool }
+    - { value: Data,        name: Data }
+    - { value: Instance,    name: Instance }
 - facet: org
   label: Organization
   values:
-    - { value: noaa-iea, name: "NOAA IEA" }
-    - { value: nms,      name: NMS }
-    - { value: fwri,     name: FWRI }
-    - { value: obis,     name: OBIS }
+    - { value: NOAA-IEA, name: "NOAA IEA" }
+    - { value: NMS,      name: NMS }
+    - { value: FWRI,     name: FWRI }
+    - { value: OBIS,     name: OBIS }
 - facet: method
   label: Method
   values:
-    - { value: remote-sensing, name: "Remote Sensing" }
-    - { value: genomics,       name: "Genomics & eDNA" }
-    - { value: acoustics,      name: Acoustics }
-    - { value: tracking,       name: Tracking }
-    - { value: indicators,     name: Indicators }
-    - { value: traditional,    name: Traditional }
+    - { value: Remote-Sensing, name: "Remote Sensing" }
+    - { value: Genomics,       name: Genomics }
+    - { value: Acoustics,      name: Acoustics }
+    - { value: Tracking,       name: Tracking }
+    - { value: Indicators,     name: Indicators }
+    - { value: Traditional,    name: Traditional }

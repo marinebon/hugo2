@@ -10,7 +10,7 @@ lng: -8
 since: '2018'
 summary: EuroSea and EMODnet-linked observing across European seas.
 tags:
-- topic.regional
+- topic.Regional
 title: Europe MBON
 ---
 

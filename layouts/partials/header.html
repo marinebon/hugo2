@@ -6,9 +6,10 @@
     <button class="nav-toggle" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">&#9776;</button>
     <nav class="site-nav">
       {{ range site.Menus.main }}
+
         {{ if eq .Identifier "network" }}
           {{ $regional := where (where site.RegularPages "Section" "network") "Params.kind_node" "regional" }}
-          {{ $thematic := where (where site.RegularPages "Section" "network") "Params.kind_node" "thematic" }}
+          {{ $working  := where (where site.RegularPages "Section" "network") "Params.kind_node" "thematic" }}
           <div class="nav-dropdown">
             <a href="{{ .URL }}"{{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }} class="is-active"{{ end }}>
               {{ .Name }}<i class="fas fa-chevron-down nav-dropdown__caret" aria-hidden="true"></i>
@@ -21,16 +22,39 @@
                 {{ end }}
               </div>
               <div class="nav-dropdown__col">
-                <span class="nav-dropdown__label">Thematic</span>
-                {{ range $thematic.ByTitle }}
+                <span class="nav-dropdown__label">Working Groups</span>
+                {{ range $working.ByTitle }}
+                  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                {{ end }}
+              </div>
+              <div class="nav-dropdown__col">
+                <span class="nav-dropdown__label">Partners</span>
+                {{ range hugo.Data.partners }}
+                  <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>
+                {{ end }}
+              </div>
+            </div>
+          </div>
+
+        {{ else if eq .Name "Methods" }}
+          {{ $methods := sort (where site.RegularPages "Section" "methods") "Params.weight" }}
+          <div class="nav-dropdown">
+            <a href="{{ .URL }}"{{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }} class="is-active"{{ end }}>
+              {{ .Name }}<i class="fas fa-chevron-down nav-dropdown__caret" aria-hidden="true"></i>
+            </a>
+            <div class="nav-dropdown__panel nav-dropdown__panel--single">
+              <div class="nav-dropdown__col">
+                {{ range $methods }}
                   <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                 {{ end }}
               </div>
             </div>
           </div>
+
         {{ else }}
           <a href="{{ .URL }}"{{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }} class="is-active"{{ end }}>{{ .Name }}</a>
         {{ end }}
+
       {{ end }}
       <span class="site-nav__sep"></span>
       <form class="nav-search" action="{{ "search" | relURL }}" method="get" role="search">

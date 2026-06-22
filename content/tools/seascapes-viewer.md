@@ -11,9 +11,9 @@ links:
 summary: Interactive Shiny application for visualizing global Seascape Classes in
   time and space across U.S. National Marine Sanctuaries.
 tags:
-- place.global
-- type.dashboard
-- org.nms
+- place.Global
+- type.Dashboard
+- org.NMS
 title: Seascapes Viewer
 weight: 2
 ---

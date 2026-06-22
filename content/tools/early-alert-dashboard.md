@@ -9,9 +9,9 @@ links:
 summary: Early-warning dashboard combining satellite and buoy data to detect harmful
   algal blooms and anoxic conditions in the Florida Keys National Marine Sanctuary.
 tags:
-- type.dashboard
-- org.nms
-- place.south-florida
+- type.Dashboard
+- org.NMS
+- place.South-Florida
 title: Florida Keys NMS Alert Dashboard
 weight: 5
 ---

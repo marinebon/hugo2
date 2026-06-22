@@ -8,10 +8,10 @@ summary: Through an integrated science approach, the NOAA Integrated Ecosystem A
   program balances the needs of nature and society, supporting diverse marine resource
   management objectives in an ecosystem context.
 tags:
-- place.us
-- type.infographic
-- org.noaa-iea
-- type.instance
+- place.US
+- type.Infographic
+- org.NOAA-IEA
+- type.Instance
 title: Alaska IEA Infographics
 weight: 9
 ---

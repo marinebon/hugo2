@@ -5,9 +5,9 @@ summary: A continental-scale ARMS network across European marine sanctuaries and
   uses genetic methods to detect non-indigenous species far earlier than conventional
   sampling.
 tags:
-- method.genomics
-- topic.invasive-species
-- topic.early-detection
+- method.Genomics
+- topic.Invasive-Species
+- topic.Early-Detection
 title: Genetic Monitoring for Non-Indigenous Species
 ---
 

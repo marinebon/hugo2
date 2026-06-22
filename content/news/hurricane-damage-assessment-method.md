@@ -2,9 +2,9 @@
 banner: img/photos/ocean-blue.jpg
 date: '2020-09-01'
 tags:
-- topic.hurricanes
-- method.remote-sensing
-- place.coastal
+- topic.Hurricanes
+- method.Remote-Sensing
+- place.Coastal
 title: Satellite-Based Hurricane Damage Assessment
 ---
 

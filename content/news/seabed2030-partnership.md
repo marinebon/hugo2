@@ -5,9 +5,9 @@ summary: MBON and Seabed 2030 renew partnership to integrate biodiversity observ
   with bathymetric data, improving understanding of deep-sea ecosystems and their
   inhabitants.
 tags:
-- org.seabed2030
-- topic.marine-life-2030
-- topic.partnership
+- org.Seabed2030
+- topic.Marine-Life-2030
+- topic.Partnership
 title: MBON Partnership with Seabed2030
 ---
 

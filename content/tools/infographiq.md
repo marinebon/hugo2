@@ -9,9 +9,9 @@ links:
 summary: JavaScript and R method for producing clickable scientific art that acts
   as an interface for users to explore marine biodiversity data.
 tags:
-- place.global
-- type.infographic
-- type.tool
+- place.Global
+- type.Infographic
+- type.Tool
 title: Infographiq
 weight: 7
 ---

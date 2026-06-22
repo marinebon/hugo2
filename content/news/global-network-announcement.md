@@ -5,8 +5,8 @@ summary: Announcement of expanded global MBON network coordination, connecting r
   programmes into a unified, interoperable system for tracking marine biodiversity
   worldwide.
 tags:
-- topic.network
-- place.global
+- topic.Network
+- place.Global
 title: Global Network for Marine Biodiversity
 ---
 

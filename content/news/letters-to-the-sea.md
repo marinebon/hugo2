@@ -6,8 +6,8 @@ summary: Somos OceanoS — a Marine Life 2030 affiliated project — invites you
   3–22 from around the world to submit letters for an art exhibition at the 2025 UN
   Ocean Conference.
 tags:
-- topic.marine-life-2030
-- topic.outreach
+- topic.Marine-Life-2030
+- topic.Outreach
 title: Letters to the Sea
 ---
 

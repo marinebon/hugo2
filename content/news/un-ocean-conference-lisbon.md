@@ -5,10 +5,10 @@ summary: MBON joined partners at UNOC Lisbon 2022 for a side event on integratin
   marine life observations into indicators for conservation, restoration, and sustainable
   development.
 tags:
-- org.un
-- topic.conference
-- place.lisbon
-- topic.marine-life-2030
+- org.UN
+- topic.Conference
+- place.Lisbon
+- topic.Marine-Life-2030
 title: UN Ocean Conference Lisbon 2022
 ---
 

@@ -4,10 +4,10 @@ date: '2023-12-18'
 summary: A seminar for European marine data holders on mobilising biological datasets
   to open repositories, applying Darwin Core standards, and publishing through OBIS.
 tags:
-- place.europe
-- topic.data-publishing
-- topic.seminar
-- org.obis
+- place.Europe
+- topic.Data-Publishing
+- topic.Seminar
+- org.OBIS
 title: MBON Europe Data Publishing Seminar
 ---
 

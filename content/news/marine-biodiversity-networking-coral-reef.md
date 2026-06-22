@@ -4,9 +4,9 @@ date: '2022-04-08'
 summary: Marine Biodiversity Networking Friday webinar on IOC/WESTPAC and coral reef
   survey and recovery activities, hosted by the AIR Centre.
 tags:
-- topic.coral-reef
-- topic.networking
-- topic.webinar
+- topic.Coral-Reef
+- topic.Networking
+- topic.Webinar
 title: Marine Biodiversity Networking on Coral Reefs
 ---
 

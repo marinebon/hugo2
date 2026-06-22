@@ -2,9 +2,9 @@
 banner: img/photos/seascapes.jpg
 date: '2020-01-01'
 tags:
-- topic.partnership
-- method.remote-sensing
-- org.ioos
+- topic.Partnership
+- method.Remote-Sensing
+- org.IOOS
 title: 'US and Global MBON Partnership: MBON Seascapes on NOAA CoastWatch'
 ---
 

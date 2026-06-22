@@ -2,9 +2,9 @@
 banner: img/photos/ocean-blue.jpg
 date: '2020-06-19'
 tags:
-- topic.eov
-- topic.standards
-- topic.interoperability
+- topic.EOV
+- topic.Standards
+- topic.Interoperability
 title: Essential Ocean Variables and Standards
 ---
 

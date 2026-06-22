@@ -5,9 +5,9 @@ summary: Over 30 regional experts met virtually to coordinate U.S.–Canada appr
   to understanding North Atlantic right whale foraging habitat, linking zooplankton
   science to conservation strategy.
 tags:
-- topic.right-whales
-- topic.monitoring
-- topic.conservation
+- topic.Right-Whales
+- topic.Monitoring
+- topic.Conservation
 title: North Atlantic Right Whale Monitoring
 ---
 

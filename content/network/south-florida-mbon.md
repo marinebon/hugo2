@@ -7,7 +7,7 @@ lng: -81.8
 since: '2014'
 summary: Southeastern United States, integrating fieldwork and satellite observations.
 tags:
-- topic.regional
+- topic.Regional
 title: Southeast US MBON
 ---
 

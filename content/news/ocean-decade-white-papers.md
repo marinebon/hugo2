@@ -5,8 +5,8 @@ date: '2024-06-14'
 summary: The UN Ocean Decade Vision 2030 white papers have been published. MBON and
   Marine Life 2030 lead Challenge 2 on protecting and restoring ecosystems and biodiversity.
 tags:
-- topic.un-ocean-decade
-- topic.policy
+- topic.UN-Ocean-Decade
+- topic.Policy
 title: Publication of Ocean Decade Vision 2030 White Papers
 ---
 

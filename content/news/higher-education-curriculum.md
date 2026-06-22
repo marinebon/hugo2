@@ -5,8 +5,8 @@ summary: An initiative to embed marine biodiversity observation methods and open
   practices into higher education curricula, building the next generation of ocean
   scientists.
 tags:
-- topic.education
-- topic.capacity-development
+- topic.Education
+- topic.Capacity-Development
 title: Higher Education Curriculum Development
 ---
 

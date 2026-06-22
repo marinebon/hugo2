@@ -5,9 +5,9 @@ summary: Collaborative effort to establish and disseminate best practices for ma
   biodiversity monitoring, ensuring interoperability and long-term usability of observation
   data.
 tags:
-- topic.best-practices
-- topic.monitoring
-- topic.training
+- topic.Best-Practices
+- topic.Monitoring
+- topic.Training
 title: Biodiversity Monitoring Best Practices
 ---
 

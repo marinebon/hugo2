@@ -2,9 +2,9 @@
 banner: img/photos/ocean-blue.jpg
 date: '2021-01-01'
 tags:
-- topic.marine-life-2030
-- topic.un-ocean-decade
-- place.global
+- topic.Marine-Life-2030
+- topic.UN-Ocean-Decade
+- place.Global
 title: Marine Life 2030
 ---
 

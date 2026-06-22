@@ -5,10 +5,10 @@ summary: MBON and FWBON held a joint session at the GEO BON Global Conference 20
   in Montreal, exploring how marine and freshwater biodiversity monitoring can be
   aligned with terrestrial approaches.
 tags:
-- org.fwbon
-- topic.freshwater
-- org.geobon
-- topic.eov
+- org.FWBON
+- topic.Freshwater
+- org.GEOBON
+- topic.EOV
 title: MBON and FWBON Joint Session at GEO BON Conference
 ---
 

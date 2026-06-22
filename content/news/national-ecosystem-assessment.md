@@ -5,8 +5,8 @@ summary: UNEP-WCMC's National Ecosystem Assessment Initiative launches an online
   hosting resources, case studies, and guidance to support countries undertaking ecosystem
   assessments.
 tags:
-- topic.ecosystem-assessment
-- org.unep
+- topic.Ecosystem-Assessment
+- org.UNEP
 title: National Ecosystem Assessment Initiative
 ---
 

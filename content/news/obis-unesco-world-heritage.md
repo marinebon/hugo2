@@ -5,10 +5,10 @@ summary: OBIS and UNESCO launch a two-year eDNA project to monitor fish biodiver
   across marine World Heritage sites, providing globally standardised data on climate
   vulnerability.
 tags:
-- org.obis
-- org.unesco
-- topic.world-heritage
-- method.genomics
+- org.OBIS
+- org.UNESCO
+- topic.World-Heritage
+- method.Genomics
 title: OBIS and UNESCO Marine World Heritage Sites
 ---
 

@@ -9,9 +9,9 @@ links:
 summary: Interactive map of satellite and acoustic marine animal tracks that identifies
   biodiversity hotspots and their overlap with human-use areas.
 tags:
-- place.north-atlantic
-- type.dashboard
-- type.tool
+- place.North-Atlantic
+- type.Dashboard
+- type.Tool
 title: BioTrack Telemetry Portal
 weight: 1
 ---

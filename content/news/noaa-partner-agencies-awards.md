@@ -4,9 +4,9 @@ date: '2022-01-01'
 summary: NOAA and partner agencies recognise outstanding contributions to marine biodiversity
   science and the development of operational ocean observation programmes.
 tags:
-- org.noaa
-- topic.award
-- topic.funding
+- org.NOAA
+- topic.Award
+- topic.Funding
 title: NOAA and Partner Agencies New Awards
 ---
 

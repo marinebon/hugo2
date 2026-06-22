@@ -5,10 +5,10 @@ summary: A workshop bringing together practitioners to document, share, and alig
   best practices for marine biodiversity observation across instruments, regions,
   and disciplines.
 tags:
-- topic.workshop
-- topic.best-practices
-- topic.data
-- topic.marine-life-2030
+- topic.Workshop
+- topic.Best-Practices
+- topic.Data
+- topic.Marine-Life-2030
 title: Ocean Best Practices Workshop
 ---
 

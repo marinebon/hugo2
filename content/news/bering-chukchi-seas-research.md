@@ -2,9 +2,9 @@
 banner: img/photos/ocean-blue.jpg
 date: '2020-11-01'
 tags:
-- place.arctic
-- place.bering-sea
-- topic.research
+- place.Arctic
+- place.Bering-Sea
+- topic.Research
 title: Bering and Chukchi Seas Research
 ---
 

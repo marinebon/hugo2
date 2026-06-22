@@ -9,9 +9,9 @@ links:
 summary: Web-based interactive tools for tracking ecosystem conditions, human connections,
   and management impacts across U.S. National Marine Sanctuaries.
 tags:
-- org.nms
-- type.dashboard
-- place.us
+- org.NMS
+- type.Dashboard
+- place.US
 title: Sanctuary Watch
 weight: 4
 ---

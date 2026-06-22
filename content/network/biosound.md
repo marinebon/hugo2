@@ -14,7 +14,7 @@ since: '2021'
 summary: Listening to the ocean — advancing passive acoustic monitoring as an indicator
   of marine biodiversity.
 tags:
-- topic.thematic
+- topic.Working-Group
 title: BioSound
 ---
 

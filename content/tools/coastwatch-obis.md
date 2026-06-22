@@ -8,9 +8,9 @@ summary: Server-side tool that co-locates satellite remote sensing products, gri
   model outputs, and OBIS field observations to generate biodiversity indicators for
   any polygon.
 tags:
-- place.global
-- type.dashboard
-- type.tool
+- place.Global
+- type.Dashboard
+- type.Tool
 title: CoastWatch OBIS Indicator Explorer
 weight: 8
 ---

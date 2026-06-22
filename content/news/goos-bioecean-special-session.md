@@ -4,9 +4,9 @@ date: '2025-07-01'
 summary: GOOS, BioEcoOcean, MBON, and the AIR Centre co-host a webinar series on Biology
   and Ecosystems Essential Ocean Variables (BioEco EOVs).
 tags:
-- org.goos
-- topic.eov
-- topic.webinar
+- org.GOOS
+- topic.EOV
+- topic.Webinar
 title: GOOS and BioEcoOcean Special Session Webinar Series
 ---
 

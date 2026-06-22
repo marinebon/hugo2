@@ -6,7 +6,7 @@ summary: By combining satellite and acoustic tracking of marine species like the
   sunfish, BioTrack is uncovering key patterns in biodiversity and making animal-movement
   data accessible to resource managers.
 tags:
-- method.tracking
+- method.Tracking
 title: Tracking Ocean Sunfish to Map Marine Biodiversity Hotspots
 ---
 

@@ -7,9 +7,9 @@ links:
 summary: Search, download, visualize, and analyze real-time, delayed-mode, and historical
   MBON biological observations alongside physical and chemical data.
 tags:
-- place.global
-- type.data
-- type.portal
+- place.Global
+- type.Data
+- type.Portal
 title: MBON Data Portal
 weight: 3
 ---

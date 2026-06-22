@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 1600 893"
+   width="1600"
+   height="893"
+   version="1.1"
+   id="svg12"
+   sodipodi:docname="methods-hotspots.svg"
+   inkscape:version="1.4.2 (ebf0e940, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs12" />
+  <sodipodi:namedview
+     id="namedview12"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1"
+     inkscape:cx="740"
+     inkscape:cy="487"
+     inkscape:window-width="1472"
+     inkscape:window-height="891"
+     inkscape:window-x="0"
+     inkscape:window-y="37"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg12" />
+  <!-- background illustration -->
+  <image
+     href="methods-illustration.png"
+     x="0"
+     y="0"
+     width="1600"
+     height="893"
+     preserveAspectRatio="xMidYMid meet"
+     id="image1" />
+  <!-- hotspot markers — drag circles in Inkscape, read off cx/cy,
+       then convert back: x% = cx/1600*100, y% = cy/893*100 -->
+  <!-- remote-sensing: x=65% y=5% -->
+  <circle
+     id="remote-sensing"
+     cx="822"
+     cy="152.7"
+     r="14"
+     fill="#f97316"
+     fill-opacity="0.85"
+     stroke="#ffffff"
+     stroke-width="2.5" />
+  <!-- traditional: x=63% y=26% -->
+  <circle
+     id="traditional"
+     cx="1052"
+     cy="242.2"
+     r="14"
+     fill="#22d3ee"
+     fill-opacity="0.85"
+     stroke="#ffffff"
+     stroke-width="2.5" />
+  <!-- acoustics: x=23% y=67% -->
+  <circle
+     id="acoustics"
+     cx="677"
+     cy="558.29999"
+     r="14"
+     fill="#a78bfa"
+     fill-opacity="0.85"
+     stroke="#ffffff"
+     stroke-width="2.5" />
+  <!-- tracking: x=47% y=60% -->
+  <circle
+     id="tracking"
+     cx="1125"
+     cy="639.79999"
+     r="14"
+     fill="#34d399"
+     fill-opacity="0.85"
+     stroke="#ffffff"
+     stroke-width="2.5" />
+  <!-- genomics: x=62% y=40% -->
+  <circle
+     id="genomics"
+     cx="1262"
+     cy="360.20001"
+     r="14"
+     fill="#f472b6"
+     fill-opacity="0.85"
+     stroke="#ffffff"
+     stroke-width="2.5" />
+  <!-- indicators: x=93% y=48% -->
+  <circle
+     id="indicators"
+     cx="1528"
+     cy="221.60001"
+     r="14"
+     fill="#fbbf24"
+     fill-opacity="0.85"
+     stroke="#ffffff"
+     stroke-width="2.5" />
+  <text
+     x="1488.0"
+     y="456.6"
+     text-anchor="middle"
+     font-family="monospace"
+     font-size="13"
+     font-weight="bold"
+     fill="#fff"
+     paint-order="stroke"
+     stroke="#000"
+     stroke-width="3"
+     id="text11">Indicators  Data</text>
+  <text
+     x="1488.0"
+     y="470.6"
+     text-anchor="middle"
+     font-family="monospace"
+     font-size="11"
+     fill="#ddd"
+     paint-order="stroke"
+     stroke="#000"
+     stroke-width="2"
+     id="text12">93%, 48%</text>
+</svg>

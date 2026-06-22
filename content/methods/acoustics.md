@@ -6,7 +6,7 @@ summary: Passive acoustic monitoring listens to the soundscape of the sea; activ
   continuously, day and night.
 banner: img/working-groups/biosound-hero.jpg
 tags:
-- method.acoustics
+- method.Acoustics
 ---
 
 Sound travels efficiently through water, making acoustics one of the most powerful remote-sensing tools available for the ocean interior. MBON's acoustics working group — operating under the **BioSound** thematic node — develops standards and products for both passive and active acoustic monitoring.

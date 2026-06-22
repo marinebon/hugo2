@@ -6,10 +6,10 @@ links:
   url: https://noaa-onms.github.io/cinms/
 summary: Interactive ecosystem infographics for Channel Islands National Marine Sanctuary.
 tags:
-- place.us
-- type.infographic
-- org.nms
-- type.instance
+- place.US
+- type.Infographic
+- org.NMS
+- type.Instance
 title: CINMS Infographics
 weight: 7
 ---

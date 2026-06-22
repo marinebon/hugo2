@@ -2,9 +2,9 @@
 banner: img/news/2017-08-seascapes.jpeg
 date: '2017-08-01'
 tags:
-- topic.research
-- topic.science
-- method.remote-sensing
+- topic.Research
+- topic.Science
+- method.Remote-Sensing
 title: MBON and AOML Characterize Seascapes Biogeographic Regions to Understand Phytoplankton
   Assemblages in the Florida Keys National Marine Sanctuary
 ---

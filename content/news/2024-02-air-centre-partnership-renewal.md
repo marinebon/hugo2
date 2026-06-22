@@ -4,9 +4,9 @@ date: '2024-01-25'
 summary: MBON and the AIR Centre renew their partnership to continue joint capacity
   building, data sharing, and collaborative research across the Atlantic and beyond.
 tags:
-- org.air-centre
-- topic.partnership
-- org.mbon
+- org.AIR-Centre
+- topic.Partnership
+- org.MBON
 title: AIR Centre Partnership Renewal
 ---
 
