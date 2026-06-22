@@ -1,0 +1,34 @@
+{{/* Methods band. Reads data/methods.yaml for hotspot configuration.
+     Placed between the hero and the network globe on the homepage. */}}
+<section class="methods-band">
+  <div class="container methods-band__inner">
+
+    <div class="methods-band__copy">
+      <span class="eyebrow eyebrow--rule eyebrow--ondark">How we observe</span>
+      <h2 style="font:var(--type-h2);font-size:clamp(1.75rem,2.6vw,2.5rem);color:#fff;margin:var(--space-3) 0 var(--space-4);">Methods for a connected ocean record</h2>
+      <p style="color:var(--text-on-dark-muted);max-width:42ch;margin-bottom:var(--space-5);">MBON advances modern observing approaches — from satellite pixels to single molecules of DNA — extending traditional surveys across space and time. Hover any hotspot to learn more.</p>
+      <a class="btn btn--action" href="{{ "methods" | relURL }}">Explore all methods <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+
+    <div class="methods-scene" aria-label="Interactive ocean methods diagram">
+      <img class="methods-scene__img" src="{{ "img/methods/methods-illustration.png" | relURL }}"
+           alt="Scientific cross-section illustration showing ocean observation methods from satellite to seafloor">
+      {{ range hugo.Data.methods }}
+      <div class="method-spot{{ if lt .y 30 }} method-spot--top{{ end }}"
+           style="left:{{ .x }}%;top:{{ .y }}%;"
+           data-method-id="{{ .id }}">
+        <button class="method-spot__pin" aria-describedby="tip-{{ .id }}" aria-expanded="false">
+          <span class="sr-only">{{ .label }}</span>
+        </button>
+        <span class="method-spot__label" aria-hidden="true">{{ .label }}</span>
+        <div class="method-spot__tip" id="tip-{{ .id }}" role="tooltip" hidden>
+          <strong>{{ .label }}</strong>
+          <p>{{ .summary }}</p>
+          <a href="{{ .url | relURL }}">Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,50 @@
+{{ define "main" }}
+<main>
+  <section class="page-header">
+    <div class="page-header__inner">
+      <span class="eyebrow eyebrow--rule eyebrow--ondark">How we observe</span>
+      <h1>Methods for a connected ocean record</h1>
+      <p class="page-header__lead">{{ .Params.summary }}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow eyebrow--rule">Observing approaches</span>
+      <h2 style="margin:var(--space-2) 0 var(--space-6);">From pixels to molecules</h2>
+      <div class="grid-3">
+        {{ range sort (where site.RegularPages "Section" "methods") "Params.weight" }}
+        <a class="card" href="{{ .RelPermalink }}">
+          {{ with .Params.banner }}
+          <div class="card__media">
+            <img src="{{ . | relURL }}" alt="">
+          </div>
+          {{ else }}
+          <div class="card__media card__media--placeholder"></div>
+          {{ end }}
+          <div class="card__body">
+            <div class="card__tags">
+              {{ range .Params.tags }}
+              {{ partial "tag.html" . }}
+              {{ end }}
+            </div>
+            <h3 class="card__title">{{ .Title }}</h3>
+            <p class="card__summary">{{ .Params.summary }}</p>
+            <div class="card__foot">Read more <i class="fas fa-arrow-right" aria-hidden="true"></i></div>
+          </div>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint">
+    <div class="container" style="max-width:760px;">
+      <span class="eyebrow eyebrow--rule">The bigger picture</span>
+      <h2 style="margin:var(--space-2) 0 var(--space-4);">Why multiple methods?</h2>
+      <p style="font-size:var(--text-lg);color:var(--text-body);margin-bottom:var(--space-5);">No single method sees the whole ocean. Satellites resolve surface patterns across millions of square kilometers but cannot count individual animals. Trawl surveys identify species precisely but cover only a tiny fraction of the sea at any moment. eDNA reveals who is present but not what they are doing. Acoustic tags reveal movement but not abundance. MBON integrates all of these streams so their strengths compound and their blind spots shrink.</p>
+      <a class="btn btn--action" href="{{ "about" | relURL }}">About MBON <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+  </section>
+</main>
+{{ end }}

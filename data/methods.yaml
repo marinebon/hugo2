@@ -1,0 +1,71 @@
+- id: remote-sensing
+  label: Remote Sensing
+  icon: satellite
+  x: 62
+  y: 8
+  summary: >
+    Satellites and aerial sensors map ocean color, sea surface temperature, and
+    habitat extent across millions of square kilometers — resolving patterns no
+    ship survey could match at that scale. Seascapes products blend multi-sensor
+    imagery into dynamic biodiversity indicators.
+  url: /methods/remote-sensing/
+
+- id: traditional
+  label: Traditional Surveys
+  icon: ship
+  x: 22
+  y: 20
+  summary: >
+    Trawl surveys, visual transects, and ship-based acoustic surveys remain the
+    calibration backbone for modern methods. They are labor-intensive and costly at
+    large scale — which is exactly why MBON invests in genomic, acoustic, and
+    remote-sensing approaches that can extend coverage between cruises.
+  url: /methods/traditional/
+
+- id: acoustics
+  label: Acoustics
+  icon: wave-square
+  x: 48
+  y: 42
+  summary: >
+    Passive acoustic monitoring (PAM) listens for biological and anthropogenic sound to
+    infer biodiversity and ecosystem health. Active acoustics (echosounders, ADCPs)
+    enumerate fish and zooplankton biomass, covering the water column continuously,
+    day and night.
+  url: /methods/acoustics/
+
+- id: tracking
+  label: Tracking
+  icon: location-dot
+  x: 15
+  y: 55
+  summary: >
+    Electronic tags on fish, turtles, marine mammals, and seabirds record fine-scale
+    movements, diving behavior, and physiology. Acoustic and satellite telemetry build
+    3-D pictures of how animals use ocean habitat — essential for understanding
+    connectivity and response to climate change.
+  url: /methods/tracking/
+
+- id: genomics
+  label: Genomics & eDNA
+  icon: dna
+  x: 80
+  y: 50
+  summary: >
+    Water and sediment samples contain DNA shed by every organism that passed through.
+    Metabarcoding and metagenomics decode this environmental DNA to produce species
+    inventories from a single water bottle — faster and cheaper than visual surveys
+    for many taxa.
+  url: /methods/genomics/
+
+- id: indicators
+  label: Indicators & Data
+  icon: chart-line
+  x: 55
+  y: 82
+  summary: >
+    Raw observations become decision-relevant information through synthesis into
+    Essential Ocean Variables and Essential Biodiversity Variables. MBON's indicators
+    and data-management working groups build reproducible pipelines that flow from
+    every node into OBIS and the global biodiversity knowledge graph (FAIR data).
+  url: /methods/indicators/

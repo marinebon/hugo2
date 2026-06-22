@@ -97,3 +97,114 @@ a.card:hover .card__media img{ transform:scale(1.04); }
 .card__foot{ margin-top:auto; display:flex; align-items:center; gap:.5em; font-family:var(--font-mono); font-size:var(--text-xs); font-weight:var(--fw-semibold); text-transform:uppercase; letter-spacing:var(--ls-label); color:var(--accent-hover); }
 .card__foot i{ transition:transform var(--dur-fast) var(--ease-out); }
 a.card:hover .card__foot i{ transform:translateX(3px); }
+
+/* ---- Methods band ----------------------------------------------------- */
+.methods-band{
+  background:var(--abyss-900);
+  padding:var(--space-10) 0;
+}
+.methods-band__inner{
+  display:grid;
+  grid-template-columns:1fr 2.4fr;
+  gap:var(--space-8);
+  align-items:center;
+}
+@media(max-width:900px){
+  .methods-band__inner{ grid-template-columns:1fr; }
+}
+
+/* scene: illustration container with absolutely-placed hotspots */
+.methods-scene{ position:relative; border-radius:var(--radius-lg); overflow:hidden; }
+.methods-scene__img{ width:100%; display:block; }
+
+/* individual hotspot wrapper — position set via inline style */
+.method-spot{
+  position:absolute;
+  transform:translate(-50%,-50%);
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* pulsing ring pin */
+.method-spot__pin{
+  width:1.25rem; height:1.25rem; border-radius:50%;
+  background:var(--teal-300); border:2px solid rgba(255,255,255,.85);
+  cursor:pointer; padding:0;
+  flex-shrink:0;
+  animation:spot-pulse 2.6s ease-in-out infinite;
+  transition:background var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+}
+.method-spot__pin:hover,
+.method-spot__pin:focus-visible{
+  background:var(--coral-500);
+  transform:scale(1.2);
+  outline:none;
+  box-shadow:var(--shadow-focus);
+}
+@keyframes spot-pulse{
+  0%,100%{ box-shadow:0 0 0 0 rgba(116,200,214,.55); }
+  50%     { box-shadow:0 0 0 10px rgba(116,200,214,0); }
+}
+
+/* label: always visible below the pin */
+.method-spot__label{
+  display:block;
+  margin-top:.25rem;
+  font-family:var(--font-mono);
+  font-size:.58rem;
+  font-weight:var(--fw-semibold);
+  text-transform:uppercase;
+  letter-spacing:var(--ls-wide);
+  color:#fff;
+  text-align:center;
+  white-space:nowrap;
+  text-shadow:0 1px 4px rgba(0,0,0,.9), 0 0 8px rgba(0,0,0,.6);
+  pointer-events:none;
+}
+
+/* tooltip card */
+.method-spot__tip{
+  position:absolute;
+  bottom:calc(100% + .6rem);
+  left:50%;
+  transform:translateX(-50%);
+  width:220px;
+  background:var(--abyss-800);
+  border:1px solid var(--teal-600);
+  border-radius:var(--radius-md);
+  padding:var(--space-3) var(--space-4);
+  color:var(--text-on-dark);
+  box-shadow:0 8px 28px rgba(0,0,0,.65);
+  z-index:20;
+  pointer-events:auto;
+}
+/* flip card below pin when hotspot is near the top of image */
+.method-spot--top .method-spot__tip{
+  bottom:auto;
+  top:calc(100% + .6rem);
+}
+.method-spot__tip[hidden]{ display:none; }
+.method-spot__tip:not([hidden]){ display:block; }
+.method-spot__tip strong{
+  display:block;
+  color:#fff;
+  font-size:var(--text-sm);
+  margin-bottom:.35rem;
+}
+.method-spot__tip p{
+  font-size:var(--text-xs);
+  color:var(--text-on-dark-muted);
+  margin:0 0 .5rem;
+  line-height:1.5;
+}
+.method-spot__tip a{
+  font-size:var(--text-xs);
+  color:var(--teal-300);
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:.35em;
+}
+.method-spot__tip a:hover{ color:var(--aqua-200); text-decoration:underline; }

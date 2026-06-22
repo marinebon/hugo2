@@ -1,0 +1,55 @@
+{{ define "main" }}
+<main>
+  <section class="page-header">
+    <div class="page-header__inner">
+      <a href="{{ "methods" | relURL }}" style="display:inline-flex;gap:8px;align-items:center;color:var(--teal-300);font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:var(--ls-wide);text-transform:uppercase;text-decoration:none;margin-bottom:var(--space-5);">
+        <i class="fas fa-arrow-left"></i> Methods
+      </a>
+      <h1>{{ .Title }}</h1>
+      <p class="page-header__lead">{{ .Params.summary }}</p>
+      <div class="card__tags" style="margin-top:var(--space-4);">
+        {{ range .Params.tags }}
+        {{ partial "tag.html" . }}
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="display:grid;grid-template-columns:1.5fr 1fr;gap:var(--space-8);align-items:start;">
+      <div style="max-width:62ch;">{{ .Content }}</div>
+      <aside>
+        {{ with .Params.banner }}
+        <div style="border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);margin-bottom:var(--space-5);">
+          <img src="{{ . | relURL }}" alt="" style="width:100%;height:220px;object-fit:cover;">
+        </div>
+        {{ end }}
+        <a class="btn btn--action btn--full" href="{{ "products" | relURL }}" style="margin-bottom:var(--space-3);">
+          View related products <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+        <a class="btn btn--outline btn--full" href="{{ "methods" | relURL }}">
+          All methods <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </aside>
+    </div>
+  </section>
+
+  {{ $others := where (where site.RegularPages "Section" "methods") "Title" "ne" .Title }}
+  {{ if $others }}
+  <section class="section section--tint">
+    <div class="container">
+      <span class="eyebrow eyebrow--rule">Other methods</span>
+      <h2 style="margin:var(--space-2) 0 var(--space-6);">More ways MBON observes</h2>
+      <div class="grid-auto">
+        {{ range sort $others "Params.weight" }}
+        <a class="node-link" href="{{ .RelPermalink }}">
+          <div class="node-link__title"><span class="dot"></span><strong>{{ .Title }}</strong></div>
+          <p>{{ .Params.summary }}</p>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+</main>
+{{ end }}
