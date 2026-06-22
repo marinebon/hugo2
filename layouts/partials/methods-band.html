@@ -21,7 +21,7 @@
           <span class="sr-only">{{ .label }}</span>
         </button>
         <span class="method-spot__label" aria-hidden="true">{{ .label }}</span>
-        <div class="method-spot__tip" id="tip-{{ .id }}" role="tooltip" hidden>
+        <div class="method-spot__tip" id="tip-{{ .id }}" role="tooltip">
           <strong>{{ .label }}</strong>
           <p>{{ .summary }}</p>
           <a href="{{ .url | relURL }}">Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i></a>

@@ -164,8 +164,9 @@ a.card:hover .card__foot i{ transform:translateX(3px); }
   pointer-events:none;
 }
 
-/* tooltip card */
+/* tooltip card — hidden by default, shown by CSS hover/focus or JS class */
 .method-spot__tip{
+  display:none;
   position:absolute;
   bottom:calc(100% + .6rem);
   left:50%;
@@ -185,8 +186,14 @@ a.card:hover .card__foot i{ transform:translateX(3px); }
   bottom:auto;
   top:calc(100% + .6rem);
 }
-.method-spot__tip[hidden]{ display:none; }
-.method-spot__tip:not([hidden]){ display:block; }
+/* show tip on hover/focus (desktop) or JS-toggled class (mobile) */
+.method-spot:hover .method-spot__tip,
+.method-spot:focus-within .method-spot__tip,
+.method-spot.is-active .method-spot__tip{ display:block; }
+/* elevate the entire spot so its tip clears sibling pins */
+.method-spot:hover,
+.method-spot:focus-within,
+.method-spot.is-active{ z-index:30; }
 .method-spot__tip strong{
   display:block;
   color:#fff;

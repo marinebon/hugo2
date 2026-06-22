@@ -1,4 +1,5 @@
-/* methods.js — hotspot interactivity for the methods-band illustration */
+/* methods.js — hotspot interactivity for the methods-band illustration.
+   Desktop: CSS :hover handles show/hide. JS only needed for mobile click-toggle. */
 (function () {
   'use strict';
 
@@ -9,29 +10,27 @@
     function closeAll(except) {
       spots.forEach(function (s) {
         if (s === except) return;
-        const tip = s.querySelector('.method-spot__tip');
+        s.classList.remove('is-active');
         const btn = s.querySelector('.method-spot__pin');
-        if (tip) tip.hidden = true;
         if (btn) btn.setAttribute('aria-expanded', 'false');
       });
     }
 
     spots.forEach(function (spot) {
       const pin = spot.querySelector('.method-spot__pin');
-      const tip = spot.querySelector('.method-spot__tip');
-      if (!pin || !tip) return;
+      if (!pin) return;
 
       pin.addEventListener('click', function (e) {
         e.stopPropagation();
-        const isOpen = !tip.hidden;
+        const isOpen = spot.classList.contains('is-active');
         closeAll(isOpen ? null : spot);
-        tip.hidden = isOpen;
+        spot.classList.toggle('is-active', !isOpen);
         pin.setAttribute('aria-expanded', String(!isOpen));
       });
 
       pin.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') {
-          tip.hidden = true;
+          spot.classList.remove('is-active');
           pin.setAttribute('aria-expanded', 'false');
           pin.focus();
         }
