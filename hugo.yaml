@@ -3,6 +3,8 @@ locale: en-us
 title: Marine Biodiversity Observation Network
 summaryLength: 40
 enableEmoji: false
+# build future-dated content so upcoming Events (date in the future) are published
+buildFuture: true
 
 pagination:
   pagerSize: 9
