@@ -374,3 +374,49 @@ How should adding a Paper work?
                                   │   (manual fallback)                       │
                                   └───────────────────────────────────────────┘
 
+
+⏺ Done — all five parts are implemented, verified with clean Hugo builds, committed, and pushed to main.
+
+  **What shipped**
+
+  **Part 1 — Events content type**. content/events.md split into 13 per-event files under a new content/events/ section, with layouts/events/{list,single}.html, a range-aware event-date.html formatter, and
+  card-event.html. News is now a navbar dropdown (All News + Events). All dates display faithfully (Nov 1–4, 2022, October 2021, 2016–2018).
+
+  **Part 2 — Issue Forms**. .github/ISSUE_TEMPLATE/ forms for News, Event, Paper, Tool, plus an Edit form and chooser config. Contributors pick tags from dropdowns (no facet.Value typing), drag-drop images, and
+  get inline formatting help. Each auto-labels content:<type>.
+
+  **Part 3 — Action + builder**. scripts/issue_to_content.py (tested for all five types) builds the Markdown file, maps friendly labels → facet.Value tags, imports dragged-in images, auto-tags methods, and
+  fetches Crossref metadata for papers given a DOI. .github/workflows/content-from-issue.yml parses the form, runs the script, and opens a PR. buildFuture: true so upcoming events publish.
+
+  **Part 4 — On-page links**. Every content page gets a ✏️  Suggest an edit (pre-filled issue) + Edit on GitHub bar (wired once in baseof.html), and the News/Events/Tools/Papers list pages get + Add buttons.
+
+  **Part 5 — README**. Rewritten to correct the stale architecture and document the full contributor and maintainer procedures.
+
+  **One manual setup step for the maintainer**
+
+  For the workflow to open PRs with the default token, enable in repo Settings → Actions → General → Workflow permissions:
+  - "Read and write permissions", and
+  - "Allow GitHub Actions to create and approve pull requests"
+
+  Without that toggle, create-pull-request fails with a permissions error. (The forms, on-page links, and Events type all work regardless.)
+
+  **Note on your in-progress edits**
+
+  I left your staged globe/hero/layout.css/_claude changes (the "reduce right-panel height" work) untouched and uncommitted — none of my commits include them, so they're still yours to finish.
+
+  One thing worth deciding when you can test it live: the edit form's auto-apply only triggers when someone pastes a full ```markdown block; plain-language edit requests are left for a maintainer. If you'd prefer the on-page "Suggest an edit" to always prefill the current page content for editing, that's a worthwhile follow-up — but it runs into GitHub's URL-length limit on long pages, which is why I didn't default to it.
+
+
+### tag fix
+
+Why are all the news tags of incorrect format, eg "Place. pole to pole" vs "place.Pole-to-Pole" and not synchronized the tags page? Clean this up. Why also are the tags in the tags page not sorted alphabetically? [Image #3] [Image #4]
+
+⏺ All fixes applied. Here's the full summary:
+
+  Root causes:
+  1. card-news.html called humanize (index . 0) on the raw full string "place.Pole-to-Pole" → the dot becomes a period with a space, giving "Place. pole to pole". Fixed to partial "tag.html" (index . 0).
+  2. news/single.html had the same bug — humanize . on full tag strings in the banner. Fixed to partial "tag.html" ..
+  3. tag.html emitted tag--Place (uppercase) when given a title-cased input; CSS only defines tag--place. Fixed with $facet | lower.
+  4. Tags page had no dedicated template, falling back to _default/list.html with unsorted .Pages. Created layouts/tags/terms.html using .Pages.ByTitle for alphabetical order and rendering each tag via the
+  tag.html partial (colored chips linking to their tag page).
+  5. Bonus: humanize was ordinalizing years ("2016th"). Fixed with a numeric check — pure digit values skip humanize and display as-is.

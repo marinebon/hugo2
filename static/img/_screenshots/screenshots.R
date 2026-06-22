@@ -9,29 +9,30 @@ librarian::shelf(webshot2, quiet = TRUE)
 base_url <- "http://localhost:1313"
 
 pages <- list(
-  home     = "",
-  network  = "network",
+  home = "",
+  network = "network",
   products = "products",
-  news     = "news",
-  about    = "about",
-  contact  = "contact",
-  events   = "events",
-  search   = "search"
+  news = "news",
+  about = "about",
+  contact = "contact",
+  events = "events",
+  search = "search",
+  tags = "tags"
 )
 
 out_dir <- "static/img/_screenshots"
 
 for (slug in names(pages)) {
   path <- pages[[slug]]
-  url  <- paste0(base_url, "/", path)
+  url <- paste0(base_url, "/", path)
   file <- file.path(out_dir, paste0(slug, ".png"))
   message("screenshotting ", url, " → ", file)
   webshot2::webshot(
-    url    = url,
-    file   = file,
+    url = url,
+    file = file,
     vwidth = 1440,
     vheight = 900,
-    delay  = 1.5    # allow JS (globe, etc.) to settle
+    delay = 1.5 # allow JS (globe, etc.) to settle
   )
 }
 
