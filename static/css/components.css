@@ -117,9 +117,10 @@ a.card:hover .card__foot i{ transform:translateX(3px); }
   .methods-band__inner{ grid-template-columns:1fr; }
 }
 
-/* scene: illustration container with absolutely-placed hotspots */
-.methods-scene{ position:relative; border-radius:var(--radius-lg); overflow:hidden; }
-.methods-scene__img{ width:100%; display:block; }
+/* scene: illustration container with absolutely-placed hotspots.
+   overflow must stay visible so tooltip cards can escape the image boundary. */
+.methods-scene{ position:relative; }
+.methods-scene__img{ width:100%; display:block; border-radius:var(--radius-lg); }
 
 /* individual hotspot wrapper — position set via inline style */
 .method-spot{
@@ -189,6 +190,17 @@ a.card:hover .card__foot i{ transform:translateX(3px); }
 .method-spot--top .method-spot__tip{
   bottom:auto;
   top:calc(100% + .6rem);
+}
+/* anchor card to the right edge of pin for right-edge hotspots */
+.method-spot--right .method-spot__tip{
+  left:auto;
+  right:0;
+  transform:none;
+}
+/* anchor card to the left edge of pin for left-edge hotspots */
+.method-spot--left .method-spot__tip{
+  left:0;
+  transform:none;
 }
 /* show tip on hover/focus (desktop) or JS-toggled class (mobile) */
 .method-spot:hover .method-spot__tip,

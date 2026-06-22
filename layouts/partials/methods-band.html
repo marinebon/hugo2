@@ -14,7 +14,10 @@
       <img class="methods-scene__img" src="{{ "img/methods/methods-illustration.png" | relURL }}"
            alt="Scientific cross-section illustration showing ocean observation methods from satellite to seafloor">
       {{ range hugo.Data.methods }}
-      <div class="method-spot{{ if lt .y 30 }} method-spot--top{{ end }}"
+      {{ $isTop   := lt .y 30 }}
+      {{ $isRight := gt .x 75 }}
+      {{ $isLeft  := lt .x 25 }}
+      <div class="method-spot{{ if $isTop }} method-spot--top{{ end }}{{ if $isRight }} method-spot--right{{ end }}{{ if $isLeft }} method-spot--left{{ end }}"
            style="left:{{ .x }}%;top:{{ .y }}%;"
            data-method-id="{{ .id }}">
         <button class="method-spot__pin" aria-describedby="tip-{{ .id }}" aria-expanded="false">
