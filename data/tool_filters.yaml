@@ -29,4 +29,5 @@
     - { value: Acoustics,      name: Acoustics }
     - { value: Tracking,       name: Tracking }
     - { value: Indicators,     name: Indicators }
+    - { value: Benthic,        name: Benthic }
     - { value: Traditional,    name: Traditional }

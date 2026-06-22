@@ -10,8 +10,19 @@
     imagery into dynamic biodiversity indicators.
   url: /methods/remote-sensing/
 
+- id: benthic
+  label: Benthic Surveys
+  icon: border-all
+  x: 14
+  y: 46
+  summary: >
+    Rocky-shore and sandy-beach transects, photo quadrats, and intertidal surveys
+    record coastal biodiversity — from barnacles and algae to shorebirds —
+    using standardized protocols that make observations comparable across ocean basins.
+  url: /methods/benthic/
+
 - id: traditional
-  label: Traditional Surveys
+  label: Traditional At-Sea Surveys
   icon: ship
   x: 66
   y: 27

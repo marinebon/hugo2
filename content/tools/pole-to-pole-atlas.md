@@ -12,6 +12,7 @@ summary: Harmonized rocky-shore and sandy-beach biodiversity observations from C
   to Patagonia, standardized for cross-regional comparison and open access via OBIS.
 tags:
 - tool.Protocol
+- method.Benthic
 - place.Americas
 - org.OBIS
 title: MBON Pole to Pole Data Atlas
