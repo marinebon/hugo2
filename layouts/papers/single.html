@@ -1,0 +1,55 @@
+{{ define "main" }}
+<main>
+  <section class="page-header">
+    <div class="page-header__inner">
+      <a href="{{ "papers" | relURL }}" style="display:inline-flex;gap:8px;align-items:center;color:var(--teal-300);font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:var(--ls-wide);text-transform:uppercase;text-decoration:none;margin-bottom:var(--space-5);">
+        <i class="fas fa-arrow-left"></i> Papers
+      </a>
+      <h1 style="max-width:72ch;">{{ .Title }}</h1>
+      <div class="card__tags" style="margin-top:var(--space-4);">
+        {{ range .Params.tags }}{{ partial "tag.html" . }}{{ end }}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width:760px;">
+
+      {{/* Citation block */}}
+      <div class="citation-block">
+        {{ with .Params.authors }}
+        <p class="citation-block__authors">
+          {{ range $i, $a := . }}{{ if $i }}, {{ end }}{{ $a }}{{ end }}
+          ({{ $.Params.year }}).
+        </p>
+        {{ end }}
+        <p class="citation-block__ref">
+          <strong>{{ .Title }}</strong>
+          {{ with .Params.journal }}. <em>{{ . }}</em>{{ end }}.
+          {{ with .Params.doi }}
+            <a href="https://doi.org/{{ . }}" target="_blank" rel="noopener" class="citation-block__doi">
+              doi:{{ . }} <i class="fas fa-arrow-up-right-from-square" aria-hidden="true" style="font-size:.7em;"></i>
+            </a>
+          {{ end }}
+        </p>
+        {{ with .Params.paper_url }}
+          <p><a class="btn btn--outline btn--sm" href="{{ . }}" target="_blank" rel="noopener">
+            <i class="fas fa-file-pdf" aria-hidden="true"></i> Full text / PDF
+          </a></p>
+        {{ end }}
+      </div>
+
+      {{ with .Params.abstract }}
+      <div style="margin-top:var(--space-7);border-top:1px solid var(--border);padding-top:var(--space-6);">
+        <span class="eyebrow eyebrow--rule" style="margin-bottom:var(--space-4);display:block;">Abstract</span>
+        <p style="max-width:68ch;line-height:1.7;color:var(--text-body);">{{ . }}</p>
+      </div>
+      {{ end }}
+
+      {{/* COinS for Zotero */}}
+      {{ partial "coins.html" . }}
+
+    </div>
+  </section>
+</main>
+{{ end }}

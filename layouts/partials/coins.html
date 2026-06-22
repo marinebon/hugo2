@@ -1,0 +1,15 @@
+{{/* COinS span — exposes bibliographic metadata so Zotero can detect and import this citation.
+     See: https://www.zotero.org/support/dev/exposing_metadata/coins */}}
+{{ $rft := slice
+    "ctx_ver=Z39.88-2004"
+    "rft_val_fmt=info:ofi/fmt:kev:mtx:journal"
+    "rft.genre=article"
+    (printf "rft.atitle=%s" (.Title | urlquery))
+    (printf "rft.jtitle=%s" (.Params.journal | default "" | urlquery))
+    (printf "rft.date=%s"   (.Params.year    | default "" | string))
+    (printf "rft.doi=%s"    (.Params.doi     | default "" | urlquery))
+}}
+{{ range .Params.authors }}
+  {{ $rft = $rft | append (printf "rft.au=%s" (. | urlquery)) }}
+{{ end }}
+<span class="Z3988" title="{{ delimit $rft "&" }}"></span>

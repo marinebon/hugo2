@@ -1,0 +1,30 @@
+- facet: method
+  label: Method
+  values:
+  - name: Genomics
+    value: Genomics
+  - name: Remote Sensing
+    value: Remote-Sensing
+  - name: Acoustics
+    value: Acoustics
+  - name: Tracking
+    value: Tracking
+  - name: Indicators
+    value: Indicators
+  - name: Traditional
+    value: Traditional
+- facet: year
+  label: Year
+  values:
+  - name: '2021'
+    value: '2021'
+  - name: '2020'
+    value: '2020'
+  - name: '2019'
+    value: '2019'
+  - name: '2018'
+    value: '2018'
+  - name: '2017'
+    value: '2017'
+  - name: '2016'
+    value: '2016'

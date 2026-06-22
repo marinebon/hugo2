@@ -1,0 +1,63 @@
+{{ define "main" }}
+<main>
+  <section class="page-header">
+    <div class="page-header__inner">
+      <span class="eyebrow eyebrow--rule eyebrow--ondark">Research &amp; publications</span>
+      <h1>MBON Papers</h1>
+      <p class="page-header__lead">{{ .Params.summary }}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="filter-bar" data-paper-filter>
+        {{ range hugo.Data.paper_filters }}
+          {{ $facet := .facet }}
+          <div class="filter-group">
+            <span class="filter-group__label" style="color:var(--facet-{{ $facet }}, var(--text-muted));">{{ .label }}</span>
+            <div class="filter-group__btns">
+              {{ range .values }}
+                <button class="filter-btn tag tag--{{ $facet }}" data-facet="{{ $facet }}" data-value="{{ .value }}">{{ .name }}</button>
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+        <div class="filter-foot">
+          <span class="filter-count" data-paper-count></span>
+          <button class="btn btn--ghost btn--sm" data-paper-clear style="display:none;">
+            <i class="fas fa-xmark" aria-hidden="true"></i> Clear filters
+          </button>
+        </div>
+      </div>
+
+      <ul class="paper-list">
+        {{ range sort (where site.RegularPages "Section" "papers") "Params.year" "desc" }}
+        <li class="paper-row" data-paper data-tags="{{ delimit .Params.tags " " }}">
+          <span class="paper-row__year">{{ .Params.year }}</span>
+          <div class="paper-row__body">
+            <a class="paper-row__title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <span class="paper-row__meta">
+              {{ with .Params.authors }}
+                {{ index . 0 }}{{ if gt (len .) 1 }} et al.{{ end }}
+              {{ end }}
+              {{ with .Params.journal }}<em class="paper-row__journal"> · {{ . }}</em>{{ end }}
+            </span>
+            <div class="paper-row__tags">
+              {{ range .Params.tags }}{{ partial "tag.html" . }}{{ end }}
+            </div>
+          </div>
+        </li>
+        {{ end }}
+      </ul>
+
+      <div data-paper-empty style="display:none;text-align:center;padding:var(--space-9);color:var(--text-muted);">
+        <i class="fas fa-file-circle-xmark" style="font-size:32px;opacity:.4;" aria-hidden="true"></i>
+        <p style="margin-top:var(--space-4);">No papers match those filters.</p>
+      </div>
+
+    </div>
+  </section>
+</main>
+{{ end }}
+{{ define "scripts" }}<script src="{{ "js/papers-filter.js" | relURL }}" defer></script>{{ end }}
