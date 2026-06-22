@@ -1,8 +1,8 @@
 /* ============================================================================
    MBON tools filter — vanilla JS. Filter cards by faceted tags.
-   Each [data-tool] card carries data-tags="place.south-florida type.dashboard".
+   Each [data-tool] card carries data-tags="place.Global tool.Portal".
    Each .filter-btn carries data-facet + data-value. AND across facets,
-   OR within a facet. 
+   OR within a facet. URL param ?tool=Portal pre-activates that filter.
    ========================================================================== */
 (function () {
   document.addEventListener('DOMContentLoaded', function () {
@@ -49,6 +49,14 @@
     if (clearEl) clearEl.addEventListener('click', function () {
       sel = {}; btns.forEach(function (b) { b.classList.remove('is-active'); }); apply();
     });
-    apply();
+
+    // Pre-activate from URL param: ?tool=Portal
+    var urlTool = new URLSearchParams(window.location.search).get('tool');
+    if (urlTool) {
+      var preBtn = bar.querySelector('[data-facet="tool"][data-value="' + urlTool + '"]');
+      if (preBtn) preBtn.click();
+    } else {
+      apply();
+    }
   });
 })();

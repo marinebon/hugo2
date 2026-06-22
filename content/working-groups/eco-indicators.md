@@ -1,12 +1,14 @@
 ---
 title: Eco-Indicators
-kind_node: thematic
+aliases:
+- /network/eco-indicators
 since: '2023'
 summary: Linking marine biodiversity observations to ecosystem service indicators for integrated ocean assessment.
+leads:
+- name: TBD
+  org: MBON / NOAA IEA
 tags:
-- topic.Working-Group
-- topic.EOV
-- topic.Ecosystem-Assessment
+- method.Indicators
 ---
 Eco-Indicators focuses on the next step beyond species occurrence: translating biodiversity observations into ecosystem function and service metrics. This working group develops composite indices that integrate physical, chemical, and biological observations to characterize ecosystem state and resilience.
 

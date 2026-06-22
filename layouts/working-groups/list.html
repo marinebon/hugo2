@@ -1,0 +1,44 @@
+{{ define "main" }}
+<main>
+  <section class="page-header">
+    <div class="page-header__inner">
+      <span class="eyebrow eyebrow--rule eyebrow--ondark">Cross-cutting science</span>
+      <h1>Working Groups</h1>
+      <p class="page-header__lead">{{ .Params.summary }}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid-3">
+        {{ range sort site.RegularPages "Params.since" }}
+          {{ if eq .Section "working-groups" }}
+          <div class="feature-row">
+            {{ with .Params.logo }}<img src="{{ . | relURL }}" alt="{{ $.Title }}" style="height:56px;object-fit:contain;margin-bottom:var(--space-3);">{{ end }}
+            <div>
+              <h3 style="margin:0 0 var(--space-2);"><a href="{{ .RelPermalink }}" style="color:var(--text-heading);text-decoration:none;">{{ .Title }}</a></h3>
+              <p style="color:var(--text-body);font-size:var(--text-sm);margin:0 0 var(--space-3);">{{ .Params.summary }}</p>
+              {{ with .Params.leads }}
+              <p style="font-size:var(--text-xs);color:var(--text-muted);font-family:var(--font-mono);margin:0;">
+                Lead{{ if gt (len .) 1 }}s{{ end }}:
+                {{ range . }}{{ .name }}{{ with .org }} · {{ . }}{{ end }}{{ end }}
+              </p>
+              {{ end }}
+            </div>
+          </div>
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint">
+    <div class="container" style="max-width:680px;text-align:center;">
+      <span class="eyebrow eyebrow--rule" style="justify-content:center;margin-bottom:var(--space-4);">Get involved</span>
+      <h2 style="margin:0 0 var(--space-4);">Join a working group</h2>
+      <p style="color:var(--text-body);margin-bottom:var(--space-6);">Working groups are open to all MBON participants. Meetings are held virtually; contact the working group lead to join the next call.</p>
+      <a class="btn btn--action" href="{{ "network/#join" | relURL }}">Connect with MBON <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+  </section>
+</main>
+{{ end }}

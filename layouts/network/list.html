@@ -6,22 +6,38 @@
       <h1>One ocean, observed together.</h1>
       <p class="page-header__lead">{{ .Params.summary }}</p>
     </div>
+    <div class="footer-partners" style="margin-top:var(--space-8);padding-top:var(--space-6);border-top:1px solid rgba(255,255,255,.12);">
+      <div class="footer-partners__inner">
+        <span class="eyebrow eyebrow--rule eyebrow--ondark" style="margin-bottom:var(--space-4);display:block;">Strategic collaborators</span>
+        <div class="partner-strip">
+          {{ range hugo.Data.partners }}
+            <a class="partner-chip" href="{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener">
+              <img src="{{ .logo | relURL }}" alt="{{ .name }}">
+            </a>
+          {{ end }}
+        </div>
+        <div style="margin-top:var(--space-4);">
+          <a class="btn btn--on-photo btn--sm" href="{{ "network/partners" | relURL }}">View all partners <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
   </section>
 
   {{ partial "globe.html" (dict
       "eyebrow" "Explore the nodes"
-      "heading" "Regional & thematic networks"
-      "lead" "Each node monitors its own waters; thematic nodes cut across regions by method. All publish to shared standards so the data interconnects. Select a node to spin the globe.") }}
+      "heading" "Regional networks"
+      "lead" "Each node monitors its own waters and publishes to shared standards so the data interconnects. Select a node to spin the globe.") }}
 
   {{ $regional := where (where site.RegularPages "Section" "network") "Params.kind_node" "regional" }}
-  {{ $thematic := where (where site.RegularPages "Section" "network") "Params.kind_node" "thematic" }}
+  {{ $usa  := where $regional "Params.geo" "USA" }}
+  {{ $intl := where $regional "Params.geo" "International" }}
 
-  <section id="regional" class="section">
+  <section id="regional-usa" class="section">
     <div class="container">
-      <span class="eyebrow eyebrow--rule">Regional MBONs</span>
-      <h2 style="margin:var(--space-2) 0 var(--space-6);">{{ len $regional }} regional networks</h2>
+      <span class="eyebrow eyebrow--rule">USA Nodes</span>
+      <h2 style="margin:var(--space-2) 0 var(--space-6);">{{ len $usa }} regional networks</h2>
       <div class="grid-auto">
-        {{ range $regional }}
+        {{ range $usa.ByTitle }}
           <a class="node-link" href="{{ .RelPermalink }}">
             <div class="node-link__title"><span class="dot"></span><strong>{{ .Title }}</strong></div>
             <p>{{ .Params.summary }}</p>
@@ -31,25 +47,31 @@
     </div>
   </section>
 
-  <section id="thematic" class="section section--tint">
+  <section id="regional-intl" class="section section--tint">
     <div class="container">
-      <span class="eyebrow eyebrow--rule">Thematic MBONs</span>
-      <h2 style="margin:var(--space-2) 0 var(--space-6);">Cross-cutting by method</h2>
-      <div class="grid-3">
-        {{ range $thematic }}
-          <div class="feature-row">
-            {{ with .Params.logo }}<img src="{{ . | relURL }}" alt="{{ $.Title }}">{{ end }}
-            <div>
-              <div class="card__tags" style="margin-bottom:var(--space-2);"><span class="tag tag--tool">Thematic</span></div>
-              <h3 style="margin:0 0 var(--space-2);"><a href="{{ .RelPermalink }}" style="color:var(--text-heading);text-decoration:none;">{{ .Title }}</a></h3>
-              <p style="color:var(--text-body);font-size:var(--text-sm);margin:0;">{{ .Params.summary }}</p>
-            </div>
-          </div>
+      <span class="eyebrow eyebrow--rule">International Nodes</span>
+      <h2 style="margin:var(--space-2) 0 var(--space-6);">{{ len $intl }} international networks</h2>
+      <div class="grid-auto">
+        {{ range $intl.ByTitle }}
+          <a class="node-link" href="{{ .RelPermalink }}">
+            <div class="node-link__title"><span class="dot"></span><strong>{{ .Title }}</strong></div>
+            <p>{{ .Params.summary }}</p>
+          </a>
         {{ end }}
       </div>
     </div>
   </section>
-  <section id="join" class="section">
+
+  <section id="working-groups" class="section">
+    <div class="container" style="max-width:760px;">
+      <span class="eyebrow eyebrow--rule">Working Groups</span>
+      <h2 style="margin:var(--space-2) 0 var(--space-4);">Cross-cutting science</h2>
+      <p style="font-size:var(--text-lg);color:var(--text-body);margin-bottom:var(--space-6);">MBON working groups advance shared methods, standards, and data products across all regional nodes — from eDNA protocols to acoustic monitoring to biodiversity indicators.</p>
+      <a class="btn btn--outline" href="{{ "working-groups" | relURL }}">View all working groups <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+  </section>
+
+  <section id="join" class="section section--tint">
     <div class="container" style="max-width:760px;">
       <span class="eyebrow eyebrow--rule">Get involved</span>
       <h2 style="margin:var(--space-2) 0 var(--space-4);">Join the MBON network</h2>

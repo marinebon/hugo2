@@ -280,3 +280,184 @@ a.card:hover .card__foot i{ transform:translateX(3px); }
   text-decoration:none; white-space:nowrap;
 }
 .citation-block__doi:hover{ text-decoration:underline; }
+
+/* ---- Search widget ------------------------------------------------------- */
+.search-widget__bar{
+  display:flex; align-items:center; gap:var(--space-2);
+  border:2px solid var(--border-strong); border-radius:var(--radius-md);
+  padding:var(--space-2) var(--space-4); background:var(--bg-surface);
+  margin-bottom:var(--space-3);
+  transition:border-color var(--dur-fast) var(--ease-out);
+}
+.search-widget__bar:focus-within{ border-color:var(--brand); }
+.search-widget__icon{ color:var(--text-muted); font-size:var(--text-md); flex-shrink:0; }
+#sw-text{
+  flex:1; border:none; outline:none; font-size:var(--text-base);
+  background:transparent; color:var(--text-heading);
+}
+.search-widget__tag-wrap{
+  position:relative; display:flex; align-items:center;
+  border-left:1px solid var(--border); padding-left:var(--space-3);
+}
+#sw-tag-input{
+  border:none; outline:none; font-size:var(--text-sm);
+  background:transparent; color:var(--text-body); width:160px;
+}
+.search-widget__suggest{
+  position:absolute; top:calc(100% + 6px); left:0; right:0; z-index:50;
+  background:var(--bg-surface); border:1px solid var(--border); border-radius:var(--radius-md);
+  box-shadow:var(--shadow-lg); list-style:none; margin:0; padding:var(--space-2) 0;
+  min-width:240px;
+}
+.search-widget__suggest li{
+  padding:var(--space-2) var(--space-4);
+  font-size:var(--text-sm); cursor:pointer;
+  transition:background var(--dur-fast) var(--ease-out);
+}
+.search-widget__suggest li:hover{ background:var(--foam-100); }
+.search-widget__chips{ display:flex; flex-wrap:wrap; gap:var(--space-2); margin-bottom:var(--space-3); }
+.tag-chip{ display:inline-flex; align-items:center; gap:.4em; }
+.tag-chip button{ border:none; background:none; cursor:pointer; font-size:1em; padding:0; line-height:1; color:inherit; opacity:.7; }
+.tag-chip button:hover{ opacity:1; }
+.search-widget__status{ font-family:var(--font-mono); font-size:var(--text-xs); color:var(--text-muted); margin:0 0 var(--space-4); }
+.search-widget__results{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:var(--space-6); }
+.search-result{ border-bottom:1px solid var(--border); padding-bottom:var(--space-5); }
+.search-result:last-child{ border-bottom:none; }
+.search-result__title{ font:var(--type-card); color:var(--text-heading); text-decoration:none; display:block; margin-bottom:var(--space-2); }
+.search-result__title:hover{ color:var(--accent); text-decoration:underline; }
+.search-result__excerpt{ font-size:var(--text-sm); color:var(--text-body); line-height:1.6; margin:0; }
+
+/* ---- 404 page — deep-sea "lost at depth" ------------------------------- */
+.err404{
+  position:relative;
+  background:var(--abyss-900);
+  overflow:hidden;
+}
+
+/* ocean atmosphere layer */
+.err404__ocean{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+}
+
+/* volumetric light shafts filtering down from the surface */
+.err404__rays{
+  position:absolute;
+  inset:0;
+  background:
+    conic-gradient(from 268deg at 18% -4%, transparent 0deg, rgba(28,145,171,.07) 9deg,  transparent 16deg),
+    conic-gradient(from 265deg at 52% -6%, transparent 0deg, rgba(63,116,214,.05) 7deg,   transparent 13deg),
+    conic-gradient(from 272deg at 78% -2%, transparent 0deg, rgba(28,145,171,.06) 11deg, transparent 18deg);
+  animation:err404-rays 22s ease-in-out infinite alternate;
+}
+@keyframes err404-rays{
+  from{ transform:scaleX(1);           opacity:.75; }
+  to  { transform:scaleX(1.06) rotate(.8deg); opacity:1;  }
+}
+
+/* bioluminescent particle bubbles */
+.err404__particles{ position:absolute; inset:0; }
+.err404__particle{
+  position:absolute;
+  bottom:-16px;
+  border-radius:50%;
+  border:1px solid rgba(174,226,234,.45);
+  background:radial-gradient(circle at 35% 35%, rgba(174,226,234,.35), transparent 70%);
+  animation:err404-particle linear infinite;
+  will-change:transform,opacity;
+}
+@keyframes err404-particle{
+  0%  { transform:translateY(0)     translateX(0);  }
+  33% { transform:translateY(-30vh) translateX(6px);  }
+  66% { transform:translateY(-65vh) translateX(-4px); }
+  100%{ transform:translateY(-115vh) translateX(3px); opacity:0; }
+}
+
+/* wave break between dark ocean and light search surface */
+.err404__wave{
+  position:absolute;
+  bottom:0; left:0;
+  width:100%; height:88px;
+  display:block;
+}
+
+/* hero content */
+.err404__hero{
+  position:relative;
+  z-index:1;
+  text-align:center;
+  padding:var(--space-9) var(--space-5) calc(var(--space-9) + 68px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:var(--space-3);
+}
+
+.err404__numeral{
+  font-family:var(--font-display);
+  font-weight:var(--fw-bold);
+  font-size:clamp(6rem, 22vw, 14rem);
+  line-height:1;
+  letter-spacing:-.04em;
+  color:transparent;
+  background:linear-gradient(160deg, var(--aqua-100) 0%, var(--teal-300) 36%, var(--cobalt-300) 70%, var(--navy-500) 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  filter:drop-shadow(0 0 52px rgba(28,145,171,.5)) drop-shadow(0 0 18px rgba(174,226,234,.35));
+  animation:err404-glow 7s ease-in-out infinite alternate;
+  user-select:none;
+  margin:var(--space-2) 0;
+}
+@keyframes err404-glow{
+  from{ filter:drop-shadow(0 0 40px rgba(28,145,171,.38)) drop-shadow(0 0 12px rgba(174,226,234,.22)); }
+  to  { filter:drop-shadow(0 0 72px rgba(28,145,171,.62)) drop-shadow(0 0 30px rgba(174,226,234,.52)); }
+}
+
+.err404__title{
+  font-family:var(--font-display);
+  font-weight:var(--fw-bold);
+  font-size:clamp(1.75rem, 4vw, var(--text-3xl));
+  line-height:var(--lh-snug);
+  letter-spacing:var(--ls-tight);
+  color:var(--text-on-dark);
+  margin:0;
+}
+
+.err404__lead{
+  font:var(--type-lead);
+  color:var(--text-on-dark-muted);
+  max-width:44ch;
+  margin:0;
+}
+
+/* light surface section — the search area */
+.err404__surface{
+  position:relative;
+  z-index:1;
+  background:var(--bg-page);
+  padding:var(--space-8) var(--space-5) var(--space-10);
+}
+
+.err404__hint{
+  font-family:var(--font-mono);
+  font-size:var(--text-sm);
+  letter-spacing:var(--ls-wide);
+  color:var(--text-muted);
+  text-align:center;
+  margin-bottom:var(--space-5);
+}
+.err404__hint em{
+  color:var(--accent);
+  font-style:normal;
+  font-weight:var(--fw-semibold);
+}
+
+.err404__actions{
+  display:flex;
+  justify-content:center;
+  gap:var(--space-3);
+  margin-top:var(--space-7);
+  flex-wrap:wrap;
+}

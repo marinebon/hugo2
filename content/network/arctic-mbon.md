@@ -2,6 +2,7 @@
 banner: img/photos/ocean-blue.jpg
 footprint: 22
 kind_node: regional
+geo: USA
 lat: 71
 lng: -150
 since: '2019'

@@ -30,6 +30,7 @@ menu:
       pageRef: /papers
       weight: 4
     - name: Tools
+      identifier: tools
       pageRef: /tools
       weight: 5
     - name: News

@@ -9,10 +9,9 @@ links:
 summary: Shiny application with a swipeable "then vs. now" map comparing climatological
   reference periods to the present for each U.S. National Marine Sanctuary.
 tags:
+- tool.App
+- org.NationalMarineSanctuaries
 - place.US
-- type.Dashboard
-- org.NMS
-- type.Instance
 title: Climate Change for Sanctuaries
 weight: 18
 ---

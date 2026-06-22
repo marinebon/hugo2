@@ -3,18 +3,19 @@ aliases:
 - /BioSound
 - /biosound
 - /bons_thematic/biosound
-- /working-groups/biosound
+- /network/biosound
 banner: img/working-groups/biosound-hero.jpg
-footprint: 8
-kind_node: thematic
-lat: 36
-lng: -122
 logo: img/logos/biosound.jpg
 since: '2021'
 summary: Listening to the ocean — advancing passive acoustic monitoring as an indicator
   of marine biodiversity.
+leads:
+- name: Liz Ferguson
+  org: Ocean Science Analytics
+- name: Neil Hammerschlag
+  org: Shark Research Foundation
 tags:
-- topic.Working-Group
+- method.Acoustics
 title: BioSound
 ---
 

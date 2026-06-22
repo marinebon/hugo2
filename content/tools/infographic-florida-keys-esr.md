@@ -7,11 +7,10 @@ links:
 summary: Conceptual diagram as interactive infographic for the Florida Keys Sanctuary
   associated with Ecosystem Status Report (ESR).
 tags:
+- tool.Infographic
 - place.US
 - place.South-Florida
-- type.Infographic
 - org.NOAA-IEA
-- type.Instance
 title: Florida Keys ESR Infographic
 weight: 8
 ---

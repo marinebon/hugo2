@@ -9,10 +9,9 @@ links:
 summary: Static flexdashboard rendering climate indicators — sea surface temperature,
   chlorophyll-a, pH, sea-level rise — for each U.S. National Marine Sanctuary.
 tags:
+- tool.App
+- org.NationalMarineSanctuaries
 - place.US
-- type.Dashboard
-- org.NMS
-- type.Instance
 title: Sanctuaries Climate Dashboard
 weight: 17
 ---

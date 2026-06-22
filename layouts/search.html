@@ -3,43 +3,149 @@
   <section class="page-header">
     <div class="page-header__inner">
       <h1>Search</h1>
-      <p class="page-header__lead">Find network nodes, tools, news, and more.</p>
+      <p class="page-header__lead">Find network nodes, tools, papers, news, and more. Add tag chips to filter by method, type, region, or topic.</p>
     </div>
   </section>
   <section class="section">
-    <div class="container" style="max-width:720px;">
-      <div id="search"></div>
+    <div class="container" style="max-width:760px;">
+      <div class="search-widget">
+        <div class="search-widget__bar">
+          <i class="fas fa-magnifying-glass search-widget__icon" aria-hidden="true"></i>
+          <input id="sw-text" type="search" placeholder="Search…" aria-label="Search" autocomplete="off">
+          <div class="search-widget__tag-wrap" id="sw-tag-wrap">
+            <input id="sw-tag-input" type="text" placeholder="Add tag filter…" aria-label="Filter by tag" autocomplete="off">
+            <ul id="sw-tag-suggest" class="search-widget__suggest" hidden></ul>
+          </div>
+        </div>
+        <div id="sw-chips" class="search-widget__chips"></div>
+        <p id="sw-status" class="search-widget__status" aria-live="polite"></p>
+        <ul id="sw-results" class="search-widget__results"></ul>
+      </div>
     </div>
   </section>
 </main>
 {{ end }}
 {{ define "scripts" }}
-<link  href="{{ "pagefind/pagefind-ui.css" | relURL }}" rel="stylesheet">
-<script src="{{ "pagefind/pagefind-ui.js"  | relURL }}"></script>
 <script>
-  const pf = new PagefindUI({
-    element: "#search",
-    showSubResults: true,
-    showImages: false,
-    excerptLength: 20,
-    filters: {
-      method: "Method",
-      place:  "Region",
-      org:    "Organization",
-      type:   "Type",
-      topic:  "Topic",
-    },
+(async function () {
+  const pf = await import('{{ "pagefind/pagefind.js" | relURL }}');
+  await pf.options({ baseUrl: '{{ "/" | relURL }}' });
+
+  // Collect all available filter values: { facet: { value: count } }
+  let available = {};
+  try { available = await pf.filters(); } catch(e) {}
+
+  // Flatten into autocomplete list: [{facet, value, label}]
+  const FACET_LABELS = {method:'Method', place:'Region', org:'Org', type:'Type', tool:'Type', topic:'Topic', year:'Year'};
+  const allOptions = [];
+  Object.keys(available).forEach(facet => {
+    Object.keys(available[facet]).forEach(value => {
+      allOptions.push({ facet, value, label: (FACET_LABELS[facet] || facet) + ' · ' + value });
+    });
   });
-  const q = new URLSearchParams(window.location.search).get('q');
-  if (q) {
-    const poll = setInterval(() => {
-      const input = document.querySelector('#search input[type=text]');
-      if (input) {
-        clearInterval(poll);
-        input.value = q;
-        input.dispatchEvent(new Event('input', { bubbles: true }));
-      }
-    }, 50);
+
+  // State
+  let chips = []; // [{facet, value, label}]
+  let debounce = null;
+
+  const textEl   = document.getElementById('sw-text');
+  const tagInput = document.getElementById('sw-tag-input');
+  const suggest  = document.getElementById('sw-tag-suggest');
+  const chipsEl  = document.getElementById('sw-chips');
+  const statusEl = document.getElementById('sw-status');
+  const resultsEl = document.getElementById('sw-results');
+
+  function buildFilters() {
+    const f = {};
+    chips.forEach(c => {
+      if (!f[c.facet]) f[c.facet] = [];
+      if (!f[c.facet].includes(c.value)) f[c.facet].push(c.value);
+    });
+    return f;
   }
+
+  async function runSearch() {
+    const q = textEl.value.trim();
+    const filters = buildFilters();
+    const hasFilters = Object.keys(filters).length > 0;
+    if (!q && !hasFilters) { resultsEl.innerHTML = ''; statusEl.textContent = ''; return; }
+    statusEl.textContent = 'Searching…';
+    try {
+      const res = await pf.search(q || null, { filters });
+      const items = res ? res.results : [];
+      statusEl.textContent = items.length + ' result' + (items.length === 1 ? '' : 's');
+      const loaded = await Promise.all(items.slice(0, 30).map(r => r.data()));
+      resultsEl.innerHTML = loaded.map(d =>
+        '<li class="search-result"><a class="search-result__title" href="' + d.url + '">' + d.meta.title + '</a>' +
+        '<p class="search-result__excerpt">' + d.excerpt + '</p></li>'
+      ).join('');
+    } catch(e) {
+      statusEl.textContent = 'Search unavailable — run pagefind after build.';
+    }
+  }
+
+  function renderChips() {
+    chipsEl.innerHTML = chips.map((c, i) =>
+      '<span class="tag-chip tag tag--' + c.facet + '" data-i="' + i + '">' + c.label +
+      ' <button aria-label="Remove ' + c.label + '" onclick="removeChip(' + i + ')">×</button></span>'
+    ).join('');
+  }
+
+  window.removeChip = function(i) {
+    chips.splice(i, 1);
+    renderChips();
+    runSearch();
+  };
+
+  function addChip(opt) {
+    if (!chips.find(c => c.facet === opt.facet && c.value === opt.value)) {
+      chips.push(opt);
+      renderChips();
+    }
+    tagInput.value = '';
+    suggest.hidden = true;
+    runSearch();
+  }
+
+  tagInput.addEventListener('input', function() {
+    const q = tagInput.value.toLowerCase().trim();
+    if (!q) { suggest.hidden = true; return; }
+    const matches = allOptions.filter(o => o.label.toLowerCase().includes(q)).slice(0, 10);
+    if (!matches.length) { suggest.hidden = true; return; }
+    suggest.innerHTML = matches.map((o, i) =>
+      '<li data-i="' + i + '" tabindex="-1">' + o.label + '</li>'
+    ).join('');
+    suggest._matches = matches;
+    suggest.hidden = false;
+  });
+
+  suggest.addEventListener('click', function(e) {
+    const li = e.target.closest('li');
+    if (!li) return;
+    const idx = parseInt(li.getAttribute('data-i'), 10);
+    addChip(suggest._matches[idx]);
+  });
+
+  tagInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') { suggest.hidden = true; }
+    if (e.key === 'Enter' && !suggest.hidden && suggest._matches && suggest._matches.length) {
+      addChip(suggest._matches[0]);
+      e.preventDefault();
+    }
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('#sw-tag-wrap')) suggest.hidden = true;
+  });
+
+  textEl.addEventListener('input', function() {
+    clearTimeout(debounce);
+    debounce = setTimeout(runSearch, 250);
+  });
+
+  // Pre-fill from URL ?q=
+  const urlQ = new URLSearchParams(window.location.search).get('q');
+  if (urlQ) { textEl.value = urlQ; runSearch(); }
+})();
 </script>
 {{ end }}

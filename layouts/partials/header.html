@@ -9,15 +9,23 @@
 
         {{ if eq .Identifier "network" }}
           {{ $regional := where (where site.RegularPages "Section" "network") "Params.kind_node" "regional" }}
-          {{ $working  := where (where site.RegularPages "Section" "network") "Params.kind_node" "thematic" }}
+          {{ $usa      := where $regional "Params.geo" "USA" }}
+          {{ $intl     := where $regional "Params.geo" "International" }}
+          {{ $working  := where site.RegularPages "Section" "working-groups" }}
           <div class="nav-dropdown">
             <a href="{{ .URL }}"{{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }} class="is-active"{{ end }}>
               {{ .Name }}<i class="fas fa-chevron-down nav-dropdown__caret" aria-hidden="true"></i>
             </a>
             <div class="nav-dropdown__panel">
               <div class="nav-dropdown__col">
-                <span class="nav-dropdown__label">Regional MBONs</span>
-                {{ range $regional.ByTitle }}
+                <span class="nav-dropdown__label">USA</span>
+                {{ range $usa.ByTitle }}
+                  <a href="{{ .RelPermalink }}">{{ .Title | strings.TrimSuffix " MBON" }}</a>
+                {{ end }}
+              </div>
+              <div class="nav-dropdown__col">
+                <span class="nav-dropdown__label">International</span>
+                {{ range $intl.ByTitle }}
                   <a href="{{ .RelPermalink }}">{{ .Title | strings.TrimSuffix " MBON" }}</a>
                 {{ end }}
               </div>
@@ -26,12 +34,7 @@
                 {{ range $working.ByTitle }}
                   <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                 {{ end }}
-              </div>
-              <div class="nav-dropdown__col">
-                <span class="nav-dropdown__label">Partners</span>
-                {{ range hugo.Data.partners }}
-                  <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>
-                {{ end }}
+                <a href="{{ "network/partners" | relURL }}" style="margin-top:var(--space-3);color:var(--text-muted);font-size:var(--text-xs);">All partners →</a>
               </div>
             </div>
           </div>
@@ -47,6 +50,23 @@
                 {{ range $methods }}
                   <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                 {{ end }}
+              </div>
+            </div>
+          </div>
+
+        {{ else if eq .Identifier "tools" }}
+          <div class="nav-dropdown">
+            <a href="{{ .URL }}"{{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }} class="is-active"{{ end }}>
+              {{ .Name }}<i class="fas fa-chevron-down nav-dropdown__caret" aria-hidden="true"></i>
+            </a>
+            <div class="nav-dropdown__panel nav-dropdown__panel--single">
+              <div class="nav-dropdown__col">
+                <a href="{{ "tools" | relURL }}">All Tools</a>
+                <a href="{{ "tools" | relURL }}?tool=Portal">Portals</a>
+                <a href="{{ "tools" | relURL }}?tool=App">Apps</a>
+                <a href="{{ "tools" | relURL }}?tool=Infographic">Infographics</a>
+                <a href="{{ "tools" | relURL }}?tool=Library">Libraries</a>
+                <a href="{{ "tools" | relURL }}?tool=Protocol">Protocols</a>
               </div>
             </div>
           </div>

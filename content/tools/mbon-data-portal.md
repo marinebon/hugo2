@@ -7,11 +7,12 @@ links:
 summary: Search, download, visualize, and analyze real-time, delayed-mode, and historical
   MBON biological observations alongside physical and chemical data.
 tags:
+- tool.Portal
 - place.Global
-- type.Data
-- type.Portal
 title: MBON Data Portal
 weight: 3
+aliases:
+- /tools/edna-explorer
 ---
 
 The MBON Data Portal — developed and managed by [Axiom Data Science](https://www.axiomdatascience.com/) — provides easy access to the full breadth of MBON data holdings. The portal combines a searchable data catalog with a feature-rich mapping interface.

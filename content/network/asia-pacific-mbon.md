@@ -5,6 +5,7 @@ fcenter:
 - 10
 footprint: 44
 kind_node: regional
+geo: International
 lat: 35
 lng: 140
 since: '2019'

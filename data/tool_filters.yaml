@@ -1,29 +1,26 @@
-# Facets for filtering tools. Tags use dot-notation: "facet.value".
-# Prefix is dropped in the display; color comes from CSS .tag--{facet}.
+- facet: tool
+  label: Type
+  values:
+    - { value: Portal,      name: Portal }
+    - { value: App,         name: App }
+    - { value: Infographic, name: Infographic }
+    - { value: Library,     name: Library }
+    - { value: Protocol,    name: Protocol }
 - facet: place
   label: Region
   values:
     - { value: Global,        name: Global }
     - { value: US,            name: "U.S." }
     - { value: Americas,      name: Americas }
-    - { value: North-Atlantic,name: "N. Atlantic" }
+    - { value: North-Atlantic, name: "N. Atlantic" }
     - { value: South-Florida, name: "South FL" }
-- facet: type
-  label: Tool type
-  values:
-    - { value: Dashboard,   name: Dashboard }
-    - { value: Infographic, name: Infographic }
-    - { value: Portal,      name: Portal }
-    - { value: Tool,        name: Tool }
-    - { value: Data,        name: Data }
-    - { value: Instance,    name: Instance }
 - facet: org
   label: Organization
   values:
-    - { value: NOAA-IEA, name: "NOAA IEA" }
-    - { value: NMS,      name: NMS }
-    - { value: FWRI,     name: FWRI }
-    - { value: OBIS,     name: OBIS }
+    - { value: NOAA-IEA,                 name: "NOAA IEA" }
+    - { value: NationalMarineSanctuaries, name: "Nat'l Marine Sanctuaries" }
+    - { value: FWRI,                     name: FWRI }
+    - { value: OBIS,                     name: OBIS }
 - facet: method
   label: Method
   values:

@@ -1,30 +1,40 @@
 - name: IOOS
   logo: img/partners/ioos.jpg
   url: https://ioos.noaa.gov/
+  description: The U.S. Integrated Ocean Observing System — the national framework for sustained ocean observations that MBON regional nodes connect through.
 - name: GEOBON
   logo: img/partners/geobon.jpg
   url: https://geobon.org/
+  description: Group on Earth Observations Biodiversity Observation Network — MBON is the marine thematic node of GEO BON, linking ocean biodiversity to the global framework.
 - name: GOOS
   logo: img/partners/goos.png
   url: https://www.goosocean.org/
+  description: The Global Ocean Observing System coordinates sustained observations of the ocean; MBON contributes marine biodiversity data streams to GOOS through the BioEco panel.
 - name: GEO
   logo: img/partners/geo.png
   url: https://earthobservations.org/
+  description: Group on Earth Observations — the intergovernmental partnership that hosts GEO BON and coordinates satellite, in situ, and citizen-science observation networks worldwide.
 - name: OBIS
   logo: img/partners/obis.png
   url: https://obis.org/
+  description: The Ocean Biodiversity Information System — the primary open repository for MBON node data; all MBON observations are published to OBIS following Darwin Core standards.
 - name: AIR Centre
   logo: img/partners/aircentre.jpg
   url: https://www.aircentre.org/
+  description: The Atlantic International Research Centre (Azores) hosts the MBON Secretariat and anchors partnerships across the Atlantic basin and Portuguese-speaking nations.
 - name: GCRMN
   logo: img/partners/gcrmn.png
   url: https://www.gcrmn.net/
+  description: The Global Coral Reef Monitoring Network provides harmonized reef biodiversity data that complement MBON's tropical node observations.
 - name: MarineGEO
   logo: img/partners/marinegeo.png
   url: https://marinegeo.si.edu/
+  description: The Smithsonian Institution's Marine Global Earth Observatory — a partner long-term monitoring network sharing standardized coastal survey protocols with MBON.
 - name: SCAR
   logo: img/partners/scar.png
   url: https://www.scar.org/
+  description: The Scientific Committee on Antarctic Research coordinates polar marine biodiversity observations that feed into MBON's Southern Ocean coverage.
 - name: LifeWatch
   logo: img/partners/lifewatch.png
   url: https://www.lifewatch.eu/
+  description: LifeWatch ERIC is Europe's e-Science infrastructure for biodiversity research, providing data services and analytical tools used by MBON's European regional nodes.
