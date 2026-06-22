@@ -10,6 +10,9 @@ pagination:
   pagerSize: 9
 
 params:
+  # GitHub repo backing the contribution links (Suggest an edit / Edit on GitHub / Add forms)
+  github_repo: marinebon/hugo2
+  github_branch: main
   description: A global collaborative initiative contributing to the effective management of marine biodiversity and ecosystem services. A thematic node of GEO BON.
   tagline: Global ocean observing · GEO BON node
   heroImage: img/photos/reef-sunlight.jpg

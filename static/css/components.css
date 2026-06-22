@@ -109,6 +109,15 @@ a.card:hover .card__foot i{ transform:translateX(3px); }
 .event-card__head{ display:flex; align-items:center; justify-content:space-between; gap:var(--space-3); flex-wrap:wrap; }
 .event-card__loc{ font-family:var(--font-mono); font-size:var(--text-xs); color:var(--text-muted); letter-spacing:.02em; }
 
+/* on-page contribution bar (Suggest an edit / Edit on GitHub) */
+.edit-cta{ border-top:1px solid var(--divider); background:var(--bg-surface); }
+.edit-cta__inner{ max-width:var(--container-wide); margin:0 auto; padding:var(--space-5) var(--space-6); display:flex; align-items:center; justify-content:space-between; gap:var(--space-4); flex-wrap:wrap; }
+.edit-cta__label{ font-family:var(--font-mono); font-size:var(--text-xs); text-transform:uppercase; letter-spacing:var(--ls-label); color:var(--text-muted); }
+.edit-cta__links{ display:flex; align-items:center; gap:var(--space-3); font-size:var(--text-sm); }
+.edit-cta__links a{ color:var(--accent); text-decoration:none; font-weight:var(--fw-semibold); }
+.edit-cta__links a:hover{ text-decoration:underline; }
+.edit-cta__sep{ color:var(--text-muted); }
+
 /* ---- Methods band ----------------------------------------------------- */
 .methods-band{
   background:var(--abyss-900);

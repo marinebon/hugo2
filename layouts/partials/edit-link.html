@@ -1,0 +1,20 @@
+{{/* On-page contribution links for a single content page.
+     "Suggest an edit" -> pre-filled edit issue form (non-technical contributors).
+     "Edit on GitHub"  -> native web editor (instant fork+PR for power users).
+     Renders nothing for pages without a source file (generated/virtual).
+     Query values are interpolated directly so html/template URL-encodes each once. */}}
+{{ with .File }}
+{{ $repo := site.Params.github_repo }}
+{{ $branch := site.Params.github_branch | default "main" }}
+{{ $title := printf "Edit: %s" $.Title }}
+<div class="edit-cta">
+  <div class="edit-cta__inner">
+    <span class="edit-cta__label"><i class="fas fa-pen-to-square" aria-hidden="true"></i> Help improve this page</span>
+    <span class="edit-cta__links">
+      <a href="https://github.com/{{ $repo }}/issues/new?template=edit-content.yml&title={{ $title }}&page_url={{ $.Permalink }}&content_path={{ .Path }}" target="_blank" rel="noopener">Suggest an edit</a>
+      <span class="edit-cta__sep">·</span>
+      <a href="https://github.com/{{ $repo }}/edit/{{ $branch }}/content/{{ .Path }}" target="_blank" rel="noopener">Edit on GitHub</a>
+    </span>
+  </div>
+</div>
+{{ end }}

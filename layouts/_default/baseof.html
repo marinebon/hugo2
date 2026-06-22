@@ -4,6 +4,7 @@
 <body>
   {{ partial "header.html" . }}
   {{ block "main" . }}{{ end }}
+  {{ if eq .Kind "page" }}{{ partial "edit-link.html" . }}{{ end }}
   {{ partial "footer.html" . }}
   <script src="{{ "js/globe.js" | relURL }}" defer></script>
   <script src="{{ "js/methods.js" | relURL }}" defer></script>

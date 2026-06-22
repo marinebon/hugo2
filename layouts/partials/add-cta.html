@@ -1,0 +1,5 @@
+{{/* "+ Add" button linking to an issue form.
+     Call with (dict "template" "add-news.yml" "label" "Add a news post"). */}}
+<a class="btn btn--on-photo btn--sm" href="https://github.com/{{ site.Params.github_repo }}/issues/new?template={{ .template }}" target="_blank" rel="noopener">
+  <i class="fas fa-plus" aria-hidden="true"></i> {{ .label }}
+</a>

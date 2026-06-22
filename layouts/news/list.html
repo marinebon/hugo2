@@ -6,6 +6,7 @@
       <h1>{{ .Title }}</h1>
       <p class="page-header__lead">{{ .Params.summary }}</p>
       {{ partial "social-links.html" (dict "class" "page-header-social") }}
+      <p style="margin-top:var(--space-5);">{{ partial "add-cta.html" (dict "template" "add-news.yml" "label" "Add a news post") }}</p>
     </div>
   </section>
   <section class="section">
