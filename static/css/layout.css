@@ -33,6 +33,10 @@
   display:grid; grid-template-columns:1fr 1fr; gap:var(--space-5); min-width:440px;
   opacity:0; pointer-events:none; transition:opacity var(--dur-base) var(--ease-out);
 }
+/* invisible bridge filling the gap between trigger and panel so hover doesn't drop */
+.nav-dropdown__panel::before{
+  content:""; position:absolute; top:-12px; left:0; right:0; height:12px;
+}
 .nav-dropdown:hover .nav-dropdown__panel,
 .nav-dropdown:focus-within .nav-dropdown__panel{ opacity:1; pointer-events:auto; }
 .nav-dropdown__panel--single{ min-width:200px; }
