@@ -1,11 +1,7 @@
 
 ## TODO
 
-### Github Issue templates
-
-Design Github Issue templates to enable issue creation to add or edit content. Pre-populate with all necessary YAML and instructions with help on finding tags and formatting basics. Make these consumable via a Github Action that imports images and injects content into the website. Consider a link directly on the pages enabling issue creation for edits of existing content. I think this is all doable, but be creative with the most efficient system that minimizes the technical burden for end users contributing.
-
-### Update README with instructions
+### Update README with style
 
 Pull relevant bits from the Claude.ai/design design system at `/Users/bbest/Downloads/MBON Design System (1)` for 
 
@@ -335,3 +331,46 @@ Alphabetically order the Methods navbar elements
 Alphabetically order the Tools navbar elements
 
 ⏺ Done. Tools dropdown now reads: All Tools → Apps → Infographics → Libraries → Portals → Protocols.
+
+### Github Issue templates (+ events content type)
+
+Design Github Issue templates to enable issue creation to add or edit content. Pre-populate with all necessary YAML and instructions with help on finding tags and formatting basics. Make these consumable via a Github Action that imports images and injects content into the website. Consider a link directly on the pages enabling issue creation for edits of existing content. I think this is all doable, but be creative with the most efficient system that minimizes the technical burden for end users contributing.
+
+In reality events should be its own content type too, and added under the News navbar, with a listing. Please do that first, then the rest. 
+
+←  ☒ Edit flow  ☒ Add forms  ☐ Papers  ✔ Submit  →
+
+For editing existing pages, how should the on-page link behave?
+
+ 1. Issue form + GitHub      ✔    ┌───────────────────────────────────────────┐
+   editor                         │ Page footer:                              │
+  2. Issue form only              │   ✏️  Suggest an edit   ·   Edit on GitHub │
+  3. GitHub editor only           │    └ issue form          └ raw web editor │
+                                  │      → Action → PR          → instant PR  │
+                                  └───────────────────────────────────────────┘
+
+←  ☒ Edit flow  ☒ Add forms  ☐ Papers  ✔ Submit  →
+
+Which content types should get dedicated 'Add new…' issue forms?
+
+ 1. News, Events, Papers,    ✔    ┌───────────────────────────────────────────┐
+   Tools                          │ Add forms:                                │
+  2. All content types            │ - Add News                                │
+  3. News & Events only           │ - Add Event                               │
+                                  │ - Add Paper                               │
+                                  │ - Add Tool                                │
+                                  │ (Network/WG → generic edit)               │
+                                  └───────────────────────────────────────────┘
+
+←  ☒ Edit flow  ☒ Add forms  ☒ Papers  ✔ Submit  →
+
+How should adding a Paper work?
+
+  1. DOI auto-fill                ┌───────────────────────────────────────────┐
+  2. Full manual form             │ Form:                                     │
+❯ 3. Both (DOI or manual) ✔       │   DOI (optional, auto-fills)              │
+                                  │   — or —                                  │
+                                  │   Title/Authors/Year/...                  │
+                                  │   (manual fallback)                       │
+                                  └───────────────────────────────────────────┘
+

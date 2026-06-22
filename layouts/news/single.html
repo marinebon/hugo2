@@ -4,7 +4,7 @@
     {{ with .Params.banner }}<img src="{{ . | relURL }}" alt="">{{ end }}
     <div class="article-banner__scrim"></div>
     <div class="article-banner__inner">
-      {{ with .Params.tags }}<div class="card__tags" style="margin-bottom:var(--space-4);">{{ range first 2 . }}<span class="tag tag--tool is-active">{{ humanize . }}</span>{{ end }}</div>{{ end }}
+      {{ with .Params.tags }}<div class="card__tags" style="margin-bottom:var(--space-4);">{{ range first 2 . }}{{ partial "tag.html" . }}{{ end }}</div>{{ end }}
       <h1>{{ .Title }}</h1>
     </div>
   </section>

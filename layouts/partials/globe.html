@@ -21,20 +21,23 @@
       <h2 style="font:var(--type-h2);font-size:clamp(2rem,3vw,2.75rem);color:#fff;margin:var(--space-3) 0 var(--space-4);">{{ .heading }}</h2>
       <p style="color:var(--text-on-dark-muted);max-width:46ch;margin-bottom:var(--space-5);">{{ .lead }}</p>
       <div class="node-chips">
-        <span class="node-chip-label">USA</span>
-        {{ range $usa.ByTitle }}
-          <button class="node-chip" data-node-id="{{ .File.ContentBaseName }}">{{ replace .Title " MBON" "" }}</button>
-        {{ end }}
-        <span class="node-chip-label">International</span>
-        {{ range $intl.ByTitle }}
-          <button class="node-chip" data-node-id="{{ .File.ContentBaseName }}">{{ replace .Title " MBON" "" }}</button>
-        {{ end }}
+        <div class="node-chips__col">
+          <span class="node-chip-label">USA</span>
+          {{ range $usa.ByTitle }}
+            <button class="node-chip" data-node-id="{{ .File.ContentBaseName }}">{{ replace .Title " MBON" "" }}</button>
+          {{ end }}
+        </div>
+        <div class="node-chips__col">
+          <span class="node-chip-label">International</span>
+          {{ range $intl.ByTitle }}
+            <button class="node-chip" data-node-id="{{ .File.ContentBaseName }}">{{ replace .Title " MBON" "" }}</button>
+          {{ end }}
+        </div>
       </div>
       <div class="node-card" data-node-card>
-        <div class="node-card__coord" data-node-field="coord"></div>
-        <h3 data-node-field="name" style="font:var(--type-h3);color:#fff;margin:var(--space-2) 0 var(--space-3);"></h3>
-        <p data-node-field="blurb" style="color:var(--text-on-dark-muted);font-size:var(--text-base);margin:0 0 var(--space-5);"></p>
-        <a class="btn btn--action" data-node-link href="#">Open this region <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        <h4 data-node-field="name" style="font:var(--type-card);color:#fff;margin:0 0 var(--space-2);"></h4>
+        <p data-node-field="blurb" style="color:var(--text-on-dark-muted);font-size:var(--text-sm);margin:0 0 var(--space-3);"></p>
+        <a class="btn btn--action btn--sm" data-node-link href="#">Open this region <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
       </div>
     </div>
   </div>

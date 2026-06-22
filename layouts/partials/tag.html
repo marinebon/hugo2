@@ -7,7 +7,7 @@
 {{ if ge (len $parts) 2 }}
   {{ $facet := index $parts 0 }}
   {{ $value := strings.TrimPrefix (printf "%s." $facet) $raw }}
-  {{ $label := humanize $value }}
+  {{ $label := cond (findRE `^\d+$` $value) $value (humanize $value) }}
   {{/* look up friendly label from tool_filters.yaml */}}
   {{ range hugo.Data.tool_filters }}
     {{ if eq .facet $facet }}
@@ -16,7 +16,7 @@
       {{ end }}
     {{ end }}
   {{ end }}
-  <span class="tag tag--{{ $facet }}">{{ $label }}</span>
+  <span class="tag tag--{{ $facet | lower }}">{{ $label }}</span>
 {{ else }}
   <span class="tag">{{ humanize $raw }}</span>
 {{ end }}
