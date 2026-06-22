@@ -1,8 +1,8 @@
 - id: remote-sensing
   label: Remote Sensing
   icon: satellite
-  x: 65
-  y: 5
+  x: 51
+  y: 17
   summary: >
     Satellites and aerial sensors map ocean color, sea surface temperature, and
     habitat extent across millions of square kilometers — resolving patterns no
@@ -13,8 +13,8 @@
 - id: traditional
   label: Traditional Surveys
   icon: ship
-  x: 63
-  y: 26
+  x: 66
+  y: 27
   summary: >
     Trawl surveys, visual transects, and ship-based acoustic surveys remain the
     calibration backbone for modern methods. They are labor-intensive and costly at
@@ -25,8 +25,8 @@
 - id: acoustics
   label: Acoustics
   icon: wave-square
-  x: 23
-  y: 67
+  x: 42
+  y: 63
   summary: >
     Passive acoustic monitoring (PAM) listens for biological and anthropogenic sound to
     infer biodiversity and ecosystem health. Active acoustics (echosounders, ADCPs)
@@ -37,8 +37,8 @@
 - id: tracking
   label: Tracking
   icon: location-dot
-  x: 47
-  y: 60
+  x: 70
+  y: 72
   summary: >
     Electronic tags on fish, turtles, marine mammals, and seabirds record fine-scale
     movements, diving behavior, and physiology. Acoustic and satellite telemetry build
@@ -50,7 +50,7 @@
   label: Genomics & eDNA
   display: "GENOMICS & <span style=\"text-transform:none\">e</span>DNA"
   icon: dna
-  x: 62
+  x: 79
   y: 40
   summary: >
     Water and sediment samples contain DNA shed by every organism that passed through.
@@ -62,8 +62,8 @@
 - id: indicators
   label: Indicators & Data
   icon: chart-line
-  x: 93
-  y: 48
+  x: 96
+  y: 25
   summary: >
     Raw observations become decision-relevant information through synthesis into
     Essential Ocean Variables and Essential Biodiversity Variables. MBON's indicators
