@@ -34,6 +34,7 @@ menu:
       pageRef: /tools
       weight: 5
     - name: News
+      identifier: news
       pageRef: /news
       weight: 6
     - name: About

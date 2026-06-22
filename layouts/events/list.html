@@ -1,0 +1,37 @@
+{{ define "main" }}
+<main>
+  <section class="page-header">
+    <div class="page-header__inner">
+      <span class="eyebrow eyebrow--rule eyebrow--ondark">Events</span>
+      <h1>{{ .Title }}</h1>
+      <p class="page-header__lead">{{ .Params.summary }}</p>
+    </div>
+  </section>
+
+  {{ $now := now }}
+  {{ $upcoming := where .Pages "Date" ">=" $now }}
+  {{ $past     := where .Pages "Date" "<" $now }}
+
+  {{ with $upcoming }}
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow eyebrow--rule">Upcoming</span>
+      <h2 style="margin:var(--space-2) 0 var(--space-6);">On the calendar</h2>
+      <div class="grid-3">
+        {{ range .ByDate }}{{ partial "card-event.html" . }}{{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <section class="section{{ if $upcoming }} section--tint{{ end }}">
+    <div class="container">
+      <span class="eyebrow eyebrow--rule">{{ if $upcoming }}Past events{{ else }}Archive{{ end }}</span>
+      <h2 style="margin:var(--space-2) 0 var(--space-6);">Presentations &amp; meetings</h2>
+      <div class="grid-3">
+        {{ range $past.ByDate.Reverse }}{{ partial "card-event.html" . }}{{ end }}
+      </div>
+    </div>
+  </section>
+</main>
+{{ end }}

@@ -1,0 +1,30 @@
+{{ define "main" }}
+<main>
+  <section class="page-header">
+    <div class="page-header__inner">
+      <a href="{{ "events" | relURL }}" style="display:inline-flex;gap:8px;align-items:center;color:var(--teal-300);font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:var(--ls-wide);text-transform:uppercase;text-decoration:none;margin-bottom:var(--space-5);">
+        <i class="fas fa-arrow-left"></i> Events
+      </a>
+      <div class="article__meta" style="margin-bottom:var(--space-3);border:0;padding:0;color:var(--teal-300);">
+        <span>{{ partial "event-date.html" . }}</span>
+        {{ with .Params.location }}<span>&middot;</span><span><i class="fas fa-location-dot" aria-hidden="true"></i> {{ . }}</span>{{ end }}
+      </div>
+      <h1 style="max-width:64ch;">{{ .Title }}</h1>
+      {{ with .Params.tags }}<div class="card__tags" style="margin-top:var(--space-4);">{{ range . }}{{ partial "tag.html" . }}{{ end }}</div>{{ end }}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width:760px;">
+      {{ with .Params.event_url }}
+      <p style="margin-bottom:var(--space-6);"><a class="btn btn--outline btn--sm" href="{{ . }}" target="_blank" rel="noopener">
+        <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> Event website
+      </a></p>
+      {{ end }}
+      <div class="article" style="max-width:none;margin:0;padding:0;">
+        {{ .Content }}
+      </div>
+    </div>
+  </section>
+</main>
+{{ end }}

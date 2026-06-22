@@ -1,0 +1,20 @@
+{{- /* event-date.html — returns a human date (or date range) string for an event Page.
+       Uses .Params.date_display verbatim when present (for month-only / multi-year events);
+       otherwise formats .Date and optional .Params.end_date. */ -}}
+{{- with .Params.date_display -}}
+{{- . -}}
+{{- else -}}
+  {{- $s := .Date -}}
+  {{- with .Params.end_date -}}
+    {{- $e := time.AsTime . -}}
+    {{- if eq ($s.Format "2006-01") ($e.Format "2006-01") -}}
+      {{- printf "%s %d–%d, %d" ($s.Format "Jan") $s.Day $e.Day $s.Year -}}
+    {{- else if eq ($s.Format "2006") ($e.Format "2006") -}}
+      {{- printf "%s %d – %s %d, %d" ($s.Format "Jan") $s.Day ($e.Format "Jan") $e.Day $s.Year -}}
+    {{- else -}}
+      {{- printf "%s – %s" ($s.Format "Jan 2, 2006") ($e.Format "Jan 2, 2006") -}}
+    {{- end -}}
+  {{- else -}}
+    {{- $s.Format "Jan 2, 2006" -}}
+  {{- end -}}
+{{- end -}}

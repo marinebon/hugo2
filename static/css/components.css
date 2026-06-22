@@ -104,6 +104,11 @@ a.card:hover .card__media img{ transform:scale(1.04); }
 .card__foot i{ transition:transform var(--dur-fast) var(--ease-out); }
 a.card:hover .card__foot i{ transform:translateX(3px); }
 
+/* event card: date chip + location row (no media) */
+.card--event{ border-left:3px solid var(--teal-600); }
+.event-card__head{ display:flex; align-items:center; justify-content:space-between; gap:var(--space-3); flex-wrap:wrap; }
+.event-card__loc{ font-family:var(--font-mono); font-size:var(--text-xs); color:var(--text-muted); letter-spacing:.02em; }
+
 /* ---- Methods band ----------------------------------------------------- */
 .methods-band{
   background:var(--abyss-900);

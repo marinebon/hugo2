@@ -1,0 +1,13 @@
+{{/* Event card. Call with a Page (.) */}}
+<a class="card card--event" href="{{ .RelPermalink }}">
+  <div class="card__body">
+    <div class="event-card__head">
+      <span class="badge badge--solid badge--accent">{{ partial "event-date.html" . }}</span>
+      {{ with .Params.location }}<span class="event-card__loc"><i class="fas fa-location-dot" aria-hidden="true"></i> {{ . }}</span>{{ end }}
+    </div>
+    <h3 class="card__title">{{ .Title }}</h3>
+    <p class="card__summary">{{ .Params.summary | default (.Summary | plainify | truncate 160) }}</p>
+    {{ with .Params.tags }}<div class="card__tags">{{ range first 2 . }}{{ partial "tag.html" . }}{{ end }}</div>{{ end }}
+    <span class="card__foot">View details <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+  </div>
+</a>
