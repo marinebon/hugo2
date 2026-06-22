@@ -5,8 +5,8 @@ aliases:
 since: '2023'
 summary: Linking marine biodiversity observations to ecosystem service indicators for integrated ocean assessment.
 leads:
-- name: TBD
-  org: MBON / NOAA IEA
+- name: Joshua Kilborn
+  org: University of South Florida
 tags:
 - method.Indicators
 ---

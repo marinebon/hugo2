@@ -5,8 +5,8 @@ aliases:
 since: '2022'
 summary: Developing standardized environmental DNA protocols and pipelines for marine biodiversity assessment across MBON nodes.
 leads:
-- name: TBD
-  org: MBON
+- name: Luke Thompson
+  org: NOAA Atlantic Oceanographic and Meteorological Laboratory
 tags:
 - method.Genomics
 ---

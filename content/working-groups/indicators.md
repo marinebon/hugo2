@@ -5,8 +5,8 @@ aliases:
 since: '2020'
 summary: Synthesizing raw observations into Essential Biodiversity Variables and Essential Ocean Variables for policy-relevant reporting.
 leads:
-- name: TBD
-  org: MBON / GEO BON
+- name: Ben Best
+  org: Ocean Metrics LLC
 tags:
 - method.Indicators
 ---
