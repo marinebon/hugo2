@@ -5,7 +5,7 @@
    OR within a facet. URL param ?tool=Portal pre-activates that filter.
    ========================================================================== */
 (function () {
-  document.addEventListener('DOMContentLoaded', function () {
+  function init() {
     var bar = document.querySelector('[data-tool-filter]');
     if (!bar) return;
     var cards = Array.prototype.slice.call(document.querySelectorAll('[data-tool]'));
@@ -54,9 +54,18 @@
     var urlTool = new URLSearchParams(window.location.search).get('tool');
     if (urlTool) {
       var preBtn = bar.querySelector('[data-facet="tool"][data-value="' + urlTool + '"]');
-      if (preBtn) preBtn.click();
-    } else {
-      apply();
+      if (preBtn) {
+        if (!sel['tool']) sel['tool'] = new Set();
+        sel['tool'].add(urlTool);
+        preBtn.classList.add('is-active');
+      }
     }
-  });
+    apply();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();

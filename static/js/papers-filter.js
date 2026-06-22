@@ -2,10 +2,10 @@
    MBON papers filter — vanilla JS. Filter cards by faceted tags.
    Each [data-paper] card carries data-tags="method.Genomics type.Paper".
    Each .filter-btn carries data-facet + data-value. AND across facets,
-   OR within a facet. 
+   OR within a facet.
    ========================================================================== */
 (function () {
-  document.addEventListener('DOMContentLoaded', function () {
+  function init() {
     var bar = document.querySelector('[data-paper-filter]');
     if (!bar) return;
     var cards = Array.prototype.slice.call(document.querySelectorAll('[data-paper]'));
@@ -31,7 +31,7 @@
         card.style.display = ok ? '' : 'none';
         if (ok) shown++;
       });
-      if (countEl) countEl.textContent = shown + ' OF ' + cards.length + ' PAPERS' + (active ? ' \u00b7 ' + active + ' FILTERS' : '');
+      if (countEl) countEl.textContent = shown + ' OF ' + cards.length + ' PAPERS' + (active ? ' · ' + active + ' FILTERS' : '');
       if (clearEl) clearEl.style.display = active ? '' : 'none';
       var empty = document.querySelector('[data-paper-empty]');
       if (empty) empty.style.display = shown === 0 ? '' : 'none';
@@ -50,5 +50,11 @@
       sel = {}; btns.forEach(function (b) { b.classList.remove('is-active'); }); apply();
     });
     apply();
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
