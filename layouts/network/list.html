@@ -6,31 +6,16 @@
       <h1>One ocean, observed together.</h1>
       <p class="page-header__lead">{{ .Params.summary }}</p>
     </div>
-    <div class="footer-partners" style="margin-top:var(--space-8);padding-top:var(--space-6);border-top:1px solid rgba(255,255,255,.12);">
-      <div class="footer-partners__inner">
-        <span class="eyebrow eyebrow--rule eyebrow--ondark" style="margin-bottom:var(--space-4);display:block;">Strategic collaborators</span>
-        <div class="partner-strip">
-          {{ range hugo.Data.partners }}
-            <a class="partner-chip" href="{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener">
-              <img src="{{ .logo | relURL }}" alt="{{ .name }}">
-            </a>
-          {{ end }}
-        </div>
-        <div style="margin-top:var(--space-4);">
-          <a class="btn btn--on-photo btn--sm" href="{{ "network/partners" | relURL }}">View all partners <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
-      </div>
-    </div>
   </section>
 
   {{ partial "globe.html" (dict
       "eyebrow" "Explore the nodes"
-      "heading" "Regional networks"
-      "lead" "Each node monitors its own waters and publishes to shared standards so the data interconnects. Select a node to spin the globe.") }}
+      "heading" "USA and international regional nodes"
+      "lead" "Each node monitors its own waters and contributes biodiversity data to shared, open standards — connecting science across every ocean basin. Select a region to spin the globe.") }}
 
-  {{ $regional := where (where site.RegularPages "Section" "network") "Params.kind_node" "regional" }}
-  {{ $usa  := where $regional "Params.geo" "USA" }}
-  {{ $intl := where $regional "Params.geo" "International" }}
+  {{ $all  := where site.RegularPages "Section" "network" }}
+  {{ $usa  := where $all "Params.geo" "USA" }}
+  {{ $intl := where $all "Params.geo" "International" }}
 
   <section id="regional-usa" class="section">
     <div class="container">
@@ -83,7 +68,7 @@
         </div>
         <div>
           <h3 style="font-size:var(--text-base);margin:0 0 var(--space-2);">Join a working group</h3>
-          <p style="font-size:var(--text-sm);color:var(--text-muted);margin:0;">Active working groups cover eDNA, remote sensing, BioTrack, BioSound, indicators, and data management. Meetings are open; contact the working group lead to join.</p>
+          <p style="font-size:var(--text-sm);color:var(--text-muted);margin:0;">Active working groups cover eDNA, acoustic monitoring, BioTrack, BioSound, indicators, and data management. Meetings are open; contact the working group lead to join.</p>
         </div>
         <div>
           <h3 style="font-size:var(--text-base);margin:0 0 var(--space-2);">Partner at the global level</h3>

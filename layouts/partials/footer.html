@@ -1,16 +1,4 @@
 <footer class="site-footer">
-  <div class="footer-partners">
-    <div class="footer-partners__inner">
-      <span class="eyebrow eyebrow--rule eyebrow--ondark">Strategic collaborators</span>
-      <div class="partner-strip">
-        {{ range hugo.Data.partners }}
-          <a class="partner-chip" href="{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener">
-            <img src="{{ .logo | relURL }}" alt="{{ .name }}">
-          </a>
-        {{ end }}
-      </div>
-    </div>
-  </div>
   <div class="footer-main">
     <div>
       <img class="wordmark" src="{{ "img/logos/mbon-logo.png" | relURL }}" alt="MBON">

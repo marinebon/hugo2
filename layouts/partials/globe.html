@@ -1,9 +1,12 @@
 {{/* MBON network globe band. Call with a dict:
-      (dict "eyebrow" "…" "heading" "…" "lead" "…")
-     Node data is built from every page in the /network section. */}}
-{{ $nodes := slice }}
-{{ range (where site.RegularPages "Section" "network") }}
-  {{ $n := dict "id" .File.ContentBaseName "name" .Title "lat" .Params.lat "lng" .Params.lng "footprint" .Params.footprint "blurb" .Params.summary "url" .RelPermalink "kind" .Params.kind_node }}
+     (dict "eyebrow" "…" "heading" "…" "lead" "…")
+     Nodes come from content/network/ (all regional). */}}
+{{ $regional := where site.RegularPages "Section" "network" }}
+{{ $usa      := where $regional "Params.geo" "USA" }}
+{{ $intl     := where $regional "Params.geo" "International" }}
+{{ $nodes    := slice }}
+{{ range $regional }}
+  {{ $n := dict "id" .File.ContentBaseName "name" .Title "lat" .Params.lat "lng" .Params.lng "footprint" .Params.footprint "blurb" .Params.summary "url" .RelPermalink "geo" .Params.geo }}
   {{ with .Params.fcenter }}{{ $n = merge $n (dict "fcenter" .) }}{{ end }}
   {{ $nodes = $nodes | append $n }}
 {{ end }}
@@ -18,7 +21,12 @@
       <h2 style="font:var(--type-h2);font-size:clamp(2rem,3vw,2.75rem);color:#fff;margin:var(--space-3) 0 var(--space-4);">{{ .heading }}</h2>
       <p style="color:var(--text-on-dark-muted);max-width:46ch;margin-bottom:var(--space-5);">{{ .lead }}</p>
       <div class="node-chips">
-        {{ range (where site.RegularPages "Section" "network") }}
+        <span class="node-chip-label">USA</span>
+        {{ range $usa.ByTitle }}
+          <button class="node-chip" data-node-id="{{ .File.ContentBaseName }}">{{ replace .Title " MBON" "" }}</button>
+        {{ end }}
+        <span class="node-chip-label">International</span>
+        {{ range $intl.ByTitle }}
           <button class="node-chip" data-node-id="{{ .File.ContentBaseName }}">{{ replace .Title " MBON" "" }}</button>
         {{ end }}
       </div>
@@ -28,6 +36,19 @@
         <p data-node-field="blurb" style="color:var(--text-on-dark-muted);font-size:var(--text-base);margin:0 0 var(--space-5);"></p>
         <a class="btn btn--action" data-node-link href="#">Open this region <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
       </div>
+    </div>
+  </div>
+  <div class="globe-partners">
+    <span class="eyebrow eyebrow--rule eyebrow--ondark">Strategic collaborators</span>
+    <div class="partner-strip" style="margin-top:var(--space-4);">
+      {{ range hugo.Data.partners }}
+        <a class="partner-chip" href="{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener">
+          <img src="{{ .logo | relURL }}" alt="{{ .name }}">
+        </a>
+      {{ end }}
+    </div>
+    <div style="margin-top:var(--space-4);">
+      <a class="btn btn--on-photo btn--sm" href="{{ "network/partners" | relURL }}">View all partners <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
     </div>
   </div>
   <script id="mbon-regions" type="application/json">{{ $nodes | jsonify | safeHTML }}</script>

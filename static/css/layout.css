@@ -84,10 +84,13 @@
 .globe-stage canvas{ display:block; }
 .globe-loading{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-family:var(--font-mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:rgba(174,226,234,0.7); }
 .node-chips{ display:flex; flex-wrap:wrap; gap:var(--space-2); margin-bottom:var(--space-5); }
+.node-chip-label{ flex-basis:100%; font-family:var(--font-mono); font-size:var(--text-xs); text-transform:uppercase; letter-spacing:var(--ls-wide); color:rgba(174,226,234,0.45); margin-bottom:calc(-1 * var(--space-1)); }
+.node-chips > .node-chip-label:not(:first-child){ margin-top:var(--space-3); }
 .node-chip{ font-family:var(--font-mono); font-size:var(--text-xs); cursor:pointer; padding:6px 12px; border-radius:var(--radius-pill); border:1px solid rgba(174,226,234,0.3); background:transparent; color:var(--aqua-200); transition:all .15s; }
 .node-chip.is-active{ border-color:var(--coral-500); background:var(--coral-500); color:#fff; }
 .node-card{ background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:var(--radius-lg); padding:var(--space-5); }
 .node-card__coord{ font-family:var(--font-mono); font-size:var(--text-xs); color:var(--teal-300); letter-spacing:var(--ls-label); }
+.globe-partners{ max-width:var(--container-wide); margin:0 auto; padding:var(--space-6) var(--space-6) var(--space-8); border-top:1px solid rgba(255,255,255,0.08); }
 @media (max-width:860px){ .globe-band__inner{ grid-template-columns:1fr; } }
 
 /* ---- Directory cards (regions) ---------------------------------------- */

@@ -10,7 +10,7 @@
       <p class="hero__lead">{{ site.Params.heroLead }}</p>
       <div class="hero__actions">
         <a class="btn btn--action btn--lg" href="{{ "network" | relURL }}">Explore the network <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-        <a class="btn btn--lg btn--on-photo" href="{{ "tools" | relURL }}">Explore tools</a>
+        <a class="btn btn--lg btn--on-photo" href="{{ "methods" | relURL }}">Explore methods</a>
       </div>
       <div class="stat-strip">
         {{ range hugo.Data.stats }}
@@ -23,19 +23,19 @@
   {{/* ===== METHODS ===== */}}
   {{ partial "methods-band.html" . }}
 
-  {{/* ===== NETWORK GLOBE ===== */}}
+  {{/* ===== NETWORK GLOBE + PARTNERS ===== */}}
   {{ partial "globe.html" (dict
-      "eyebrow" "A network of networks"
-      "heading" "Regional & thematic nodes, one shared standard."
-      "lead" "From the Arctic to the Antarctic, each node observes its own waters and publishes to common standards. Select a node to spin the globe.") }}
+      "eyebrow" "The global network"
+      "heading" "Regional nodes from Arctic to Antarctic"
+      "lead" "Each node monitors its own waters and contributes biodiversity data to shared, open standards — connecting science across every ocean basin. Select a region to spin the globe.") }}
 
   {{/* ===== LATEST NEWS ===== */}}
-  <section class="section section--tint">
+  <section class="section">
     <div class="container">
       <div class="section-head">
         <div>
-          <span class="eyebrow eyebrow--rule">Latest news &amp; updates</span>
-          <h2>From around the global network</h2>
+          <span class="eyebrow eyebrow--rule">Latest news</span>
+          <h2>Discoveries from across the network</h2>
           {{ partial "social-links.html" (dict "class" "section-social") }}
         </div>
         <a class="btn btn--ghost" href="{{ "news" | relURL }}">All news <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
@@ -48,13 +48,13 @@
     </div>
   </section>
 
-  {{/* ===== FEATURED PRODUCTS ===== */}}
-  <section class="section">
+  {{/* ===== FEATURED TOOLS ===== */}}
+  <section class="section section--tint">
     <div class="container">
       <div class="section-head">
         <div>
-          <span class="eyebrow eyebrow--rule">Software &amp; data portals</span>
-          <h2>Tools that connect observations to decisions</h2>
+          <span class="eyebrow eyebrow--rule">Tools &amp; data products</span>
+          <h2>Turning observations into decisions</h2>
         </div>
         <a class="btn btn--outline" href="{{ "tools" | relURL }}">Browse all tools <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
       </div>
