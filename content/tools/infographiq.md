@@ -6,11 +6,12 @@ links:
   url: https://marinebon.org/infographiq/
 - label: Source code
   url: https://github.com/marinebon/infographiq
-summary: JavaScript and R method for producing clickable scientific art that acts as an interface for users to explore marine biodiversity data.
+summary: JavaScript and R method for producing clickable scientific art that acts
+  as an interface for users to explore marine biodiversity data.
 tags:
-- region:global
-- tool:infographic
-- type:tool
+- place.global
+- type.infographic
+- type.tool
 title: Infographiq
 weight: 7
 ---

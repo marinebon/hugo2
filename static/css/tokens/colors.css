@@ -46,16 +46,21 @@
   --foam-50:  #f6fafb;    /* page background                                */
   --white:    #ffffff;
 
-  /* ---- Facet colors: the four interrelating taxonomies ------------------ */
-  /* Carried from www_marinebon2 product_viewer_colorize.js for continuity.  */
-  --facet-region:  #01375f;  /* navy   — places / regional MBONs            */
-  --facet-tool:    #b5651d;  /* amber  — tools, dashboards, infographics    */
+  /* ---- Facet colors: tag taxonomy prefixes ------------------------------ */
+  --facet-place:   #01375f;  /* navy   — geographic places / regions        */
+  --facet-method:  #15788f;  /* teal   — observing methods                  */
   --facet-org:     #1a7a4e;  /* kelp   — organizations / partners           */
-  --facet-type:    #9c2150;  /* coral-deep — product types / topics         */
-  /* darker source variants, for borders/text on tints */
-  --facet-tool-deep: #884501;
-  --facet-org-deep:  #015f37;
-  --facet-type-deep: #5f012b;
+  --facet-type:    #b5651d;  /* amber  — content/tool types                 */
+  --facet-topic:   #44606e;  /* ink    — general topics                     */
+  /* legacy aliases kept for backward compat */
+  --facet-region:  var(--facet-place);
+  --facet-tool:    var(--facet-type);
+  /* darker variants for borders */
+  --facet-place-deep:  #002843;
+  --facet-method-deep: #0d5a6b;
+  --facet-org-deep:    #015f37;
+  --facet-type-deep:   #884501;
+  --facet-topic-deep:  #2c4550;
 
   /* ---- Semantic status -------------------------------------------------- */
   --ok:   #1a7a4e;

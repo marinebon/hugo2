@@ -2,10 +2,11 @@
 author: Emily Davenport
 banner: img/news/2026-01-tracking-mola.jpg
 date: '2026-01-15'
-summary: By combining satellite and acoustic tracking of marine species like the ocean sunfish, BioTrack is uncovering key patterns in biodiversity and making animal-movement data accessible to resource managers.
+summary: By combining satellite and acoustic tracking of marine species like the ocean
+  sunfish, BioTrack is uncovering key patterns in biodiversity and making animal-movement
+  data accessible to resource managers.
 tags:
-- biotrack
-- tracking
+- method.tracking
 title: Tracking Ocean Sunfish to Map Marine Biodiversity Hotspots
 ---
 

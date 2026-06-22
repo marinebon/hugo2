@@ -2,10 +2,11 @@
 author: MBON Communications
 banner: img/news/2026-01-plankton-perfect-ctd.png
 date: '2025-12-10'
-summary: Dr. Enrique Montes uses a CPICS underwater microscope to capture high-resolution images of plankton in South Florida waters, building a new window into marine biodiversity.
+summary: Dr. Enrique Montes uses a CPICS underwater microscope to capture high-resolution
+  images of plankton in South Florida waters, building a new window into marine biodiversity.
 tags:
-- south-florida
-- science
+- place.south-florida
+- topic.science
 title: 'Plankton Perfect: Using Imagery to Document Microscopic Marine Life'
 ---
 

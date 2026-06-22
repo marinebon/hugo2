@@ -3,7 +3,7 @@
   <section class="page-header">
     <div class="page-header__inner">
       <h1>Search</h1>
-      <p class="page-header__lead">Find network nodes, products, news, and more.</p>
+      <p class="page-header__lead">Find network nodes, tools, news, and more.</p>
     </div>
   </section>
   <section class="section">
@@ -17,10 +17,21 @@
 <link  href="{{ "pagefind/pagefind-ui.css" | relURL }}" rel="stylesheet">
 <script src="{{ "pagefind/pagefind-ui.js"  | relURL }}"></script>
 <script>
-  const pf = new PagefindUI({ element: "#search", showSubResults: true });
+  const pf = new PagefindUI({
+    element: "#search",
+    showSubResults: true,
+    showImages: false,
+    excerptLength: 20,
+    filters: {
+      method: "Method",
+      place:  "Region",
+      org:    "Organization",
+      type:   "Type",
+      topic:  "Topic",
+    },
+  });
   const q = new URLSearchParams(window.location.search).get('q');
   if (q) {
-    // PagefindUI renders async — wait for its input to mount then trigger search
     const poll = setInterval(() => {
       const input = document.querySelector('#search input[type=text]');
       if (input) {

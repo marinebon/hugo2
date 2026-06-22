@@ -1,10 +1,12 @@
 ---
 banner: img/photos/ocean-blue.jpg
 date: '2022-01-01'
-summary: Announcement of expanded global MBON network coordination, connecting regional programmes into a unified, interoperable system for tracking marine biodiversity worldwide.
+summary: Announcement of expanded global MBON network coordination, connecting regional
+  programmes into a unified, interoperable system for tracking marine biodiversity
+  worldwide.
 tags:
-- network
-- global
+- topic.network
+- place.global
 title: Global Network for Marine Biodiversity
 ---
 

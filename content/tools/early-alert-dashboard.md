@@ -6,11 +6,12 @@ links:
   url: https://mbon-dashboards.marine.usf.edu
 - label: Source code
   url: https://github.com/marinebon/mbon-dashboard-server
-summary: Early-warning dashboard combining satellite and buoy data to detect harmful algal blooms and anoxic conditions in the Florida Keys National Marine Sanctuary.
+summary: Early-warning dashboard combining satellite and buoy data to detect harmful
+  algal blooms and anoxic conditions in the Florida Keys National Marine Sanctuary.
 tags:
-- tool:dashboard
-- org:nms
-- region:south-fl
+- type.dashboard
+- org.nms
+- place.south-florida
 title: Florida Keys NMS Alert Dashboard
 weight: 5
 ---

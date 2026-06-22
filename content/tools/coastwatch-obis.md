@@ -4,11 +4,13 @@ links:
 - label: Open CoastWatch OBIS Explorer
   primary: true
   url: https://cwcgom.aoml.noaa.gov/OBIS/
-summary: Server-side tool that co-locates satellite remote sensing products, gridded model outputs, and OBIS field observations to generate biodiversity indicators for any polygon.
+summary: Server-side tool that co-locates satellite remote sensing products, gridded
+  model outputs, and OBIS field observations to generate biodiversity indicators for
+  any polygon.
 tags:
-- region:global
-- tool:dashboard
-- type:tool
+- place.global
+- type.dashboard
+- type.tool
 title: CoastWatch OBIS Indicator Explorer
 weight: 8
 ---

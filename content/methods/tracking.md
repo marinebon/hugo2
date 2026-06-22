@@ -1,10 +1,12 @@
 ---
 title: Tracking
 weight: 4
-summary: Electronic tags on fish, turtles, marine mammals, and seabirds reveal how animals move through and use ocean habitat — essential for conservation planning and understanding climate responses.
+summary: Electronic tags on fish, turtles, marine mammals, and seabirds reveal how
+  animals move through and use ocean habitat — essential for conservation planning
+  and understanding climate responses.
 banner: img/working-groups/atn-biotrack.png
 tags:
-- method.Tracking
+- method.tracking
 ---
 
 Telemetry — attaching electronic tags to marine animals and recovering the location and behavior data they record — has transformed our understanding of how ocean biodiversity is distributed in space and time. MBON's tracking work is anchored in the **BioTrack** thematic node, which coordinates with NOAA's Animal Telemetry Network (ATN).

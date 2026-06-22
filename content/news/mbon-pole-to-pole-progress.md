@@ -1,11 +1,13 @@
 ---
 banner: img/photos/pole-to-pole-map.png
 date: '2021-09-09'
-summary: Enrique Montes presented on the MBON Pole to Pole network's progress coordinating standardised biodiversity data across the Americas in support of the 2030 Agenda and CBD.
+summary: Enrique Montes presented on the MBON Pole to Pole network's progress coordinating
+  standardised biodiversity data across the Americas in support of the 2030 Agenda
+  and CBD.
 tags:
-- pole-to-pole
-- americas
-- progress
+- place.pole-to-pole
+- place.americas
+- topic.progress
 title: MBON Pole to Pole Progress Report
 ---
 

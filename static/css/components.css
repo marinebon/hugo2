@@ -47,10 +47,14 @@
   color:var(--_c); background:color-mix(in srgb, var(--_c) 8%, var(--white));
   cursor:default; transition:background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
 }
-.tag--region{ --_c:var(--facet-region); }
-.tag--tool{   --_c:var(--facet-tool); }
+.tag--place{  --_c:var(--facet-place); }
+.tag--method{ --_c:var(--facet-method); }
 .tag--org{    --_c:var(--facet-org); }
 .tag--type{   --_c:var(--facet-type); }
+.tag--topic{  --_c:var(--facet-topic); }
+/* legacy aliases */
+.tag--region{ --_c:var(--facet-place); }
+.tag--tool{   --_c:var(--facet-type); }
 button.tag{ cursor:pointer; }
 button.tag:hover{ background:color-mix(in srgb, var(--_c) 16%, var(--white)); }
 .tag.is-active{ background:var(--_c); color:#fff; border-color:var(--_c); }

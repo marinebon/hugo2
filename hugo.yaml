@@ -23,15 +23,18 @@ menu:
       identifier: network
       pageRef: /network
       weight: 2
-    - name: Products
-      pageRef: /products
+    - name: Methods
+      pageRef: /methods
       weight: 3
+    - name: Tools
+      pageRef: /tools
+      weight: 4
     - name: News
       pageRef: /news
-      weight: 4
+      weight: 5
     - name: About
       pageRef: /about
-      weight: 5
+      weight: 6
 
 taxonomies:
   tag: tags

@@ -1,12 +1,14 @@
 ---
 banner: img/photos/ocean-blue.jpg
 date: '2022-10-15'
-summary: A workshop bringing together practitioners to document, share, and align best practices for marine biodiversity observation across instruments, regions, and disciplines.
+summary: A workshop bringing together practitioners to document, share, and align
+  best practices for marine biodiversity observation across instruments, regions,
+  and disciplines.
 tags:
-- workshop
-- best-practices
-- data
-- marine-life-2030
+- topic.workshop
+- topic.best-practices
+- topic.data
+- topic.marine-life-2030
 title: Ocean Best Practices Workshop
 ---
 

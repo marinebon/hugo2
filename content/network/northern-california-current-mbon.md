@@ -7,7 +7,7 @@ lng: -124
 since: '2014'
 summary: Upwelling-driven productivity off Oregon and Washington.
 tags:
-- regional
+- topic.regional
 title: N. California Current MBON
 ---
 

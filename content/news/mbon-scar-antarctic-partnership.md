@@ -1,11 +1,12 @@
 ---
 banner: img/photos/ocean-blue.jpg
 date: '2022-03-01'
-summary: MBON, SCAR, and the SCAR Antarctic Biodiversity Portal formalise a cooperation to reinforce ocean biodiversity observing capacity in the Southern Ocean and beyond.
+summary: MBON, SCAR, and the SCAR Antarctic Biodiversity Portal formalise a cooperation
+  to reinforce ocean biodiversity observing capacity in the Southern Ocean and beyond.
 tags:
-- antarctic
-- partnership
-- collaboration
+- place.antarctic
+- topic.partnership
+- topic.collaboration
 title: MBON and SCAR Antarctic Partnership
 ---
 

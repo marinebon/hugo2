@@ -1,11 +1,12 @@
 ---
 banner: img/photos/ocean-blue.jpg
 date: '2022-09-01'
-summary: MBON works to build biodiversity monitoring capacity across nations, sharing methods, tools, and training to ensure global participation in ocean observation.
+summary: MBON works to build biodiversity monitoring capacity across nations, sharing
+  methods, tools, and training to ensure global participation in ocean observation.
 tags:
-- capacity-development
-- collaboration
-- marine-protected-areas
+- topic.capacity-development
+- topic.collaboration
+- topic.marine-protected-areas
 title: International Capacity Development Collaboration
 ---
 

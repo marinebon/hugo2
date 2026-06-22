@@ -2,9 +2,9 @@
 banner: img/photos/ocean-blue.jpg
 date: '2021-06-01'
 tags:
-- marine-life-2030
-- un-ocean-decade
-- endorsement
+- topic.marine-life-2030
+- topic.un-ocean-decade
+- topic.endorsement
 title: Marine Life 2030 UN Ocean Decade Endorsement
 ---
 

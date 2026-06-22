@@ -1,11 +1,13 @@
 ---
 banner: img/photos/sunfish.jpg
 date: '2020-09-01'
-summary: Over 30 regional experts met virtually to coordinate U.S.–Canada approaches to understanding North Atlantic right whale foraging habitat, linking zooplankton science to conservation strategy.
+summary: Over 30 regional experts met virtually to coordinate U.S.–Canada approaches
+  to understanding North Atlantic right whale foraging habitat, linking zooplankton
+  science to conservation strategy.
 tags:
-- right-whales
-- monitoring
-- conservation
+- topic.right-whales
+- topic.monitoring
+- topic.conservation
 title: North Atlantic Right Whale Monitoring
 ---
 

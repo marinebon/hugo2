@@ -8,11 +8,12 @@ links:
   url: https://github.com/marinebon/seascape_app
 - label: seascapeR package
   url: https://github.com/marinebon/seascapeR
-summary: Interactive Shiny application for visualizing global Seascape Classes in time and space across U.S. National Marine Sanctuaries.
+summary: Interactive Shiny application for visualizing global Seascape Classes in
+  time and space across U.S. National Marine Sanctuaries.
 tags:
-- region:global
-- tool:dashboard
-- org:nms
+- place.global
+- type.dashboard
+- org.nms
 title: Seascapes Viewer
 weight: 2
 ---

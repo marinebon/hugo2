@@ -1,10 +1,12 @@
 ---
 banner: img/photos/ocean-blue.jpg
 date: '2021-09-01'
-summary: UNEP-WCMC's National Ecosystem Assessment Initiative launches an online platform hosting resources, case studies, and guidance to support countries undertaking ecosystem assessments.
+summary: UNEP-WCMC's National Ecosystem Assessment Initiative launches an online platform
+  hosting resources, case studies, and guidance to support countries undertaking ecosystem
+  assessments.
 tags:
-- ecosystem-assessment
-- unep
+- topic.ecosystem-assessment
+- org.unep
 title: National Ecosystem Assessment Initiative
 ---
 

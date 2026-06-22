@@ -1,12 +1,14 @@
 ---
 banner: img/photos/reef-sunlight.jpg
 date: '2021-10-18'
-summary: OBIS and UNESCO launch a two-year eDNA project to monitor fish biodiversity across marine World Heritage sites, providing globally standardised data on climate vulnerability.
+summary: OBIS and UNESCO launch a two-year eDNA project to monitor fish biodiversity
+  across marine World Heritage sites, providing globally standardised data on climate
+  vulnerability.
 tags:
-- obis
-- unesco
-- world-heritage
-- edna
+- org.obis
+- org.unesco
+- topic.world-heritage
+- method.genomics
 title: OBIS and UNESCO Marine World Heritage Sites
 ---
 

@@ -24,8 +24,8 @@
           <img src="{{ . | relURL }}" alt="" style="width:100%;height:220px;object-fit:cover;">
         </div>
         {{ end }}
-        <a class="btn btn--action btn--full" href="{{ "products" | relURL }}" style="margin-bottom:var(--space-3);">
-          View related products <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        <a class="btn btn--action btn--full" href="{{ "tools" | relURL }}" style="margin-bottom:var(--space-3);">
+          View related tools <i class="fas fa-arrow-right" aria-hidden="true"></i>
         </a>
         <a class="btn btn--outline btn--full" href="{{ "methods" | relURL }}">
           All methods <i class="fas fa-arrow-right" aria-hidden="true"></i>
@@ -50,6 +50,17 @@
       </div>
     </div>
   </section>
+  {{ end }}
+  {{/* pagefind tag filters */}}
+  {{ if .Params.tags }}
+  <div style="display:none" aria-hidden="true">
+    {{ range .Params.tags }}
+    {{ $parts := split . "." }}
+    {{ if ge (len $parts) 2 }}
+    <span data-pagefind-filter="{{ index $parts 0 }}:{{ strings.TrimPrefix (printf "%s." (index $parts 0)) . }}"></span>
+    {{ end }}
+    {{ end }}
+  </div>
   {{ end }}
 </main>
 {{ end }}

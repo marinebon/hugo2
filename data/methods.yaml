@@ -48,9 +48,10 @@
 
 - id: genomics
   label: Genomics & eDNA
+  display: "GENOMICS & <span style=\"text-transform:none\">e</span>DNA"
   icon: dna
-  x: 80
-  y: 50
+  x: 73
+  y: 42
   summary: >
     Water and sediment samples contain DNA shed by every organism that passed through.
     Metabarcoding and metagenomics decode this environmental DNA to produce species
@@ -61,8 +62,8 @@
 - id: indicators
   label: Indicators & Data
   icon: chart-line
-  x: 55
-  y: 82
+  x: 93
+  y: 22
   summary: >
     Raw observations become decision-relevant information through synthesis into
     Essential Ocean Variables and Essential Biodiversity Variables. MBON's indicators

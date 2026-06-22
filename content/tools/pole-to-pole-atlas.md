@@ -8,11 +8,12 @@ links:
   url: https://obis.org/institute/23070
 - label: Protocols & methods
   url: https://marinebon.org/p2p/about.html
-summary: Harmonized rocky-shore and sandy-beach biodiversity observations from Canada to Patagonia, standardized for cross-regional comparison and open access via OBIS.
+summary: Harmonized rocky-shore and sandy-beach biodiversity observations from Canada
+  to Patagonia, standardized for cross-regional comparison and open access via OBIS.
 tags:
-- region:americas
-- type:data
-- org:obis
+- place.americas
+- type.data
+- org.obis
 title: MBON Pole to Pole Data Atlas
 weight: 6
 ---

@@ -1,12 +1,14 @@
 ---
 banner: img/news/uruguay-rocky-shore.jpeg
 date: '2024-10-01'
-summary: MBON Pole to Pole partners gather in Uruguay for a hands-on workshop on rocky shore monitoring protocols, advancing standardised intertidal biodiversity surveys across the Americas.
+summary: MBON Pole to Pole partners gather in Uruguay for a hands-on workshop on rocky
+  shore monitoring protocols, advancing standardised intertidal biodiversity surveys
+  across the Americas.
 tags:
-- workshop
-- rocky-shore
-- pole-to-pole
-- uruguay
+- topic.workshop
+- topic.rocky-shore
+- place.pole-to-pole
+- place.uruguay
 title: Uruguay Rocky Shore Monitoring Workshop
 ---
 

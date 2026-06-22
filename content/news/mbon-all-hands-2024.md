@@ -2,10 +2,12 @@
 author: MBON Communications
 banner: img/news/mbon-all-hands-2024.png
 date: '2024-04-01'
-summary: The U.S. MBON celebrated the tenth anniversary of its pilot projects at its annual All-Hands Workshop in New Orleans, bringing together scientists, agency partners, and international collaborators.
+summary: The U.S. MBON celebrated the tenth anniversary of its pilot projects at its
+  annual All-Hands Workshop in New Orleans, bringing together scientists, agency partners,
+  and international collaborators.
 tags:
-- mbon
-- workshop
+- org.mbon
+- topic.workshop
 title: 'MBON All Hands 2024: Ten Years of U.S. MBON'
 ---
 

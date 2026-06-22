@@ -4,11 +4,12 @@ links:
 - label: Open MBON Data Portal
   primary: true
   url: https://mbon.ioos.us/
-summary: Search, download, visualize, and analyze real-time, delayed-mode, and historical MBON biological observations alongside physical and chemical data.
+summary: Search, download, visualize, and analyze real-time, delayed-mode, and historical
+  MBON biological observations alongside physical and chemical data.
 tags:
-- region:global
-- type:data
-- tool:portal
+- place.global
+- type.data
+- type.portal
 title: MBON Data Portal
 weight: 3
 ---

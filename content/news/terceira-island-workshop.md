@@ -1,12 +1,14 @@
 ---
 banner: img/photos/reef-sunlight.jpg
 date: '2025-11-10'
-summary: A hands-on workshop on mobilising marine biological datasets to OBIS, with field training on rocky intertidal monitoring using MBON Pole to Pole protocols. Terceira Island, Azores, November 2025.
+summary: A hands-on workshop on mobilising marine biological datasets to OBIS, with
+  field training on rocky intertidal monitoring using MBON Pole to Pole protocols.
+  Terceira Island, Azores, November 2025.
 tags:
-- workshop
-- training
-- azores
-- obis
+- topic.workshop
+- topic.training
+- place.azores
+- org.obis
 title: 'Terceira Island Workshop 2025: Marine Biodiversity Data'
 ---
 

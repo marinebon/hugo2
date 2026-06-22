@@ -2,9 +2,9 @@
 banner: img/photos/ocean-blue.jpg
 date: '2022-01-01'
 tags:
-- biodiversity
-- monitoring
-- indicators
+- topic.biodiversity
+- topic.monitoring
+- method.indicators
 title: Watching for Changes in Marine Biodiversity
 ---
 

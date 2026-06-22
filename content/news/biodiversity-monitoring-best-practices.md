@@ -1,11 +1,13 @@
 ---
 banner: img/photos/reef-sunlight.jpg
 date: '2022-06-01'
-summary: Collaborative effort to establish and disseminate best practices for marine biodiversity monitoring, ensuring interoperability and long-term usability of observation data.
+summary: Collaborative effort to establish and disseminate best practices for marine
+  biodiversity monitoring, ensuring interoperability and long-term usability of observation
+  data.
 tags:
-- best-practices
-- monitoring
-- training
+- topic.best-practices
+- topic.monitoring
+- topic.training
 title: Biodiversity Monitoring Best Practices
 ---
 

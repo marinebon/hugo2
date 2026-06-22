@@ -1,12 +1,22 @@
-{{/* Faceted tag from a "facet:value" string (.). Looks up a friendly label
-     from data/product_filters.yaml; falls back to a humanized value. */}}
-{{ $parts := split . ":" }}
-{{ if eq (len $parts) 2 }}
+{{/* Renders a single tag. Accepts a "facet.value" string.
+     Splits on the first "." to get facet and value; strips the prefix
+     for display. Falls back to the full string if no "." is found.
+     Color comes from .tag--{facet} CSS class. */}}
+{{ $raw   := . }}
+{{ $parts := split $raw "." }}
+{{ if ge (len $parts) 2 }}
   {{ $facet := index $parts 0 }}
-  {{ $value := index $parts 1 }}
+  {{ $value := strings.TrimPrefix (printf "%s." $facet) $raw }}
   {{ $label := humanize $value }}
-  {{ range hugo.Data.product_filters }}{{ if eq .facet $facet }}{{ range .values }}{{ if eq .value $value }}{{ $label = .name }}{{ end }}{{ end }}{{ end }}{{ end }}
+  {{/* look up friendly label from tool_filters.yaml */}}
+  {{ range hugo.Data.tool_filters }}
+    {{ if eq .facet $facet }}
+      {{ range .values }}
+        {{ if eq .value $value }}{{ $label = .name }}{{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
   <span class="tag tag--{{ $facet }}">{{ $label }}</span>
 {{ else }}
-  <span class="tag">{{ humanize . }}</span>
+  <span class="tag">{{ humanize $raw }}</span>
 {{ end }}

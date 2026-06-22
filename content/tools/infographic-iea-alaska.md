@@ -4,12 +4,14 @@ links:
 - label: Open infographic
   primary: true
   url: https://noaa-iea.github.io/ak-info/
-summary: Through an integrated science approach, the NOAA Integrated Ecosystem Assessment program balances the needs of nature and society, supporting diverse marine resource management objectives in an ecosystem context.
+summary: Through an integrated science approach, the NOAA Integrated Ecosystem Assessment
+  program balances the needs of nature and society, supporting diverse marine resource
+  management objectives in an ecosystem context.
 tags:
-- region:us
-- tool:infographic
-- org:noaa-iea
-- type:instance
+- place.us
+- type.infographic
+- org.noaa-iea
+- type.instance
 title: Alaska IEA Infographics
 weight: 9
 ---

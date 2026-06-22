@@ -6,11 +6,12 @@ links:
   url: https://sanctuarywatch.ioos.us
 - label: About the project
   url: https://sanctuarywatch.ioos.us/about
-summary: Web-based interactive tools for tracking ecosystem conditions, human connections, and management impacts across U.S. National Marine Sanctuaries.
+summary: Web-based interactive tools for tracking ecosystem conditions, human connections,
+  and management impacts across U.S. National Marine Sanctuaries.
 tags:
-- org:nms
-- tool:dashboard
-- region:us
+- org.nms
+- type.dashboard
+- place.us
 title: Sanctuary Watch
 weight: 4
 ---

@@ -6,11 +6,12 @@ links:
   url: https://portal.atn.ioos.us/
 - label: About BioTrack
   url: https://marinebon.org/bons_thematic/biotrack/
-summary: Interactive map of satellite and acoustic marine animal tracks that identifies biodiversity hotspots and their overlap with human-use areas.
+summary: Interactive map of satellite and acoustic marine animal tracks that identifies
+  biodiversity hotspots and their overlap with human-use areas.
 tags:
-- region:north-atlantic
-- tool:dashboard
-- type:tool
+- place.north-atlantic
+- type.dashboard
+- type.tool
 title: BioTrack Telemetry Portal
 weight: 1
 ---

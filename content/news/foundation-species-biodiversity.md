@@ -2,9 +2,9 @@
 banner: img/photos/kelp.jpg
 date: '2022-01-01'
 tags:
-- kelp
-- biodiversity
-- science
+- topic.kelp
+- topic.biodiversity
+- topic.science
 title: Marine Foundation Species and Biodiversity
 ---
 

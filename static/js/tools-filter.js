@@ -1,17 +1,17 @@
 /* ============================================================================
-   MBON products filter — vanilla JS. Filter cards by faceted tags.
-   Each [data-product] card carries data-tags="region:south-fl tool:dashboard".
+   MBON tools filter — vanilla JS. Filter cards by faceted tags.
+   Each [data-tool] card carries data-tags="place.south-florida type.dashboard".
    Each .filter-btn carries data-facet + data-value. AND across facets,
-   OR within a facet. No build step required.
+   OR within a facet. 
    ========================================================================== */
 (function () {
   document.addEventListener('DOMContentLoaded', function () {
-    var bar = document.querySelector('[data-product-filter]');
+    var bar = document.querySelector('[data-tool-filter]');
     if (!bar) return;
-    var cards = Array.prototype.slice.call(document.querySelectorAll('[data-product]'));
+    var cards = Array.prototype.slice.call(document.querySelectorAll('[data-tool]'));
     var btns = Array.prototype.slice.call(bar.querySelectorAll('.filter-btn'));
-    var countEl = document.querySelector('[data-product-count]');
-    var clearEl = document.querySelector('[data-product-clear]');
+    var countEl = document.querySelector('[data-tool-count]');
+    var clearEl = document.querySelector('[data-tool-clear]');
     var sel = {}; // facet -> Set(values)
 
     function apply() {
@@ -24,16 +24,16 @@
           if (!sel[facet] || sel[facet].size === 0) return true;
           var matched = false;
           sel[facet].forEach(function (val) {
-            if (tags.indexOf(facet + ':' + val) !== -1) matched = true;
+            if (tags.indexOf(facet + '.' + val) !== -1) matched = true;
           });
           return matched;
         });
         card.style.display = ok ? '' : 'none';
         if (ok) shown++;
       });
-      if (countEl) countEl.textContent = shown + ' OF ' + cards.length + ' PRODUCTS' + (active ? ' \u00b7 ' + active + ' FILTERS' : '');
+      if (countEl) countEl.textContent = shown + ' OF ' + cards.length + ' TOOLS' + (active ? ' \u00b7 ' + active + ' FILTERS' : '');
       if (clearEl) clearEl.style.display = active ? '' : 'none';
-      var empty = document.querySelector('[data-product-empty]');
+      var empty = document.querySelector('[data-tool-empty]');
       if (empty) empty.style.display = shown === 0 ? '' : 'none';
     }
 

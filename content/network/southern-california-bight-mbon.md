@@ -7,7 +7,7 @@ lng: -118.5
 since: '2015'
 summary: CalCOFI-anchored monitoring of the Bight.
 tags:
-- regional
+- topic.regional
 title: S. California Bight MBON
 ---
 

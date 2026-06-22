@@ -1,10 +1,11 @@
 ---
 title: Remote Sensing
 weight: 1
-summary: Satellites and aerial sensors resolve ocean color, temperature, and habitat extent across millions of square kilometers — scales no ship survey can match.
+summary: Satellites and aerial sensors resolve ocean color, temperature, and habitat
+  extent across millions of square kilometers — scales no ship survey can match.
 banner: img/photos/seascapes.jpg
 tags:
-- method.RemoteSensing
+- method.remote-sensing
 ---
 
 Remote sensing allows MBON to observe the ocean surface continuously and globally. Earth-observation satellites measure chlorophyll concentration, sea surface temperature, turbidity, and light attenuation — all proxies for biological productivity and habitat conditions.

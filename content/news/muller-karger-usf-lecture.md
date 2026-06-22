@@ -1,10 +1,11 @@
 ---
 banner: img/news/muller-karger-dpu.jpg
 date: '2024-01-17'
-summary: Frank Muller-Karger delivers a public lecture at USF on ocean biodiversity, remote sensing, and the future of global marine observation networks.
+summary: Frank Muller-Karger delivers a public lecture at USF on ocean biodiversity,
+  remote sensing, and the future of global marine observation networks.
 tags:
-- muller-karger
-- lecture
+- topic.muller-karger
+- topic.lecture
 title: Dr. Frank Muller-Karger USF Distinguished Lecture
 ---
 

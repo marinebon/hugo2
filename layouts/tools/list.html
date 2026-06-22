@@ -2,16 +2,16 @@
 <main>
   <section class="page-header">
     <div class="page-header__inner">
-      <span class="eyebrow eyebrow--rule eyebrow--ondark">Data &amp; products</span>
-      <h1>The MBON product catalog</h1>
+      <span class="eyebrow eyebrow--rule eyebrow--ondark">Software &amp; data portals</span>
+      <h1>MBON tools catalog</h1>
       <p class="page-header__lead">{{ .Params.summary }}</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <div class="filter-bar" data-product-filter>
-        {{ range hugo.Data.product_filters }}
+      <div class="filter-bar" data-tool-filter>
+        {{ range hugo.Data.tool_filters }}
           {{ $facet := .facet }}
           <div class="filter-group">
             <span class="filter-group__label" style="color:var(--facet-{{ $facet }});">{{ .label }}</span>
@@ -23,25 +23,25 @@
           </div>
         {{ end }}
         <div class="filter-foot">
-          <span class="filter-count" data-product-count></span>
-          <button class="btn btn--ghost btn--sm" data-product-clear style="display:none;"><i class="fas fa-xmark" aria-hidden="true"></i> Clear filters</button>
+          <span class="filter-count" data-tool-count></span>
+          <button class="btn btn--ghost btn--sm" data-tool-clear style="display:none;"><i class="fas fa-xmark" aria-hidden="true"></i> Clear filters</button>
         </div>
       </div>
 
       <div class="grid-auto">
-        {{ range sort (where site.RegularPages "Section" "products") "Params.weight" }}
-          <div data-product data-tags="{{ delimit .Params.tags " " }}">
+        {{ range sort (where site.RegularPages "Section" "tools") "Params.weight" }}
+          <div data-tool data-tags="{{ delimit .Params.tags " " }}">
             {{ partial "card-product.html" . }}
           </div>
         {{ end }}
       </div>
 
-      <div data-product-empty style="display:none;text-align:center;padding:var(--space-9);color:var(--text-muted);">
+      <div data-tool-empty style="display:none;text-align:center;padding:var(--space-9);color:var(--text-muted);">
         <i class="fas fa-fish" style="font-size:32px;opacity:.4;" aria-hidden="true"></i>
-        <p style="margin-top:var(--space-4);">No products match those filters yet.</p>
+        <p style="margin-top:var(--space-4);">No tools match those filters yet.</p>
       </div>
     </div>
   </section>
 </main>
 {{ end }}
-{{ define "scripts" }}<script src="{{ "js/products-filter.js" | relURL }}" defer></script>{{ end }}
+{{ define "scripts" }}<script src="{{ "js/tools-filter.js" | relURL }}" defer></script>{{ end }}

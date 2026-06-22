@@ -11,9 +11,10 @@ lat: 36
 lng: -122
 logo: img/logos/biosound.jpg
 since: '2021'
-summary: Listening to the ocean — advancing passive acoustic monitoring as an indicator of marine biodiversity.
+summary: Listening to the ocean — advancing passive acoustic monitoring as an indicator
+  of marine biodiversity.
 tags:
-- thematic
+- topic.thematic
 title: BioSound
 ---
 

@@ -1,11 +1,13 @@
 ---
 title: Indicators & Data Management
 weight: 6
-summary: Raw observations become decision-relevant information through synthesis into Essential Ocean Variables, open data pipelines, and indicators that managers and policymakers can act on.
+summary: Raw observations become decision-relevant information through synthesis into
+  Essential Ocean Variables, open data pipelines, and indicators that managers and
+  policymakers can act on.
 banner: img/photos/pole-to-pole-map.png
 tags:
-- method.Indicators
-- method.DataMgmt
+- method.indicators
+- method.data-mgmt
 ---
 
 Observations — however numerous — only inform conservation and policy when they are synthesized into indicators, made interoperable across networks, and delivered through open, reproducible data systems. MBON's indicators and data management (DMAC) working groups develop the infrastructure that connects raw data to decisions.

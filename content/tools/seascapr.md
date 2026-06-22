@@ -6,10 +6,11 @@ links:
   url: https://marinebon.org/seascapeR/
 - label: Source code
   url: https://github.com/marinebon/seascapeR
-summary: An R package and prototype interface to explore Seascapes in different marine regions, including U.S. National Marine Sanctuaries.
+summary: An R package and prototype interface to explore Seascapes in different marine
+  regions, including U.S. National Marine Sanctuaries.
 tags:
-- region:global
-- type:tool
+- place.global
+- type.tool
 title: seascapeR
 weight: 13
 ---

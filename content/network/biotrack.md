@@ -11,9 +11,10 @@ lat: 38
 lng: -70
 logo: img/logos/biotrack.png
 since: '2021'
-summary: Mapping marine biodiversity hotspots by integrating satellite and acoustic animal tracking with remotely sensed environmental data.
+summary: Mapping marine biodiversity hotspots by integrating satellite and acoustic
+  animal tracking with remotely sensed environmental data.
 tags:
-- thematic
+- topic.thematic
 title: BioTrack
 ---
 

@@ -20,7 +20,7 @@
         <button class="method-spot__pin" aria-describedby="tip-{{ .id }}" aria-expanded="false">
           <span class="sr-only">{{ .label }}</span>
         </button>
-        <span class="method-spot__label" aria-hidden="true">{{ .label }}</span>
+        <span class="method-spot__label" aria-hidden="true">{{ with .display }}{{ . | safeHTML }}{{ else }}{{ .label }}{{ end }}</span>
         <div class="method-spot__tip" id="tip-{{ .id }}" role="tooltip">
           <strong>{{ .label }}</strong>
           <p>{{ .summary }}</p>

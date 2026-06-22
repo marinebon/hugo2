@@ -2,11 +2,13 @@
 author: Rebecca Trinh
 banner: img/news/2026-02-sea-of-cortez/fieldwork.jpg
 date: '2026-02-26'
-summary: Over 85 years after Steinbeck and Ricketts documented life in the Sea of Cortez tidepools, a binational team retraces their expedition using MBON Pole-to-Pole protocols and eDNA to measure decades of biodiversity change.
+summary: Over 85 years after Steinbeck and Ricketts documented life in the Sea of
+  Cortez tidepools, a binational team retraces their expedition using MBON Pole-to-Pole
+  protocols and eDNA to measure decades of biodiversity change.
 tags:
-- pole-to-pole
-- edna
-- fieldwork
+- place.pole-to-pole
+- method.genomics
+- topic.fieldwork
 title: 'User Story: Bringing Steinbeck & Ricketts into the MBON Era'
 ---
 

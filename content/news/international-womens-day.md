@@ -1,9 +1,10 @@
 ---
 banner: img/photos/reef-sunlight.jpg
 date: '2022-03-04'
-summary: An early celebration of International Women's Day — part of the AIR Centre Networking Fridays webinar series on March 4, 2022.
+summary: An early celebration of International Women's Day — part of the AIR Centre
+  Networking Fridays webinar series on March 4, 2022.
 tags:
-- community
+- topic.community
 title: International Women's Day Celebration
 ---
 

@@ -1,10 +1,12 @@
 ---
 title: Traditional Surveys
 weight: 2
-summary: Trawl surveys, visual transects, and ship-based acoustic surveys remain the calibration backbone of marine biodiversity monitoring — the gold standard that modern methods are validated against.
+summary: Trawl surveys, visual transects, and ship-based acoustic surveys remain the
+  calibration backbone of marine biodiversity monitoring — the gold standard that
+  modern methods are validated against.
 banner: img/photos/ocean-blue.jpg
 tags:
-- method.Traditional
+- method.traditional
 ---
 
 Traditional survey methods — bottom trawls, midwater trawls, visual transects by divers or remotely operated vehicles, and ship-based hydroacoustic surveys — have been the primary source of marine biodiversity data for decades. They provide directly observed species identifications, abundance counts, and size measurements that form the calibration baseline for all newer approaches.

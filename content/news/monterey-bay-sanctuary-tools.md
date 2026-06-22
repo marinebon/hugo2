@@ -2,9 +2,9 @@
 banner: img/photos/reef-sunlight.jpg
 date: '2019-04-01'
 tags:
-- tools
-- sanctuaries
-- monterey-bay
+- type.tool
+- place.sanctuaries
+- place.monterey-bay
 title: Monterey Bay Sanctuary Analysis Tools
 ---
 

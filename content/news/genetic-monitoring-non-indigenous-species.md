@@ -1,11 +1,13 @@
 ---
 banner: img/photos/reef-sunlight.jpg
 date: '2021-01-01'
-summary: A continental-scale ARMS network across European marine sanctuaries and ports uses genetic methods to detect non-indigenous species far earlier than conventional sampling.
+summary: A continental-scale ARMS network across European marine sanctuaries and ports
+  uses genetic methods to detect non-indigenous species far earlier than conventional
+  sampling.
 tags:
-- genetic-monitoring
-- invasive-species
-- early-detection
+- method.genomics
+- topic.invasive-species
+- topic.early-detection
 title: Genetic Monitoring for Non-Indigenous Species
 ---
 

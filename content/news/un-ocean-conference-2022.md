@@ -1,11 +1,12 @@
 ---
 banner: img/news/unoc-side-event.jpg
 date: '2022-06-27'
-summary: MBON participated in events surrounding the UN Ocean Conference 2022, advancing Marine Life 2030 and ocean decade commitments for global biodiversity observation.
+summary: MBON participated in events surrounding the UN Ocean Conference 2022, advancing
+  Marine Life 2030 and ocean decade commitments for global biodiversity observation.
 tags:
-- un
-- conference
-- ocean
+- org.un
+- topic.conference
+- topic.ocean
 title: UN Ocean Conference 2022
 ---
 

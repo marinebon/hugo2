@@ -1,10 +1,12 @@
 ---
 title: Acoustics
 weight: 3
-summary: Passive acoustic monitoring listens to the soundscape of the sea; active acoustics enumerates fish and zooplankton. Together they cover the water column continuously, day and night.
+summary: Passive acoustic monitoring listens to the soundscape of the sea; active
+  acoustics enumerates fish and zooplankton. Together they cover the water column
+  continuously, day and night.
 banner: img/working-groups/biosound-hero.jpg
 tags:
-- method.Acoustics
+- method.acoustics
 ---
 
 Sound travels efficiently through water, making acoustics one of the most powerful remote-sensing tools available for the ocean interior. MBON's acoustics working group — operating under the **BioSound** thematic node — develops standards and products for both passive and active acoustic monitoring.

@@ -2,9 +2,9 @@
 banner: img/photos/edna.jpg
 date: '2022-01-01'
 tags:
-- edna
-- research
-- biodiversity
+- method.genomics
+- topic.research
+- topic.biodiversity
 title: Advances in Molecular eDNA Techniques
 ---
 
