@@ -150,9 +150,8 @@
           var hlx = hot._sx + 12, hly = hot._sy - 12;
           ctx.beginPath(); ctx.moveTo(hot._sx, hot._sy); ctx.lineTo(hlx, hly - 4);
           ctx.strokeStyle = 'rgba(255,220,50,0.6)'; ctx.lineWidth = 1; ctx.stroke();
-          ctx.fillStyle = 'rgba(4,19,31,0.82)'; ctx.beginPath(); ctx.roundRect(hlx - 4, hly - 15, htw + 22, 22, 5); ctx.fill();
-          ctx.fillStyle = '#ffdc32'; ctx.beginPath(); ctx.arc(hlx + 4, hly - 4, 3, 0, 7); ctx.fill();
-          ctx.fillStyle = '#ffdc32'; ctx.fillText(hlabel, hlx + 12, hly);
+          ctx.fillStyle = 'rgba(4,19,31,0.82)'; ctx.beginPath(); ctx.roundRect(hlx - 4, hly - 15, htw + 12, 22, 5); ctx.fill();
+          ctx.fillStyle = '#ffdc32'; ctx.fillText(hlabel, hlx + 4, hly);
         }
         var act = regions.find(function (r) { return r.id === st.active; });
         if (act && act._sx != null) {
@@ -161,9 +160,8 @@
           var lx = act._sx + 12, ly = act._sy - 12;
           ctx.beginPath(); ctx.moveTo(act._sx, act._sy); ctx.lineTo(lx, ly - 4);
           ctx.strokeStyle = 'rgba(242,104,63,0.6)'; ctx.lineWidth = 1; ctx.stroke();
-          ctx.fillStyle = 'rgba(4,19,31,0.82)'; ctx.beginPath(); ctx.roundRect(lx - 4, ly - 15, tw + 22, 22, 5); ctx.fill();
-          ctx.fillStyle = '#f2683f'; ctx.beginPath(); ctx.arc(lx + 4, ly - 4, 3, 0, 7); ctx.fill();
-          ctx.fillStyle = '#eaf3f7'; ctx.fillText(label, lx + 12, ly);
+          ctx.fillStyle = 'rgba(4,19,31,0.82)'; ctx.beginPath(); ctx.roundRect(lx - 4, ly - 15, tw + 12, 22, 5); ctx.fill();
+          ctx.fillStyle = '#eaf3f7'; ctx.fillText(label, lx + 4, ly);
         }
         requestAnimationFrame(draw);
       }
