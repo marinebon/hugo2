@@ -1,0 +1,105 @@
+{{ define "main" }}
+<main class="err404">
+
+  <!-- ocean atmosphere -->
+  <div class="err404__ocean" aria-hidden="true">
+    <div class="err404__rays"></div>
+    <div class="err404__particles" id="err404-particles"></div>
+    <svg class="err404__wave" viewBox="0 0 1440 88" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,44 C240,80 480,10 720,44 C900,68 1080,14 1260,36 C1340,46 1400,30 1440,22 L1440,88 L0,88 Z" fill="var(--bg-page)"/>
+    </svg>
+  </div>
+
+  <!-- hero -->
+  <div class="err404__hero">
+    <span class="eyebrow eyebrow--rule eyebrow--ondark">Signal lost · depth unknown</span>
+    <div class="err404__numeral" aria-hidden="true">404</div>
+    <h1 class="err404__title">Lost in the deep</h1>
+    <p class="err404__lead">The page you were looking for has drifted out of range. Let us help you surface.</p>
+  </div>
+
+  <!-- search surface -->
+  <section class="err404__surface">
+    <div class="container" style="max-width:720px;">
+      <p class="err404__hint" id="err404-hint">Searching for related content…</p>
+      <div id="search"></div>
+      <div class="err404__actions">
+        <a href="/" class="btn btn--outline">↑ Return to surface</a>
+        <a href="/search" class="btn btn--ghost">Browse all</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+{{ end }}
+
+{{ define "scripts" }}
+<link href="{{ "pagefind/pagefind-ui.css" | relURL }}" rel="stylesheet">
+<script src="{{ "pagefind/pagefind-ui.js" | relURL }}"></script>
+<script>
+(function () {
+  // ── Bioluminescent particles (no external deps — runs first) ──
+  var pContainer = document.getElementById('err404-particles');
+  if (pContainer) {
+    for (var i = 0; i < 32; i++) {
+      var p = document.createElement('div');
+      p.className = 'err404__particle';
+      var size = 2 + Math.random() * 9;
+      p.style.cssText = [
+        'left:'   + (Math.random() * 100) + '%',
+        'width:'  + size + 'px',
+        'height:' + size + 'px',
+        'animation-duration:' + (6 + Math.random() * 11) + 's',
+        'animation-delay:'    + (-Math.random() * 15)    + 's',
+        'opacity:'            + (0.10 + Math.random() * 0.38),
+      ].join(';');
+      pContainer.appendChild(p);
+    }
+  }
+
+  // ── Extract meaningful terms from the URL path ──
+  var stopWords = new Set([
+    'the','a','an','and','or','of','in','to','for','with','on','at','from','by',
+    'is','was','are','were','be','this','that','it','its','not','but','so','as'
+  ]);
+  // Strip .html / .htm so /404.html → /404 (which then filters as a number)
+  var path = window.location.pathname.replace(/\.html?$/i, '');
+  var terms = path
+    .split(/[\/\-_]+/)
+    .map(function (s) { return s.trim(); })
+    .filter(function (s) { return s.length > 2 && !stopWords.has(s.toLowerCase()) && !/^\d+$/.test(s); })
+    .join(' ')
+    .trim();
+
+  // ── Update hint text ──
+  var hint = document.getElementById('err404-hint');
+  if (hint) {
+    hint.innerHTML = terms
+      ? 'Showing results for <em>' + terms + '</em>'
+      : 'Explore MBON content below.';
+  }
+
+  // ── Pagefind search (guarded — index may not exist in dev) ──
+  try {
+    new PagefindUI({
+      element: "#search",
+      showSubResults: true,
+      showImages: false,
+      excerptLength: 20,
+      filters: { method: "Method", place: "Region", org: "Organization", type: "Type", topic: "Topic" },
+    });
+
+    if (terms) {
+      var poll = setInterval(function () {
+        var input = document.querySelector('#search input[type=text]');
+        if (input) {
+          clearInterval(poll);
+          input.value = terms;
+          input.dispatchEvent(new Event('input', { bubbles: true }));
+        }
+      }, 50);
+    }
+  } catch (e) {}
+})();
+</script>
+{{ end }}

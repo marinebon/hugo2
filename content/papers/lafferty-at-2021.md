@@ -1,7 +1,6 @@
 ---
-title: At textlessspan style=\"font-variant:small-caps;\"textgreaterPalmyra Atolltextless/spantextgreater
-  , the fish‐community environmental textlessspan style=\"font-variant:small-caps;\"textgreaterDNAtextless/spantextgreater
-  signal changes across habitats but not with tides
+title: "At Palmyra Atoll, the fish-community environmental DNA signal changes across
+  habitats but not with tides"
 authors:
 - Kevin D. Lafferty
 - Ana E. Garcia‐Vedrenne
