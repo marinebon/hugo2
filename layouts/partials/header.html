@@ -40,7 +40,7 @@
           </div>
 
         {{ else if eq .Name "Methods" }}
-          {{ $methods := sort (where site.RegularPages "Section" "methods") "Params.weight" }}
+          {{ $methods := sort (where site.RegularPages "Section" "methods") "Title" }}
           <div class="nav-dropdown">
             <a href="{{ .URL }}"{{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }} class="is-active"{{ end }}>
               {{ .Name }}<i class="fas fa-chevron-down nav-dropdown__caret" aria-hidden="true"></i>
