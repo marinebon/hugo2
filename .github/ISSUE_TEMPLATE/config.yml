@@ -1,0 +1,10 @@
+# Issue Template chooser config.
+# Keep "blank issues" on so maintainers can still open freeform issues.
+blank_issues_enabled: true
+contact_links:
+  - name: 📖 How contributing works
+    url: https://github.com/marinebon/hugo2/blob/main/README.md#contributing-content
+    about: Read how adding & editing content works, and how tags are chosen, before you start.
+  - name: ✏️ Edit a page directly on GitHub
+    url: https://github.com/marinebon/hugo2/tree/main/content
+    about: Power users can edit the Markdown file directly — GitHub opens a fork and a PR for you.

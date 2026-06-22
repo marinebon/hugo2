@@ -1,0 +1,47 @@
+name: ✏️ Suggest an edit
+description: Propose a fix or update to an existing page.
+title: "Edit: "
+labels: ["content:edit"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Suggest a change to an existing page. If you arrived from a page's
+        **"Suggest an edit"** link, the path below is already filled in — just
+        describe the change.
+
+        > For a quick text fix you can instead use the **"Edit on GitHub"** link on
+        > the page, which opens the file in GitHub's editor and creates the PR for you.
+  - type: input
+    id: page_url
+    attributes:
+      label: Page URL
+      description: The live URL of the page you want to change.
+      placeholder: https://marinebon.github.io/news/example/
+  - type: input
+    id: content_path
+    attributes:
+      label: Content file
+      description: Auto-filled from the page link (e.g. news/example.md). Leave as-is.
+  - type: textarea
+    id: changes
+    attributes:
+      label: Proposed change
+      description: |
+        Describe what to change — or paste the corrected text. Be specific: quote the
+        current wording and give the replacement. To replace the whole page, paste the
+        full new content inside a fenced ```markdown block``` and the workflow will
+        apply it directly.
+    validations:
+      required: true
+  - type: textarea
+    id: image
+    attributes:
+      label: New / replacement image (optional)
+      description: Drag-and-drop an image to add or swap.
+  - type: markdown
+    attributes:
+      value: |
+        ### What happens next
+        A maintainer (or, for a full-content replacement, an automated workflow) turns
+        this into a Pull Request to review and merge.

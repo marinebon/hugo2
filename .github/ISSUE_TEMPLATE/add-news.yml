@@ -1,0 +1,126 @@
+name: 📰 Add a News post
+description: Propose a new news item or update for the MBON website.
+title: "[News] "
+labels: ["content:news"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing! Fill in the fields below and submit.
+        An automated workflow drafts the page and opens a Pull Request for a
+        maintainer to review — you don't need to know Git, YAML, or Markdown files.
+
+        **Formatting basics** (for the Body field): `**bold**`, `*italic*`,
+        `[link text](https://example.org)`, `## Subheading`, and `- ` for bullet lists.
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: The headline of the post.
+      placeholder: MBON and partners launch a new biodiversity portal
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Date
+      description: Publication date as YYYY-MM-DD. Leave blank to use today.
+      placeholder: "2026-06-22"
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: One or two sentences shown on cards and previews.
+    validations:
+      required: true
+  - type: textarea
+    id: body
+    attributes:
+      label: Body
+      description: The full post in Markdown. Use the formatting basics above. Don't paste images here — use the Banner field.
+    validations:
+      required: true
+  - type: textarea
+    id: image
+    attributes:
+      label: Banner image (optional)
+      description: Drag-and-drop one image here. It becomes the post's banner.
+  - type: dropdown
+    id: tags_topic
+    attributes:
+      label: Topics
+      description: Pick any that apply (these become topic tags).
+      multiple: true
+      options:
+        - Research
+        - Partnership
+        - Workshop
+        - Conference
+        - Meeting
+        - Webinar
+        - Training
+        - Award
+        - Monitoring
+        - Biodiversity
+        - Marine Life 2030
+        - UN Ocean Decade
+        - Best Practices
+        - Data
+        - Policy
+  - type: dropdown
+    id: tags_method
+    attributes:
+      label: Methods (optional)
+      multiple: true
+      options:
+        - Remote Sensing
+        - Genomics
+        - Acoustics
+        - Tracking
+        - Indicators
+        - Benthic
+        - Traditional
+  - type: dropdown
+    id: tags_place
+    attributes:
+      label: Places (optional)
+      multiple: true
+      options:
+        - Global
+        - United States
+        - Americas
+        - North Atlantic
+        - South Florida
+        - Pole-to-Pole
+        - Arctic
+        - Europe
+        - Monterey Bay
+  - type: dropdown
+    id: tags_org
+    attributes:
+      label: Organizations (optional)
+      multiple: true
+      options:
+        - OBIS
+        - NOAA
+        - IOOS
+        - GOOS
+        - GEO BON
+        - UN
+        - UNESCO
+        - National Marine Sanctuaries
+        - NOAA IEA
+        - FWRI
+        - AIR Centre
+  - type: input
+    id: tags_other
+    attributes:
+      label: Other tags (advanced, optional)
+      description: "Comma-separated facet.Value tags if you need ones not listed above, e.g. `topic.Kelp, place.Bering-Sea`."
+  - type: markdown
+    attributes:
+      value: |
+        ### What happens next
+        On submit, a workflow creates a Markdown file (importing your image), then
+        opens a Pull Request and links it here. A maintainer reviews and merges — and
+        it goes live automatically.

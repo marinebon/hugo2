@@ -1,0 +1,104 @@
+name: 🛠️ Add a Tool / Data product
+description: Add a portal, app, infographic, library, or protocol.
+title: "[Tool] "
+labels: ["content:tool"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Add a tool or data product. On submit, a workflow drafts the page and opens
+        a Pull Request for review.
+
+        **Formatting basics** (for the Description field): `**bold**`, `*italic*`,
+        `[link text](https://example.org)`, `## Subheading`, `- ` for bullets.
+  - type: input
+    id: title
+    attributes:
+      label: Name
+      placeholder: BioTrack Telemetry Portal
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: One or two sentences shown on the tool card.
+    validations:
+      required: true
+  - type: textarea
+    id: body
+    attributes:
+      label: Description (optional)
+      description: A fuller description in Markdown — what it does, who it's for, how to use it.
+  - type: textarea
+    id: image
+    attributes:
+      label: Screenshot / logo (optional)
+      description: Drag-and-drop one image here. It becomes the tool's card image.
+  - type: textarea
+    id: links
+    attributes:
+      label: Links
+      description: "One per line as `Label | https://url`. The first line is the primary button."
+      placeholder: |
+        Open the portal | https://portal.example.org
+        About the project | https://example.org/about
+  - type: dropdown
+    id: tags_tool
+    attributes:
+      label: Type
+      description: What kind of tool is this?
+      multiple: true
+      options:
+        - Portal
+        - App
+        - Infographic
+        - Library
+        - Protocol
+    validations:
+      required: true
+  - type: dropdown
+    id: tags_place
+    attributes:
+      label: Region (optional)
+      multiple: true
+      options:
+        - Global
+        - United States
+        - Americas
+        - North Atlantic
+        - South Florida
+  - type: dropdown
+    id: tags_org
+    attributes:
+      label: Organization (optional)
+      multiple: true
+      options:
+        - NOAA IEA
+        - National Marine Sanctuaries
+        - FWRI
+        - OBIS
+  - type: dropdown
+    id: tags_method
+    attributes:
+      label: Methods (optional)
+      multiple: true
+      options:
+        - Remote Sensing
+        - Genomics
+        - Acoustics
+        - Tracking
+        - Indicators
+        - Benthic
+        - Traditional
+  - type: input
+    id: tags_other
+    attributes:
+      label: Other tags (advanced, optional)
+      description: "Comma-separated facet.Value tags, e.g. `place.Pole-to-Pole`."
+  - type: markdown
+    attributes:
+      value: |
+        ### What happens next
+        A workflow opens a Pull Request with the new tool page (importing your image)
+        and links it here for a maintainer to review and merge.

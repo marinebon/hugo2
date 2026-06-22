@@ -1,0 +1,69 @@
+name: 📄 Add a Paper
+description: Add a publication. Paste a DOI to auto-fill, or enter the details manually.
+title: "[Paper] "
+labels: ["content:paper"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Fastest way:** paste a **DOI** below and leave the rest blank — a workflow
+        fetches the title, authors, year, journal, and abstract automatically (via
+        Crossref) and assigns method tags. No DOI? Fill in the manual fields instead.
+  - type: input
+    id: doi
+    attributes:
+      label: DOI
+      description: e.g. 10.3389/fmars.2020.00575 — if provided, the fields below are auto-filled and can be left blank.
+      placeholder: 10.3389/fmars.2020.00575
+  - type: markdown
+    attributes:
+      value: "— or enter manually —"
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: Required if you did not supply a DOI.
+  - type: input
+    id: authors
+    attributes:
+      label: Authors
+      description: Comma-separated, in citation order. e.g. "Muller-Karger F, Canonico G, Montes E"
+  - type: input
+    id: year
+    attributes:
+      label: Year
+      placeholder: "2021"
+  - type: input
+    id: journal
+    attributes:
+      label: Journal / publication
+      placeholder: Frontiers in Marine Science
+  - type: input
+    id: paper_url
+    attributes:
+      label: Link to PDF or publisher page (optional)
+      placeholder: https://doi.org/10.3389/fmars.2020.00575
+  - type: textarea
+    id: abstract
+    attributes:
+      label: Abstract (optional)
+      description: Auto-filled from the DOI when available.
+  - type: dropdown
+    id: tags_method
+    attributes:
+      label: Methods (optional — auto-detected from title/abstract too)
+      multiple: true
+      options:
+        - Remote Sensing
+        - Genomics
+        - Acoustics
+        - Tracking
+        - Indicators
+        - Benthic
+        - Traditional
+  - type: markdown
+    attributes:
+      value: |
+        ### What happens next
+        A workflow builds the paper page (fetching metadata if you gave a DOI) and
+        opens a Pull Request for a maintainer to review and merge.
