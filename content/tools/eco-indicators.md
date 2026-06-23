@@ -9,7 +9,7 @@ links:
 summary: Multivariate ordination workflows summarizing ecological indicators across
   the U.S. National Marine Sanctuaries (in development).
 tags:
-- tool.App
+- tool.Workflow
 - method.Indicators
 - org.NationalMarineSanctuaries
 title: Sanctuary Eco-Indicators

@@ -8,7 +8,7 @@ links:
   url: https://github.com/marinebon/intertidal-temps
 summary: Visualization of intertidal temperature logger records along rocky shores.
 tags:
-- tool.App
+- tool.Workflow
 - method.Benthic
 title: Intertidal Temperatures
 weight: 32

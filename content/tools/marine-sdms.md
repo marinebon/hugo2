@@ -9,7 +9,7 @@ links:
 summary: Materials and code for building marine species distribution models (SDMs)
   from open occurrence and environmental data.
 tags:
-- tool.Package
+- tool.Protocol
 - method.Remote-Sensing
 title: MarineSDMs
 weight: 28

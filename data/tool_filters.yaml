@@ -7,6 +7,7 @@
     - { value: Package,     name: Package }
     - { value: Protocol,    name: Protocol }
     - { value: Training,    name: Training }
+    - { value: Workflow,    name: Workflow }
 - facet: place
   label: Region
   values:

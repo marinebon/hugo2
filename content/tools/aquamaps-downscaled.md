@@ -9,7 +9,7 @@ links:
 summary: Downscaled AquaMaps modeled species distributions for finer-resolution marine
   biodiversity mapping.
 tags:
-- tool.App
+- tool.Workflow
 - method.Remote-Sensing
 title: AquaMaps Downscaled
 weight: 27
