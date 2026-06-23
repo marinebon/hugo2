@@ -53,7 +53,7 @@ body:
         - Portal
         - App
         - Infographic
-        - Library
+        - Package
         - Protocol
     validations:
       required: true

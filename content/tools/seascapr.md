@@ -9,7 +9,7 @@ links:
 summary: An R package and prototype interface to explore Seascapes in different marine
   regions, including U.S. National Marine Sanctuaries.
 tags:
-- tool.Library
+- tool.Package
 - place.Global
 title: seascapeR
 weight: 13

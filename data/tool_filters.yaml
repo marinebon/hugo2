@@ -4,7 +4,7 @@
     - { value: Portal,      name: Portal }
     - { value: App,         name: App }
     - { value: Infographic, name: Infographic }
-    - { value: Library,     name: Library }
+    - { value: Package,     name: Package }
     - { value: Protocol,    name: Protocol }
 - facet: place
   label: Region

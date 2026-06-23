@@ -85,7 +85,7 @@ drives the tag color (`.tag--<facet>`) and the page filters.
 | Facet | Used on | Allowed values |
 |-------|---------|----------------|
 | `method` | methods, tools, papers, news | `data/*_filters.yaml` (Remote-Sensing, Genomics, Acoustics, Tracking, Indicators, Benthic, Traditional) |
-| `tool` | tools | Portal, App, Infographic, Library, Protocol |
+| `tool` | tools | Portal, App, Infographic, Package, Protocol |
 | `place` | tools, news | Global, US, Americas, North-Atlantic, South-Florida, … |
 | `org` | tools, news | OBIS, NOAA-IEA, NationalMarineSanctuaries, FWRI, … |
 | `topic` | news, events | open-ended (Research, Partnership, Meeting, …) |
