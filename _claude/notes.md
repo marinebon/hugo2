@@ -13,7 +13,50 @@ Expand and refine the use of [tags](https://marinebon.org/hugo2/tags/), so they 
 
 And add **People** as its own content type under About to similarly enable connecting with Papers and Projects / Working Groups (ie Network). We want to be able to see related content throughout website.
 
-## 2026-06-22.a **methods** content and hero
+## 2026-06-23.b
+
+Now comb all repositories under github.com/marinebon github.com/noaa-onms and develop a table for considering new additions to the Tools. See also the Glossary and Repository listing of latest paper on MBON indicators with repository references at `/Users/bbest/Library/CloudStorage/GoogleDrive-ben@ecoquants.com/.shortcut-targets-by-id/1sppUmlMtZ-sXaBm72M1-8PnjVudXO91v/US MBON Public Folder/Working Groups/BioIndicators/manuscripts/indicators/ocean_indicators_manuscript_DRAFT_v2.docx`. Try to classify each according to the existing tags (especially tool.*) and record date_last_commit, website if listed, screenshot of website (using webshot2 a la existing tools), status of website, description. Provide a recommendation for inclusion, exclusion, include if updated, etc with any notes. Place the table and images in a safe place within this repository for pushing to the Github repo without interrupting the regular hugo website.
+
+⏺ Done — the review is committed and pushed to tools-review/ (viewable at github.com/marinebon/hugo2/tree/main/tools-review).
+
+  **What I built**
+
+  **Scope**: Combed all **108 repos** — 90 under `marinebon` + 18 under `noaa-onms` — via the GitHub API, and cross-referenced the indicators manuscript's **Supplement S3 (Source Code Repositories)** and software section to
+  prioritize indicator-relevant tools and borrow its descriptions. (The unpublished draft is not reproduced — I deleted the converted text before committing.)
+
+  Disposition: 11 already on-site · **17 candidates** · 80 excluded (websites, workshops, backend infra, superseded demos, analyses).
+
+  **Deliverable in `tools-review/`**:
+  - `README.md` — a recommendation table + per-candidate detail cards with embedded screenshots, classified by `tool.*`/method/org tags, each with date_last_commit, website + 🟢/🔴 HTTP status, and a
+  recommendation. 
+  - `inventory.csv` — all 108 repos with disposition + reason.
+  - `img/` — 13 webshot2/chromote screenshots (mirroring your screenshots.R pattern).
+
+  **Top recommendations (Include)**: `obisindicators`, `extractr`, `onmsR` (R packages); `sanctsound` (Portal); `map-of-activities` (App); `eco-indicators` (App — though the screenshot showed it's still an early landing
+  page).
+
+  Safe placement: `tools-review/` is a top-level dir Hugo doesn't process — verified the build is clean (exit 0) and nothing leaks into public/.
+
+  Two notes
+
+  - 3 sites are down (404): `obis-hex-map`, `sdm-explore`, `sdg14-shiny` — flagged "include if live/updated."
+  - `MarineSDMs` screenshot failed (page render timeout, even via chromote) — noted as unavailable in the doc; the row is otherwise complete.
+
+  Also FYI: inventory.csv includes ~9 manuscript-cited repos in other orgs (CalCOFI, MarineSensitivity, noaa-iea/ecoidx, GEO-BON, iobis) that I listed for context but didn't recommend, since they're outside
+  the two orgs you asked me to comb — easy to fold in if you want them considered too.
+
+## 2026-06-23 tag tool.Library -> Package
+
+Let's change tag `tool.Library` to `tool.Package` and update the navbar Tools accordingly to **Packages** (keeping alphabetical order).
+
+### pad seascapeR hex logo
+Can you pad the `seascapeR` **hex logo** https://marinebon.org/seascapeR/reference/figures/logo.png so the entirety of it (with subtle margin) appears in the card [Image #1]
+
+### fix funk cards: grafana dashboard, fk storymap
+
+Come up with a standardized fix for these 2 tools: 1) https://marinebon.org/hugo2/img/products/early-alert-dashboard.png needed more time to render. 2) https://marinebon.org/hugo2/img/products/storymap-fk-fwri-water-quality.png is crazy long full page without any of the images loaded (probably more time needed to render). The point is to make the cards look nice. Also noticing the vestigial "products" name in img url that should be swapped for updated "tools"
+
+## 2026-06-22 **methods** content and hero
 
 Let's brainstorm on adding another content type **methods** that has its own hero section below the first hero and above the network globe. Each page should hightlight the different methods for observing, synthesizing and disseminating that MBON seeks to advance. These are also reflective of the working groups: genomics (DNA, eDNA), remote sensing (seascapes, imagery), tracking (telemetry), sound (passive & active acoustics), indicators (synthesis, dissemination), data management (DMAC, data sharing). It should also give some mention of supporting and augmenting traditional methods (trawl, visual & acoustic survey), which can be expensive at scale. Come up with a prompt for an image-generating LLM to make a graphic that can be converted to an interactive display in the hero section highlighting each method, so method labels live seperatly on top and when icon hovered shows a description.
 
