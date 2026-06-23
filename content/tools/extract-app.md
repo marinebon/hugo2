@@ -1,4 +1,5 @@
 ---
+draft: true
 image: img/tools/extract-app.png
 links:
 - label: Open the app

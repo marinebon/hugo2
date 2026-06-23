@@ -13,11 +13,11 @@ Expand and refine the use of [tags](https://marinebon.org/hugo2/tags/), so they 
 
 And add **People** as its own content type under About to similarly enable connecting with Papers and Projects / Working Groups (ie Network). We want to be able to see related content throughout website.
 
-## 2026-06-23.b
+## 2026-06-23.b + Tools, incl Trainings, from `marinebon/*`, `noaa-onms/*`, `noaa-iea/*`
 
 Now comb all repositories under github.com/marinebon github.com/noaa-onms and develop a table for considering new additions to the Tools. See also the Glossary and Repository listing of latest paper on MBON indicators with repository references at `/Users/bbest/Library/CloudStorage/GoogleDrive-ben@ecoquants.com/.shortcut-targets-by-id/1sppUmlMtZ-sXaBm72M1-8PnjVudXO91v/US MBON Public Folder/Working Groups/BioIndicators/manuscripts/indicators/ocean_indicators_manuscript_DRAFT_v2.docx`. Try to classify each according to the existing tags (especially tool.*) and record date_last_commit, website if listed, screenshot of website (using webshot2 a la existing tools), status of website, description. Provide a recommendation for inclusion, exclusion, include if updated, etc with any notes. Place the table and images in a safe place within this repository for pushing to the Github repo without interrupting the regular hugo website.
 
-⏺ Done — the review is committed and pushed to tools-review/ (viewable at github.com/marinebon/hugo2/tree/main/tools-review).
+⏺ Done — the review is committed and pushed to `tools-review/` (viewable at github.com/marinebon/hugo2/tree/main/tools-review).
 
   **What I built**
 
@@ -44,6 +44,106 @@ Now comb all repositories under github.com/marinebon github.com/noaa-onms and de
 
   Also FYI: inventory.csv includes ~9 manuscript-cited repos in other orgs (CalCOFI, MarineSensitivity, noaa-iea/ecoidx, GEO-BON, iobis) that I listed for context but didn't recommend, since they're outside
   the two orgs you asked me to comb — easy to fold in if you want them considered too.
+
+Excellent! I fixed MarineSDMs website so should now be able to screenshot, and lets include. Also noaa-onms/sanctsound should be tool.Infographic. proceed with including all recs, and promote workshop /    
+  course / training materials with new tool.Training (and Trainings into navbar of Tools)   
+
+⏺ The screenshot job is already running in the background and will notify me when it completes — no need for a separate monitor. The filter facet, navbar, and all 19 content pages are done and the build is
+  clean. I'll verify the images and commit once the renders finish.
+
+  Interim status:
+  - 19 tool pages created (14 software/data + 5 training workshops), build passes.
+  - tool.Training facet added + Trainings in the Tools navbar (alphabetical).
+  - sanctsound reclassified to tool.Infographic. 
+  - MarineSDMs included (site confirmed live again).
+  - Held back only obis-hex-map and sdm-explore (still 404).
+  - Screenshots rendering into static/img/tools/ (6/19 done so far).
+
+  I'll pick up automatically when the screenshot render finishes to confirm all 19 images landed (re-shooting any failures) and commit everything.
+
+⏺ Committed and pushed. The Tools catalog grew from 16 to 35 entries.
+
+  What was added
+
+  19 new Tools (all with live sites + webshot2 card screenshots in static/img/tools/):
+
+  Software / data (14) — sanctsound (reclassified tool.Infographic per your note), map-of-activities, extractr, obisindicators, onmsR, eco-indicators, edna-vis, aquamaps-downscaled, MarineSDMs
+  (re-screenshotted now that you fixed its site), py-dwc-viz, gmbi, extract-app, intertidal-temps, data-reports.
+
+  Training workshops (5) under the new tool.Training facet — USF Moore taxa mobilization (2026), MBON AIR mobilization, and Pole to Pole Mexico / Brazil / Colombia.
+
+  Navbar + filter — added a tool.Training value to data/tool_filters.yaml and a Trainings entry to the Tools dropdown (alphabetical: Apps · Infographics · Packages · Portals · Protocols · Trainings).
+
+  Disposition note added to tools-review/README.md.
+
+  Two things to flag
+
+  - Held back 2 of the 17 recs — obis-hex-map and sdm-explore still return 404 (no live GitHub Pages site). They're ready to add the moment their sites publish; everything else is curated.
+  - One adjacent training resource left out of scope: ioos/bio_mobilization_workshop — the canonical IOOS/MBON biological-data-mobilization curriculum (cited by the manuscript), live and directly relevant,
+  but it lives in the ioos org rather than the two you asked me to comb. Say the word and I'll add it as a tool.Training too.
+
+  The newer/stronger tools were given lower weights so they sort ahead of the older ones (gmbi, extract-app, intertidal-temps) within the catalog. The site build is clean and the page is live-deployable.
+
+
+Yes, add `ioos/bio_mobilization_workshop` as a `tool.Training`. Similarly add `tbep-tech/shiny-workshop`, and `noaa-iea/r3-train`. Comb through all repos in https://github.com/noaa-iea and update all relevant files in `@./tools-review`.
+
+Let's move these from `tool.App` to new `tool.Workflow` and add **Worfklows** to Tools navbar:
+- [Sanctuary Eco-Indicators · MBON](http://localhost:1313/tools/eco-indicators/)
+- [AquaMaps Downscaled · MBON](http://localhost:1313/tools/aquamaps-downscaled/)
+- [Intertidal Temperatures · MBON](http://localhost:1313/tools/intertidal-temps/)
+And a few more changes:
+- [MarineSDMs · MBON](http://localhost:1313/tools/marine-sdms/): tool.Package -> tool.Protocol
+- [onmsR · MBON](http://localhost:1313/tools/onmsr/): for image use https://noaa-onms.github.io/onmsR/reference/figures/onmsR.svg with white background padding.
+- [seascapeR · MBON](http://localhost:1313/tools/seascapr/): similarly to onmsR, use white backgrounded https://marinebon.org/seascapeR/logo.svg.
+
+
+⏺ All done and pushed. Summary of this pass:
+
+  Tools site changes
+  
+  - New tool.Workflow facet + Workflows in the Tools navbar (alphabetical, after Trainings). Moved eco-indicators, aquamaps-downscaled, intertidal-temps from tool.App → tool.Workflow.
+  - MarineSDMs: tool.Package → tool.Protocol.
+  - 3 new tool.Training tools with screenshots — ioos/bio_mobilization_workshop, tbep-tech/shiny-workshop, noaa-iea/r3-train (Tools catalog now 38, with 8 trainings).
+  - onmsR and seascapeR card images replaced with their white-padded SVG hex logos (rsvg-convert → PIL composite on a 16:10 white canvas).
+
+  noaa-iea sweep → tools-review/
+
+  Combed all 20 noaa-iea repos: 2 already on-site (fk-esr-info, ak-info), 6 candidates, 12 excluded. Added to:
+  - inventory.csv (now 128 repos across the three orgs)
+  - README.md — a new "noaa-iea sweep" section with a recommendation table + screenshots, plus an updated change-log banner.
+
+  Candidates surfaced (in the review, not auto-added to the site): ecoidx (manuscript-cited IEA indicator package — include if updated), ca-esr-info (California Current ESR infographic — include, sibling of
+  the on-site FK/AK infographics), and three demo/borderline ones (ecoidx-report, ecoidx-dashboard, fl-wq — maybe). r3-train is both a noaa-iea candidate and one of the three I added to the site this pass.
+
+  Build is clean (0 errors), tools-review/ stays out of the Hugo output.
+
+  One small note for next time: those two review candidates — ecoidx and ca-esr-info — are the strongest noaa-iea additions (ecoidx is manuscript-cited; ca-esr-info matches infographics you already publish).
+  Say the word and I'll promote them onto the site like the others.
+
+✻ Baked for 9m 19s
+
+Yes, add ecoidx, ca-esr-info, fl-wq. Fix the missing basemap in `@~/Github/noaa-iea/fl-wq`
+
+⏺ Both parts done and pushed.
+
+  **fl-wq basemap fix** (`noaa-iea/fl-wq`, pushed to master)
+
+  Root cause: Esri retired the Ocean_Basemap MapServer — its tile URL now returns HTTP 500, so the Leaflet map showed only the marker + attribution with blank tiles. The fix switches to the live
+  Ocean/World_Ocean_Base service (verified 200):
+  - date_template.Rmd — replaced addProviderTiles(Esri.OceanBasemap) with explicit addTiles() URLs (durable — no longer depends on the leaflet-providers alias), plus the ocean reference/labels layer.
+  - docs/site_libs/.../leaflet-providers_1.9.0.js — updated the bundled provider variant so the already-deployed dashboards render tiles immediately (shared site_libs, so all date pages fixed at once).
+
+  I confirmed the redeploy went live and the screenshot now shows the SW-Florida coastline behind the marker.
+
+  **3 tools added** to the site (hugo2, pushed to main)
+
+  - **ecoidx** — tool.Package · method.Indicators · org.NOAA-IEA (manuscript-cited IEA indicator package)
+  - **California Current ESR Infographic** — tool.Infographic · org.NOAA-IEA (sibling of the Florida Keys ESR and Alaska IEA infographics)
+  - **Fisher Water Quality Monitoring** (fl-wq) — tool.App · place.South-Florida · org.NOAA-IEA, screenshotted after the basemap fix
+
+  The tools-review/README.md now marks all three as included (with a change-log banner noting the fl-wq basemap fix), and tools-review/img/fl-wq.png was refreshed to the fixed version. The Tools catalog is now 41 entries; build is clean.
+
+  One note: I left three of your in-progress edits untouched and uncommitted in the working tree — extract-app.md (draft: true), and gmbi.md / py-dwc-viz.md (tool.App → tool.Package). They're yours to commit when ready; say the word if you'd like me to fold them into a commit instead.
 
 ## 2026-06-23 tag tool.Library -> Package
 

@@ -9,7 +9,7 @@ links:
 summary: Prototype global marine biodiversity indicators derived from open occurrence
   data.
 tags:
-- tool.App
+- tool.Package
 - method.Indicators
 title: Global Marine Biodiversity Indicators
 weight: 30

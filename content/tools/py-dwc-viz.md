@@ -8,7 +8,7 @@ links:
   url: https://github.com/marinebon/py-dwc-viz
 summary: Python tool for visualizing Darwin Core biodiversity occurrence data.
 tags:
-- tool.App
+- tool.Package
 - method.Indicators
 - org.OBIS
 title: py-dwc-viz
