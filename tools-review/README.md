@@ -5,6 +5,8 @@ _Compiled 2026-06-23. A working document for evaluating new entries for the MBON
 > **Update 2026-06-23 — acted on.** All recommendations with a live website were added to the Tools catalog (19 pages: 14 software/data tools + 5 training workshops). `sanctsound` was reclassified `tool.Portal` → **`tool.Infographic`**. A new **`tool.Training`** facet was added (with a **Trainings** entry in the Tools navbar) to promote workshop/course materials. Only `obis-hex-map` and `sdm-explore` were held back — their GitHub Pages sites still return 404. The tables below are retained as the original review.
 >
 > **Update 2026-06-23 (b).** Added 3 more training tools — `ioos/bio_mobilization_workshop`, `tbep-tech/shiny-workshop`, `noaa-iea/r3-train`. Introduced a **`tool.Workflow`** facet (+ **Workflows** navbar entry) and moved `eco-indicators`, `aquamaps-downscaled`, `intertidal-temps` from `tool.App` → `tool.Workflow`; `MarineSDMs` moved `tool.Package` → `tool.Protocol`. Combed **github.com/noaa-iea** (20 repos) — see the new section below.
+>
+> **Update 2026-06-23 (c).** Promoted **`ecoidx`**, **`ca-esr-info`**, and **`fl-wq`** from the noaa-iea sweep onto the Tools catalog. Fixed the **missing ocean basemap** in [`noaa-iea/fl-wq`](https://github.com/noaa-iea/fl-wq) (Esri retired the `Ocean_Basemap` service → switched to `Ocean/World_Ocean_Base`).
 
 ## Method
 
@@ -191,24 +193,24 @@ All 20 `noaa-iea` repos were combed (full rows appended to [`inventory.csv`](inv
 
 | Repo | Suggested `tool.*` | Other tags | Last commit | Website | Recommendation |
 |---|---|---|---|---|---|
-| [noaa-iea/ecoidx](https://github.com/noaa-iea/ecoidx) | `tool.Package` | `method.Indicators` `org.NOAA-IEA` | 2022-01-14 | [noaa-iea.github.io/ecoidx](https://noaa-iea.github.io/ecoidx/)<br>🟢 live | **Include if updated** |
-| [noaa-iea/ca-esr-info](https://github.com/noaa-iea/ca-esr-info) | `tool.Infographic` | `org.NOAA-IEA` | 2021-11-05 | [noaa-iea.github.io/ca-esr-info](https://noaa-iea.github.io/ca-esr-info/)<br>🟢 live | **Include** |
+| [noaa-iea/ecoidx](https://github.com/noaa-iea/ecoidx) | `tool.Package` | `method.Indicators` `org.NOAA-IEA` | 2022-01-14 | [noaa-iea.github.io/ecoidx](https://noaa-iea.github.io/ecoidx/)<br>🟢 live | **Included (now on site)** |
+| [noaa-iea/ca-esr-info](https://github.com/noaa-iea/ca-esr-info) | `tool.Infographic` | `org.NOAA-IEA` | 2021-11-05 | [noaa-iea.github.io/ca-esr-info](https://noaa-iea.github.io/ca-esr-info/)<br>🟢 live | **Included (now on site)** |
 | [noaa-iea/r3-train](https://github.com/noaa-iea/r3-train) | `tool.Training` | `org.NOAA-IEA` `method.Indicators` | 2021-09-07 | [noaa-iea.github.io/r3-train](https://noaa-iea.github.io/r3-train/)<br>🟢 live | **Included (now on site)** |
 | [noaa-iea/ecoidx-report](https://github.com/noaa-iea/ecoidx-report) | `tool.Workflow` | `org.NOAA-IEA` | 2021-05-04 | [ecoidx-report.netlify.app](https://ecoidx-report.netlify.app/)<br>🟢 live | **Maybe** |
 | [noaa-iea/ecoidx-dashboard](https://github.com/noaa-iea/ecoidx-dashboard) | `tool.Workflow` | `org.NOAA-IEA` | 2021-02-08 | [noaa-iea.github.io/ecoidx-dashboard](https://noaa-iea.github.io/ecoidx-dashboard/)<br>🟢 live | **Maybe** |
-| [noaa-iea/fl-wq](https://github.com/noaa-iea/fl-wq) | `tool.Infographic` | `org.NOAA-IEA` | 2020-09-09 | [noaa-iea.github.io/fl-wq](https://noaa-iea.github.io/fl-wq/)<br>🟢 live | **Maybe** |
+| [noaa-iea/fl-wq](https://github.com/noaa-iea/fl-wq) | `tool.Infographic` | `org.NOAA-IEA` | 2020-09-09 | [noaa-iea.github.io/fl-wq](https://noaa-iea.github.io/fl-wq/)<br>🟢 live | **Included (now on site)** |
 
 #### [noaa-iea/ecoidx](https://github.com/noaa-iea/ecoidx)
 - **Suggested tags:** `tool.Package`, `method.Indicators`, `org.NOAA-IEA`
 - **Last commit:** 2022-01-14 · **Website:** [https://noaa-iea.github.io/ecoidx/](https://noaa-iea.github.io/ecoidx/) — 200 live
-- **Recommendation — Include if updated.** Marine ecological indicator workflows & visualization implementing NOAA IEA indicator standards (manuscript-cited). Last commit 2022.
+- **Recommendation — Included (now on site).** Marine ecological indicator workflows & visualization implementing NOAA IEA indicator standards (manuscript-cited). Last commit 2022.
 
 [![noaa-iea/ecoidx](img/ecoidx.png)](https://noaa-iea.github.io/ecoidx/)
 
 #### [noaa-iea/ca-esr-info](https://github.com/noaa-iea/ca-esr-info)
 - **Suggested tags:** `tool.Infographic`, `org.NOAA-IEA`
 - **Last commit:** 2021-11-05 · **Website:** [https://noaa-iea.github.io/ca-esr-info/](https://noaa-iea.github.io/ca-esr-info/) — 200 live
-- **Recommendation — Include.** California Current Ecosystem Status Report infographic — a sibling of the on-site Florida Keys ESR and Alaska IEA infographics.
+- **Recommendation — Included (now on site).** California Current Ecosystem Status Report infographic — a sibling of the on-site Florida Keys ESR and Alaska IEA infographics.
 
 [![noaa-iea/ca-esr-info](img/ca-esr-info.png)](https://noaa-iea.github.io/ca-esr-info/)
 
@@ -236,7 +238,7 @@ All 20 `noaa-iea` repos were combed (full rows appended to [`inventory.csv`](inv
 #### [noaa-iea/fl-wq](https://github.com/noaa-iea/fl-wq)
 - **Suggested tags:** `tool.Infographic`, `org.NOAA-IEA`
 - **Last commit:** 2020-09-09 · **Website:** [https://noaa-iea.github.io/fl-wq/](https://noaa-iea.github.io/fl-wq/) — 200 live
-- **Recommendation — Maybe.** Florida Commercial Watermen's Conservation (FCWC) water-quality site.
+- **Recommendation — Included (now on site; ocean basemap fixed).** Florida Commercial Watermen's Conservation (FCWC) water-quality dashboard.
 
 [![noaa-iea/fl-wq](img/fl-wq.png)](https://noaa-iea.github.io/fl-wq/)
 
