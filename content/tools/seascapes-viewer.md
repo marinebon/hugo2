@@ -1,5 +1,5 @@
 ---
-image: img/products/seascapes-viewer.png
+image: img/tools/seascapes-viewer.png
 links:
 - label: Open Seascapes Viewer
   primary: true

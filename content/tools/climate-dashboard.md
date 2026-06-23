@@ -1,5 +1,5 @@
 ---
-image: img/products/climate-dashboard.png
+image: img/tools/climate-dashboard.png
 links:
 - label: Open dashboard
   primary: true

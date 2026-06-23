@@ -1,5 +1,5 @@
 ---
-image: img/products/infographic-florida-keys-esr.png
+image: img/tools/infographic-florida-keys-esr.png
 links:
 - label: Open infographic
   primary: true

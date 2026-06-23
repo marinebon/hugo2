@@ -1,5 +1,5 @@
 ---
-image: img/products/edna-explorer.png
+image: img/tools/edna-explorer.png
 links:
 - label: Open MBON Data Portal
   primary: true

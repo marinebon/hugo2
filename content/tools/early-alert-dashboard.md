@@ -1,5 +1,5 @@
 ---
-image: img/products/early-alert-dashboard.png
+image: img/tools/early-alert-dashboard.png
 links:
 - label: Open dashboard
   primary: true

@@ -1,5 +1,5 @@
 ---
-image: img/products/seascapr.png
+image: img/tools/seascapr.png
 links:
 - label: Open seascapeR docs
   primary: true

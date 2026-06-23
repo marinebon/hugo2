@@ -1,5 +1,5 @@
 ---
-image: img/products/infographic-cinms.png
+image: img/tools/infographic-cinms.png
 links:
 - label: Open infographic
   primary: true

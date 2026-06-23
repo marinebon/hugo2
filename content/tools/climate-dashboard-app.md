@@ -1,5 +1,5 @@
 ---
-image: img/products/climate-dashboard-app.png
+image: img/tools/climate-dashboard-app.png
 links:
 - label: Open app
   primary: true

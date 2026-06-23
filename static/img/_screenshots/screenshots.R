@@ -11,7 +11,7 @@ base_url <- "http://localhost:1313"
 pages <- list(
   home = "",
   network = "network",
-  products = "products",
+  tools = "tools",
   news = "news",
   about = "about",
   contact = "contact",

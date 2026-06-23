@@ -1,5 +1,5 @@
 ---
-image: img/products/coastwatch-obis.png
+image: img/tools/coastwatch-obis.png
 links:
 - label: Open CoastWatch OBIS Explorer
   primary: true

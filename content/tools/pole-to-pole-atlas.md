@@ -1,5 +1,5 @@
 ---
-image: img/products/pole-to-pole-atlas.png
+image: img/tools/pole-to-pole-atlas.png
 links:
 - label: Open Pole to Pole atlas
   primary: true

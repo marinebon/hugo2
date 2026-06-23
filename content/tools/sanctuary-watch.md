@@ -1,5 +1,5 @@
 ---
-image: img/products/sanctuary-condition-reports.png
+image: img/tools/sanctuary-condition-reports.png
 links:
 - label: Open Sanctuary Watch
   primary: true

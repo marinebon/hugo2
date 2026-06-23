@@ -1,5 +1,5 @@
 ---
-image: img/products/infographic-iea-alaska.png
+image: img/tools/infographic-iea-alaska.png
 links:
 - label: Open infographic
   primary: true

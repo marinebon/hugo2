@@ -1,5 +1,5 @@
 ---
-image: img/products/storymap-fk-fwri-water-quality.png
+image: img/tools/storymap-fk-fwri-water-quality.png
 links:
 - label: Open story map
   primary: true

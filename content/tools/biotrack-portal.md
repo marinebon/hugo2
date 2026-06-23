@@ -1,5 +1,5 @@
 ---
-image: img/products/biotrack-portal.png
+image: img/tools/biotrack-portal.png
 links:
 - label: Open ATN portal
   primary: true

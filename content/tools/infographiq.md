@@ -1,5 +1,5 @@
 ---
-image: img/products/infographiq.png
+image: img/tools/infographiq.png
 links:
 - label: Open Infographiq docs
   primary: true
