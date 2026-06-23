@@ -1,12 +1,47 @@
 # retake.R — retry slow/broken tool screenshots
 # usage: source("static/img/tools/retake.R")
 #
-# All shots use cliprect = "viewport" (1440 x 900) — above-the-fold only,
-# consistent with screenshots.R. Adjust delay per tool as needed.
+# Uses chromote directly instead of webshot2. webshot2 blocks until
+# Page.loadEventFired, which SPAs and Shiny apps never fire — causing
+# timeouts. Here we navigate with wait_ = FALSE (fire-and-forget), sleep
+# a fixed delay while Chrome renders, then capture the viewport.
 
-librarian::shelf(webshot2, quiet = TRUE)
+librarian::shelf(chromote, jsonlite, quiet = TRUE)
 
 out_dir <- "static/img/tools"
+vwidth  <- 1440L
+vheight <- 900L
+
+take_shot <- function(slug, url, delay) {
+  file <- file.path(out_dir, paste0(slug, ".png"))
+  message("screenshotting ", slug, " (delay=", delay, "s) ...")
+  tryCatch({
+    b <- chromote::ChromoteSession$new()
+    on.exit(try(b$close(), silent = TRUE))
+
+    # set viewport — ChromoteSession$new() doesn't accept width/height
+    b$Emulation$setDeviceMetricsOverride(
+      width             = vwidth,
+      height            = vheight,
+      deviceScaleFactor = 1,
+      mobile            = FALSE
+    )
+
+    # navigate without waiting for Page.loadEventFired
+    b$Page$navigate(url, wait_ = FALSE)
+    Sys.sleep(delay)
+
+    # capture viewport (not full page)
+    img <- b$Page$captureScreenshot(
+      clip = list(x = 0, y = 0, width = vwidth, height = vheight, scale = 1),
+      wait_ = TRUE
+    )
+    writeBin(jsonlite::base64_dec(img$data), file)
+    message("  saved → ", file)
+  }, error = function(e) {
+    message("  ERROR: ", conditionMessage(e))
+  })
+}
 
 retakes <- list(
   list(slug = "early-alert-dashboard",          url = "https://mbon-dashboards.marine.usf.edu",                                            delay =  20),
@@ -18,20 +53,7 @@ retakes <- list(
 )
 
 for (p in retakes) {
-  file <- file.path(out_dir, paste0(p$slug, ".png"))
-  message("screenshotting ", p$slug, " (delay=", p$delay, "s) ...")
-  tryCatch(
-    webshot2::webshot(
-      url      = p$url,
-      file     = file,
-      vwidth   = 1440,
-      vheight  = 900,
-      delay    = p$delay,
-      cliprect = "viewport"
-    ),
-    error = function(e) message("  ERROR: ", conditionMessage(e))
-  )
-  message("  done → ", file)
+  take_shot(p$slug, p$url, p$delay)
 }
 
 message("retakes complete")

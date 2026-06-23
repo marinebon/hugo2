@@ -1,14 +1,43 @@
 # screenshots.R — tool page screenshots for hugo2 tools
 # usage: source("static/img/tools/screenshots.R")
-# requires: librarian, webshot2, chromote
+# requires: chromote, jsonlite
 #
-# All shots use cliprect = "viewport" (1440 x 900) so long/scrollable
-# pages are captured above-the-fold only, keeping card images consistent.
-# Increase delay for tools that load data or render charts asynchronously.
+# Uses chromote directly (not webshot2) so SPAs/dashboards that never fire
+# Page.loadEventFired don't time out. Navigate with wait_ = FALSE, sleep a
+# fixed delay, then capture the viewport (1440 x 900) above-the-fold only.
 
-librarian::shelf(webshot2, quiet = TRUE)
+librarian::shelf(chromote, jsonlite, quiet = TRUE)
 
 out_dir <- "static/img/tools"
+vwidth  <- 1440L
+vheight <- 900L
+
+take_shot <- function(slug, url, delay) {
+  file <- file.path(out_dir, paste0(slug, ".png"))
+  message("screenshotting ", slug, " → ", file)
+  tryCatch({
+    b <- chromote::ChromoteSession$new()
+    on.exit(try(b$close(), silent = TRUE))
+
+    b$Emulation$setDeviceMetricsOverride(
+      width             = vwidth,
+      height            = vheight,
+      deviceScaleFactor = 1,
+      mobile            = FALSE
+    )
+
+    b$Page$navigate(url, wait_ = FALSE)
+    Sys.sleep(delay)
+
+    img <- b$Page$captureScreenshot(
+      clip = list(x = 0, y = 0, width = vwidth, height = vheight, scale = 1),
+      wait_ = TRUE
+    )
+    writeBin(jsonlite::base64_dec(img$data), file)
+  }, error = function(e) {
+    message("  ERROR: ", conditionMessage(e))
+  })
+}
 
 tools <- list(
   list(slug = "edna-explorer",                  url = "https://mbon.ioos.us/",                                                             delay = 12),
@@ -30,19 +59,7 @@ tools <- list(
 )
 
 for (p in tools) {
-  file <- file.path(out_dir, paste0(p$slug, ".png"))
-  message("screenshotting ", p$slug, " → ", file)
-  tryCatch(
-    webshot2::webshot(
-      url      = p$url,
-      file     = file,
-      vwidth   = 1440,
-      vheight  = 900,
-      delay    = p$delay,
-      cliprect = "viewport"
-    ),
-    error = function(e) message("  ERROR: ", conditionMessage(e))
-  )
+  take_shot(p$slug, p$url, p$delay)
 }
 
 message("done — ", length(tools), " tool screenshots in ", out_dir)
