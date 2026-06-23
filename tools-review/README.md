@@ -2,6 +2,8 @@
 
 _Compiled 2026-06-23. A working document for evaluating new entries for the MBON site's [Tools](https://marinebon.github.io/tools/) catalog. Not part of the Hugo build — this folder (`tools-review/`) is ignored by Hugo and exists only as repo documentation._
 
+> **Update 2026-06-23 — acted on.** All recommendations with a live website were added to the Tools catalog (19 pages: 14 software/data tools + 5 training workshops). `sanctsound` was reclassified `tool.Portal` → **`tool.Infographic`**. A new **`tool.Training`** facet was added (with a **Trainings** entry in the Tools navbar) to promote workshop/course materials. Only `obis-hex-map` and `sdm-explore` were held back — their GitHub Pages sites still return 404. The tables below are retained as the original review.
+
 ## Method
 
 - Combed **all repositories** under [github.com/marinebon](https://github.com/orgs/marinebon/repositories) (90) and [github.com/noaa-onms](https://github.com/orgs/noaa-onms/repositories) (18) via the GitHub API.

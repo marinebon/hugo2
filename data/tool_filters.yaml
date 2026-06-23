@@ -6,6 +6,7 @@
     - { value: Infographic, name: Infographic }
     - { value: Package,     name: Package }
     - { value: Protocol,    name: Protocol }
+    - { value: Training,    name: Training }
 - facet: place
   label: Region
   values:
