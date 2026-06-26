@@ -75,10 +75,22 @@
       const items = res ? res.results : [];
       statusEl.textContent = items.length + ' result' + (items.length === 1 ? '' : 's');
       const loaded = await Promise.all(items.slice(0, 30).map(r => r.data()));
-      resultsEl.innerHTML = loaded.map(d =>
-        '<li class="search-result"><a class="search-result__title" href="' + d.url + '">' + d.meta.title + '</a>' +
-        '<p class="search-result__excerpt">' + d.excerpt + '</p></li>'
-      ).join('');
+      const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+      resultsEl.innerHTML = loaded.map(d => {
+        const m = d.meta || {};
+        const type = (m.type || 'page').toLowerCase();
+        const badge = m.badge || cap(type);
+        // with an image: badge sits over the thumbnail (card motif); otherwise a kind chip
+        const thumb = m.image
+          ? '<span class="search-result__media"><img src="' + m.image + '" alt="" loading="lazy">' +
+            '<span class="badge badge--solid badge--accent search-result__badge">' + badge + '</span></span>'
+          : '<span class="search-result__kind">' + badge + '</span>';
+        return '<li class="search-result search-result--' + type + (m.image ? ' search-result--media' : '') + '">' +
+          (m.image ? thumb : '') +
+          '<span class="search-result__main">' + (m.image ? '' : thumb) +
+          '<a class="search-result__title" href="' + d.url + '">' + m.title + '</a>' +
+          '<p class="search-result__excerpt">' + d.excerpt + '</p></span></li>';
+      }).join('');
     } catch(e) {
       statusEl.textContent = 'Search unavailable — run pagefind after build.';
     }

@@ -12,7 +12,7 @@
   <section class="section">
     <div class="container">
       <div class="filter-bar" data-tool-filter>
-        {{ range hugo.Data.tool_filters }}
+        {{ range where hugo.Data.tags "filters" "intersect" (slice "tools") }}
           {{ $facet := .facet }}
           <div class="filter-group">
             <span class="filter-group__label" style="color:var(--facet-{{ $facet }});">{{ .label }}</span>
@@ -32,7 +32,7 @@
       <div class="grid-auto">
         {{ range sort (where site.RegularPages "Section" "tools") "Params.weight" }}
           <div data-tool data-tags="{{ delimit .Params.tags " " }}">
-            {{ partial "card-product.html" . }}
+            {{ partial "card-tool.html" . }}
           </div>
         {{ end }}
       </div>

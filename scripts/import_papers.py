@@ -10,7 +10,6 @@ from html.parser import HTMLParser
 
 SRC  = Path("../www_marinebon2/content/publication")
 DEST = Path("content/papers")
-YAML_OUT = Path("data/paper_filters.yaml")
 
 # ── tag auto-assignment ───────────────────────────────────────────────────────
 METHOD_RULES = [
@@ -141,21 +140,5 @@ for pub_dir in sorted(SRC.iterdir()):
 
 print(f"Written: {written}  Skipped: {skipped}")
 print(f"Years: {sorted(years_seen)}")
-
-# ── generate data/paper_filters.yaml ─────────────────────────────────────────
-method_values = [
-    {"value": "Genomics",       "name": "Genomics"},
-    {"value": "Remote-Sensing", "name": "Remote Sensing"},
-    {"value": "Acoustics",      "name": "Acoustics"},
-    {"value": "Tracking",       "name": "Tracking"},
-    {"value": "Indicators",     "name": "Indicators"},
-    {"value": "Traditional",    "name": "Traditional"},
-]
-year_values = [{"value": str(y), "name": str(y)} for y in sorted(years_seen, reverse=True)]
-
-filters = [
-    {"facet": "method", "label": "Method",  "values": method_values},
-    {"facet": "year",   "label": "Year",    "values": year_values},
-]
-YAML_OUT.write_text(yaml.dump(filters, allow_unicode=True, default_flow_style=False), encoding="utf-8")
-print(f"Wrote {YAML_OUT}")
+# Note: the Papers page builds its Method/Year filter buttons from the canonical
+# data/tags.yaml registry and the imported papers themselves — no filter file to write.

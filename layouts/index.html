@@ -60,7 +60,7 @@
       </div>
       <div class="grid-3">
         {{ range first 3 (sort (where site.RegularPages "Section" "tools") "Params.weight") }}
-          {{ partial "card-product.html" . }}
+          {{ partial "card-tool.html" . }}
         {{ end }}
       </div>
     </div>

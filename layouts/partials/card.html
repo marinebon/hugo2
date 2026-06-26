@@ -1,0 +1,13 @@
+{{/* Card dispatcher: renders the right card for a Page based on its content type.
+     Used on tag/term pages and anywhere a mixed list of content is shown so each
+     result keeps its section's treatment (news = month/year over banner, events =
+     date, papers = year badge, everything else = generic image card). */}}
+{{- if eq .Type "news" -}}
+  {{ partial "card-news.html" . }}
+{{- else if eq .Type "events" -}}
+  {{ partial "card-event.html" . }}
+{{- else if eq .Type "papers" -}}
+  {{ partial "card-paper.html" . }}
+{{- else -}}
+  {{ partial "card-tool.html" . }}
+{{- end -}}

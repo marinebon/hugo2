@@ -1,6 +1,8 @@
 {{/* Renders a single tag. Accepts a "facet.value" string.
      Splits on the first "." to get facet and value; strips the prefix
      for display. Falls back to the full string if no "." is found.
+     Matching is case-insensitive so it works both for original-case tags in
+     front matter and the lowercased terms Hugo emits on taxonomy pages.
      Color comes from .tag--{facet} CSS class. */}}
 {{ $raw   := . }}
 {{ $parts := split $raw "." }}
@@ -8,11 +10,14 @@
   {{ $facet := index $parts 0 }}
   {{ $value := strings.TrimPrefix (printf "%s." $facet) $raw }}
   {{ $label := cond (findRE `^\d+$` $value) $value (humanize $value) }}
-  {{/* look up friendly label from tool_filters.yaml */}}
-  {{ range hugo.Data.tool_filters }}
-    {{ if eq .facet $facet }}
+  {{/* look up friendly label from the canonical registry: values first, then aliases */}}
+  {{ range hugo.Data.tags }}
+    {{ if eq (lower .facet) (lower $facet) }}
       {{ range .values }}
-        {{ if eq .value $value }}{{ $label = .name }}{{ end }}
+        {{ if eq (lower .value) (lower $value) }}{{ $label = .name }}{{ end }}
+      {{ end }}
+      {{ range $k, $v := .aliases }}
+        {{ if eq (lower $k) (lower $value) }}{{ $label = $v }}{{ end }}
       {{ end }}
     {{ end }}
   {{ end }}

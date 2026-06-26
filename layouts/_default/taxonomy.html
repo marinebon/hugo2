@@ -1,0 +1,56 @@
+{{ define "main" }}
+<main>
+  <section class="page-header">
+    <div class="page-header__inner">
+      <span class="eyebrow eyebrow--rule eyebrow--ondark">Tagged</span>
+      <h1 style="display:flex;align-items:center;gap:var(--space-3);flex-wrap:wrap;">
+        {{ partial "tag.html" .Data.Term }}
+        <span style="color:var(--text-muted);font-weight:var(--fw-normal);font-size:var(--text-lg);">
+          {{ len .Pages }} item{{ if ne (len .Pages) 1 }}s{{ end }}
+        </span>
+      </h1>
+      <p class="page-header__lead">Content across the network sharing this tag, grouped by type.</p>
+    </div>
+  </section>
+
+  {{/* one group per content type, in a stable order; only render groups with pages */}}
+  {{ $groups := slice
+      (dict "type" "network"        "label" "Network nodes")
+      (dict "type" "working-groups" "label" "Working groups")
+      (dict "type" "methods"        "label" "Methods")
+      (dict "type" "tools"          "label" "Tools")
+      (dict "type" "papers"         "label" "Papers")
+      (dict "type" "news"           "label" "News")
+      (dict "type" "events"         "label" "Events") }}
+
+  {{ $shown := 0 }}
+  {{ range $g := $groups }}
+    {{ $pages := where $.Pages "Type" $g.type }}
+    {{ with $pages }}
+      {{ $shown = add $shown 1 }}
+      <section class="section{{ if eq (math.Mod $shown 2) 0 }} section--tint{{ end }}">
+        <div class="container">
+          <span class="eyebrow eyebrow--rule">{{ $g.label }} <span style="opacity:.6;">· {{ len . }}</span></span>
+          <div class="grid-3" style="margin-top:var(--space-6);">
+            {{ range .ByDate.Reverse }}{{ partial "card.html" . }}{{ end }}
+          </div>
+        </div>
+      </section>
+    {{ end }}
+  {{ end }}
+
+  {{/* any pages whose type isn't one of the known groups (e.g. standalone pages) */}}
+  {{ $known := apply $groups "index" "." "type" }}
+  {{ $rest := where $.Pages "Type" "not in" $known }}
+  {{ with $rest }}
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow eyebrow--rule">More <span style="opacity:.6;">· {{ len . }}</span></span>
+        <div class="grid-3" style="margin-top:var(--space-6);">
+          {{ range . }}{{ partial "card.html" . }}{{ end }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
+</main>
+{{ end }}

@@ -13,7 +13,9 @@
     <div class="container">
 
       <div class="filter-bar" data-paper-filter>
-        {{ range hugo.Data.paper_filters }}
+        {{/* curated facets (method) from the canonical registry */}}
+        {{ range where hugo.Data.tags "filters" "intersect" (slice "papers") }}
+          {{ if .values }}
           {{ $facet := .facet }}
           <div class="filter-group">
             <span class="filter-group__label" style="color:var(--facet-{{ $facet }}, var(--text-muted));">{{ .label }}</span>
@@ -23,6 +25,22 @@
               {{ end }}
             </div>
           </div>
+          {{ end }}
+        {{ end }}
+        {{/* Year buttons generated from the papers themselves (newest first) */}}
+        {{ $years := slice }}
+        {{ range where site.RegularPages "Section" "papers" }}
+          {{ with .Params.year }}{{ $years = $years | append (string .) }}{{ end }}
+        {{ end }}
+        {{ with ($years | uniq) }}
+        <div class="filter-group">
+          <span class="filter-group__label" style="color:var(--facet-year, var(--text-muted));">Year</span>
+          <div class="filter-group__btns">
+            {{ range sort . "value" "desc" }}
+              <button class="filter-btn tag tag--year" data-facet="year" data-value="{{ . }}">{{ . }}</button>
+            {{ end }}
+          </div>
+        </div>
         {{ end }}
         <div class="filter-foot">
           <span class="filter-count" data-paper-count></span>

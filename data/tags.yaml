@@ -1,0 +1,99 @@
+# Canonical tag registry for the whole site.
+#
+# Tags are written `facet.Value` in content front matter (e.g. method.Remote-Sensing).
+# This file is the single source of truth for every facet:
+#   facet    machine prefix (drives color via --facet-<facet> / .tag--<facet>)
+#   label    human heading shown above a filter group
+#   filters  sections whose filter-bar renders buttons for this facet
+#            (year for papers is generated dynamically from the papers themselves)
+#   values   curated filter-button values: { value, name } (name = display label)
+#   aliases  display-name overrides for open-set values that have no button
+#            (so org.GEOBON renders "GEO BON", not the humanized "Geobon")
+#
+# Used by: layouts/partials/tag.html (label lookup over values+aliases),
+#          layouts/tools/list.html and layouts/papers/list.html (filter bars).
+# To wire up a new filter button: add it to `values` here and use it in front matter.
+
+- facet: method
+  label: Method
+  filters: [tools, papers]
+  values:
+    - { value: Remote-Sensing, name: "Remote Sensing" }
+    - { value: Genomics,       name: Genomics }
+    - { value: Acoustics,      name: Acoustics }
+    - { value: Tracking,       name: Tracking }
+    - { value: Indicators,     name: Indicators }
+    - { value: Benthic,        name: Benthic }
+    - { value: Traditional,    name: Traditional }
+  aliases:
+    Data-Mgmt: "Data Management"
+
+- facet: tool
+  label: Type
+  filters: [tools]
+  values:
+    - { value: Portal,      name: Portal }
+    - { value: App,         name: App }
+    - { value: Infographic, name: Infographic }
+    - { value: Package,     name: Package }
+    - { value: Protocol,    name: Protocol }
+    - { value: Training,    name: Training }
+    - { value: Workflow,    name: Workflow }
+
+- facet: place
+  label: Region
+  filters: [tools]
+  values:
+    - { value: Global,         name: Global }
+    - { value: US,             name: "U.S." }
+    - { value: Americas,       name: Americas }
+    - { value: North-Atlantic, name: "N. Atlantic" }
+    - { value: South-Florida,  name: "South FL" }
+  aliases:
+    Pole-to-Pole: "Pole to Pole"
+    Monterey-Bay: "Monterey Bay"
+    Bering-Sea:   "Bering Sea"
+
+- facet: org
+  label: Organization
+  filters: [tools]
+  values:
+    - { value: OBIS,                      name: OBIS }
+    - { value: NOAA-IEA,                  name: "NOAA IEA" }
+    - { value: NationalMarineSanctuaries, name: "Nat'l Marine Sanctuaries" }
+    - { value: FWRI,                      name: FWRI }
+  aliases:
+    GEOBON:      "GEO BON"
+    FWBON:       FWBON
+    MBON:        MBON
+    NOAA:        NOAA
+    IOOS:        IOOS
+    GOOS:        GOOS
+    UN:          UN
+    UNEP:        UNEP
+    UNESCO:      UNESCO
+    Seabed2030:  "Seabed 2030"
+    AIR-Centre:  "AIR Centre"
+
+- facet: topic
+  label: Topic
+  filters: []
+  values: []
+  aliases:
+    EOV:                  EOV
+    UN-Ocean-Decade:      "UN Ocean Decade"
+    Marine-Life-2030:     "Marine Life 2030"
+    Marine-Protected-Areas: "Marine Protected Areas"
+    Muller-Karger:        "Müller-Karger"
+    All-Atlantic:         "All-Atlantic"
+
+- facet: type
+  label: Type
+  filters: []
+  values:
+    - { value: Paper, name: Paper }
+
+- facet: year
+  label: Year
+  filters: [papers]
+  values: []

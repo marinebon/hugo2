@@ -4,6 +4,20 @@
 <body>
   {{ partial "header.html" . }}
   {{ block "main" . }}{{ end }}
+  {{/* pagefind metadata so search can render type-aware result cards.
+       One element per key, capturing its text — pagefind doesn't split a single
+       attribute into multiple keys, and the HTML minifier drops empty elements. */}}
+  {{ if eq .Kind "page" }}
+    {{ $badge := humanize .Type }}
+    {{ if or (eq .Type "news") (eq .Type "events") }}{{ $badge = .Date.Format "Jan 2006" }}
+    {{ else if eq .Type "papers" }}{{ $badge = printf "%v" (.Params.year | default "Paper") }}{{ end }}
+    {{ $img := .Params.image | default .Params.banner }}
+    <div hidden aria-hidden="true" data-pagefind-ignore>
+      <span data-pagefind-meta="type">{{ .Type }}</span>
+      <span data-pagefind-meta="badge">{{ $badge }}</span>
+      {{ with $img }}<span data-pagefind-meta="image">{{ . | relURL }}</span>{{ end }}
+    </div>
+  {{ end }}
   {{ if eq .Kind "page" }}{{ partial "edit-link.html" . }}{{ end }}
   {{ partial "footer.html" . }}
   <script src="{{ "js/globe.js" | relURL }}" defer></script>
