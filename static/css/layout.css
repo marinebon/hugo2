@@ -3,6 +3,7 @@
    ========================================================================== */
 
 .container{ width:100%; max-width:var(--container-wide); margin-inline:auto; padding-inline:var(--space-6); }
+@media (max-width:600px){ .container{ padding-inline:var(--space-4); } }
 .section{ padding-block:var(--section-y); }
 .section--tint{ background:var(--foam-100); }
 .section-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:var(--space-4); flex-wrap:wrap; margin-bottom:var(--space-6); }
@@ -43,9 +44,6 @@
 .nav-dropdown__label{ display:block; font-family:var(--font-mono); font-size:var(--text-xs); text-transform:uppercase; letter-spacing:var(--ls-wide); color:var(--text-muted); padding-bottom:var(--space-2); margin-bottom:var(--space-2); border-bottom:1px solid var(--divider); }
 .nav-dropdown__col a{ display:block; font-size:var(--text-sm); color:var(--text-body); padding:3px 0; text-decoration:none; white-space:nowrap; }
 .nav-dropdown__col a:hover{ color:var(--accent); }
-@media (max-width:860px){
-  .nav-dropdown__panel{ position:static; transform:none; box-shadow:none; border:none; opacity:1; pointer-events:auto; padding:0 0 0 var(--space-3); min-width:0; grid-template-columns:1fr; gap:var(--space-2); }
-}
 
 .nav-search{ position:relative; display:flex; align-items:center; }
 .nav-search__icon{ position:absolute; left:10px; font-size:12px; color:var(--text-muted); pointer-events:none; }
@@ -53,12 +51,45 @@
 .nav-search input:focus{ border-color:var(--accent); width:200px; }
 .nav-search input::placeholder{ color:var(--text-muted); }
 .nav-toggle{ display:none; }
-@media (max-width:780px){
+
+/* ---- Mobile nav ------------------------------------------------------- */
+/* one breakpoint: the header needs ~1260px for the logo + full nav, so below
+   that we collapse to a hamburger. The dropdown panels expand inline (stacked,
+   scrollable) instead of floating. */
+@media (max-width:1024px){
+  .nav-toggle{ display:inline-flex; margin-left:auto; background:none; border:none; font-size:24px; line-height:1; color:var(--text-heading); cursor:pointer; padding:8px; }
   .site-nav{ display:none; }
   .site-header:focus-within .site-nav,
-  .site-nav.open{ display:flex; position:absolute; top:72px; left:0; right:0; flex-direction:column; align-items:stretch; background:#fff; border-bottom:1px solid var(--border); padding:var(--space-3); }
-  .nav-toggle{ display:inline-flex; margin-left:auto; background:none; border:none; font-size:22px; color:var(--text-heading); cursor:pointer; }
-  .nav-search input{ width:100%; }
+  .site-nav.open{
+    display:flex; position:absolute; top:72px; left:0; right:0;
+    flex-direction:column; align-items:stretch; gap:var(--space-1);
+    background:#fff; border-bottom:1px solid var(--border);
+    padding:var(--space-3) var(--space-4) var(--space-4);
+    max-height:calc(100vh - 72px); overflow-y:auto;
+    box-shadow:var(--shadow-lg);
+  }
+  /* top-level links + dropdown triggers become full-width rows */
+  .site-nav > a,
+  .nav-dropdown > a{ padding:10px 8px; border-radius:var(--radius-sm); }
+  /* stack the trigger above its panel instead of floating beside it */
+  .nav-dropdown{ flex-direction:column; align-items:stretch; width:100%; }
+  .nav-dropdown > a{ justify-content:space-between; }
+  .nav-dropdown__caret{ font-size:.8em; }
+  .nav-dropdown__panel{
+    position:static; transform:none; opacity:1; pointer-events:auto;
+    display:block; box-shadow:none; border:none; border-radius:0;
+    background:transparent; padding:0 0 var(--space-2) var(--space-4);
+    min-width:0; margin:0;
+  }
+  .nav-dropdown__panel::before{ display:none; }
+  .nav-dropdown__col{ margin-bottom:var(--space-3); }
+  .nav-dropdown__col:last-child{ margin-bottom:0; }
+  .nav-dropdown__col a{ white-space:normal; padding:7px 0; }
+  .site-nav__sep{ display:none; }
+  .nav-search{ width:100%; margin-top:var(--space-2); }
+  .nav-search input,
+  .nav-search input:focus{ width:100%; height:40px; }
+  .site-nav .btn{ margin-top:var(--space-2); justify-content:center; }
 }
 
 /* ---- Hero ------------------------------------------------------------- */
@@ -70,6 +101,10 @@
 .hero__lead{ font:var(--type-lead); color:rgba(234,243,247,0.92); max-width:52ch; margin-bottom:var(--space-6); }
 .hero__actions{ display:flex; gap:var(--space-3); flex-wrap:wrap; }
 .stat-strip{ display:flex; flex-wrap:wrap; gap:var(--space-8); margin-top:var(--space-8); padding-top:var(--space-6); border-top:1px solid rgba(255,255,255,0.18); }
+@media (max-width:600px){
+  .hero{ min-height:78vh; }
+  .stat-strip{ gap:var(--space-4) var(--space-6); margin-top:var(--space-6); }
+}
 
 /* page header (interior pages) */
 .page-header{ background:linear-gradient(135deg, var(--abyss-900), var(--navy-700)); color:#fff; }
@@ -120,6 +155,10 @@
 .person-card img{ width:120px; height:120px; object-fit:cover; border-radius:50%; border:2px solid var(--border); margin:0; }
 .person-card strong{ font-size:var(--text-sm); color:var(--text-heading); }
 .person-card p, .person-card span{ font-size:var(--text-xs); color:var(--text-muted); margin:0; }
+@media (max-width:480px){
+  .people-grid{ gap:var(--space-5); justify-content:center; }
+  .person-card{ width:calc(50% - var(--space-3)); }
+}
 
 /* ---- Article ---------------------------------------------------------- */
 .article{ max-width:720px; margin:0 auto; padding:var(--space-8) var(--space-6) 0; }

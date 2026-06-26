@@ -13,6 +13,136 @@ Expand and refine the use of [tags](https://marinebon.org/hugo2/tags/), so they 
 
 And add **People** as its own content type under About to similarly enable connecting with Papers and Projects / Working Groups (ie Network). We want to be able to see related content throughout website.
 
+
+## 2026-06-26.d + Data #1
+
+Take on issue #1 + Data
+
+  I now have a clear picture of the architecture. Issue #1 has a firm ask (Data nav item + landing page explaining data access via Tools) and a larger "Consider" (a new filterable dataset content type harvested from OBIS/GBIF/EDI/ERDDAP). Those are very different sizes of work, so let me confirm scope before building.
+
+  ☐ Scope
+
+  Issue #1 firmly asks for a Data nav item + landing page (routing to Portals/Apps/Packages), and separately says to *consider* a new filterable `dataset` content type harvested from OBIS/GBIF/EDI/ERDDAP. How far should I take it now?
+
+    1. Landing page only            ┌───────────────────────────────────────────────────┐
+    2. Landing page + dataset scaffold                      │                                                   │
+  > 3. Full build incl. harvester    │ scripts/harvest_datasets.py                       │
+                                    │   → queries OBIS / GBIF / EDI / ERDDAP            │
+                                    │   → writes content/datasets/*.md                  │
+                                    │   → n_records, cross-portal linking               │
+                                    │                                                   │
+                                    │ Needs: API exploration, network calls,            │
+                                    │ de-dup logic. Multi-hour, iterative.              │
+                                    └───────────────────────────────────────────────────┘
+
+Let's prefer OBIS datasets over GBIF duplicates, since OBIS has more extended schemas and QA/QC
+
+## 2026-06-26.c fix navbar, website on phone
+
+I notice on a smartphone that the navbar is not navigable [image]. The whole website needs to be reviewed for use on smartphone devices.
+
+## 2026-06-26.b fix 404s on Methods illustration
+
+I notice that the Methods illustration links are not properly formed, eg goes to https://marinebon.org/methods/acoustics/ which 404s. It is missing `hugo2`:  https://marinebon.org/hugo2/methods/acoustics/. Fix all these links now and into future (for when the website gets staged from https://marinebon.org/hugo2/ to https://marinebon.org/). 
+
+Can we also check for these 404s throughout the website, possibly on render and fail if any are found to flag for fixing? We could also have an exceptions list to allow publishing the site anyways, until some known culprits are fixed later.
+
+Done. Everything is fixed and verified against both the production subpath build (/hugo2/) and the future root build (/).
+
+Root cause
+
+The methods illustration "Learn more" links came from data/methods.yaml (url: /methods/acoustics/) rendered via relURL. The trap: relURL drops the base path when given a leading-slash string — relURL "/methods/acoustics/" → /methods/acoustics/ (404s under /hugo2/), whereas relURL "methods/acoustics/" → /hugo2/methods/acoustics/. It "worked" locally only because the default local baseURL has no path.
+
+What I fixed
+
+The link checker I wrote surfaced 20 broken links across the site, not just the methods band — all now fixed (zero content edits needed for the markdown ones):
+
+- data/methods.yaml — removed leading slashes from the 7 hotspot url: values (the reported bug).
+- layouts/_default/_markup/render-link.html (new) — there was already a render-image.html hook but no link hook, which is exactly why markdown images resolved correctly but markdown links didn't. This new hook runs every internal markdown link through relURL (base-path-correct), fixing the tool/news/method cross-links and the relative docs/*.pdf links automatically — now and for future content.
+- layouts/partials/social-links.html — the footer "Contact" link (/contact/ from data/social.yaml, on all 327 pages) now resolves through relURL.
+- layouts/404.html — hardcoded href="/" and href="/search" now use relURL.
+
+404 detection (your second ask)
+
+- scripts/check_links.py (new, stdlib-only) — walks the built site, extracts every href/src/srcset, and fails (exit 1) if any internal link either drops the base path (catches the exact relURL class of bug) or points to a missing file. Auto-detects the base path from sitemap.xml, so it's correct whether the site is served at /hugo2/ or root.
+- scripts/linkcheck_allow.txt (new) — your exceptions list: glob patterns for known-broken links to allow publishing anyway. Currently empty — every real link was fixable, so nothing needed an exception.
+- .github/workflows/deploy.yml — runs the checker after the Hugo build (against the real /hugo2/ baseURL), so a regression fails the deploy.
+- CLAUDE.md — documented the command, the leading-slash gotcha, the render hooks, and how to reproduce the subpath locally.
+
+Verification: pre-fix build → 20 broken (exit 1); fixed subpath build → 0 broken (exit 0); fixed root build → 0 broken (exit 0); allow-file correctly demotes matches to warnings.
+
+To check locally the way CI does:
+hugo --gc --minify --baseURL "https://marinebon.org/hugo2/"
+python3 scripts/check_links.py public
+
+One thing worth your awareness: the build I tested includes your in-progress data/tags.yaml refactor (the deleted *_filters.yaml files) — it builds clean and passes the link check, so nothing there is blocked.
+
+Committed on a new branch fix/base-path-internal-links (commit 3674e3e).
+
+What's in the commit — only the 7 task files:
+- data/methods.yaml, layouts/_default/_markup/render-link.html, layouts/partials/social-links.html, layouts/404.html — the link fixes
+- scripts/check_links.py, scripts/linkcheck_allow.txt, .github/workflows/deploy.yml — the checker + CI wiring
+
+Deliberately left out of this commit (still in your working tree, uncommitted):
+- Your in-progress tags refactor — data/tags.yaml, the deleted *_filters.yaml, the card-*/taxonomy.html/baseof.html/etc. changes — not mine to commit.
+- CLAUDE.md — my doc additions (link-checker command + the relURL gotcha) are entangled with your refactor's documentation in that same new file, so I left it for you to commit alongside the refactor.
+- _claude/notes.md — was already modified before this session.
+
+Two notes:
+- I branched (rather than committing to main) per the default for the default branch. To fold it into your trunk-based flow: git checkout main && git merge fix/base-path-internal-links (fast-forward). Nothing has been pushed, so no deploy was triggered.
+- Your other uncommitted changes carried over to this branch and will follow you back when you git checkout main.
+
+
+## 2026-06-26.a create CLAUDE.md, harmonize tags
+
+  All references check out. I've created /Users/bbest/Github/marinebon/hugo2/CLAUDE.md.
+
+  It deliberately doesn't restate the contributor-facing README (which is already excellent). Instead it captures what a future Claude instance needs to be productive fast:
+
+  - Commands — hugo server / hugo --gc --minify / pagefind, the pinned extended-Hugo version, and the fact that the build is the test (no test suite).
+  - Architecture — the two non-obvious systems that require reading several files: the faceted facet.Value tag system (color + filter wiring, and the two-places-must-agree rule for new values) and the issue → PR → deploy contribution pipeline.
+  - Conventions & gotchas — the reserved url:, buildFuture for events, image path roots, auto-globe nodes, unsafe: true, CSS token structure.
+  - Repo-only dirs — _claude/ (session notes) and tools-review/ (the repo audit), both ignored by Hugo so an agent doesn't mistake them for site content.
+  - A pointer to the parent /Users/bbest/Github/CLAUDE.md for R/Python style rules.
+
+  One thing I noticed but left out (flag for you): data/product_filters.yaml uses a different, lowercase facet:value schema (region/tool with dashboard, infographic) that doesn't match the live tool_filters.yaml ProperCase convention — it looks like a legacy/orphaned file. Worth confirming whether it's still used or should be deleted.
+  One thing I noticed but left out (flag for you): data/product_filters.yaml uses a different, lowercase facet:value schema (region/tool with dashboard, infographic) that doesn't match the live tool_filters.yaml ProperCase convention — it looks like a legacy/orphaned file. Worth confirming whether it's still used or should be deleted.
+
+Yes, proceed with harmonizing all the tags and their usage. The data/product_filters.yaml is I
+  believe vestigial and should be removed (after confirming it is not used), since products was
+  renamed to tools (or maybe the tools/ index needs to properly point to the working
+  tool_filters.yaml). This should be confirmed by looking at the /tags page, which ideally would
+  also describe results here and in the search with different cards  based on content type (like a
+  header tag similar to the news card with "month year" over news image).
+
+  All verified — year buttons render descending (2021→2016); minify had just dropped the attribute quotes from my grep. Everything builds clean and works in the browser.
+
+  Summary
+
+  Done. Here's what changed, grouped by your three asks.
+
+  1. Removed the vestigial files
+  - data/product_filters.yaml was confirmed unused (referenced nowhere in templates — only tool_filters/paper_filters were). Deleted it, along with tool_filters.yaml and paper_filters.yaml, now superseded by a single source.
+
+  2. Harmonized all tags into one canonical source — data/tags.yaml
+  - Every facet (method/tool/place/org/topic/type/year) lives in one file with curated filter-button values plus an aliases map for proper labels of open-set values.
+  - Fixed the /tags inconsistency you spotted: Hugo lowercases taxonomy terms, so the old case-sensitive lookup fell back to humanize — the index showed "Geobon", "Noaa iea", "Nationalmarinesanctuaries". tag.html now resolves labels case-insensitively from tags.yaml, so the index reads "GEO BON", "NOAA IEA", "Nat'l Marine Sanctuaries", "AIR Centre", "Seabed 2030" everywhere consistently.
+  - tools/list.html and papers/list.html filter bars now read tags.yaml (via each facet's filters: list); the Papers Year buttons are generated from the papers themselves, so import_papers.py no longer writes a filter file.
+  - Fixed the stray undefined method.Data-Mgmt → aliased to "Data Management".
+
+  3. Type-aware cards on /tags term pages and search
+  - New card.html dispatcher routes by content type: news = month/year badge over banner, events = date, papers = year badge over a placeholder (the news-card motif you described, applied to papers), everything else = generic image card.
+  - New layouts/_default/taxonomy.html renders a tag's results grouped by type (verified in-browser: "Genomics" → Working groups, Methods, Tools, Papers with year badges, News, Events).
+  - Search (search.html + Pagefind) renders the same type-aware cards with thumbnail + badge. This required emitting per-page Pagefind meta (type/badge/image) in baseof.html — verified in-browser that news shows "JAN 2022", tools "TOOLS", etc., images load, and excerpts are clean (data-pagefind-ignore keeps the hidden meta out of result text).
+
+  Also renamed the vestigially-named card-product.html → card-tool.html, and updated README.md and CLAUDE.md to document the single tags.yaml registry and the card/search architecture.
+
+  Verified throughout: hugo --gc --minify builds clean (442 pages, exit 0), pagefind indexes 329 pages + 5 filters, and I drove the actual rendered /tags/ and /search/ pages in Chrome to confirm.
+
+  Two notes:
+  - I did not commit anything (you didn't ask). When you're ready, the relevant changes are the data/, layouts/, scripts/import_papers.py, static/css/components.css, README.md, and new CLAUDE.md/data/tags.yaml files.
+  - Your working tree also has unrelated uncommitted edits I didn't touch (data/methods.yaml, layouts/404.html, scripts/check_links.py, scripts/linkcheck_allow.txt) — left them as-is.
+
 ## 2026-06-23.b + Tools, incl Trainings, from `marinebon/*`, `noaa-onms/*`, `noaa-iea/*`
 
 Now comb all repositories under github.com/marinebon github.com/noaa-onms and develop a table for considering new additions to the Tools. See also the Glossary and Repository listing of latest paper on MBON indicators with repository references at `/Users/bbest/Library/CloudStorage/GoogleDrive-ben@ecoquants.com/.shortcut-targets-by-id/1sppUmlMtZ-sXaBm72M1-8PnjVudXO91v/US MBON Public Folder/Working Groups/BioIndicators/manuscripts/indicators/ocean_indicators_manuscript_DRAFT_v2.docx`. Try to classify each according to the existing tags (especially tool.*) and record date_last_commit, website if listed, screenshot of website (using webshot2 a la existing tools), status of website, description. Provide a recommendation for inclusion, exclusion, include if updated, etc with any notes. Place the table and images in a safe place within this repository for pushing to the Github repo without interrupting the regular hugo website.
@@ -144,6 +274,19 @@ Yes, add ecoidx, ca-esr-info, fl-wq. Fix the missing basemap in `@~/Github/noaa-
   The tools-review/README.md now marks all three as included (with a change-log banner noting the fl-wq basemap fix), and tools-review/img/fl-wq.png was refreshed to the fixed version. The Tools catalog is now 41 entries; build is clean.
 
   One note: I left three of your in-progress edits untouched and uncommitted in the working tree — extract-app.md (draft: true), and gmbi.md / py-dwc-viz.md (tool.App → tool.Package). They're yours to commit when ready; say the word if you'd like me to fold them into a commit instead.
+
+
+Add these two:
+- ioos/bio_data_guide: tool.Protocol, tool.Training
+- bbest/dismapr: tool.Package
+
+⏺ Both added and pushed. Tools catalog is now 43 entries.
+
+  - Bio Data Guide (ioos/bio_data_guide) — tool.Protocol + tool.Training, plus org.OBIS and place.Global. IOOS Standardizing Marine Biological Data Working Group's guide for mobilizing biological data to
+  Darwin Core/OBIS.
+  - dismapr (bbest/dismapr) — tool.Package, plus method.Traditional and place.US. R access to NOAA's DisMAP species-distribution/range-shift APIs (derived from bottom-trawl surveys).
+
+  Both sites are live (200), screenshotted as card images, build is clean. Since bio-data-guide carries both tool.Protocol and tool.Training, it'll surface under both the Protocols and Trainings filters/nav.
 
 ## 2026-06-23 tag tool.Library -> Package
 
