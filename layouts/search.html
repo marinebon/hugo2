@@ -31,6 +31,17 @@
   const pf = await import('{{ "pagefind/pagefind.js" | relURL }}');
   await pf.options({ baseUrl: '{{ "/" | relURL }}' });
 
+  // Pagefind indexes public/ at the server root, so its result URLs are
+  // root-relative (e.g. /network/x/) and drop the site's base path. Prepend it
+  // so links resolve under /hugo2 on GitHub Pages (and stay correct locally).
+  const BASE = '{{ "" | relURL }}'.replace(/\/+$/, '');
+  function withBase(u) {
+    if (!u) return u;
+    if (u.charAt(0) !== '/') u = '/' + u;
+    if (BASE && u.indexOf(BASE + '/') === 0) return u; // already prefixed
+    return BASE + u;
+  }
+
   // Collect all available filter values: { facet: { value: count } }
   let available = {};
   try { available = await pf.filters(); } catch(e) {}
@@ -88,7 +99,7 @@
         return '<li class="search-result search-result--' + type + (m.image ? ' search-result--media' : '') + '">' +
           (m.image ? thumb : '') +
           '<span class="search-result__main">' + (m.image ? '' : thumb) +
-          '<a class="search-result__title" href="' + d.url + '">' + m.title + '</a>' +
+          '<a class="search-result__title" href="' + withBase(d.url) + '">' + m.title + '</a>' +
           '<p class="search-result__excerpt">' + d.excerpt + '</p></span></li>';
       }).join('');
     } catch(e) {
