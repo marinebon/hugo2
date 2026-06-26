@@ -9,8 +9,12 @@ librarian::shelf(webshot2, quiet = TRUE)
 base_url <- "http://localhost:1313"
 
 pages <- list(
+  
   home = "",
   network = "network",
+  methods = "methods",
+  papers = "papers",
+  data = "data",
   tools = "tools",
   news = "news",
   about = "about",

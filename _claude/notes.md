@@ -119,9 +119,8 @@ If it still doesn't close after a hard refresh, tell me and I'll dig further —
 ---
 One optional follow-up worth considering: in production, returning visitors can cache /css/styles.css across deploys and hit this same staleness. Hugo can fingerprint the CSS (hashed filename like styles.abc123.css) so every change auto-busts the cache. Want me to wire that up? It's a ~10-line change to head.html + styles.css handling.
 
-✻ Baked for 7m 14s
+Yes, let's autobust the cache
 
-※ recap: Goal: make the MBON site work on phones. The mobile navbar fix and the menu-close bug are both fixed and verified in code. Next: hard-refresh your device-mode browser (Cmd+Shift+R) to load the corrected CSS and confirm the menu closes. (disable recaps in /config)
 
 ## 2026-06-26.b fix 404s on Methods illustration
 
