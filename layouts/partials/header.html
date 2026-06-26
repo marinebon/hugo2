@@ -3,7 +3,7 @@
     <a class="site-header__logo" href="{{ "" | relURL }}">
       <img src="{{ "img/logos/mbon-logo.png" | relURL }}" alt="MBON — Marine Biodiversity Observation Network">
     </a>
-    <button class="nav-toggle" aria-label="Toggle menu" onclick="this.nextElementSibling.classList.toggle('open')">&#9776;</button>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="const o=this.nextElementSibling.classList.toggle('open');this.setAttribute('aria-expanded',o);this.textContent=o?'✕':'☰';">&#9776;</button>
     <nav class="site-nav">
       {{ range site.Menus.main }}
 
@@ -50,6 +50,23 @@
                 {{ range $methods }}
                   <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                 {{ end }}
+              </div>
+            </div>
+          </div>
+
+        {{ else if eq .Identifier "data" }}
+          <div class="nav-dropdown">
+            <a href="{{ .URL }}"{{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }} class="is-active"{{ end }}>
+              {{ .Name }}<i class="fas fa-chevron-down nav-dropdown__caret" aria-hidden="true"></i>
+            </a>
+            <div class="nav-dropdown__panel nav-dropdown__panel--single">
+              <div class="nav-dropdown__col">
+                <a href="{{ "data" | relURL }}">All datasets</a>
+                <a href="{{ "data" | relURL }}?portal=OBIS">OBIS</a>
+                <a href="{{ "data" | relURL }}?portal=GBIF">GBIF</a>
+                <a href="{{ "data" | relURL }}?portal=EDI">EDI</a>
+                <a href="{{ "data" | relURL }}?portal=ERDDAP">ERDDAP</a>
+                <a href="{{ "data/#access" | relURL }}" style="margin-top:var(--space-3);color:var(--text-muted);font-size:var(--text-xs);">How to access →</a>
               </div>
             </div>
           </div>

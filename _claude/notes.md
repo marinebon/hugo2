@@ -35,11 +35,93 @@ Take on issue #1 + Data
                                     │ de-dup logic. Multi-hour, iterative.              │
                                     └───────────────────────────────────────────────────┘
 
+Note: looks like erddapy supports searching across ERDDAP servers. From Google Search AI results:
+
 Let's prefer OBIS datasets over GBIF duplicates, since OBIS has more extended schemas and QA/QC
+
+```py
+import pandas as pd
+from erddapy.multiple_server_search import search_servers
+
+# Searches across registered ERDDAP servers simultaneously
+df = search_servers(
+    query="glider", 
+    servers_list=None, 
+    parallel=True, 
+    protocol="tabledap"
+)
+print(f"Total entries found: {len(df)}")
+```
+
+Note: Per https://edirepository.org/resources/finding-data#ediutils, the https://docs.ropensci.org/EDIutils/reference/search_data_packages.html function allows searching data packages in EDI. And then there's a broad Google Dataset type that could be searched: https://developers.google.com/search/docs/appearance/structured-data/dataset
+
+**Outcome — what shipped (uncommitted; tree had prior WIP, so left for you to branch+commit):**
+
+- **Nav + landing**: `Data` in navbar left of Tools (`hugo.yaml` w5, others bumped) with a
+  dropdown (All · OBIS/GBIF/EDI/ERDDAP · How to access). `content/data/_index.md` +
+  `layouts/data/list.html` = "Three ways into the data" (Portals/Apps/Packages) over a
+  filterable catalog. Footer → "Data & Tools" with a Data-catalog link.
+- **Dataset type**: `layouts/data/{list,single}.html`, `card-dataset.html` (portal-tinted
+  placeholder + record count), `card.html` routes `data`. New `portal` facet (violet
+  `--facet-portal`) + `type.Dataset` in `data/tags.yaml`; data filters = Portal/Method/Region.
+  Single page: record-count stat, cross-portal "Available in" buttons, `schema.org/Dataset`
+  JSON-LD (Google Dataset Search). Generic `static/js/filter.js`; `partials/num.html` formats
+  counts (`lang.NumFmt` errored in this Hugo — resolved to interface{}).
+- **Harvester** `scripts/harvest_datasets.py` (pyyaml+stdlib): GBIF q=MBON → resolve to
+  canonical **OBIS** (per-node index + title/IPT-sig match; OBIS global paging unreliable,
+  size≥5000 times out). **OBIS-first** merge (ARMS-MBON: OBIS 20,210 vs GBIF 21,482). EDI via
+  PASTA Solr, ERDDAP via stdlib multi-server search over awesome-erddap (no erddapy dep).
+  **Relevance gate**: keep only with MBON text signal OR `ipt.iobis.org/mbon` — the GBIF "OBIS
+  network" alone admitted noise (Royal Ontario Museum, Queensland turtles, "Ambon Indonesia").
+- **Result**: 54 datasets (34 OBIS, 10 EDI, 6 ERDDAP, 4 GBIF gap), 219 off-topic dropped.
+  `hugo --gc --minify` exit 0 (524 pages); pagefind OK. Verified landing + a dataset page in browser.
+
+Looking good! Something is off though with PORTAL tag filters, which don't have proper pill
+  styling and disappear when selected, eg here OBIS disappeared: [Image #2]
+
+Also noticing the datasets are not showing up as typed like other content, just under "More" at
+  bottom, eg http://localhost:1313/tags/method.genomics/ [Image #3]
+
+Both issues are now resolved and verified in the browser:
+
+1. Portal filter pills — now render correctly: OBIS shows as a filled violet pill (active/visible), with GBIF/EDI/ERDDAP as outlined violet pills alongside the teal Method and navy Region pills. The root cause was a stale cached styles.css: it's @import-ing tokens/colors.css and the <link> has no fingerprint, so your browser kept serving the pre---facet-portal CSS. With --_c: var(--facet-portal) undefined, the pill lost its background/border and the active state's color:#fff went invisible — exactly what you saw. The build itself was already correct; a rebuild + fresh load fixed it.
+
+2. Datasets typed on tag pages — fixed for real. layouts/_default/taxonomy.html had an explicit type-group list (Network, Methods, Tools, Papers, News, Events) that omitted data, so datasets fell into the catch-all "More". I added a Datasets group (between Tools and Papers). Now /tags/method.genomics/ shows a proper DATASETS · 3 section with portal-tinted dataset cards.
+
+Clean rebuild passed (exit 0, no errors/broken links). The only file changed for these fixes is layouts/_default/taxonomy.html.
+
+One follow-up worth flagging: that stale-CSS confusion will recur on every CSS edit — and bite returning visitors in production (GitHub Pages caches styles.css), since it's linked directly from static/ without a content hash. If you'd like, I can route the CSS through Hugo's asset pipeline with fingerprint (cache-busting hash in the filename) so CSS changes always take effect immediately. Out of scope for issue #1, but a small, high-value hardening — say the word.
+
 
 ## 2026-06-26.c fix navbar, website on phone
 
 I notice on a smartphone that the navbar is not navigable [image]. The whole website needs to be reviewed for use on smartphone devices.
+
+Summary
+
+The code fix is complete and verified — the menu now closes on the second click, even while the button is focused (tested with fresh CSS: open → flex, second click → display: none).
+
+What I changed:
+- layout.css: removed the .site-header:focus-within .site-nav fallback that held the menu open whenever the hamburger had focus.
+- header.html: the toggle now also syncs aria-expanded and swaps the glyph ☰ ↔ ✕.
+
+
+Can you see this Chrome window controlled by Claude that is already setup  to iPhone SE 375 x
+  667. I could now see the hamburger toggle to an X, but not close the nav menu when clicked (just
+  toggles back to hamburger) [Image #4]
+
+Why you're still seeing the bug: your browser is running stale styles.css. Hugo's livereload reloaded the page HTML (which is why you got the new ☰↔✕ icon behavior), but it reused the cached stylesheet — which still has the original max-width:780px + :focus-within rules. I confirmed this by reading the loaded CSS in the controlled tab: it had the old 780px/focus-within rules, while the dev server is serving the corrected 1024px/no-focus-within version.
+
+👉 To pick it up: hard-refresh the device-mode tab — Cmd+Shift+R (or DevTools open → right-click reload → "Empty Cache and Hard Reload"). After that, tapping ✕ will close the menu.
+
+If it still doesn't close after a hard refresh, tell me and I'll dig further — but the fresh-CSS test passed cleanly, so I'm confident it's the cache.
+
+---
+One optional follow-up worth considering: in production, returning visitors can cache /css/styles.css across deploys and hit this same staleness. Hugo can fingerprint the CSS (hashed filename like styles.abc123.css) so every change auto-busts the cache. Want me to wire that up? It's a ~10-line change to head.html + styles.css handling.
+
+✻ Baked for 7m 14s
+
+※ recap: Goal: make the MBON site work on phones. The mobile navbar fix and the menu-close bug are both fixed and verified in code. Next: hard-refresh your device-mode browser (Cmd+Shift+R) to load the corrected CSS and confirm the menu closes. (disable recaps in /config)
 
 ## 2026-06-26.b fix 404s on Methods illustration
 
@@ -92,6 +174,21 @@ Two notes:
 - I branched (rather than committing to main) per the default for the default branch. To fold it into your trunk-based flow: git checkout main && git merge fix/base-path-internal-links (fast-forward). Nothing has been pushed, so no deploy was triggered.
 - Your other uncommitted changes carried over to this branch and will follow you back when you git checkout main.
 
+Done — everything that was pending is now folded into main as two clean commits:
+
+9e6f7d0  Make navbar and layout responsive on mobile        (components.css, layout.css, notes)
+51dd35f  Fix internal links dropping base path; add link checker   (+ CLAUDE.md docs)
+bf93fc5  Harmonize tags into one registry; type-aware tag & search cards   (your refactor — already committed)
+
+Notes on what I did:
+- The bulk of the tags refactor was already committed in bf93fc5, so "commit the refactor" only left its tail (responsive CSS, docs, notes).
+- I folded my CLAUDE.md link-checker docs into the fix commit (51dd35f) so the docs travel with the code, and committed the mobile/responsive-nav CSS + session notes as 9e6f7d0.
+- The old fix/base-path-internal-links branch is deleted (fully merged).
+- Nothing was pushed, so no deploy was triggered.
+
+One heads-up: there are newer uncommitted changes in your working tree that appeared while we were committing — hugo.yaml, data/tags.yaml, layouts/partials/header.html, static/css/tokens/colors.css. These are your in-progress Data nav work (issue #1), not part of "these changes," so I left them alone for you to finish and commit.
+
+Related: that new Data menu item points to /data (pageRef: /data). Once you build, if there's no content/data page yet, check_links.py will flag the menu link as broken — that's the new checker doing its job, not a regression. Add the page (or a linkcheck_allow.txt entry) when you're ready.
 
 ## 2026-06-26.a create CLAUDE.md, harmonize tags
 

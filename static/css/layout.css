@@ -59,7 +59,6 @@
 @media (max-width:1024px){
   .nav-toggle{ display:inline-flex; margin-left:auto; background:none; border:none; font-size:24px; line-height:1; color:var(--text-heading); cursor:pointer; padding:8px; }
   .site-nav{ display:none; }
-  .site-header:focus-within .site-nav,
   .site-nav.open{
     display:flex; position:absolute; top:72px; left:0; right:0;
     flex-direction:column; align-items:stretch; gap:var(--space-1);

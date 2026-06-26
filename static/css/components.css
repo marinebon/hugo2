@@ -115,6 +115,29 @@ a.card:hover .card__foot i{ transform:translateX(3px); }
 .event-card__head{ display:flex; align-items:center; justify-content:space-between; gap:var(--space-3); flex-wrap:wrap; }
 .event-card__loc{ font-family:var(--font-mono); font-size:var(--text-xs); color:var(--text-muted); letter-spacing:.02em; }
 
+/* dataset card: portal-tinted placeholder carries portal name + record count */
+.card__media--portal{ display:flex; flex-direction:column; justify-content:space-between; padding:var(--space-4);
+  background:linear-gradient(135deg, var(--_pc,var(--facet-portal)) 0%, var(--abyss-900) 118%); }
+.card__media--portal[data-portal="OBIS"]{   --_pc:#2c6f8c; }
+.card__media--portal[data-portal="GBIF"]{   --_pc:#4ba258; }
+.card__media--portal[data-portal="EDI"]{    --_pc:#1f6f9c; }
+.card__media--portal[data-portal="ERDDAP"]{ --_pc:#c4702a; }
+.card__portal{ align-self:flex-start; font-family:var(--font-mono); font-size:var(--text-xs); font-weight:var(--fw-semibold);
+  text-transform:uppercase; letter-spacing:var(--ls-wide); color:#fff;
+  background:rgba(0,0,0,.28); padding:.3em .65em; border-radius:var(--radius-xs); }
+.card__records{ align-self:flex-start; font-family:var(--font-mono); font-size:var(--text-xs); color:var(--aqua-100);
+  display:flex; align-items:center; gap:.45em; }
+
+/* dataset single page: metadata panel + cross-portal access */
+.ds-meta{ display:flex; gap:var(--space-7); align-items:center; flex-wrap:wrap;
+  padding-bottom:var(--space-5); margin-bottom:var(--space-5); border-bottom:1px solid var(--divider); }
+.ds-facts{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:var(--space-3) var(--space-6); margin:0; flex:1; }
+.ds-facts div{ display:flex; flex-direction:column; gap:.15em; }
+.ds-facts dt{ font-family:var(--font-mono); font-size:var(--text-xs); text-transform:uppercase; letter-spacing:var(--ls-label); color:var(--text-muted); }
+.ds-facts dd{ margin:0; font-size:var(--text-sm); color:var(--text-body); word-break:break-word; }
+.ds-sources{ margin-bottom:var(--space-6); }
+.ds-note{ margin-top:var(--space-3); font-size:var(--text-sm); color:var(--text-muted); display:flex; align-items:center; gap:.5em; }
+
 /* on-page contribution bar (Suggest an edit / Edit on GitHub) */
 .edit-cta{ border-top:1px solid var(--divider); background:var(--bg-surface); }
 .edit-cta__inner{ max-width:var(--container-wide); margin:0 auto; padding:var(--space-5) var(--space-6); display:flex; align-items:center; justify-content:space-between; gap:var(--space-4); flex-wrap:wrap; }

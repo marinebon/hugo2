@@ -5,5 +5,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="shortcut icon" href="{{ "img/favicon.ico" | relURL }}" type="image/x-icon">
-<link rel="stylesheet" href="{{ "css/styles.css" | relURL }}">
+{{- /* Bundle every @import listed in styles.css into one fingerprinted file, so
+       the browser cache busts automatically whenever any CSS changes.
+       styles.css stays the single source of cascade order. */ -}}
+{{- $manifest := readFile "static/css/styles.css" -}}
+{{- $css := "" -}}
+{{- range findRE `@import "[^"]+"` $manifest -}}
+  {{- $rel := replaceRE `@import "([^"]+)"` "$1" . -}}
+  {{- $css = printf "%s\n%s" $css (readFile (printf "static/css/%s" $rel)) -}}
+{{- end -}}
+{{- $styles := resources.FromString "css/styles.css" $css | fingerprint -}}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">

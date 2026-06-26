@@ -1,0 +1,91 @@
+{{ define "main" }}
+{{ $records := .Params.records | default 0 }}
+{{ $rlabel := .Params.records_label | default "records" }}
+<main>
+  <section class="page-header">
+    <div class="page-header__inner">
+      <span class="eyebrow eyebrow--rule eyebrow--ondark">Dataset</span>
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.tags }}<div class="card__tags" style="margin-top:var(--space-3);">{{ range . }}{{ partial "tag.html" . }}{{ end }}</div>{{ end }}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width:840px;">
+
+      {{/* ---- metadata panel ---- */}}
+      <div class="ds-meta">
+        {{ if gt $records 0 }}
+        <div class="stat">
+          <span class="stat__value">{{ partial "num.html" $records }}</span>
+          <span class="stat__label">{{ $rlabel }}</span>
+        </div>
+        {{ end }}
+        <dl class="ds-facts">
+          {{ with .Params.publisher }}<div><dt>Publisher</dt><dd>{{ . }}</dd></div>{{ end }}
+          {{ if or .Params.temporal_start .Params.temporal_end }}<div><dt>Temporal</dt><dd>{{ .Params.temporal_start | default "?" }} – {{ .Params.temporal_end | default "ongoing" }}</dd></div>{{ end }}
+          {{ with .Params.extent }}<div><dt>Spatial</dt><dd>{{ printf "%.1f°N–%.1f°N, %.1f°E–%.1f°E" .south .north .west .east }}</dd></div>{{ end }}
+          {{ with .Params.doi }}<div><dt>DOI</dt><dd><a href="https://doi.org/{{ . }}" target="_blank" rel="noopener">{{ . }}</a></dd></div>{{ end }}
+        </dl>
+      </div>
+
+      {{/* ---- cross-portal access ---- */}}
+      {{ with .Params.sources }}
+      <div class="ds-sources">
+        <span class="eyebrow eyebrow--rule">Available in</span>
+        <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;margin-top:var(--space-3);">
+          {{ range . }}
+          <a class="btn {{ if .primary }}btn--action{{ else }}btn--outline{{ end }}" href="{{ .url }}" target="_blank" rel="noopener">
+            {{ .portal }}{{ if .records }} · {{ partial "num.html" .records }}{{ end }} <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </a>
+          {{ end }}
+        </div>
+        {{ if $.Params.not_in_obis }}<p class="ds-note"><i class="fas fa-circle-info" aria-hidden="true"></i> Tagged in the OBIS network via GBIF, but not yet ingested into OBIS.</p>{{ end }}
+      </div>
+      {{ end }}
+
+      {{ with .Params.homepage }}<p style="margin-bottom:var(--space-5);"><a href="{{ . }}" target="_blank" rel="noopener"><i class="fas fa-house" aria-hidden="true"></i> Project homepage</a></p>{{ end }}
+
+      <div style="max-width:64ch;">{{ .Content }}</div>
+
+      <p style="margin-top:var(--space-7);"><a href="{{ "data" | relURL }}" class="btn btn--ghost"><i class="fas fa-arrow-left" aria-hidden="true"></i> All datasets</a></p>
+    </div>
+  </section>
+
+  {{/* ---- pagefind tag filters ---- */}}
+  {{ if .Params.tags }}
+  <div style="display:none" aria-hidden="true">
+    {{ range .Params.tags }}
+    {{ $parts := split . "." }}
+    {{ if ge (len $parts) 2 }}
+    <span data-pagefind-filter="{{ index $parts 0 }}:{{ strings.TrimPrefix (printf "%s." (index $parts 0)) . }}"></span>
+    {{ end }}
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{/* ---- schema.org/Dataset JSON-LD → Google Dataset Search ---- */}}
+  {{ $ld := dict
+      "@context" "https://schema.org/"
+      "@type" "Dataset"
+      "name" .Title
+      "description" (.Params.summary | default .Summary)
+      "url" .Permalink
+      "isAccessibleForFree" true }}
+  {{ with .Params.tags }}{{ $ld = merge $ld (dict "keywords" .) }}{{ end }}
+  {{ with .Params.doi }}{{ $ld = merge $ld (dict "identifier" (printf "https://doi.org/%s" .)) }}{{ end }}
+  {{ with .Params.date }}{{ $ld = merge $ld (dict "datePublished" (printf "%v" .)) }}{{ end }}
+  {{ with .Params.publisher }}{{ $ld = merge $ld (dict "creator" (dict "@type" "Organization" "name" .) "publisher" (dict "@type" "Organization" "name" .)) }}{{ end }}
+  {{ if or .Params.temporal_start .Params.temporal_end }}{{ $ld = merge $ld (dict "temporalCoverage" (printf "%s/%s" (.Params.temporal_start | default "..") (.Params.temporal_end | default ".."))) }}{{ end }}
+  {{ with .Params.extent }}{{ $ld = merge $ld (dict "spatialCoverage" (dict "@type" "Place" "geo" (dict "@type" "GeoShape" "box" (printf "%v %v %v %v" .south .west .north .east)))) }}{{ end }}
+  {{ with .Params.sources }}
+    {{ $dist := slice }}{{ $same := slice }}
+    {{ range . }}
+      {{ $dist = $dist | append (dict "@type" "DataDownload" "name" (printf "View in %s" .portal) "contentUrl" .url) }}
+      {{ $same = $same | append .url }}
+    {{ end }}
+    {{ $ld = merge $ld (dict "distribution" $dist "sameAs" $same) }}
+  {{ end }}
+  <script type="application/ld+json">{{ $ld | jsonify }}</script>
+</main>
+{{ end }}

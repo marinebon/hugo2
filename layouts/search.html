@@ -36,7 +36,7 @@
   try { available = await pf.filters(); } catch(e) {}
 
   // Flatten into autocomplete list: [{facet, value, label}]
-  const FACET_LABELS = {method:'Method', place:'Region', org:'Org', type:'Type', tool:'Type', topic:'Topic', year:'Year'};
+  const FACET_LABELS = {method:'Method', place:'Region', org:'Org', type:'Type', tool:'Type', topic:'Topic', year:'Year', portal:'Portal'};
   const allOptions = [];
   Object.keys(available).forEach(facet => {
     Object.keys(available[facet]).forEach(value => {

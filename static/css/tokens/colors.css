@@ -52,6 +52,7 @@
   --facet-org:     #1a7a4e;  /* kelp   — organizations / partners           */
   --facet-type:    #b5651d;  /* amber  — content/tool types                 */
   --facet-topic:   #44606e;  /* ink    — general topics                     */
+  --facet-portal:  #6d4aa7;  /* violet — data portals (OBIS/GBIF/EDI/ERDDAP)*/
   /* legacy aliases kept for backward compat */
   --facet-region:  var(--facet-place);
   --facet-tool:    var(--facet-type);
@@ -61,6 +62,7 @@
   --facet-org-deep:    #015f37;
   --facet-type-deep:   #884501;
   --facet-topic-deep:  #2c4550;
+  --facet-portal-deep: #4f3380;
 
   /* ---- Semantic status -------------------------------------------------- */
   --ok:   #1a7a4e;

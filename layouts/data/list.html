@@ -1,0 +1,104 @@
+{{ define "main" }}
+<main>
+  <section class="page-header">
+    <div class="page-header__inner">
+      <span class="eyebrow eyebrow--rule eyebrow--ondark">Open marine biodiversity data</span>
+      <h1>Accessing MBON data</h1>
+      <p class="page-header__lead">{{ .Params.summary }}</p>
+    </div>
+  </section>
+
+  {{/* ---- How to access: the three on-ramps via Tools ------------------ */}}
+  <section class="section" id="access">
+    <div class="container">
+      <span class="eyebrow eyebrow--rule">How to access</span>
+      <h2 style="margin:var(--space-2) 0 var(--space-3);">Three ways into the data</h2>
+      <p style="max-width:64ch;color:var(--text-body);margin-bottom:var(--space-6);">MBON observations are published openly to global repositories and reached through the network's <a href="{{ "tools" | relURL }}">Tools</a> — pick the on-ramp that fits your work.</p>
+      <div class="grid-3">
+        <a class="card" href="{{ "tools" | relURL }}?tool=Portal" style="text-decoration:none;">
+          <div class="card__body">
+            <span class="badge badge--type"><i class="fas fa-magnifying-glass-chart" aria-hidden="true"></i> Portals</span>
+            <h3 class="card__title">Search &amp; download</h3>
+            <p class="card__summary" style="-webkit-line-clamp:4;">Discover datasets, map occurrences, and download records through interactive portals like the MBON Data Portal, OBIS, and GBIF.</p>
+            <span class="card__foot">Browse portals <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+          </div>
+        </a>
+        <a class="card" href="{{ "tools" | relURL }}?tool=App" style="text-decoration:none;">
+          <div class="card__body">
+            <span class="badge badge--type"><i class="fas fa-chart-line" aria-hidden="true"></i> Apps &amp; Workflows</span>
+            <h3 class="card__title">Visualize &amp; explore</h3>
+            <p class="card__summary" style="-webkit-line-clamp:4;">Dashboards and apps turn raw observations into seascapes, indicators, and decision-ready views — no code required.</p>
+            <span class="card__foot">Browse apps <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+          </div>
+        </a>
+        <a class="card" href="{{ "tools" | relURL }}?tool=Package" style="text-decoration:none;">
+          <div class="card__body">
+            <span class="badge badge--type"><i class="fas fa-code" aria-hidden="true"></i> Packages</span>
+            <h3 class="card__title">Query &amp; analyze</h3>
+            <p class="card__summary" style="-webkit-line-clamp:4;">R and Python packages pull data programmatically from OBIS, GBIF, ERDDAP, and more for reproducible analysis.</p>
+            <span class="card__foot">Browse packages <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {{/* ---- Dataset catalog: filterable grid ----------------------------- */}}
+  {{ $datasets := where site.RegularPages "Section" "data" }}
+  <section class="section section--tint">
+    <div class="container">
+      <span class="eyebrow eyebrow--rule">Dataset catalog</span>
+      <h2 style="margin:var(--space-2) 0 var(--space-3);">{{ len $datasets }} marine biodiversity datasets</h2>
+      <p style="max-width:64ch;color:var(--text-body);margin-bottom:var(--space-6);">Harvested from <strong>OBIS</strong>, <strong>GBIF</strong>, <strong>EDI</strong>, and <strong>ERDDAP</strong>. The same dataset is often mirrored across portals — we list the <strong>OBIS</strong> record when available, since it carries richer Darwin&nbsp;Core extensions and QA/QC. Filter by portal, method, region, or organization; every card links back to its source.</p>
+
+      <div class="filter-bar" data-filter data-noun="datasets" data-param="portal">
+        {{ range where hugo.Data.tags "filters" "intersect" (slice "data") }}
+          {{ $facet := .facet }}
+          <div class="filter-group">
+            <span class="filter-group__label" style="color:var(--facet-{{ $facet }});">{{ .label }}</span>
+            <div class="filter-group__btns">
+              {{ range .values }}
+                <button class="filter-btn tag tag--{{ $facet }}" data-facet="{{ $facet }}" data-value="{{ .value }}">{{ .name }}</button>
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+        <div class="filter-foot">
+          <span class="filter-count" data-filter-count></span>
+          <button class="btn btn--ghost btn--sm" data-filter-clear style="display:none;"><i class="fas fa-xmark" aria-hidden="true"></i> Clear filters</button>
+        </div>
+      </div>
+
+      <div class="grid-auto">
+        {{ range sort $datasets "Params.records" "desc" }}
+          <div data-filter-item data-tags="{{ delimit .Params.tags " " }}">
+            {{ partial "card-dataset.html" . }}
+          </div>
+        {{ end }}
+      </div>
+
+      <div data-filter-empty style="display:none;text-align:center;padding:var(--space-9);color:var(--text-muted);">
+        <i class="fas fa-fish" style="font-size:32px;opacity:.4;" aria-hidden="true"></i>
+        <p style="margin-top:var(--space-4);">No datasets match those filters yet.</p>
+      </div>
+
+      {{ if eq (len $datasets) 0 }}
+        <div style="text-align:center;padding:var(--space-8);color:var(--text-muted);border:1px dashed var(--border-strong);border-radius:var(--radius-lg);">
+          <p style="margin:0;">The catalog is empty. Run <code>python3 scripts/harvest_datasets.py</code> to populate it from OBIS, GBIF, EDI, and ERDDAP.</p>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+
+  {{/* ---- Where the data lives ---------------------------------------- */}}
+  <section class="section">
+    <div class="container" style="max-width:760px;">
+      <span class="eyebrow eyebrow--rule">The bigger picture</span>
+      <h2 style="margin:var(--space-2) 0 var(--space-4);">FAIR by design</h2>
+      <p style="font-size:var(--text-lg);color:var(--text-body);margin-bottom:var(--space-5);">MBON observations are standardized to <a href="https://dwc.tdwg.org/" target="_blank" rel="noopener">Darwin&nbsp;Core</a> and published to open repositories so they are <strong>Findable, Accessible, Interoperable, and Reusable</strong>. The <a href="https://obis.org" target="_blank" rel="noopener">Ocean Biodiversity Information System (OBIS)</a> is the primary home for biological occurrence data; <a href="https://gbif.org" target="_blank" rel="noopener">GBIF</a> aggregates the broader OBIS network; the <a href="https://edirepository.org" target="_blank" rel="noopener">Environmental Data Initiative (EDI)</a> archives long-term ecological packages; and <a href="https://www.ncei.noaa.gov/erddap/" target="_blank" rel="noopener">ERDDAP</a> servers stream gridded and sensor data.</p>
+      <a class="btn btn--action" href="{{ "tools" | relURL }}?tool=Portal">Explore data portals <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+  </section>
+</main>
+{{ end }}
+{{ define "scripts" }}<script src="{{ "js/filter.js" | relURL }}" defer></script>{{ end }}

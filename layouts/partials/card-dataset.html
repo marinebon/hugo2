@@ -1,0 +1,21 @@
+{{/* Dataset card: no screenshot — a portal-tinted placeholder carrying the
+     canonical portal + record count, then tags, title, summary. Call with a
+     Page (.) from the `data` section. */}}
+{{ $portal := .Params.portal_primary | default "OBIS" }}
+{{ $records := .Params.records | default 0 }}
+<a class="card card--dataset" href="{{ .RelPermalink }}">
+  <div class="card__media card__media--placeholder card__media--portal" data-portal="{{ $portal }}">
+    <span class="card__portal">{{ $portal }}</span>
+    {{ if gt $records 0 }}<span class="card__records"><i class="fas fa-database" aria-hidden="true"></i> {{ partial "num.html" $records }} records</span>{{ end }}
+  </div>
+  <div class="card__body">
+    {{ with .Params.tags }}
+      <div class="card__tags">
+        {{ range first 3 . }}{{ partial "tag.html" . }}{{ end }}
+      </div>
+    {{ end }}
+    <h3 class="card__title">{{ .Title }}</h3>
+    <p class="card__summary">{{ .Params.summary | default .Summary }}</p>
+    <span class="card__foot">View dataset <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+  </div>
+</a>

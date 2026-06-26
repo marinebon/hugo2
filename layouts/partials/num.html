@@ -1,0 +1,14 @@
+{{- /* Format an integer with thousands separators, e.g. 160081 → 160,081.
+       Call: {{ partial "num.html" $n }}. Avoids lang.NumFmt (unreliable here). */ -}}
+{{- $s := printf "%d" (int .) -}}
+{{- $n := len $s -}}
+{{- $out := "" -}}
+{{- range $i := seq 1 $n -}}
+  {{- $ch := substr $s (sub $i 1) 1 -}}
+  {{- if and (gt $i 1) (eq (mod (sub $n (sub $i 1)) 3) 0) -}}
+    {{- $out = printf "%s,%s" $out $ch -}}
+  {{- else -}}
+    {{- $out = printf "%s%s" $out $ch -}}
+  {{- end -}}
+{{- end -}}
+{{- $out -}}

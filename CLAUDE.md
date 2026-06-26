@@ -34,6 +34,8 @@ python3 scripts/import_papers.py     # regenerate content/papers/*.md
 # build one content file from issue-form JSON (what the workflow runs):
 ISSUE_JSON='{"title":"…","tags_topic":"Research"}' CONTENT_TYPE=news ISSUE_NUMBER=0 \
   python3 scripts/issue_to_content.py
+# (re)generate the Data catalog: content/data/*.md from OBIS/GBIF/EDI/ERDDAP
+python3 scripts/harvest_datasets.py --clean        # add --dry-run to preview
 ```
 
 ## Architecture
@@ -86,9 +88,33 @@ papers resolves a DOI via Crossref. It opens a PR on a stable branch
 `layouts/partials/card.html` is a dispatcher that renders the right card for a
 Page by `.Type`: news (`card-news`, month/year badge over banner), events
 (`card-event`, date), papers (`card-paper`, year badge over a placeholder),
-everything else (`card-tool`, generic image card). Any mixed-content list should
-call `card.html` so each result keeps its section's treatment. The tag term page
+datasets (`card-dataset`, portal-tinted placeholder + record count), everything
+else (`card-tool`, generic image card). Any mixed-content list should call
+`card.html` so each result keeps its section's treatment. The tag term page
 `layouts/_default/taxonomy.html` uses it, grouping a tag's results by type.
+
+### The Data catalog (harvested datasets)
+
+The **Data** nav item (`content/data/`, type `data`, rendered by
+`layouts/data/{list,single}.html`) is an auto-generated catalog of marine
+biodiversity datasets — *not* hand-edited or issue-form contributed.
+`scripts/harvest_datasets.py` (pyyaml + stdlib) discovers MBON datasets via GBIF
+`dataset/search?q=MBON`, then cross-lists each across **OBIS / GBIF / EDI / ERDDAP**
+and writes one `content/data/<slug>.md` per dataset (front matter: `records`,
+`doi`, `sources[]`, `portal_primary`, `tags`, optional `extent`/temporal).
+
+Two rules encoded there: **OBIS-first** — when a dataset is mirrored in both OBIS
+and GBIF, the OBIS record is canonical (richer Darwin Core + QA/QC), GBIF is a
+secondary "also in" link; and an **MBON-relevance gate** — a candidate is kept
+only if it carries an MBON text signal *or* is served by the MBON IPT
+(`ipt.iobis.org/mbon`); being merely in the GBIF "OBIS network" is **not** enough
+(that's all ~3,400 OBIS datasets, which admits noise). ERDDAP discovery is a
+stdlib re-implementation of `erddapy.multiple_server_search` over the
+awesome-erddap registry. The new `portal` facet (OBIS/GBIF/EDI/ERDDAP) lives in
+`data/tags.yaml` like any other; since datasets are harvested, it needs no
+issue-template counterpart. `data/{list,single}` reuse the generic
+`static/js/filter.js` (parameterized by `data-noun`/`data-param`), and each
+dataset page emits `schema.org/Dataset` JSON-LD for Google Dataset Search.
 
 Search (`layouts/search.html`, Pagefind) renders the same type-aware cards in JS.
 `baseof.html` emits per-page Pagefind meta (`type`, `badge`, `image`) as **one

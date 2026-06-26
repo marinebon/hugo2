@@ -14,9 +14,18 @@
 #          layouts/tools/list.html and layouts/papers/list.html (filter bars).
 # To wire up a new filter button: add it to `values` here and use it in front matter.
 
+- facet: portal
+  label: Portal
+  filters: [data]
+  values:
+    - { value: OBIS,   name: OBIS }
+    - { value: GBIF,   name: GBIF }
+    - { value: EDI,    name: EDI }
+    - { value: ERDDAP, name: ERDDAP }
+
 - facet: method
   label: Method
-  filters: [tools, papers]
+  filters: [tools, papers, data]
   values:
     - { value: Remote-Sensing, name: "Remote Sensing" }
     - { value: Genomics,       name: Genomics }
@@ -42,7 +51,7 @@
 
 - facet: place
   label: Region
-  filters: [tools]
+  filters: [tools, data]
   values:
     - { value: Global,         name: Global }
     - { value: US,             name: "U.S." }
@@ -91,7 +100,8 @@
   label: Type
   filters: []
   values:
-    - { value: Paper, name: Paper }
+    - { value: Paper,   name: Paper }
+    - { value: Dataset, name: Dataset }
 
 - facet: year
   label: Year

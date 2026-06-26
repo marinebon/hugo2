@@ -8,6 +8,8 @@
   {{ partial "card-event.html" . }}
 {{- else if eq .Type "papers" -}}
   {{ partial "card-paper.html" . }}
+{{- else if eq .Type "data" -}}
+  {{ partial "card-dataset.html" . }}
 {{- else -}}
   {{ partial "card-tool.html" . }}
 {{- end -}}
