@@ -7,7 +7,7 @@
 {{ $repo := site.Params.github_repo }}
 {{ $branch := site.Params.github_branch | default "main" }}
 {{ $title := printf "Edit: %s" $.Title }}
-<div class="edit-cta">
+<div class="edit-cta" data-pagefind-ignore>
   <div class="edit-cta__inner">
     <span class="edit-cta__label"><i class="fas fa-pen-to-square" aria-hidden="true"></i> Help improve this page</span>
     <span class="edit-cta__links">
