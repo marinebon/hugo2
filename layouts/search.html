@@ -87,7 +87,10 @@
       statusEl.textContent = items.length + ' result' + (items.length === 1 ? '' : 's');
       const loaded = await Promise.all(items.slice(0, 30).map(r => r.data()));
       const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
-      resultsEl.innerHTML = loaded.map(d => {
+      const GROUP_LABELS = { papers:'Papers', data:'Datasets', tools:'Tools', methods:'Methods',
+        news:'News', events:'Events', network:'Network', 'working-groups':'Working Groups', page:'Pages' };
+
+      function renderResult(d) {
         const m = d.meta || {};
         const type = (m.type || 'page').toLowerCase();
         const badge = m.badge || cap(type);
@@ -101,7 +104,23 @@
           '<span class="search-result__main">' + (m.image ? '' : thumb) +
           '<a class="search-result__title" href="' + withBase(d.url) + '">' + m.title + '</a>' +
           '<p class="search-result__excerpt">' + d.excerpt + '</p></span></li>';
-      }).join('');
+      }
+
+      // group by content type, keeping Pagefind relevance order for the groups
+      // (by each type's first/best hit) and for items within each group
+      const byType = {}, order = [];
+      loaded.forEach(d => {
+        const t = ((d.meta || {}).type || 'page').toLowerCase();
+        if (!byType[t]) { byType[t] = []; order.push(t); }
+        byType[t].push(d);
+      });
+      resultsEl.innerHTML = order.map(t =>
+        '<li class="search-group">' +
+          '<div class="search-group__head">' + (GROUP_LABELS[t] || cap(t)) +
+            '<span class="search-group__count">' + byType[t].length + '</span></div>' +
+          '<ul class="search-group__list">' + byType[t].map(renderResult).join('') + '</ul>' +
+        '</li>'
+      ).join('');
     } catch(e) {
       statusEl.textContent = 'Search unavailable — run pagefind after build.';
     }
