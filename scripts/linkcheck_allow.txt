@@ -1,0 +1,16 @@
+# linkcheck_allow.txt — tolerated broken internal links for scripts/check_links.py
+#
+# One glob pattern per line (shell-style: * ? [seq]); blank lines and lines
+# starting with # are ignored. A pattern is matched against the raw link value
+# exactly as it appears in the built HTML (e.g. /hugo2/foo/ or ../bar.png).
+#
+# Listing a link here lets the build/deploy succeed even though the link is
+# currently broken — use it as a temporary escape hatch for known issues that
+# are tracked elsewhere, and prefer fixing the link instead. Each entry should
+# carry a comment saying why and (ideally) a tracking issue.
+#
+# Examples:
+#   /hugo2/methods/upcoming-method/   # placeholder page, content pending — #123
+#   *.pdf                             # large PDFs published out of band
+
+# (no exceptions currently)

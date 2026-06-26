@@ -1,0 +1,12 @@
+{{- /* Markdown link render hook. Mirrors render-image.html: internal links are
+       resolved through relURL so they carry the site base path (e.g. /hugo2/),
+       both for root-relative ("/tools/x/") and bare ("docs/x.pdf") destinations.
+       A leading slash is trimmed first because relURL drops the base path on an
+       already-absolute path. External, protocol-relative, mailto/tel, and
+       in-page (#anchor) destinations are left untouched. */ -}}
+{{- $u := .Destination -}}
+{{- if or (hasPrefix $u "#") (hasPrefix $u "//") (strings.Contains $u "://") (hasPrefix $u "mailto:") (hasPrefix $u "tel:") -}}
+{{- else -}}
+  {{- $u = $u | strings.TrimPrefix "/" | relURL -}}
+{{- end -}}
+<a href="{{ $u | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>

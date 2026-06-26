@@ -14,11 +14,17 @@ the contribution flow — read it for anything user-facing.
 hugo server                  # live-reloading preview at http://localhost:1313
 hugo --gc --minify           # production build into ./public (what CI runs)
 npx --yes pagefind --site public   # build the search index over the built site
+python3 scripts/check_links.py public   # fail on any broken internal link (CI runs this)
 ```
 
 Requires Hugo **extended** ≥ 0.163 (CI pins `HUGO_VERSION: 0.163.3` in
 `.github/workflows/deploy.yml`). There is no test suite; the build is the check —
-`hugo --gc --minify` must exit 0 and not leak unintended files into `public/`.
+`hugo --gc --minify` must exit 0 and not leak unintended files into `public/`,
+and `check_links.py` must exit 0.
+
+To reproduce the deployed subpath locally (CI serves under `/hugo2/`), build with
+`hugo --gc --minify --baseURL "https://marinebon.org/hugo2/"` before checking —
+the default local `baseURL` has no path, so base-path bugs only surface that way.
 
 Python helper scripts use only `pyyaml` + stdlib:
 
@@ -100,6 +106,14 @@ Pagefind, and without `-ignore` the hidden values leak into result excerpts.
 - Adding a `content/network/*.md` with `lat`/`lng` auto-adds a globe node
   (`globe.js` reads nodes emitted by `layouts/partials/globe.html`).
 - Markdown allows raw HTML (`unsafe: true` in `hugo.yaml`); icons are Font Awesome 6.
+- **Internal links must carry the base path** (`/hugo2/` in prod). The trap:
+  `relURL` *drops* the base path on a leading-slash string — `relURL "/methods/x/"`
+  → `/methods/x/` (404s under `/hugo2/`), while `relURL "methods/x/"` →
+  `/hugo2/methods/x/`. So write `relURL` args **without** a leading slash, prefer
+  `.RelPermalink` for pages, and keep `data/*.yaml` link values slash-free. Markdown
+  links/images are safe automatically: `layouts/_default/_markup/render-{link,image}.html`
+  trim a leading slash and run every internal destination through `relURL`.
+  `scripts/check_links.py` enforces all of this against the built site (see Commands).
 - All CSS is in `static/css/`: `styles.css` imports `tokens/*` then
   `components.css` + `layout.css`. Brand and `--facet-*` colors are single-source.
 

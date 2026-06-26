@@ -36,6 +36,10 @@ jobs:
         env:
           HUGO_ENVIRONMENT: production
         run: hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - name: Check internal links
+        # fails the deploy if any internal link 404s or drops the base path
+        # (e.g. the /hugo2/ prefix). allow known issues in scripts/linkcheck_allow.txt
+        run: python3 scripts/check_links.py public
       - name: Index with Pagefind
         run: npx --yes pagefind --site public
       - name: Upload artifact

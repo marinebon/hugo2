@@ -7,7 +7,13 @@
 <div class="{{ $class }}">
   {{ if $showContact }}
     {{ with hugo.Data.social.contact }}
-      <a href="{{ . }}" aria-label="Contact" target="_blank" rel="noopener" class="social-contact">Contact</a>
+      {{ $href := . }}
+      {{/* internal path -> resolve through relURL for the site base path;
+           external / mailto / tel destinations pass through untouched */}}
+      {{ if not (or (strings.Contains $href "://") (hasPrefix $href "mailto:") (hasPrefix $href "tel:") (hasPrefix $href "#")) }}
+        {{ $href = $href | strings.TrimPrefix "/" | relURL }}
+      {{ end }}
+      <a href="{{ $href }}" aria-label="Contact" target="_blank" rel="noopener" class="social-contact">Contact</a>
     {{ end }}
   {{ end }}
   {{ range hugo.Data.social.channels }}

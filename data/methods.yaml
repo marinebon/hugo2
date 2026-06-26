@@ -8,7 +8,7 @@
     habitat extent across millions of square kilometers — resolving patterns no
     ship survey could match at that scale. Seascapes products blend multi-sensor
     imagery into dynamic biodiversity indicators.
-  url: /methods/remote-sensing/
+  url: methods/remote-sensing/
 
 - id: benthic
   label: Benthic Surveys
@@ -19,7 +19,7 @@
     Rocky-shore and sandy-beach transects, photo quadrats, and intertidal surveys
     record coastal biodiversity — from barnacles and algae to shorebirds —
     using standardized protocols that make observations comparable across ocean basins.
-  url: /methods/benthic/
+  url: methods/benthic/
 
 - id: traditional
   label: Traditional At-Sea Surveys
@@ -31,7 +31,7 @@
     calibration backbone for modern methods. They are labor-intensive and costly at
     large scale — which is exactly why MBON invests in genomic, acoustic, and
     remote-sensing approaches that can extend coverage between cruises.
-  url: /methods/traditional/
+  url: methods/traditional/
 
 - id: acoustics
   label: Acoustics
@@ -43,7 +43,7 @@
     infer biodiversity and ecosystem health. Active acoustics (echosounders, ADCPs)
     enumerate fish and zooplankton biomass, covering the water column continuously,
     day and night.
-  url: /methods/acoustics/
+  url: methods/acoustics/
 
 - id: tracking
   label: Tracking
@@ -55,7 +55,7 @@
     movements, diving behavior, and physiology. Acoustic and satellite telemetry build
     3-D pictures of how animals use ocean habitat — essential for understanding
     connectivity and response to climate change.
-  url: /methods/tracking/
+  url: methods/tracking/
 
 - id: genomics
   label: Genomics & eDNA
@@ -68,7 +68,7 @@
     Metabarcoding and metagenomics decode this environmental DNA to produce species
     inventories from a single water bottle — faster and cheaper than visual surveys
     for many taxa.
-  url: /methods/genomics/
+  url: methods/genomics/
 
 - id: indicators
   label: Indicators & Data
@@ -80,4 +80,4 @@
     Essential Ocean Variables and Essential Biodiversity Variables. MBON's indicators
     and data-management working groups build reproducible pipelines that flow from
     every node into OBIS and the global biodiversity knowledge graph (FAIR data).
-  url: /methods/indicators/
+  url: methods/indicators/
