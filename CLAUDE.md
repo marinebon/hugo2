@@ -29,7 +29,7 @@ the default local `baseURL` has no path, so base-path bugs only surface that way
 Python helper scripts use only `pyyaml` + stdlib:
 
 ```bash
-python3 scripts/import_papers.py     # regenerate content/papers/*.md + data/paper_filters.yaml
+python3 scripts/import_papers.py     # regenerate content/papers/*.md
                                      # from a Hugo-Academic source tree
 # build one content file from issue-form JSON (what the workflow runs):
 ISSUE_JSON='{"title":"…","tags_topic":"Research"}' CONTENT_TYPE=news ISSUE_NUMBER=0 \
