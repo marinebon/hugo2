@@ -15,7 +15,7 @@ params:
   github_branch: main
   # Google Apps Script web-app /exec URL backing the Contact form (see scripts/contact-form.gs).
   # Leave empty until deployed; recipient emails live in the script, never on the site.
-  contact_endpoint: ""
+  contact_endpoint: "https://script.google.com/macros/s/AKfycbzrDZ6kPDILybYJSuQqTAQqkIkKDk8PBeJzf1xPzFUOejQE-78yz0ZoCEpGQG3xbBG-MQ/exec"
   description: A global collaborative initiative contributing to the effective management of marine biodiversity and ecosystem services. A thematic node of GEO BON.
   tagline: Global ocean observing · GEO BON node
   heroImage: img/photos/reef-sunlight.jpg
