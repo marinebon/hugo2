@@ -32,17 +32,20 @@
     </div>
   </section>
 
-  {{/* each worldwide node is its own regional network-of-networks — give each its
-       own named section (peer to "USA MBON" and "Working Groups"), no "International" umbrella */}}
-  {{ range $i, $node := $intl.ByTitle }}
-  <section id="regional-{{ $node.File.ContentBaseName }}" class="section{{ if eq (math.Mod $i 2) 0 }} section--tint{{ end }}">
-    <div class="container" style="max-width:820px;">
-      <span class="eyebrow eyebrow--rule">{{ $node.Title }}</span>
-      <p style="font-size:var(--text-lg);color:var(--text-body);margin:var(--space-3) 0 var(--space-5);">{{ $node.Params.summary }}</p>
-      <a class="btn btn--outline" href="{{ $node.RelPermalink }}">Explore {{ $node.Title }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+  <section id="regional-worldwide" class="section section--tint">
+    <div class="container">
+      <span class="eyebrow eyebrow--rule">Worldwide MBON</span>
+      <h2 style="margin:var(--space-2) 0 var(--space-6);">{{ len $intl }} regional networks</h2>
+      <div class="grid-auto">
+        {{ range $intl.ByTitle }}
+          <a class="node-link" href="{{ .RelPermalink }}">
+            <div class="node-link__title"><span class="dot"></span><strong>{{ .Title }}</strong></div>
+            <p>{{ .Params.summary }}</p>
+          </a>
+        {{ end }}
+      </div>
     </div>
   </section>
-  {{ end }}
 
   <section id="working-groups" class="section">
     <div class="container" style="max-width:760px;">

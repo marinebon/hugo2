@@ -5,7 +5,7 @@
     <div class="page-header__inner">
       <a href="{{ "network" | relURL }}" style="display:inline-flex;gap:8px;align-items:center;color:var(--teal-300);font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:var(--ls-wide);text-transform:uppercase;text-decoration:none;margin-bottom:var(--space-5);"><i class="fas fa-arrow-left"></i> Network</a>
       <div style="display:flex;gap:var(--space-3);align-items:center;margin-bottom:var(--space-3);">
-        <span class="badge badge--ok"><span class="badge__dot"></span>{{ if eq .Params.geo "International" }}International node{{ else }}Active node{{ end }}</span>
+        <span class="badge badge--ok"><span class="badge__dot"></span>{{ if eq .Params.geo "International" }}Worldwide node{{ else }}Active node{{ end }}</span>
         <span class="node-card__coord">{{ printf "%.1f&deg; %s &middot; %.1f&deg; %s" (math.Abs $lat) (cond (ge $lat 0.0) "N" "S") (math.Abs $lng) (cond (ge $lng 0.0) "E" "W") | safeHTML }}</span>
       </div>
       <h1>{{ .Title }}</h1>
@@ -13,7 +13,7 @@
       <div class="stat-strip">
         <div class="stat stat--ondark"><div class="stat__value">{{ .Params.since }}</div><div class="stat__label">Observing since</div></div>
         <div class="stat stat--ondark"><div class="stat__value">FAIR</div><div class="stat__label">Open data</div></div>
-        <div class="stat stat--ondark"><div class="stat__value">{{ if eq .Params.geo "International" }}International{{ else }}USA{{ end }}</div><div class="stat__label">Node type</div></div>
+        <div class="stat stat--ondark"><div class="stat__value">{{ if eq .Params.geo "International" }}Worldwide{{ else }}USA{{ end }}</div><div class="stat__label">Node type</div></div>
       </div>
     </div>
   </section>
