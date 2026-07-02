@@ -1,0 +1,10 @@
+{{/* FAQ accordion from data/faq.yaml. Used on the homepage and the /faq/ page.
+     The schema.org/FAQPage JSON-LD is emitted once, by layouts/_default/faq.html. */}}
+<div class="faq-list">
+  {{ range hugo.Data.faq }}
+  <details class="faq-item">
+    <summary>{{ .q }}</summary>
+    <div class="faq-item__a">{{ .a }}</div>
+  </details>
+  {{ end }}
+</div>

@@ -72,30 +72,14 @@
     </div>
   </section>
 
-  {{/* ===== FAQ (with schema.org/FAQPage for answer engines) ===== */}}
-  {{ $faqs := slice
-      (dict "q" "What is MBON?"
-            "a" "The Marine Biodiversity Observation Network (MBON) is a global, collaborative network that observes marine life — from microbes to whales — and turns those observations into open, standardized data and indicators that inform ocean conservation and management. MBON is the marine thematic node of GEO BON and leads the Marine Life 2030 programme of the UN Ocean Decade.")
-      (dict "q" "How do I access MBON data?"
-            "a" "MBON data are open and published to global repositories following FAIR and Darwin Core standards. Browse the searchable Data catalog on this site, or access records directly through OBIS (Ocean Biodiversity Information System), GBIF, EDI, and ERDDAP.")
-      (dict "q" "How can I get involved?"
-            "a" "Anyone can contribute: publish biodiversity data to OBIS through a regional node, join a working group (eDNA, acoustics, tracking, indicators, or data management), or partner at the global level through the MBON Secretariat. See the Network page to get started.") }}
+  {{/* ===== FAQ (accordion from data/faq.yaml; full page + FAQPage schema live at /faq/) ===== */}}
   <section class="section faq-section" id="faq">
     <div class="container" style="max-width:760px;">
       <span class="eyebrow eyebrow--rule">FAQ</span>
       <h2 style="margin:var(--space-2) 0 var(--space-6);">Frequently asked questions</h2>
-      <div class="faq-list">
-        {{ range $faqs }}
-        <details class="faq-item">
-          <summary>{{ .q }}</summary>
-          <div class="faq-item__a">{{ .a }}</div>
-        </details>
-        {{ end }}
-      </div>
+      {{ partial "faq.html" . }}
+      <a class="btn btn--ghost" style="margin-top:var(--space-5);" href="{{ "faq" | relURL }}">All FAQs <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
     </div>
   </section>
-  {{ $qa := slice }}
-  {{ range $faqs }}{{ $qa = $qa | append (dict "@type" "Question" "name" .q "acceptedAnswer" (dict "@type" "Answer" "text" .a)) }}{{ end }}
-  <script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@type" "FAQPage" "mainEntity" $qa) | jsonify | safeJS }}</script>
 </main>
 {{ end }}

@@ -1,0 +1,19 @@
+# Frequently asked questions. Rendered by layouts/partials/faq.html (accordion, used on
+# the homepage and the /faq/ page) and layouts/_default/faq.html (full page + schema.org
+# FAQPage JSON-LD for answer engines). Edit here to change both places at once.
+- q: What is MBON?
+  a: >-
+    The Marine Biodiversity Observation Network (MBON) is a global, collaborative network that
+    observes marine life — from microbes to whales — and turns those observations into open,
+    standardized data and indicators that inform ocean conservation and management. MBON is the
+    marine thematic node of GEO BON and leads the Marine Life 2030 programme of the UN Ocean Decade.
+- q: How do I access MBON data?
+  a: >-
+    MBON data are open and published to global repositories following FAIR and Darwin Core
+    standards. Browse the searchable Data catalog on this site, or access records directly through
+    OBIS (Ocean Biodiversity Information System), GBIF, EDI, and ERDDAP.
+- q: How can I get involved?
+  a: >-
+    Anyone can contribute: publish biodiversity data to OBIS through a regional node, join a working
+    group (eDNA, acoustics, tracking, indicators, or data management), or partner at the global level
+    through the MBON Secretariat. See the Network page to get started.

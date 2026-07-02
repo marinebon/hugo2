@@ -1,0 +1,20 @@
+{{ define "main" }}
+<main>
+  <section class="page-header">
+    <div class="page-header__inner">
+      <span class="eyebrow eyebrow--rule eyebrow--ondark">About</span>
+      <h1>{{ .Title }}</h1>
+      <p class="page-header__lead">{{ .Params.summary }}</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container" style="max-width:760px;">
+      {{ partial "faq.html" . }}
+    </div>
+  </section>
+  {{/* schema.org/FAQPage — this is the canonical FAQ URL for answer engines */}}
+  {{ $qa := slice }}
+  {{ range hugo.Data.faq }}{{ $qa = $qa | append (dict "@type" "Question" "name" .q "acceptedAnswer" (dict "@type" "Answer" "text" .a)) }}{{ end }}
+  <script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@type" "FAQPage" "mainEntity" $qa) | jsonify | safeJS }}</script>
+</main>
+{{ end }}

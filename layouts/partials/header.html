@@ -103,6 +103,20 @@
             </div>
           </div>
 
+        {{ else if eq .Name "About" }}
+          <div class="nav-dropdown">
+            <a href="{{ .URL }}"{{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }} class="is-active"{{ end }}>
+              {{ .Name }}<i class="fas fa-chevron-down nav-dropdown__caret" aria-hidden="true"></i>
+            </a>
+            <div class="nav-dropdown__panel nav-dropdown__panel--single">
+              <div class="nav-dropdown__col">
+                <a href="{{ "about" | relURL }}">About MBON</a>
+                <a href="{{ "faq" | relURL }}">FAQ</a>
+                <a href="{{ "contact" | relURL }}">Contact</a>
+              </div>
+            </div>
+          </div>
+
         {{ else }}
           <a href="{{ .URL }}"{{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }} class="is-active"{{ end }}>{{ .Name }}</a>
         {{ end }}
