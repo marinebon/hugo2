@@ -11,6 +11,8 @@ tags:
 - place.Global
 - topic.Data-Publishing
 - topic.Interoperability
+- topic.eDNA
+- method.Genomics
 title: MBON Data Portal
 weight: 3
 aliases:

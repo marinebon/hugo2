@@ -11,6 +11,8 @@ tags:
 - place.US
 - topic.Kelp
 - topic.Phytoplankton
+- topic.eDNA
+- method.Genomics
 title: S. California Bight MBON
 aliases:
 - /bons/southern-california-bight-mbon/

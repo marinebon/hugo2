@@ -9,6 +9,7 @@ leads:
   org: NOAA Atlantic Oceanographic and Meteorological Laboratory
 tags:
 - method.Genomics
+- topic.eDNA
 ---
 Environmental DNA (eDNA) metabarcoding offers a transformative approach to marine biodiversity monitoring — a water sample captures genetic traces of every organism that passed through, producing species inventories without nets, dredges, or destructive sampling.
 

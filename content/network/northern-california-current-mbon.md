@@ -12,6 +12,8 @@ tags:
 - topic.Seascapes
 - topic.Ecosystem-Assessment
 - topic.Phytoplankton
+- topic.eDNA
+- method.Genomics
 title: N. California Current MBON
 aliases:
 - /bons/northern-california-current-mbon/

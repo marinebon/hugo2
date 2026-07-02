@@ -13,6 +13,8 @@ tags:
 - place.US
 - topic.Climate-Change
 - topic.Fisheries
+- topic.eDNA
+- method.Genomics
 title: Coastal New England MBON
 ---
 

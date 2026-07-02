@@ -7,6 +7,8 @@ tags:
 - org.NOAA
 - topic.Award
 - topic.Funding
+- topic.eDNA
+- method.Genomics
 title: NOAA and Partner Agencies New Awards
 aliases:
 - /blog/1/01/01/noaa-and-partner-agencies-new-awards/

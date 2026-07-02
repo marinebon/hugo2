@@ -18,4 +18,5 @@ paper_url: http://doi.wiley.com/10.1002/lom3.10237
 tags:
 - method.Genomics
 - year.2018
+- topic.eDNA
 ---

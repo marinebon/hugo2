@@ -8,6 +8,8 @@ summary: The U.S. MBON celebrated the tenth anniversary of its pilot projects at
 tags:
 - org.MBON
 - topic.Workshop
+- topic.eDNA
+- method.Genomics
 title: 'MBON All Hands 2024: Ten Years of U.S. MBON'
 aliases:
 - /blog/2024/04/01/mbon-all-hands/

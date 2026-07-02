@@ -7,6 +7,7 @@ summary: Tracking ecosystem shifts from microbes to mammals with environmental D
 tags:
 - topic.Conference
 - method.Genomics
+- topic.eDNA
 ---
 
 [Tracking Ecosystem Shifts, from Microbes to Mammals, with Environmental DNA](https://vimeo.com/297203776) — Anni Djurhuus

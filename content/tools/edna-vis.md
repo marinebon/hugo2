@@ -11,6 +11,7 @@ summary: Interactive visualization of environmental DNA (eDNA) detections across
 tags:
 - tool.App
 - method.Genomics
+- topic.eDNA
 title: eDNA Visualization
 weight: 26
 ---

@@ -15,6 +15,8 @@ tags:
 - topic.Ecosystem-Assessment
 - topic.Climate-Change
 - topic.Seascapes
+- topic.eDNA
+- method.Genomics
 title: Central California MBON
 ---
 

@@ -11,6 +11,8 @@ tags:
 - place.US
 - topic.Freshwater
 - topic.Fisheries
+- topic.eDNA
+- method.Genomics
 title: Great Lakes MBON
 aliases:
 - /bons/great-lakes-mbon/

@@ -5,6 +5,7 @@ tags:
 - method.Genomics
 - topic.Research
 - topic.Biodiversity
+- topic.eDNA
 title: Advances in Molecular eDNA Techniques
 aliases:
 - /blog/1/01/01/advances-in-molecular-edna-techniques/

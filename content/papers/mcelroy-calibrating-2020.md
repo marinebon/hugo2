@@ -29,4 +29,5 @@ paper_url: https://www.frontiersin.org/articles/10.3389/fevo.2020.00276/full
 tags:
 - method.Genomics
 - year.2020
+- topic.eDNA
 ---

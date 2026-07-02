@@ -9,6 +9,8 @@ tags:
 - topic.Freshwater
 - org.GEOBON
 - topic.EOV
+- topic.eDNA
+- method.Genomics
 title: MBON and FWBON Joint Session at GEO BON Conference
 aliases:
 - /blog/1/01/01/mbon-and-fwbon-joint-session/

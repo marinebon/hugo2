@@ -21,4 +21,5 @@ paper_url: http://journal.frontiersin.org/article/10.3389/fmars.2017.00314/full
 tags:
 - method.Genomics
 - year.2017
+- topic.eDNA
 ---

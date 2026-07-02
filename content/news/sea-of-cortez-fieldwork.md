@@ -11,6 +11,7 @@ tags:
 - place.Americas
 - method.Genomics
 - topic.Fieldwork
+- topic.eDNA
 title: 'User Story: Bringing Steinbeck & Ricketts into the MBON Era'
 aliases:
 - /blog/2026/02/26/user-story-bringing-steinbeck-ricketts-into-the-mbon-era/

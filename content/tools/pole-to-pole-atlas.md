@@ -20,6 +20,8 @@ tags:
 - topic.Rocky-Shore
 - topic.Standards
 - topic.Data-Publishing
+- topic.eDNA
+- method.Genomics
 title: MBON Pole to Pole Data Atlas
 weight: 6
 ---

@@ -12,6 +12,8 @@ summary: Wind-energy planning and shelf biodiversity.
 tags:
 - place.US
 - topic.Fisheries
+- topic.eDNA
+- method.Genomics
 title: Mid-Atlantic MBON
 ---
 

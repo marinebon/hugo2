@@ -15,4 +15,5 @@ paper_url: https://pubs.acs.org/doi/10.1021/acs.est.6b03114
 tags:
 - method.Genomics
 - year.2016
+- topic.eDNA
 ---

@@ -10,6 +10,7 @@ tags:
 - org.UNESCO
 - topic.World-Heritage
 - method.Genomics
+- topic.eDNA
 title: OBIS and UNESCO Marine World Heritage Sites
 aliases:
 - /blog/1/01/01/obis-and-unesco-marine-world-heritage-sites/

@@ -6,6 +6,8 @@ since: '2013'
 summary: The U.S. partnership integrating biology and ecosystem surveys with remote sensing and molecular (eDNA) methods across regional MBONs.
 tags:
 - place.US
+- topic.eDNA
+- method.Genomics
 title: US MBON
 aliases:
 - /bons/us-mbon/

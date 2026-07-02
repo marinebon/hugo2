@@ -11,6 +11,8 @@ tags:
 - place.US
 - place.Arctic
 - topic.Climate-Change
+- topic.eDNA
+- method.Genomics
 title: Arctic MBON
 aliases:
 - /bons/arctic-mbon/
