@@ -12,6 +12,8 @@ tags:
 - place.US
 title: Olympic Coast NMS Infographics
 weight: 10
+aliases:
+- /products/infographic-ocnms/
 ---
 
 Interactive ecosystem infographics for the Olympic Coast National Marine Sanctuary.

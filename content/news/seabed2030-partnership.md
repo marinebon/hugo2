@@ -9,6 +9,8 @@ tags:
 - topic.Marine-Life-2030
 - topic.Partnership
 title: MBON Partnership with Seabed2030
+aliases:
+- /blog/1/01/01/mbon-partnership-with-seabed2030/
 ---
 
 A new partnership has been announced between the Marine Biodiversity Observation Network (MBON), Marine Life 2030 and the Nippon Foundation-GEBCO Seabed 2030 Project. The memorandum of understanding signed by the parties outlines their commitment to advancing the field of ocean exploration, with a particular focus on the observation of marine life.

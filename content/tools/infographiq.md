@@ -13,6 +13,8 @@ tags:
 - place.Global
 title: Infographiq
 weight: 7
+aliases:
+- /products/infographiq/
 ---
 
 Infographiq combines JavaScript and R to produce clickable illustrated diagrams — "infographics" in the ecological sense — that serve as intuitive interfaces for exploring scientific data. Each element in the illustration is linked to a data popup, allowing end users (managers, educators, the public) to explore ecosystem indicators by clicking on species or habitat features they already recognize visually.

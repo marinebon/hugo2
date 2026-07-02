@@ -11,6 +11,8 @@ tags:
 - topic.World-Heritage
 - method.Genomics
 title: OBIS and UNESCO Marine World Heritage Sites
+aliases:
+- /blog/1/01/01/obis-and-unesco-marine-world-heritage-sites/
 ---
 
 OBIS partnered with UNESCO's Marine World Heritage sites in a global project to study biodiversity. A two-year project using environmental DNA (eDNA) to study biodiversity across selected marine World Heritage sites by local citizens guided by expert support, to monitor fish as well as species red-listed by the International Union for Conservation of Nature (IUCN) was launched on the 18th of October 2021. OBIS will play a major role in developing standard protocols for sampling and data management using eDNA for ocean monitoring and data collection.

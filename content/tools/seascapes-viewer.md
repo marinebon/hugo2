@@ -16,6 +16,8 @@ tags:
 - place.Global
 title: Seascapes Viewer
 weight: 2
+aliases:
+- /products/seascapes-for-sanctuaries/
 ---
 
 Seascapes are dynamic classes of water masses defined by surface properties obtained via satellite — sea surface temperature, salinity, chlorophyll-a, colored dissolved organic matter (CDOM), and others — combined with an ordination statistical process (Kavanaugh et al. 2016). Each class represents a distinct ocean habitat type that shifts in space and time as water masses move, making Seascapes a powerful proxy predictor for species distributions.

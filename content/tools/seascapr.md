@@ -13,6 +13,8 @@ tags:
 - place.Global
 title: seascapeR
 weight: 13
+aliases:
+- /products/seascapr/
 ---
 
 The seascapeR package provides functions for fetching, analyzing and visualizing Seascapes — a global and regional dynamic seawater classification product derived from satellite imagery by Maria Kavanaugh (OSU).

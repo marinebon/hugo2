@@ -8,6 +8,8 @@ tags:
 - topic.Conference
 - topic.Ocean
 title: UN Ocean Conference 2022
+aliases:
+- /blog/1/01/01/un-ocean-conference-2022/
 ---
 
 **Lisbon / 27 June – 2 July, 2022**

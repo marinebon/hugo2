@@ -11,6 +11,8 @@ tags:
 - place.US
 title: CINMS Infographics
 weight: 7
+aliases:
+- /products/infographic-cinms/
 ---
 
 Interactive ecosystem infographics for the Channel Islands National Marine Sanctuary.

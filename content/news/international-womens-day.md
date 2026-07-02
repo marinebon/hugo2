@@ -6,6 +6,8 @@ summary: An early celebration of International Women's Day — part of the AIR C
 tags:
 - topic.Community
 title: International Women's Day Celebration
+aliases:
+- /blog/1/01/01/international-womens-day-celebration/
 ---
 
 An early celebration of International Women's Day — AIR Centre Networking Fridays webinar series.

@@ -8,6 +8,8 @@ tags:
 - topic.UN-Ocean-Decade
 - topic.Policy
 title: Publication of Ocean Decade Vision 2030 White Papers
+aliases:
+- /blog/2024/06/14/publication-of-ocean-decade-vision-2030-white-papers/
 ---
 
 We are excited to share that the [United Nations Ocean Decade](https://oceandecade.org/) Vision 2030 White Papers have been officially published. Structured around the 10 Ocean Decade Challenges, the [Vision 2030](https://oceandecade.org/news/vision-2030-ocean-decade-launches-new-global-ambition-setting-process/) process aimed to set a tailored and specific strategic ambition, and associated milestones, for each of the Challenges, ensuring their road to success by 2030.

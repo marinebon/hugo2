@@ -10,6 +10,8 @@ tags:
 - topic.Data-Publishing
 - topic.Seminar
 title: MBON Europe Data Publishing Seminar
+aliases:
+- /blog/1/01/01/mbon-europe-data-publishing-seminar/
 ---
 
 MBON Europe held an online seminar about how to publish biodiversity data on 18th December 2023. The seminar was attended by 35 researchers interested in publishing their data, and 11 staff from LifeWatch ERIC, VLIZ (LifeWatch Belgium) and HCMR (LifeWatchGreece). Participants learned about tools for publishing biodiversity data on OBIS, GBIF and LifeWatch ERIC websites, FAIR principles, and how to publish data as papers in the Biodiversity Data Journal.

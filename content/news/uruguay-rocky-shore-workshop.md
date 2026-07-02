@@ -12,6 +12,8 @@ tags:
 - place.Americas
 - place.Uruguay
 title: Uruguay Rocky Shore Monitoring Workshop
+aliases:
+- /blog/1/01/01/uruguay-rocky-shore-monitoring-workshop/
 ---
 
 An MBON Pole to Pole Workshop for Rocky Shore Monitoring in Uruguay was held during 1–4 October 2024, organized by the Forum for the Conservation of the Patagonian Sea and Areas of Influence, during a course coordinated by Karumbé and Vida Silvestre Uruguay at Santa Teresa National Park.

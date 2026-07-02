@@ -4,6 +4,10 @@ aliases:
 - /biotrack
 - /bons_thematic/biotrack
 - /network/biotrack
+- /bons_thematic/biotrack/
+- /BioTrack/
+- /biotrack/
+- /bons_thematic/bons_thematic/BioTrack/
 banner: img/working-groups/biotrack-logo.jpg
 logo: img/logos/biotrack.png
 since: '2021'

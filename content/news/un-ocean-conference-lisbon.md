@@ -10,6 +10,8 @@ tags:
 - place.Lisbon
 - topic.Marine-Life-2030
 title: UN Ocean Conference Lisbon 2022
+aliases:
+- /blog/1/01/01/un-ocean-conference-lisbon/
 ---
 
 The [UN Ocean Conference (UNOC)](https://www.un.org/en/conferences/ocean2022), held in Lisbon from 27 June to 1 July 2022, joined Heads of State and Government, thousands of experts, business leaders, scientists, and civil society representatives together, providing a space for meaningful dialogue and seeking collaborations to conserve and conduct responsible use of the oceans for sustainable development (SDG14).

@@ -13,6 +13,8 @@ tags:
 - org.NOAA-IEA
 title: Alaska IEA Infographics
 weight: 9
+aliases:
+- /products/infographic-iea-alaska/
 ---
 
 Through an integrated science approach, the NOAA Integrated Ecosystem Assessment program balances the needs of nature and society for current and future generations, supporting diverse marine resource management objectives in an ecosystem context.

@@ -9,6 +9,8 @@ tags:
 - topic.Marine-Life-2030
 - topic.Outreach
 title: Letters to the Sea
+aliases:
+- /blog/2024/08/01/letters-to-the-sea/
 ---
 
 Over 2.15 billion people live close to the coast, with 898 million in low-lying areas. For these communities, the sea is central to their lives, work, culture, emotions, and spirituality.

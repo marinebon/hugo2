@@ -9,6 +9,8 @@ tags:
 - topic.Monitoring
 - topic.Conservation
 title: North Atlantic Right Whale Monitoring
+aliases:
+- /blog/1/01/01/north-atlantic-right-whale-monitoring/
 ---
 
 *Convened by Chris Orphanides, NEFSC Protected Species Branch, NOAA Fisheries; Catherine Johnson, Bedford Institute of Oceanography, Canada DFO; Jeffrey Runge, University of Maine, MBON.*

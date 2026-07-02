@@ -10,6 +10,8 @@ tags:
 - org.GEOBON
 - topic.EOV
 title: MBON and FWBON Joint Session at GEO BON Conference
+aliases:
+- /blog/1/01/01/mbon-and-fwbon-joint-session/
 ---
 
 On October 12th, 2023, the Marine Biodiversity Observation Network (MBON) and the Fresh Water Biodiversity Observation Network (FWBON) brought together their members in a joint session at the GEO BON Global Conference 2023 in Montreal.

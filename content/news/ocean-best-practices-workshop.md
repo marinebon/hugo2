@@ -10,6 +10,8 @@ tags:
 - topic.Data
 - topic.Marine-Life-2030
 title: Ocean Best Practices Workshop
+aliases:
+- /blog/1/01/01/ocean-best-practices-workshop/
 ---
 
 MBON, Marine Life 2030, GOOS and the AIR Centre hosted two special sessions at the VIII Ocean Best Practices (OBPS) workshop, bringing together the communities contributing to Biology and Ecosystem (BioEco) ocean observation and forecasting.

@@ -7,6 +7,8 @@ tags:
 - topic.Muller-Karger
 - topic.Award
 title: Dr. Frank Muller-Karger TOS Fellow Award
+aliases:
+- /blog/2024/02/06/dr.-frank-muller-karger-tos-fellow-award/
 ---
 
 The MBON is pleased to announce that Dr. Frank Muller-Karger, MBON co-chair, was recognized by The Oceanography Society (TOS) 2024 Honors as a Fellow for his exceptional achievement and contributions to ocean sciences.

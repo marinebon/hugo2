@@ -7,6 +7,8 @@ tags:
 - topic.Muller-Karger
 - topic.Lecture
 title: Dr. Frank Muller-Karger USF Distinguished Lecture
+aliases:
+- /blog/1/01/01/dr.-frank-muller-karger-usf-lecture/
 ---
 
 On 17th January 2024, MBON co-chair Dr. Frank Muller-Karger gave a presentation as part of the Distinguished University Professors Lecture (DPU) series at the University of South Florida (USF).

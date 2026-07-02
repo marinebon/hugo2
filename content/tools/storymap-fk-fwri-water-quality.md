@@ -12,6 +12,8 @@ tags:
 - org.FWRI
 title: FWRI FK Water Quality Story Map
 weight: 14
+aliases:
+- /products/storymap-fk-fwri-water-quality/
 ---
 
 A story map for water quality in the Florida Keys, led by Co-PI Luke McEachron (FWRI). The work compiles water quality data for the region and tracks change over time.

@@ -9,6 +9,8 @@ tags:
 - org.MBON
 - topic.Workshop
 title: 'MBON All Hands 2024: Ten Years of U.S. MBON'
+aliases:
+- /blog/2024/04/01/mbon-all-hands/
 ---
 
 The Marine Biodiversity Observation Network (MBON) hosted the annual U.S. MBON All-Hands Workshop in New Orleans, Louisiana, March 18–22, 2024 — celebrating the **tenth anniversary** of the implementation of the first U.S. MBON pilot projects.

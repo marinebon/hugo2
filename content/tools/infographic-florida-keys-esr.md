@@ -13,6 +13,8 @@ tags:
 - org.NOAA-IEA
 title: Florida Keys ESR Infographic
 weight: 8
+aliases:
+- /products/infographic-florida-keys-esr/
 ---
 
 This interactive conceptual model infographic illustrates the status and trends of selected indicators within the context of the Florida Keys National Marine Sanctuary's ecosystem, showing conditions of the sanctuary's resources via different sections. To explore this suite of indicators, hover over each indicator icon, or click on the indicator from the menu on the right. This is a product of the Florida Keys NOAA Integrated Ecosystem Assessment program.

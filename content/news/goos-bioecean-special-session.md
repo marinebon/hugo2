@@ -8,6 +8,8 @@ tags:
 - topic.EOV
 - topic.Webinar
 title: GOOS and BioEcoOcean Special Session Webinar Series
+aliases:
+- /blog/1/01/01/goos-and-bioecoocean-special-session/
 ---
 
 The Global Ocean Observing System (GOOS), the BioEcoOcean EU-project, the Marine Biodiversity Observation Network (MBON) and the Atlantic International Research Centre (AIR Centre) are organising a special webinar series focusing on the Biology and Ecosystems Essential Ocean Variables (BioEco EOVs) — the minimum set of variables needed to assess the state of the ocean and its biodiversity.

@@ -9,6 +9,8 @@ tags:
 - topic.Research
 - topic.Partnership
 title: All-Atlantic Ocean Research Alliance Forum
+aliases:
+- /blog/1/01/01/all-atlantic-ocean-research-alliance-forum/
 ---
 
 The All-Atlantic Ocean Research Alliance Forum held a Scientific Event in Brasilia (Brazil) from May 21 to June 2, 2022. The Marine Biodiversity Observation Network (MBON) partnered with the Ocean Best Practices System (OBPS), the Ocean Biodiversity Information System (OBIS), and the Global Ocean Observing System (GOOS) of the Intergovernmental Oceanographic Commission (IOC) to hold a virtual side event to advance the co-design of solutions that require biology and ecosystem observations integrated with traditional ocean observing.

@@ -8,6 +8,8 @@ tags:
 - topic.Collaboration
 - topic.Marine-Protected-Areas
 title: International Capacity Development Collaboration
+aliases:
+- /blog/1/01/01/international-capacity-development-collaboration/
 ---
 
 The Marine Biodiversity Observation Network (MBON) of GEO BON and ProtectedSeas recognize the need for globally coordinated and sustained ocean and biodiversity observing and data collection systems. Such systems are urgently needed to systematically assess the state of the ocean's biodiversity including biological resources and ecosystems, and how these will change in the future.

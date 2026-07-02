@@ -12,6 +12,8 @@ tags:
 - place.Global
 title: CoastWatch OBIS Indicator Explorer
 weight: 8
+aliases:
+- /products/explorer-coastwatch/
 ---
 
 The CoastWatch OBIS Indicator Explorer (developed by J. Trinanes, NOAA CoastWatch) provides a server-side approach for extracting co-located satellite remote sensing products, gridded numerical model results, and field observations — including records from OBIS, NCEI, and Seascapes — for any user-defined polygon.

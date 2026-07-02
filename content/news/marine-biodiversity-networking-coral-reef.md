@@ -8,6 +8,8 @@ tags:
 - topic.Networking
 - topic.Webinar
 title: Marine Biodiversity Networking on Coral Reefs
+aliases:
+- /blog/1/01/01/marine-biodiversity-networking-on-coral-reefs/
 ---
 
 Marine Biodiversity Networking Friday on IOC/WESTPAC and coral reef survey and recovery activities.

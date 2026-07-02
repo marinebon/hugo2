@@ -4,6 +4,10 @@ aliases:
 - /biosound
 - /bons_thematic/biosound
 - /network/biosound
+- /bons_thematic/biosound/
+- /BioSound/
+- /biosound/
+- /bons_thematic/bons_thematic/BioSound/
 banner: img/working-groups/biosound-hero.jpg
 logo: img/logos/biosound.jpg
 since: '2021'

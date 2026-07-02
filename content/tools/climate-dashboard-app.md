@@ -14,6 +14,8 @@ tags:
 - place.US
 title: Climate Change for Sanctuaries
 weight: 18
+aliases:
+- /products/climate-dashboard-app/
 ---
 
 Extends the static [Sanctuaries Climate Dashboard](/tools/climate-dashboard/) with an interactive Shiny interface. The signature view is a swipeable map comparing climatological "then" (1985–2005 reference) to "now" (most recent day-of-year) for each sanctuary; a lower slider steps the comparison through the calendar year. Sanctuary and variable are selectable from the left-hand panel.

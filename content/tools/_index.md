@@ -4,4 +4,7 @@ title: Tools
 aliases:
 - /data-products/
 - /products/
+- /products/axiom-portal/
+- /products/dashboard-fknms/
+- /products/dashboard-server/
 ---

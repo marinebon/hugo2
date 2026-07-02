@@ -14,6 +14,8 @@ tags:
 - place.US
 title: Sanctuaries Climate Dashboard
 weight: 17
+aliases:
+- /products/climate-dashboard/
 ---
 
 A flexdashboard-based product that renders climate indicators for each National Marine Sanctuary as a static website hosted on GitHub Pages. The layout follows ecowatch.noaa.gov and supports panels for bottom temperature, sea surface temperature, pH, precipitation, and sea-level rise among others. The dashboard is regenerated on a schedule by pulling from ERDDAP and Copernicus Marine Service endpoints.

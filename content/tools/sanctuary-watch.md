@@ -17,6 +17,7 @@ title: Sanctuary Watch
 weight: 4
 aliases:
 - /tools/sanctuary-condition-reports
+- /products/sanctuary-watch/
 ---
 
 Easy access to information for tracking ecosystem conditions, human connections, and management impacts is critical to timely, effective, community-based resource management. Sanctuary Watch brings that information to the fingertips of resource managers, scientists, educators, and the public through [web-based, interactive tools](https://sanctuarywatch.ioos.us).

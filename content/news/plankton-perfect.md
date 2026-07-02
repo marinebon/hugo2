@@ -8,6 +8,8 @@ tags:
 - place.South-Florida
 - topic.Science
 title: 'Plankton Perfect: Using Imagery to Document Microscopic Marine Life'
+aliases:
+- /blog/2025/12/10/plankton-perfect-using-imagery-to-document-microscopic-marine-life/
 ---
 
 *Pictured: Students operate a Conductivity, Temperature, and Depth (CTD) Rosette with an underwater microscope attached to capture photos of plankton. Clockwise from top left: starfish larva, jellyfish larva, crab/shrimp/lobster larva.*

@@ -11,6 +11,8 @@ tags:
 - topic.Training
 - place.Azores
 title: 'Terceira Island Workshop 2025: Marine Biodiversity Data'
+aliases:
+- /blog/1/01/01/terceira-island-workshop-2025/
 ---
 
 **Workshop: Enhancing marine biodiversity data collection and publishing**

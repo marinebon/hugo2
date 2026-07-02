@@ -8,6 +8,8 @@ summary: By combining satellite and acoustic tracking of marine species like the
 tags:
 - method.Tracking
 title: Tracking Ocean Sunfish to Map Marine Biodiversity Hotspots
+aliases:
+- /blog/2026/01/15/tracking-ocean-sunfish-to-map-marine-biodiversity-hotspots/
 ---
 
 *By tracking marine species like the ocean sunfish (Mola mola), [BioTrack](https://marinebon.org/bons_thematic/biotrack) — a project of the Marine Biodiversity Observation Network (MBON) — is uncovering key patterns in biodiversity and making marine animal movement data accessible to stakeholders. Photo Credit: Dr. Austin Gallagher – Beneath The Waves.*

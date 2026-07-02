@@ -6,6 +6,8 @@ tags:
 - method.Remote-Sensing
 - place.Coastal
 title: Satellite-Based Hurricane Damage Assessment
+aliases:
+- /blog/1/01/01/satellite-based-hurricane-damage-assessment/
 ---
 
 MBON, NERRS and NASA team develops automated, satellite-based method to evaluate damage caused by hurricanes and severe storms in coastal areas. [Read more here.](https://www.usf.edu/marine-science/news/2020/a-new-fast-way-to-analyze-hurricane-damage-to-coastal-environments.aspx)
