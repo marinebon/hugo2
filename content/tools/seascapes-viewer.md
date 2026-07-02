@@ -14,6 +14,7 @@ tags:
 - tool.App
 - org.NationalMarineSanctuaries
 - place.Global
+- topic.Seascapes
 title: Seascapes Viewer
 weight: 2
 aliases:

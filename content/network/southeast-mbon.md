@@ -11,6 +11,7 @@ tags:
 - place.US
 - place.South-Florida
 - org.NationalMarineSanctuaries
+- topic.Seascapes
 title: Southeast US MBON
 aliases:
 - /bons/south-florida-mbon/

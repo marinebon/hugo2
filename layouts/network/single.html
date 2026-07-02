@@ -38,7 +38,7 @@
   </section>
 
   {{ $others := first 4 (where (where site.RegularPages "Section" "network") "Params.kind_node" "regional") }}
-  <section class="section section--tint">
+  <section class="section section--tint" data-pagefind-ignore>
     <div class="container">
       <span class="eyebrow eyebrow--rule">Connected nodes</span>
       <h2 style="margin:var(--space-2) 0 var(--space-6);">Explore nearby networks</h2>

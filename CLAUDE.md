@@ -93,7 +93,9 @@ Two things require reading multiple files to understand:
   fallback (generic `year`/`tool`/`place.Global` ignored; an `org`/`portal` overlap counts
   3×). Dedup by `.RelPermalink`, cap 6. Pass `(dict "page" . "excludeSection" true …)` to
   drop same-type tag matches (network nodes do this — "Connected nodes" already lists other
-  nodes). `related:` page titles are also emitted as Pagefind meta so search matches them.
+  nodes). The whole related section (and the network "Connected nodes" section) carries
+  `data-pagefind-ignore` — a page's links to *other* pages are not its own content, so they
+  must not leak into search (otherwise e.g. `tools/onmsr` matched "seascape" via a linked card).
 - **/tags index** (`layouts/tags/terms.html`) is one flat list of tag facets, built from
   the live taxonomy terms (`.Data.Terms.Alphabetical`, bucketed by the prefix before `.`)
   with usage counts. No content-type or "references" rows.

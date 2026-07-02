@@ -71,7 +71,8 @@
 
 {{ $out = first $count $out }}
 {{ with $out }}
-<section class="section section--tint">
+{{/* data-pagefind-ignore: a page's related links are not its own content — keep them out of search */}}
+<section class="section section--tint" data-pagefind-ignore>
   <div class="container">
     <span class="eyebrow eyebrow--rule">{{ $heading }}</span>
     <div class="grid-3" style="margin-top:var(--space-6);">

@@ -17,4 +17,5 @@ paper_url: https://www.frontiersin.org/article/10.3389/fmars.2020.00575/full
 tags:
 - method.Remote-Sensing
 - year.2020
+- topic.Seascapes
 ---

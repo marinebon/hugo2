@@ -10,6 +10,7 @@ summary: Server-side tool that co-locates satellite remote sensing products, gri
 tags:
 - tool.App
 - place.Global
+- topic.Seascapes
 title: CoastWatch OBIS Indicator Explorer
 weight: 8
 aliases:

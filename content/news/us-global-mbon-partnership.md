@@ -5,6 +5,7 @@ tags:
 - topic.Partnership
 - method.Remote-Sensing
 - org.IOOS
+- topic.Seascapes
 title: 'US and Global MBON Partnership: MBON Seascapes on NOAA CoastWatch'
 aliases:
 - /blog/1/01/01/us-and-global-mbon-partnership/

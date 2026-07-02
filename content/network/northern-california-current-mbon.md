@@ -9,6 +9,7 @@ since: '2014'
 summary: Upwelling-driven productivity off Oregon and Washington.
 tags:
 - place.US
+- topic.Seascapes
 title: N. California Current MBON
 aliases:
 - /bons/northern-california-current-mbon/

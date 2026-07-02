@@ -6,6 +6,7 @@ summary: Satellites and aerial sensors resolve ocean color, temperature, and hab
 banner: img/methods/remote-sensing.jpeg
 tags:
 - method.Remote-Sensing
+- topic.Seascapes
 ---
 
 Remote sensing allows MBON to observe the ocean surface continuously and globally. Earth-observation satellites measure chlorophyll concentration, sea surface temperature, turbidity, and light attenuation — all proxies for biological productivity and habitat conditions.

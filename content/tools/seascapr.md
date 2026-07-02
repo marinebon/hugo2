@@ -11,6 +11,7 @@ summary: An R package and prototype interface to explore Seascapes in different 
 tags:
 - tool.Package
 - place.Global
+- topic.Seascapes
 title: seascapeR
 weight: 13
 aliases:
