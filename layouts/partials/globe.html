@@ -1,7 +1,8 @@
 {{/* MBON network globe band. Call with a dict:
      (dict "eyebrow" "…" "heading" "…" "lead" "…")
      Nodes come from content/network/ (all regional). */}}
-{{ $regional := where site.RegularPages "Section" "network" }}
+{{/* only regional nodes are globe pins; umbrella pages (e.g. US MBON) have no lat/lng */}}
+{{ $regional := where (where site.RegularPages "Section" "network") "Params.kind_node" "regional" }}
 {{ $usa      := where $regional "Params.geo" "USA" }}
 {{ $intl     := where $regional "Params.geo" "International" }}
 {{ $nodes    := slice }}

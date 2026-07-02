@@ -1,4 +1,7 @@
 ---
+aliases:
+- /bons/europe-mbon/
+- /mbon-europe/
 banner: img/photos/ocean-blue.jpg
 fcenter:
 - 12
@@ -9,20 +12,17 @@ geo: International
 lat: 43
 lng: -8
 since: '2018'
-summary: EuroSea and EMODnet-linked observing across European seas.
+summary: The Marine Biodiversity Observation Network for Europe (MBON Europe) will spearhead coordination of active monitoring of marine biodiversity by organisations in Europe.
 tags:
 - place.Europe
 - place.North-Atlantic
 title: Europe MBON
 ---
 
-EuroSea and EMODnet-linked observing across European seas.
+The Marine Biodiversity Observation Network for Europe (MBON Europe) will spearhead coordination of active monitoring of marine biodiversity by organisations in Europe.
 
-## Objectives
+Long term time series are essential to recognise and understand trends that may be due to natural or human activities, especially climate change. [MBON Europe](https://euromarinenetwork.eu/activities/mbon-europe/) will formalise coordination between organisations through Memoranda of Understanding (MoU), collate information on what monitoring is being done and how, discuss how to harmonise methods, facilitate data publication, synthesise the current situation, and develop a strategy for improved coordination.
 
-- Integrate and synthesize observations from ongoing monitoring programs through the Integrated Ocean Observing System (IOOS).
-- Refine practical Essential Biodiversity Variables (EBVs) and Essential Ocean Variables (EOVs) for the region.
-- Combine animal movement, ambient sound, and molecular (eDNA) methods to map biodiversity and its drivers.
-- Feed Sanctuary Condition Reports, ecosystem assessments, and resource-management decisions with timely indicators.
+This LTSWG is open to new members interested in the topic. To become a member contact: Mark John Costello.
 
-This node coordinates with national MBON efforts and international programs (GEO BON, GOOS, OBIS, OBPS) to advance interoperable, FAIR biodiversity data.
+[MBON Europe main website](https://euromarinenetwork.eu/activities/mbon-europe/)

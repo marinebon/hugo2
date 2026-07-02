@@ -1,4 +1,7 @@
 ---
+aliases:
+- /bons/pole-to-pole-americas-mbon/
+- /mbon-pole-to-pole-of-the-americas/
 banner: img/photos/ocean-blue.jpg
 fcenter:
 - -80
@@ -15,13 +18,12 @@ tags:
 title: Pole to Pole Americas
 ---
 
-A network of networks spanning the Americas.
+**MBON Pole-to-Pole** is a developing community of Practice across the Americas to assess marine biodiversity and ecosystem change using field and space observations.
 
-## Objectives
+The Marine Biodiversity Observation Network Pole to Pole of the Americas - MBON Pole to Pole - is a Knowledge Sharing Network dedicated to the collection, use and sharing of marine biodiversity data in a coordinated, standardized manner leveraging on existing infrastructure managed by the Global Ocean Observing System (GOOS; IOC-UNESCO), the GEO Biodiversity Observation Network (GEO BON), and the Ocean Biodiversity Information System (OBIS).
 
-- Integrate and synthesize observations from ongoing monitoring programs through the Integrated Ocean Observing System (IOOS).
-- Refine practical Essential Biodiversity Variables (EBVs) and Essential Ocean Variables (EOVs) for the region.
-- Combine animal movement, ambient sound, and molecular (eDNA) methods to map biodiversity and its drivers.
-- Feed Sanctuary Condition Reports, ecosystem assessments, and resource-management decisions with timely indicators.
+The MBON Pole to Pole aims to become a key resource for decision-making and management of living resources across countries in the Americas and support their reporting requirements of the Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services (IPBES), the Post-2020 Global Biodiversity Framework of the Convention of Biological Diversity (CBD), and the UN 2030 Agenda for Sustainable Development Goals (SDGs).
 
-This node coordinates with national MBON efforts and international programs (GEO BON, GOOS, OBIS, OBPS) to advance interoperable, FAIR biodiversity data.
+The MBON Pole to Pole project has published standard data collection protocols for rocky shores and sandy beaches which can be used across geographic regions to assess biodiversity. The MBON Pole to Pole project has hosted workshops and training sessions to build capacity and foster collaboration among researchers and stakeholders across the Americas.
+
+For more information see [the main MBON Pole to Pole website](https://marinebon.org/p2p/index.html).

@@ -13,14 +13,16 @@
       "heading" "USA and worldwide regional nodes"
       "lead" "Each node monitors its own waters and contributes biodiversity data to shared, open standards — connecting science across every ocean basin. Select a region to spin the globe.") }}
 
-  {{ $all  := where site.RegularPages "Section" "network" }}
+  {{/* only regional nodes render as cards; umbrella pages (e.g. US MBON) are surfaced separately */}}
+  {{ $all  := where (where site.RegularPages "Section" "network") "Params.kind_node" "regional" }}
   {{ $usa  := where $all "Params.geo" "USA" }}
   {{ $intl := where $all "Params.geo" "International" }}
 
   <section id="regional-usa" class="section">
     <div class="container">
       <span class="eyebrow eyebrow--rule">USA MBON</span>
-      <h2 style="margin:var(--space-2) 0 var(--space-6);">{{ len $usa }} regional networks</h2>
+      <h2 style="margin:var(--space-2) 0 var(--space-4);">{{ len $usa }} regional networks</h2>
+      {{ with site.GetPage "/network/us-mbon" }}<p style="margin:0 0 var(--space-6);"><a href="{{ .RelPermalink }}">About the U.S. MBON program <i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>{{ end }}
       <div class="grid-auto">
         {{ range $usa.ByTitle }}
           <a class="node-link" href="{{ .RelPermalink }}">
