@@ -117,7 +117,7 @@ Each tag facet has one of two roles:
 | `place` | attribute | tools, news, data, network | Global, US, Americas, North-Atlantic, South-Florida, Monterey-Bay, … |
 | `topic` | attribute | news, events | open-ended (Research, Partnership, Meeting, …) |
 | `year` | attribute | papers | `year.<YYYY>` |
-| `org` | attribute | tools, news | who **built** a tool — NOAA-IEA, NationalMarineSanctuaries, FWRI, … |
+| `org` | attribute | tools, news | who **built** a tool or for whom — NOAA-IEA, NationalMarineSanctuaries, FWRI, … |
 | `portal` | attribute | data, tools | whose **data** it uses / where a dataset is served — OBIS, GBIF, EDI, ERDDAP |
 
 - `org` vs `portal`: **`org` = the developer** of a tool; **`portal` = the data source**
