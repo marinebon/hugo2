@@ -14,6 +14,8 @@ tags:
 title: Southeast US MBON
 aliases:
 - /bons/south-florida-mbon/
+- /bons/southeast-mbon/
+- /network/south-florida-mbon/
 ---
 
 This project will build on the foundations laid by the present Sanctuaries MBON demonstration. A close partnership with NOAA AOML and the FKNMS has focused on periodic MBON surveys of the Florida Keys since 2014. Additional partners now add animal tracking and other dimensions to the Sanctuaries MBON.

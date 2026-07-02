@@ -25,7 +25,7 @@ MBON projects, partners and data play an important role in enabling the scientif
 - [Southern California](/network/southern-california-bight-mbon/)
 - [Gulf of Maine](/network/gulf-of-maine-mbon/)
 - [Pacific Northwest](/network/northern-california-current-mbon/)
-- [Southeast](/network/south-florida-mbon/)
+- [Southeast](/network/southeast-mbon/)
 - [Coastal New England](/network/coastal-new-england-mbon/)
 - [Mid-Atlantic](/network/mid-atlantic-mbon/)
 
