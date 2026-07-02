@@ -11,6 +11,9 @@ summary: MBON Pole to Pole rocky-shore and sandy-beach biodiversity monitoring t
 tags:
 - tool.Training
 - place.Americas
+- topic.Capacity-Development
+- topic.Rocky-Shore
+- topic.Monitoring
 title: Pole to Pole Workshop — Brazil
 weight: 54
 ---

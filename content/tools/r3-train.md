@@ -12,6 +12,8 @@ tags:
 - tool.Training
 - org.NOAA-IEA
 - method.Indicators
+- topic.Capacity-Development
+- topic.Ecosystem-Assessment
 title: Reproducible Reporting with R (R3)
 weight: 52
 ---

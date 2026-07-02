@@ -13,4 +13,6 @@ paper_url: https://linkinghub.elsevier.com/retrieve/pii/S0169534720300896
 tags:
 - method.Genomics
 - year.2020
+- topic.Invasive-Species
+- topic.Early-Detection
 ---

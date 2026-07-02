@@ -12,6 +12,8 @@ tags:
 - tool.Portal
 - place.Global
 - portal.OBIS
+- topic.Data-Publishing
+- topic.Standards
 title: OBIS — Ocean Biodiversity Information System
 weight: 5
 ---

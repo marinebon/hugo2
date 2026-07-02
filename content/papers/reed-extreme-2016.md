@@ -16,4 +16,6 @@ paper_url: http://www.nature.com/articles/ncomms13757
 tags:
 - method.Indicators
 - year.2016
+- topic.Kelp
+- topic.Climate-Change
 ---

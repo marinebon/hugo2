@@ -15,4 +15,5 @@ doi: 10.1016/B978-0-12-805052-1.00032-2
 paper_url: https://linkinghub.elsevier.com/retrieve/pii/B9780128050521000322
 tags:
 - year.2019
+- topic.Monitoring
 ---

@@ -15,4 +15,5 @@ doi: 10.1016/j.fishres.2019.05.002
 paper_url: https://linkinghub.elsevier.com/retrieve/pii/S0165783619301183
 tags:
 - year.2019
+- topic.Fisheries
 ---

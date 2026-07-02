@@ -9,6 +9,8 @@ tags:
 - tool.Infographic
 - org.NationalMarineSanctuaries
 - place.US
+- topic.Ecosystem-Assessment
+- topic.Marine-Protected-Areas
 title: CINMS Infographics
 weight: 7
 aliases:

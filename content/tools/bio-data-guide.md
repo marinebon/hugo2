@@ -13,6 +13,9 @@ tags:
 - tool.Training
 - portal.OBIS
 - place.Global
+- topic.Data-Publishing
+- topic.Standards
+- topic.Best-Practices
 title: Bio Data Guide
 weight: 48
 ---

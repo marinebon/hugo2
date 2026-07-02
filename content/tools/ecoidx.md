@@ -12,6 +12,7 @@ tags:
 - tool.Package
 - method.Indicators
 - org.NOAA-IEA
+- topic.Ecosystem-Assessment
 title: ecoidx
 weight: 23
 ---

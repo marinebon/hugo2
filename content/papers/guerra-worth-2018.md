@@ -13,4 +13,6 @@ doi: 10.1002/aqc.2837
 paper_url: http://doi.wiley.com/10.1002/aqc.2837
 tags:
 - year.2018
+- topic.Fisheries
+- topic.Conservation
 ---

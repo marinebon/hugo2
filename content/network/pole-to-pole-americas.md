@@ -15,6 +15,9 @@ since: '2017'
 summary: A network of networks spanning the Americas.
 tags:
 - place.Americas
+- topic.Rocky-Shore
+- topic.Capacity-Development
+- topic.Standards
 title: Pole to Pole Americas
 ---
 

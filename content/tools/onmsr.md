@@ -11,6 +11,7 @@ summary: R package providing spatial data and boundaries for the U.S. National M
 tags:
 - tool.Package
 - org.NationalMarineSanctuaries
+- topic.Marine-Protected-Areas
 title: onmsR
 weight: 24
 ---

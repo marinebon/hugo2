@@ -13,6 +13,8 @@ tags:
 - tool.Infographic
 - org.NationalMarineSanctuaries
 - place.US
+- topic.Marine-Protected-Areas
+- topic.Ecosystem-Assessment
 title: Sanctuary Watch
 weight: 4
 aliases:

@@ -9,6 +9,8 @@ summary: Search, download, visualize, and analyze real-time, delayed-mode, and h
 tags:
 - tool.Portal
 - place.Global
+- topic.Data-Publishing
+- topic.Interoperability
 title: MBON Data Portal
 weight: 3
 aliases:

@@ -15,4 +15,5 @@ paper_url: https://www.frontiersin.org/article/10.3389/fmars.2020.00022/full
 tags:
 - method.Remote-Sensing
 - year.2020
+- topic.Kelp
 ---

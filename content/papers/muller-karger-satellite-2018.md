@@ -64,4 +64,6 @@ tags:
 - method.Remote-Sensing
 - method.Indicators
 - year.2018
+- topic.EOV
+- topic.Ecosystem-Assessment
 ---

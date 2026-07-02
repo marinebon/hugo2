@@ -10,6 +10,7 @@ summary: Hands-on materials for building interactive R Shiny dashboards, from th
   CERF 2023 workshop (Tampa Bay Estuary Program).
 tags:
 - tool.Training
+- topic.Capacity-Development
 title: R Shiny Dashboard Workshop
 weight: 56
 ---

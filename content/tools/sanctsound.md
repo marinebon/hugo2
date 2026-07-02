@@ -12,6 +12,8 @@ tags:
 - tool.Infographic
 - method.Acoustics
 - org.NationalMarineSanctuaries
+- topic.Marine-Protected-Areas
+- topic.Monitoring
 title: SanctSound
 weight: 20
 ---

@@ -9,6 +9,8 @@ since: '2020'
 summary: Freshwater biodiversity at continental scale.
 tags:
 - place.US
+- topic.Freshwater
+- topic.Fisheries
 title: Great Lakes MBON
 aliases:
 - /bons/great-lakes-mbon/

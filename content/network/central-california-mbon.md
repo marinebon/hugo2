@@ -12,6 +12,9 @@ aliases:
 tags:
 - place.US
 - place.Monterey-Bay
+- topic.Ecosystem-Assessment
+- topic.Climate-Change
+- topic.Seascapes
 title: Central California MBON
 ---
 

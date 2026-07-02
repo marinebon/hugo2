@@ -12,6 +12,9 @@ tags:
 - place.South-Florida
 - org.NationalMarineSanctuaries
 - topic.Seascapes
+- topic.Coral-Reef
+- topic.Ecosystem-Assessment
+- topic.Marine-Protected-Areas
 title: Southeast US MBON
 aliases:
 - /bons/south-florida-mbon/

@@ -6,6 +6,7 @@ summary: Rocky-shore and sandy-beach transects, photo quadrats, and intertidal s
 banner: img/methods/benthic.jpeg
 tags:
 - method.Benthic
+- topic.Rocky-Shore
 ---
 
 Benthic and coastal surveys place trained observers directly at the shoreline or on the seafloor to measure what lives there. Unlike ship-based or satellite methods, these surveys require physical presence — which yields unmatched taxonomic resolution for sessile invertebrates, algae, and macrofauna that define the structure of coastal ecosystems.

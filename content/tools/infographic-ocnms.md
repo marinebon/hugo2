@@ -10,6 +10,8 @@ tags:
 - tool.Infographic
 - org.NationalMarineSanctuaries
 - place.US
+- topic.Ecosystem-Assessment
+- topic.Marine-Protected-Areas
 title: Olympic Coast NMS Infographics
 weight: 10
 aliases:

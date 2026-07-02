@@ -13,6 +13,9 @@ tags:
 - tool.Training
 - portal.OBIS
 - place.Global
+- topic.Capacity-Development
+- topic.Data-Publishing
+- topic.EOV
 title: Bio Data Mobilization Workshop
 weight: 49
 ---

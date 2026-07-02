@@ -10,4 +10,5 @@ paper_url: https://onlinelibrary.wiley.com/doi/10.1111/jfb.14218
 tags:
 - method.Genomics
 - year.2021
+- topic.Fisheries
 ---

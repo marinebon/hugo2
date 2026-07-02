@@ -10,6 +10,8 @@ summary: Visualization of intertidal temperature logger records along rocky shor
 tags:
 - tool.Workflow
 - method.Benthic
+- topic.Rocky-Shore
+- topic.Monitoring
 title: Intertidal Temperatures
 weight: 32
 ---

@@ -16,4 +16,6 @@ doi: 10.3897/biss.3.37047
 paper_url: https://biss.pensoft.net/article/37047/
 tags:
 - year.2019
+- topic.Data-Publishing
+- topic.Interoperability
 ---

@@ -11,6 +11,8 @@ tags:
 - place.US
 - place.South-Florida
 - org.NOAA-IEA
+- topic.Ecosystem-Assessment
+- topic.Marine-Protected-Areas
 title: Florida Keys ESR Infographic
 weight: 8
 aliases:

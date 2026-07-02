@@ -12,6 +12,7 @@ tags:
 - tool.Package
 - method.Indicators
 - portal.OBIS
+- topic.Ecosystem-Assessment
 title: obisindicators
 weight: 23
 ---

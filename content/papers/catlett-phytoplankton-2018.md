@@ -13,4 +13,5 @@ paper_url: http://doi.wiley.com/10.1002/2017JC013195
 tags:
 - method.Remote-Sensing
 - year.2018
+- topic.Phytoplankton
 ---

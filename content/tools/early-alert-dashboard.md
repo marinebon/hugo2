@@ -12,6 +12,9 @@ tags:
 - tool.App
 - org.NationalMarineSanctuaries
 - place.South-Florida
+- topic.Early-Detection
+- topic.Phytoplankton
+- topic.Marine-Protected-Areas
 title: Florida Keys NMS Alert Dashboard
 weight: 5
 ---

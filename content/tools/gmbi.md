@@ -11,6 +11,7 @@ summary: Prototype global marine biodiversity indicators derived from open occur
 tags:
 - tool.Package
 - method.Indicators
+- topic.Ecosystem-Assessment
 title: Global Marine Biodiversity Indicators
 weight: 30
 ---

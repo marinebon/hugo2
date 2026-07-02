@@ -16,6 +16,7 @@ summary: The Marine Biodiversity Observation Network for Europe (MBON Europe) wi
 tags:
 - place.Europe
 - place.North-Atlantic
+- topic.Data-Publishing
 title: Europe MBON
 ---
 

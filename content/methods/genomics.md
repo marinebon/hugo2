@@ -9,6 +9,8 @@ related:
 - /working-groups/edna
 tags:
 - method.Genomics
+- topic.EOV
+- topic.Standards
 ---
 
 Every organism in the ocean continuously sheds cells, mucus, feces, and gametes — all carrying DNA. Filtering seawater and extracting this environmental DNA (eDNA), then sequencing and comparing it against reference databases, produces a species inventory of the community that passed through that water over recent hours to days.

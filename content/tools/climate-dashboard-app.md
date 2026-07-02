@@ -12,6 +12,8 @@ tags:
 - tool.App
 - org.NationalMarineSanctuaries
 - place.US
+- topic.Climate-Change
+- topic.Marine-Protected-Areas
 title: Climate Change for Sanctuaries
 weight: 18
 aliases:

@@ -14,4 +14,5 @@ paper_url: https://linkinghub.elsevier.com/retrieve/pii/S0034425718303171
 tags:
 - method.Remote-Sensing
 - year.2020
+- topic.Kelp
 ---

@@ -11,6 +11,8 @@ since: '2018'
 summary: Nearshore observing from Long Island to Cape Cod.
 tags:
 - place.US
+- topic.Climate-Change
+- topic.Fisheries
 title: Coastal New England MBON
 ---
 

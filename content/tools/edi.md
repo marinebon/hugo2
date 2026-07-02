@@ -11,6 +11,7 @@ summary: The Environmental Data Initiative archives long-term ecological dataset
 tags:
 - tool.Portal
 - place.US
+- topic.Data-Publishing
 title: EDI — Environmental Data Initiative
 weight: 7
 ---

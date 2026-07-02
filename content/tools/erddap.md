@@ -11,6 +11,8 @@ summary: ERDDAP data servers stream gridded and tabular ocean datasets — satel
 tags:
 - tool.Portal
 - place.Global
+- topic.Interoperability
+- topic.Data-Publishing
 title: ERDDAP — Environmental Research Data Server
 weight: 8
 ---

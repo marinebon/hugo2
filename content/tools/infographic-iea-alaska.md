@@ -11,6 +11,7 @@ tags:
 - tool.Infographic
 - place.US
 - org.NOAA-IEA
+- topic.Ecosystem-Assessment
 title: Alaska IEA Infographics
 weight: 9
 aliases:

@@ -11,6 +11,8 @@ summary: The Global Biodiversity Information Facility — an international netwo
 tags:
 - tool.Portal
 - place.Global
+- topic.Data-Publishing
+- topic.Interoperability
 title: GBIF — Global Biodiversity Information Facility
 weight: 6
 ---

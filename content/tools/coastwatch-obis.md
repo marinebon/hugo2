@@ -11,6 +11,7 @@ tags:
 - tool.App
 - place.Global
 - topic.Seascapes
+- topic.Ecosystem-Assessment
 title: CoastWatch OBIS Indicator Explorer
 weight: 8
 aliases:

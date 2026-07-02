@@ -46,4 +46,6 @@ paper_url: https://www.frontiersin.org/article/10.3389/fmars.2018.00211/full
 tags:
 - method.Indicators
 - year.2018
+- topic.EOV
+- topic.Ecosystem-Assessment
 ---

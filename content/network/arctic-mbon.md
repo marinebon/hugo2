@@ -10,6 +10,7 @@ summary: Pan-Arctic biodiversity observing across a rapidly changing ocean.
 tags:
 - place.US
 - place.Arctic
+- topic.Climate-Change
 title: Arctic MBON
 aliases:
 - /bons/arctic-mbon/

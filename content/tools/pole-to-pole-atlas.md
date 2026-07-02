@@ -17,6 +17,9 @@ tags:
 - method.Benthic
 - place.Americas
 - portal.OBIS
+- topic.Rocky-Shore
+- topic.Standards
+- topic.Data-Publishing
 title: MBON Pole to Pole Data Atlas
 weight: 6
 ---

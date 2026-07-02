@@ -9,6 +9,8 @@ since: '2015'
 summary: CalCOFI-anchored monitoring of the Bight.
 tags:
 - place.US
+- topic.Kelp
+- topic.Phytoplankton
 title: S. California Bight MBON
 aliases:
 - /bons/southern-california-bight-mbon/

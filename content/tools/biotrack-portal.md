@@ -11,6 +11,9 @@ summary: Interactive map of satellite and acoustic marine animal tracks that ide
 tags:
 - tool.Portal
 - place.North-Atlantic
+- topic.Conservation
+- topic.Fisheries
+- topic.Monitoring
 title: BioTrack Telemetry Portal
 weight: 1
 ---

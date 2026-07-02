@@ -11,6 +11,7 @@ summary: Illustrated California Current Ecosystem Status Report — an interacti
 tags:
 - tool.Infographic
 - org.NOAA-IEA
+- topic.Ecosystem-Assessment
 title: California Current ESR Infographic
 weight: 26
 ---

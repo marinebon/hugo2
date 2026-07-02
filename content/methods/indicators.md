@@ -12,6 +12,9 @@ related:
 tags:
 - method.Indicators
 - method.Data-Mgmt
+- topic.EOV
+- topic.Ecosystem-Assessment
+- topic.Interoperability
 ---
 
 Observations — however numerous — only inform conservation and policy when they are synthesized into indicators, made interoperable across networks, and delivered through open, reproducible data systems. MBON's indicators and data management (DMAC) working groups develop the infrastructure that connects raw data to decisions.

@@ -11,6 +11,8 @@ summary: Training materials from the MBON / AIR Centre biological data mobilizat
 tags:
 - tool.Training
 - portal.OBIS
+- topic.Capacity-Development
+- topic.Data-Publishing
 title: MBON AIR Mobilization Workshop
 weight: 51
 ---

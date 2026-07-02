@@ -12,6 +12,8 @@ tags:
 - tool.Workflow
 - method.Indicators
 - org.NationalMarineSanctuaries
+- topic.Ecosystem-Assessment
+- topic.Marine-Protected-Areas
 title: Sanctuary Eco-Indicators
 weight: 25
 ---
