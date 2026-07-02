@@ -73,8 +73,11 @@ content/                 # ← all editable content (Markdown + YAML front matte
   events/*.md            #   one file per event (date, location, presentations)
   about.md contact.md search.md
 data/                    # ← structured data (YAML)
-  stats.yaml             #   hero stat strip          social.yaml   # social links
-  partners.yaml          #   partner logos + blurbs    methods.yaml  # methods hotspots
+  faq.yaml               #   frequently asked questions
+  methods.yaml           #   methods hotspots
+  social.yaml            #   social links
+  stats.yaml             #   hero stat strip
+  partners.yaml          #   partner logos + blurbs
   tags.yaml              #   canonical tag registry: every facet, its filter
                          #   buttons, and display-name aliases (one source of truth)
 layouts/                 # Hugo templates (HTML)
