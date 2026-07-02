@@ -24,8 +24,9 @@
           <div class="partner-grid">
             {{ range . }}
               {{ $internal := hasPrefix .url "/" }}
+              {{/* relURL drops the base path on a leading-slash arg, so trim it first (see CLAUDE.md) */}}
               <a class="partner-tile" title="{{ .name }}"
-                 href="{{ if $internal }}{{ .url | relURL }}{{ else }}{{ .url }}{{ end }}"{{ if not $internal }} target="_blank" rel="noopener"{{ end }}>
+                 href="{{ if $internal }}{{ (strings.TrimPrefix "/" .url) | relURL }}{{ else }}{{ .url }}{{ end }}"{{ if not $internal }} target="_blank" rel="noopener"{{ end }}>
                 <img src="{{ .logo | relURL }}" alt="{{ .name }} logo" loading="lazy">
                 <span>{{ .name }}</span>
               </a>
