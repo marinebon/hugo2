@@ -8,7 +8,9 @@ lng: -81.8
 since: '2014'
 summary: Southeastern United States, integrating fieldwork and satellite observations.
 tags:
-- topic.Regional
+- place.US
+- place.South-Florida
+- org.NationalMarineSanctuaries
 title: Southeast US MBON
 ---
 

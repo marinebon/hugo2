@@ -14,7 +14,6 @@ journal: The ISME Journal
 doi: 10.1038/ismej.2016.134
 paper_url: http://www.nature.com/articles/ismej2016134
 tags:
-- type.Paper
 - method.Genomics
 - year.2017
 ---

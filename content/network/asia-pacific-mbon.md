@@ -11,7 +11,7 @@ lng: 140
 since: '2019'
 summary: Coral, kelp and seagrass monitoring across the Pacific rim.
 tags:
-- topic.Regional
+- place.Global
 title: Asia-Pacific MBON
 ---
 

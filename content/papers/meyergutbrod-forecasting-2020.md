@@ -14,6 +14,5 @@ journal: Ecological Applications
 doi: 10.1002/eap.2185
 paper_url: https://onlinelibrary.wiley.com/doi/10.1002/eap.2185
 tags:
-- type.Paper
 - year.2020
 ---

@@ -13,7 +13,6 @@ tags:
 - place.North-Atlantic
 - portal.GBIF
 - portal.OBIS
-- type.Dataset
 sources:
 - portal: OBIS
   url: https://obis.org/dataset/0ada9b0c-14f5-4247-881e-9f6f62b2c165

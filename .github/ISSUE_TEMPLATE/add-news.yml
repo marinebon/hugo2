@@ -91,10 +91,12 @@ body:
         - Americas
         - North Atlantic
         - South Florida
-        - Pole-to-Pole
-        - Arctic
-        - Europe
         - Monterey Bay
+        - Bering Sea
+        - Coastal
+        - Arctic
+        - Antarctic
+        - Europe
   - type: dropdown
     id: tags_org
     attributes:
@@ -117,6 +119,14 @@ body:
     attributes:
       label: Other tags (advanced, optional)
       description: "Comma-separated facet.Value tags if you need ones not listed above, e.g. `topic.Kelp, place.Bering-Sea`."
+  - type: textarea
+    id: related
+    attributes:
+      label: Related pages (advanced, optional)
+      description: "Link this post to specific MBON pages — one content path per line (e.g. /tools/obis, /network/pole-to-pole-americas). They appear in the post's Related section."
+      placeholder: |
+        /tools/obis
+        /network/pole-to-pole-americas
   - type: markdown
     attributes:
       value: |

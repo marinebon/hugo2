@@ -11,7 +11,7 @@ summary: The global open-access database for marine biodiversity — search, map
 tags:
 - tool.Portal
 - place.Global
-- org.OBIS
+- portal.OBIS
 title: OBIS — Ocean Biodiversity Information System
 weight: 5
 ---

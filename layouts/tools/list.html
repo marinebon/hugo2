@@ -31,7 +31,7 @@
 
       <div class="grid-auto">
         {{ range sort (where site.RegularPages "Section" "tools") "Params.weight" }}
-          <div data-tool data-tags="{{ delimit .Params.tags " " }}">
+          <div data-tool data-tags="{{ delimit (.Params.tags | default slice) " " }}">
             {{ partial "card-tool.html" . }}
           </div>
         {{ end }}

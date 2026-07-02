@@ -19,7 +19,6 @@ journal: Frontiers in Marine Science
 doi: 10.3389/fmars.2017.00314
 paper_url: http://journal.frontiersin.org/article/10.3389/fmars.2017.00314/full
 tags:
-- type.Paper
 - method.Genomics
 - year.2017
 ---

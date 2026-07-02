@@ -17,7 +17,6 @@ tags:
 - method.Genomics
 - method.Tracking
 - portal.GBIF
-- type.Dataset
 sources:
 - portal: GBIF
   url: https://www.gbif.org/dataset/226712d5-7bcd-4fb4-8a55-ad98162d0088

@@ -68,6 +68,12 @@ body:
         - Americas
         - North Atlantic
         - South Florida
+        - Monterey Bay
+        - Bering Sea
+        - Coastal
+        - Arctic
+        - Antarctic
+        - Europe
   - type: dropdown
     id: tags_org
     attributes:
@@ -95,7 +101,15 @@ body:
     id: tags_other
     attributes:
       label: Other tags (advanced, optional)
-      description: "Comma-separated facet.Value tags, e.g. `place.Pole-to-Pole`."
+      description: "Comma-separated facet.Value tags, e.g. `place.Bering-Sea`."
+  - type: textarea
+    id: related
+    attributes:
+      label: Related pages (advanced, optional)
+      description: "Link this tool to specific MBON pages — one content path per line (e.g. /tools/obis, /working-groups/indicators). They appear in the page's Related section."
+      placeholder: |
+        /tools/obis
+        /network/pole-to-pole-americas
   - type: markdown
     attributes:
       value: |

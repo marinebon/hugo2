@@ -11,6 +11,5 @@ journal: Polar Biology
 doi: 10.1007/s00300-020-02632-3
 paper_url: http://link.springer.com/10.1007/s00300-020-02632-3
 tags:
-- type.Paper
 - year.2020
 ---

@@ -5,8 +5,10 @@ date: '2026-02-26'
 summary: Over 85 years after Steinbeck and Ricketts documented life in the Sea of
   Cortez tidepools, a binational team retraces their expedition using MBON Pole-to-Pole
   protocols and eDNA to measure decades of biodiversity change.
+related:
+- /network/pole-to-pole-americas
 tags:
-- place.Pole-to-Pole
+- place.Americas
 - method.Genomics
 - topic.Fieldwork
 title: 'User Story: Bringing Steinbeck & Ricketts into the MBON Era'

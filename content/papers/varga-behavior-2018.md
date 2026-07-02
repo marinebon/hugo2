@@ -11,7 +11,6 @@ journal: Endangered Species Research
 doi: 10.3354/esr00881
 paper_url: http://www.int-res.com/abstracts/esr/v35/p113-124/
 tags:
-- type.Paper
 - method.Acoustics
 - method.Tracking
 - year.2018

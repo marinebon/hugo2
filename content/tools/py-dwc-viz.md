@@ -10,7 +10,7 @@ summary: Python tool for visualizing Darwin Core biodiversity occurrence data.
 tags:
 - tool.Package
 - method.Indicators
-- org.OBIS
+- portal.OBIS
 title: py-dwc-viz
 weight: 29
 ---

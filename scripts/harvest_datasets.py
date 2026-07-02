@@ -511,7 +511,7 @@ def merge_records(gbif_enriched, obis_index, edi, erddap, verbose=False):
         rec["sources"] = srcs
         rec["portal_primary"] = primary
 
-        tags = {"type.Dataset"}
+        tags = set()  # content type is structural (the data section), not a tag
         for s in srcs:
             tags.add(f"portal.{s['portal']}")
         for m in infer_methods(rec.pop("_methods", "")):

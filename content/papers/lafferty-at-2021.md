@@ -14,6 +14,5 @@ journal: Journal of Fish Biology
 doi: 10.1111/jfb.14403
 paper_url: https://onlinelibrary.wiley.com/doi/10.1111/jfb.14403
 tags:
-- type.Paper
 - year.2021
 ---

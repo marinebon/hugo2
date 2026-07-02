@@ -11,6 +11,5 @@ journal: Marine Ecology Progress Series
 doi: 10.3354/meps13478
 paper_url: https://www.int-res.com/abstracts/meps/v651/p1-21/
 tags:
-- type.Paper
 - year.2020
 ---

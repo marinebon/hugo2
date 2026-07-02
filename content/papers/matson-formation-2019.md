@@ -15,6 +15,5 @@ journal: 'Journal of Geophysical Research: Oceans'
 doi: 10.1029/2019JC015072
 paper_url: https://onlinelibrary.wiley.com/doi/abs/10.1029/2019JC015072
 tags:
-- type.Paper
 - year.2019
 ---

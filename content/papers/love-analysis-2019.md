@@ -12,6 +12,5 @@ journal: Bulletin of Marine Science
 doi: 10.5343/bms.2017.1042
 paper_url: https://www.ingentaconnect.com/content/10.5343/bms.2017.1042
 tags:
-- type.Paper
 - year.2019
 ---

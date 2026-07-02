@@ -10,7 +10,7 @@
         {{ with .Params.location }}<span>&middot;</span><span><i class="fas fa-location-dot" aria-hidden="true"></i> {{ . }}</span>{{ end }}
       </div>
       <h1 style="max-width:64ch;">{{ .Title }}</h1>
-      {{ with .Params.tags }}<div class="card__tags" style="margin-top:var(--space-4);">{{ range . }}{{ partial "tag.html" . }}{{ end }}</div>{{ end }}
+      {{ with .Params.tags }}<div class="card__tags" style="margin-top:var(--space-4);">{{ range . }}{{ partial "tag.html" (dict "value" . "link" true) }}{{ end }}</div>{{ end }}
     </div>
   </section>
 
@@ -26,5 +26,8 @@
       </div>
     </div>
   </section>
+
+  {{/* related-by-tag across the network (build-time, shared tags) */}}
+  {{ partial "related.html" . }}
 </main>
 {{ end }}

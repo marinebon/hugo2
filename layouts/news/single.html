@@ -4,7 +4,7 @@
     {{ with .Params.banner }}<img src="{{ . | relURL }}" alt="">{{ end }}
     <div class="article-banner__scrim"></div>
     <div class="article-banner__inner">
-      {{ with .Params.tags }}<div class="card__tags" style="margin-bottom:var(--space-4);">{{ range first 2 . }}{{ partial "tag.html" . }}{{ end }}</div>{{ end }}
+      {{ with .Params.tags }}<div class="card__tags" style="margin-bottom:var(--space-4);">{{ range . }}{{ partial "tag.html" (dict "value" . "link" true) }}{{ end }}</div>{{ end }}
       <h1>{{ .Title }}</h1>
     </div>
   </section>
@@ -19,20 +19,12 @@
     {{ .Content }}
   </article>
 
-  <section class="section">
+  {{/* related-by-tag across the network (build-time, shared tags) */}}
+  {{ partial "related.html" . }}
+
+  <section class="section" style="padding-top:0;">
     <div class="container">
-      <span class="eyebrow eyebrow--rule">More from the network</span>
-      <h2 style="margin:var(--space-2) 0 var(--space-6);">Related stories</h2>
-      <div class="grid-3">
-        {{ $cur := .File.ContentBaseName }}{{ $shown := 0 }}
-        {{ range (where site.RegularPages "Section" "news").ByDate.Reverse }}
-          {{ if and (ne .File.ContentBaseName $cur) (lt $shown 3) }}
-            {{ partial "card-news.html" . }}
-            {{ $shown = add $shown 1 }}
-          {{ end }}
-        {{ end }}
-      </div>
-      <p style="text-align:center;margin-top:var(--space-7);"><a class="btn btn--outline" href="{{ "news" | relURL }}"><i class="fas fa-arrow-left" aria-hidden="true"></i> All news</a></p>
+      <p style="text-align:center;"><a class="btn btn--outline" href="{{ "news" | relURL }}"><i class="fas fa-arrow-left" aria-hidden="true"></i> All news</a></p>
     </div>
   </section>
   {{/* pagefind tag filters */}}

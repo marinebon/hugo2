@@ -14,7 +14,6 @@ tags:
 - place.US
 - portal.GBIF
 - portal.OBIS
-- type.Dataset
 sources:
 - portal: OBIS
   url: https://obis.org/dataset/a2e29f6c-4978-438f-8cc4-f6ea98b34141

@@ -8,7 +8,7 @@ lng: -74
 since: '2019'
 summary: Wind-energy planning and shelf biodiversity.
 tags:
-- topic.Regional
+- place.US
 title: Mid-Atlantic MBON
 ---
 

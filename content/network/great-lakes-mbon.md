@@ -8,7 +8,7 @@ lng: -84
 since: '2020'
 summary: Freshwater biodiversity at continental scale.
 tags:
-- topic.Regional
+- place.US
 title: Great Lakes MBON
 ---
 

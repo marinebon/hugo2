@@ -23,7 +23,7 @@ METHOD_RULES = [
 
 def auto_tags(title: str, abstract: str, year: int) -> list[str]:
     text = (title + " " + abstract).lower()
-    tags = ["type.Paper"]
+    tags = []  # content type is structural (the papers section), not a tag
     for tag, pattern in METHOD_RULES:
         if re.search(pattern, text, re.I):
             tags.append(tag)

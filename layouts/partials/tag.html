@@ -1,10 +1,14 @@
-{{/* Renders a single tag. Accepts a "facet.value" string.
-     Splits on the first "." to get facet and value; strips the prefix
-     for display. Falls back to the full string if no "." is found.
-     Matching is case-insensitive so it works both for original-case tags in
-     front matter and the lowercased terms Hugo emits on taxonomy pages.
-     Color comes from .tag--{facet} CSS class. */}}
-{{ $raw   := . }}
+{{/* Renders a single tag chip. Argument is EITHER:
+       - a "facet.value" string        -> a <span> (safe inside card links, no nested <a>)
+       - a dict {value, link:true}      -> an <a> linking to the /tags/<facet.value>/ term page
+     Splits on the first "." to get facet and value; strips the prefix for display.
+     Falls back to the full string if no "." is found. Matching is case-insensitive so
+     it works both for original-case tags in front matter and the lowercased terms Hugo
+     emits on taxonomy pages. Color comes from .tag--{facet}. The link URL is built from
+     the lowercased tag (Hugo lowercases taxonomy terms) run through relURL so it carries
+     the /hugo2/ base path — checked by scripts/check_links.py. */}}
+{{ $raw := . }}{{ $link := false }}
+{{ if reflect.IsMap . }}{{ $raw = .value }}{{ $link = .link }}{{ end }}
 {{ $parts := split $raw "." }}
 {{ if ge (len $parts) 2 }}
   {{ $facet := index $parts 0 }}
@@ -21,7 +25,9 @@
       {{ end }}
     {{ end }}
   {{ end }}
-  <span class="tag tag--{{ $facet | lower }}">{{ $label }}</span>
+  {{ if $link }}<a class="tag tag--{{ $facet | lower }}" href="{{ relURL (printf "tags/%s/" (lower $raw)) }}">{{ $label }}</a>
+  {{ else }}<span class="tag tag--{{ $facet | lower }}">{{ $label }}</span>{{ end }}
 {{ else }}
-  <span class="tag">{{ humanize $raw }}</span>
+  {{ if $link }}<a class="tag" href="{{ relURL (printf "tags/%s/" (lower $raw)) }}">{{ humanize $raw }}</a>
+  {{ else }}<span class="tag">{{ humanize $raw }}</span>{{ end }}
 {{ end }}

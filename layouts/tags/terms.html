@@ -1,19 +1,46 @@
 {{ define "main" }}
+{{ $terms := $.Data.Terms.Alphabetical }}
+{{/* one flat set of tag facets — tags are for filter/browse only. Content types are
+     structural (top nav / section pages); page-to-page links live in each page's
+     Related section, not here. */}}
+{{ $facets := slice
+    (dict "facet" "tool"   "label" "Tool types")
+    (dict "facet" "method" "label" "Methods")
+    (dict "facet" "place"  "label" "Regions")
+    (dict "facet" "topic"  "label" "Topics")
+    (dict "facet" "year"   "label" "Years")
+    (dict "facet" "org"    "label" "Organizations")
+    (dict "facet" "portal" "label" "Portals") }}
 <main>
   <section class="page-header">
     <div class="page-header__inner">
+      <span class="eyebrow eyebrow--rule eyebrow--ondark">Browse</span>
       <h1>{{ .Title }}</h1>
+      <p class="page-header__lead">Filter and browse content by tag. Content types live in the top nav; a page's specific links to other pages show in its “Related” section.</p>
     </div>
   </section>
+
   <section class="section">
     <div class="container">
-      <div style="display:flex; flex-wrap:wrap; gap:var(--space-3);">
-        {{ range .Pages.ByTitle }}
-          <a href="{{ .RelPermalink }}" style="text-decoration:none;">
-            {{ partial "tag.html" (.Title | lower) }}
-          </a>
+      {{ range $g := $facets }}
+        {{ $prefix := printf "%s." $g.facet }}
+        {{ $ts := slice }}
+        {{ range $terms }}{{ if hasPrefix .Name $prefix }}{{ $ts = $ts | append . }}{{ end }}{{ end }}
+        {{ if eq $g.facet "year" }}{{ $ts = sort $ts "Name" "desc" }}{{ end }}
+        {{ with $ts }}
+        <div style="margin-top:var(--space-7);">
+          <span class="eyebrow" style="color:var(--facet-{{ $g.facet }});display:block;margin-bottom:var(--space-3);">{{ $g.label }} <span style="opacity:.6;">· {{ len . }}</span></span>
+          <div style="display:flex;flex-wrap:wrap;gap:var(--space-3);">
+            {{ range . }}
+            <a class="tag-link" href="{{ .Page.RelPermalink }}">
+              {{ partial "tag.html" .Name }}
+              <span class="tag__count">{{ .Count }}</span>
+            </a>
+            {{ end }}
+          </div>
+        </div>
         {{ end }}
-      </div>
+      {{ end }}
     </div>
   </section>
 </main>

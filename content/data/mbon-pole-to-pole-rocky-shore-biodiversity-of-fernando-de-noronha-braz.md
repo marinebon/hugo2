@@ -13,7 +13,6 @@ tags:
 - place.Americas
 - portal.GBIF
 - portal.OBIS
-- type.Dataset
 sources:
 - portal: OBIS
   url: https://obis.org/dataset/dae283ff-1835-465c-b058-fa6417d0ff2d

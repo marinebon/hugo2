@@ -24,12 +24,28 @@ Run from the repository root:
 hugo server          # live-reloading preview at http://localhost:1313
 ```
 
-Build the production site (what CI publishes):
+`hugo server` live-reloads content, layouts, and CSS — **but not search**. The search
+index is a separate build step ([Pagefind](https://pagefind.app)), so `hugo server`
+serves whatever index is sitting in `static/pagefind/` (a git-ignored artifact). If that
+index is missing or stale, `/search/` shows nothing or **old results**. To preview search
+with your latest content, rebuild the index:
 
 ```bash
-hugo --gc --minify   # output lands in ./public
-npx pagefind --site public   # (optional) build the search index locally
+./scripts/reindex.sh   # build → pagefind → copy into static/pagefind/, then hard-reload /search/
 ```
+
+That's just three commands if you'd rather run them by hand:
+
+```bash
+hugo --gc --minify                                               # build ./public
+npx --yes pagefind --site public                                 # index it → ./public/pagefind
+rm -rf static/pagefind && cp -r public/pagefind static/pagefind  # serve it from `hugo server`
+```
+
+Re-run whenever you want `/search/` refreshed, then **hard-reload** the page (Pagefind
+caches the index in the browser). `public/` and `static/pagefind/` are both git-ignored.
+CI runs the same Hugo + Pagefind (with the deployed base URL) on every push — see
+[Deploy](#2-deploy).
 
 ## 2. Deploy
 
@@ -77,26 +93,45 @@ scripts/                 # Python helpers (import_papers.py, issue_to_content.py
 
 ### The tag system
 
-Tags are **faceted**, written `facet.Value` where the value is `ProperCase`
-(hyphenated for multi-word), e.g. `method.Remote-Sensing`, `tool.Portal`,
-`place.US`, `org.OBIS`, `topic.Research`, `year.2021`, `type.Paper`. The facet
-drives the tag color (`.tag--<facet>`) and the page filters.
+Content relates in **three ways** — keep them apart:
 
-| Facet | Used on | Allowed values |
-|-------|---------|----------------|
-| `method` | methods, tools, papers, news | Remote-Sensing, Genomics, Acoustics, Tracking, Indicators, Benthic, Traditional |
-| `tool` | tools | Portal, App, Infographic, Package, Protocol, Training, Workflow |
-| `place` | tools, news | Global, US, Americas, North-Atlantic, South-Florida, … |
-| `org` | tools, news | OBIS, NOAA-IEA, NationalMarineSanctuaries, FWRI, … |
-| `topic` | news, events | open-ended (Research, Partnership, Meeting, …) |
-| `year` / `type` | papers | `year.<YYYY>`, `type.Paper` |
+1. **Content type** — *structural*. Every page lives in exactly one section
+   (network, working-groups, methods, tools, data, papers, news, events); that's its
+   type. It's not a tag — there's nothing to choose. Browse a type via the top nav.
+2. **Tags** — *applied* labels for **filter & search**, written `facet.Value` in
+   `ProperCase` (e.g. `method.Remote-Sensing`, `tool.Portal`, `place.US`, `portal.OBIS`,
+   `year.2021`). The facet drives the tag color (`.tag--<facet>`) and the page filters.
+3. **`related:`** — a front-matter list of **content paths** (e.g.
+   `related: [/working-groups/indicators, /network/pole-to-pole-americas]`) that links a
+   page to *specific* other pages. This — not a tag — is how you say "see also".
 
-Every facet — its filter-bar buttons and the display-name **aliases** for open-set
-values (so `org.GEOBON` renders "GEO BON", not "Geobon") — lives in one file,
-`data/tags.yaml`. `layouts/partials/tag.html` renders a tag, resolving its label
-there (case-insensitively, so it also works on the lowercased `/tags/` pages). The
-Tools and Papers filter bars read the same file (the Papers **Year** buttons are
-generated from the papers themselves).
+Each tag facet has one of two roles:
+
+| Facet | Role | Used on | Values |
+|-------|------|---------|--------|
+| `tool` | subtype | tools | Portal, App, Infographic, Package, Protocol, Training, Workflow |
+| `method` | attribute | methods, tools, papers, news, data | Remote-Sensing, Genomics, Acoustics, Tracking, Indicators, Benthic, Traditional |
+| `place` | attribute | tools, news, data, network | Global, US, Americas, North-Atlantic, South-Florida, Monterey-Bay, … |
+| `topic` | attribute | news, events | open-ended (Research, Partnership, Meeting, …) |
+| `year` | attribute | papers | `year.<YYYY>` |
+| `org` | attribute | tools, news | who **built** a tool — NOAA-IEA, NationalMarineSanctuaries, FWRI, … |
+| `portal` | attribute | data, tools | whose **data** it uses / where a dataset is served — OBIS, GBIF, EDI, ERDDAP |
+
+- `org` vs `portal`: **`org` = the developer** of a tool; **`portal` = the data source**
+  (a dataset is served by a portal; a tool uses a portal's data). **OBIS is a portal, not
+  an org.** Prefer a specific facet over a vague one, and don't mint a `topic.*` that
+  duplicates a `method`/`place`.
+- Every facet — its filter-bar buttons and the display-name **aliases** (so `org.GEOBON`
+  renders "GEO BON") — lives in one file, `data/tags.yaml`. `layouts/partials/tag.html`
+  resolves labels there case-insensitively; the Tools/Papers/Data filter bars read the
+  same file (Papers **Year** buttons come from the papers themselves).
+
+**It all interlinks at build time — nothing is hand-maintained.** On any page the tag
+chips are clickable (→ the `/tags/<tag>/` collection), and a **Related across the
+network** section shows: the pages you named in `related:`, plus **backlinks** (pages
+that named *this* one — so a portal/node page like `tools/obis` becomes the hub of
+everything pointing at it), plus a shared-tag fallback. `/tags` is one flat list of tag
+facets.
 
 ### Contribution pipeline
 

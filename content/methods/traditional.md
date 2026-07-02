@@ -4,7 +4,7 @@ weight: 2
 summary: Trawl surveys, visual transects, and ship-based acoustic surveys remain the
   calibration backbone of marine biodiversity monitoring — the gold standard that
   modern methods are validated against.
-banner: img/photos/ocean-blue.jpg
+banner: img/methods/traditional.jpeg
 tags:
 - method.Traditional
 ---

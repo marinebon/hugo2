@@ -2,7 +2,11 @@
 #
 # Tags are written `facet.Value` in content front matter (e.g. method.Remote-Sensing).
 # This file is the single source of truth for every facet:
+# Tags are for FILTER & SEARCH only. Content TYPE is structural (the section) — not a
+# tag. Page-to-page links use the `related:` front-matter field (content paths), NOT tags.
+#
 #   facet    machine prefix (drives color via --facet-<facet> / .tag--<facet>)
+#   role     what kind of tag this facet is (see the two roles below)
 #   label    human heading shown above a filter group
 #   filters  sections whose filter-bar renders buttons for this facet
 #            (year for papers is generated dynamically from the papers themselves)
@@ -10,13 +14,24 @@
 #   aliases  display-name overrides for open-set values that have no button
 #            (so org.GEOBON renders "GEO BON", not the humanized "Geobon")
 #
+# The two roles (semantic only — they do NOT change the contribution pipeline):
+#   subtype    a finer type within ONE section; drives that section's filter (tool.*)
+#   attribute  cross-cutting filter/browse axis (method/place/topic/year/org/portal)
+#
+# org vs portal: `org` = who BUILT a tool (developer, e.g. NOAA-IEA); `portal` = whose
+# DATA a tool uses / where a dataset is served (OBIS/GBIF/EDI/ERDDAP). OBIS is a portal,
+# not an org. Don't mint a `topic.*` that duplicates a method/place.
+#
 # Used by: layouts/partials/tag.html (label lookup over values+aliases),
-#          layouts/tools/list.html and layouts/papers/list.html (filter bars).
-# To wire up a new filter button: add it to `values` here and use it in front matter.
+#          layouts/tags/terms.html (flat facet /tags index),
+#          layouts/tools|papers|data list.html (filter bars).
+# To wire up a new filter button: add it to `values` here and to the matching
+# dropdown in .github/ISSUE_TEMPLATE/add-*.yml.
 
 - facet: portal
   label: Portal
-  filters: [data]
+  role: attribute
+  filters: [data, tools]
   values:
     - { value: OBIS,   name: OBIS }
     - { value: GBIF,   name: GBIF }
@@ -25,6 +40,7 @@
 
 - facet: method
   label: Method
+  role: attribute
   filters: [tools, papers, data]
   values:
     - { value: Remote-Sensing, name: "Remote Sensing" }
@@ -39,6 +55,7 @@
 
 - facet: tool
   label: Type
+  role: subtype
   filters: [tools]
   values:
     - { value: Portal,      name: Portal }
@@ -51,6 +68,7 @@
 
 - facet: place
   label: Region
+  role: attribute
   filters: [tools, data]
   values:
     - { value: Global,         name: Global }
@@ -58,16 +76,22 @@
     - { value: Americas,       name: Americas }
     - { value: North-Atlantic, name: "N. Atlantic" }
     - { value: South-Florida,  name: "South FL" }
+    - { value: Europe,         name: Europe }
+    - { value: Arctic,         name: Arctic }
+    - { value: Antarctic,      name: Antarctic }
+    - { value: Monterey-Bay,   name: "Monterey Bay" }
+    - { value: Bering-Sea,     name: "Bering Sea" }
+    - { value: Coastal,        name: Coastal }
   aliases:
-    Pole-to-Pole: "Pole to Pole"
-    Monterey-Bay: "Monterey Bay"
-    Bering-Sea:   "Bering Sea"
+    Azores:  Azores
+    Lisbon:  Lisbon
+    Uruguay: Uruguay
 
 - facet: org
   label: Organization
+  role: attribute
   filters: [tools]
   values:
-    - { value: OBIS,                      name: OBIS }
     - { value: NOAA-IEA,                  name: "NOAA IEA" }
     - { value: NationalMarineSanctuaries, name: "Nat'l Marine Sanctuaries" }
     - { value: FWRI,                      name: FWRI }
@@ -86,6 +110,7 @@
 
 - facet: topic
   label: Topic
+  role: attribute
   filters: []
   values: []
   aliases:
@@ -96,14 +121,8 @@
     Muller-Karger:        "Müller-Karger"
     All-Atlantic:         "All-Atlantic"
 
-- facet: type
-  label: Type
-  filters: []
-  values:
-    - { value: Paper,   name: Paper }
-    - { value: Dataset, name: Dataset }
-
 - facet: year
   label: Year
+  role: attribute
   filters: [papers]
   values: []

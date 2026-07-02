@@ -14,7 +14,6 @@ tags:
 - method.Benthic
 - method.Traditional
 - portal.EDI
-- type.Dataset
 sources:
 - portal: EDI
   url: https://portal.edirepository.org/nis/mapbrowse?packageid=edi.5.5

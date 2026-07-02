@@ -14,6 +14,5 @@ journal: Ecology
 doi: 10.1002/ecy.2719
 paper_url: https://onlinelibrary.wiley.com/doi/abs/10.1002/ecy.2719
 tags:
-- type.Paper
 - year.2019
 ---

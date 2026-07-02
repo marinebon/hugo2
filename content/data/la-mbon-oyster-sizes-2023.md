@@ -7,7 +7,6 @@ portal_primary: ERDDAP
 publisher: GCOOS
 tags:
 - portal.ERDDAP
-- type.Dataset
 sources:
 - portal: ERDDAP
   url: https://gcoos4.tamu.edu/erddap/info/la_mbon_2023_oystersizes/index.html

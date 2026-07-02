@@ -15,7 +15,6 @@ journal: Frontiers in Marine Science
 doi: 10.3389/fmars.2020.00575
 paper_url: https://www.frontiersin.org/article/10.3389/fmars.2020.00575/full
 tags:
-- type.Paper
 - method.Remote-Sensing
 - year.2020
 ---

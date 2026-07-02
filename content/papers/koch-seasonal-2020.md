@@ -14,6 +14,5 @@ journal: PLOS ONE
 doi: 10.1371/journal.pone.0231178
 paper_url: https://dx.plos.org/10.1371/journal.pone.0231178
 tags:
-- type.Paper
 - year.2020
 ---

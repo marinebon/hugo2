@@ -11,7 +11,7 @@ lng: -60
 since: '2017'
 summary: A network of networks spanning the Americas.
 tags:
-- topic.Regional
+- place.Americas
 title: Pole to Pole Americas
 ---
 

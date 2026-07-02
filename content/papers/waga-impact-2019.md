@@ -13,6 +13,5 @@ journal: 'Deep Sea Research Part II: Topical Studies in Oceanography'
 doi: 10.1016/j.dsr2.2018.10.008
 paper_url: https://linkinghub.elsevier.com/retrieve/pii/S0967064517302229
 tags:
-- type.Paper
 - year.2019
 ---

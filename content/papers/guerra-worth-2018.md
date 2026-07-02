@@ -12,6 +12,5 @@ journal: 'Aquatic Conservation: Marine and Freshwater Ecosystems'
 doi: 10.1002/aqc.2837
 paper_url: http://doi.wiley.com/10.1002/aqc.2837
 tags:
-- type.Paper
 - year.2018
 ---

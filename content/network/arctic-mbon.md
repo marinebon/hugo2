@@ -8,7 +8,8 @@ lng: -150
 since: '2019'
 summary: Pan-Arctic biodiversity observing across a rapidly changing ocean.
 tags:
-- topic.Regional
+- place.US
+- place.Arctic
 title: Arctic MBON
 ---
 

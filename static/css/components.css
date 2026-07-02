@@ -60,8 +60,14 @@
 .tag--tool{   --_c:var(--facet-type); }
 button.tag{ cursor:pointer; }
 button.tag:hover{ background:color-mix(in srgb, var(--_c) 16%, var(--white)); }
+/* a.tag — clickable tag chips (single pages, /tags index) link to their term page */
+a.tag{ cursor:pointer; text-decoration:none; }
+a.tag:hover{ background:color-mix(in srgb, var(--_c) 18%, var(--white)); }
 .tag.is-active{ background:var(--_c); color:#fff; border-color:var(--_c); }
 .tag__dot{ width:.5em; height:.5em; border-radius:50%; background:currentColor; }
+/* /tags index: a tag chip plus its usage count */
+.tag-link{ display:inline-flex; align-items:center; gap:.4em; text-decoration:none; }
+.tag__count{ font-family:var(--font-mono); font-size:.68rem; color:var(--text-muted); }
 
 /* ---- Badge ------------------------------------------------------------ */
 .badge{
@@ -107,7 +113,17 @@ a.card:hover .card__media img{ transform:scale(1.04); }
 a.card:hover .card__foot i{ transform:translateX(3px); }
 
 /* paper card: kind label sits bottom-left on the tinted placeholder */
-.card__kind{ position:absolute; bottom:var(--space-3); left:var(--space-3); display:flex; align-items:center; gap:.5em; font-family:var(--font-mono); font-size:var(--text-xs); font-weight:var(--fw-semibold); text-transform:uppercase; letter-spacing:var(--ls-label); color:var(--teal-300); }
+/* content-type label at the top of every card body (Tool / Working Group / Method / Node / …) */
+.card__type{ display:inline-flex; align-items:center; gap:.45em; align-self:flex-start; font-family:var(--font-mono); font-size:.68rem; font-weight:var(--fw-semibold); text-transform:uppercase; letter-spacing:var(--ls-label); color:var(--text-muted); }
+.card__type i{ font-size:.95em; opacity:.85; }
+.card__type--tools{          color:var(--facet-type); }
+.card__type--working-groups{ color:var(--facet-org); }
+.card__type--methods{        color:var(--facet-method); }
+.card__type--network{        color:var(--facet-place); }
+.card__type--data{           color:var(--facet-portal); }
+.card__type--papers{         color:var(--ink-400); }
+.card__type--news{           color:var(--coral-600); }
+.card__type--events{         color:var(--teal-600); }
 .card--paper .card__media{ aspect-ratio:16/7; }
 
 /* event card: date chip + location row (no media) */

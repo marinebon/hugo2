@@ -61,7 +61,6 @@ journal: Ecological Applications
 doi: 10.1002/eap.1682
 paper_url: http://doi.wiley.com/10.1002/eap.1682
 tags:
-- type.Paper
 - method.Remote-Sensing
 - method.Indicators
 - year.2018

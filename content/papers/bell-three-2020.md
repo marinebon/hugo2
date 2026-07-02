@@ -12,7 +12,6 @@ journal: Remote Sensing of Environment
 doi: 10.1016/j.rse.2018.06.039
 paper_url: https://linkinghub.elsevier.com/retrieve/pii/S0034425718303171
 tags:
-- type.Paper
 - method.Remote-Sensing
 - year.2020
 ---

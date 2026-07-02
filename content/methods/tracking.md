@@ -4,7 +4,9 @@ weight: 4
 summary: Electronic tags on fish, turtles, marine mammals, and seabirds reveal how
   animals move through and use ocean habitat — essential for conservation planning
   and understanding climate responses.
-banner: img/working-groups/atn-biotrack.png
+banner: img/methods/tracking.jpeg
+related:
+- /working-groups/biotrack
 tags:
 - method.Tracking
 ---

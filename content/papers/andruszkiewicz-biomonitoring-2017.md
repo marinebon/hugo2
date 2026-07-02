@@ -13,7 +13,6 @@ journal: PLOS ONE
 doi: 10.1371/journal.pone.0176343
 paper_url: https://dx.plos.org/10.1371/journal.pone.0176343
 tags:
-- type.Paper
 - method.Genomics
 - year.2017
 ---

@@ -29,7 +29,7 @@
         {{ end }}
         {{ with .Params.tags }}
         <div class="card__tags" style="margin-bottom:var(--space-5);">
-          {{ range . }}{{ partial "tag.html" . }}{{ end }}
+          {{ range . }}{{ partial "tag.html" (dict "value" . "link" true) }}{{ end }}
         </div>
         {{ end }}
         <a class="btn btn--action btn--full" href="{{ "tools" | relURL }}">View related tools <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
@@ -53,6 +53,10 @@
       </div>
     </div>
   </section>
+  {{/* related content in this node's region/orgs (excludes other nodes — "Connected
+       nodes" above already lists those); build-time from shared place/org/topic tags */}}
+  {{ partial "related.html" (dict "page" . "excludeSection" true "heading" "In this region") }}
+
   {{/* pagefind tag filters */}}
   {{ if .Params.tags }}
   <div style="display:none" aria-hidden="true">

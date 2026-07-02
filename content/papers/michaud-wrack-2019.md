@@ -12,6 +12,5 @@ journal: Estuarine, Coastal and Shelf Science
 doi: 10.1016/j.ecss.2019.03.014
 paper_url: https://linkinghub.elsevier.com/retrieve/pii/S0272771418308175
 tags:
-- type.Paper
 - year.2019
 ---

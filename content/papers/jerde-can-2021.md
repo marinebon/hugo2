@@ -8,7 +8,6 @@ journal: Journal of Fish Biology
 doi: 10.1111/jfb.14218
 paper_url: https://onlinelibrary.wiley.com/doi/10.1111/jfb.14218
 tags:
-- type.Paper
 - method.Genomics
 - year.2021
 ---

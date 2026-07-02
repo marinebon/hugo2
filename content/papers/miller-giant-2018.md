@@ -14,6 +14,5 @@ journal: 'Proceedings of the Royal Society B: Biological Sciences'
 doi: 10.1098/rspb.2017.2571
 paper_url: https://royalsocietypublishing.org/doi/10.1098/rspb.2017.2571
 tags:
-- type.Paper
 - year.2018
 ---

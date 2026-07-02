@@ -71,7 +71,7 @@
 
       <div class="grid-auto">
         {{ range sort $datasets "Params.records" "desc" }}
-          <div data-filter-item data-tags="{{ delimit .Params.tags " " }}">
+          <div data-filter-item data-tags="{{ delimit (.Params.tags | default slice) " " }}">
             {{ partial "card-dataset.html" . }}
           </div>
         {{ end }}

@@ -7,6 +7,5 @@ journal: Journal of Fish Biology
 doi: 10.1111/jfb.14679
 paper_url: https://onlinelibrary.wiley.com/doi/10.1111/jfb.14679
 tags:
-- type.Paper
 - year.2021
 ---

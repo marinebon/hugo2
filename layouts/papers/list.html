@@ -52,7 +52,7 @@
 
       <ul class="paper-list">
         {{ range sort (where site.RegularPages "Section" "papers") "Params.year" "desc" }}
-        <li class="paper-row" data-paper data-tags="{{ delimit .Params.tags " " }}">
+        <li class="paper-row" data-paper data-tags="{{ delimit (.Params.tags | default slice) " " }}">
           <span class="paper-row__year">{{ .Params.year }}</span>
           <div class="paper-row__body">
             <a class="paper-row__title" href="{{ .RelPermalink }}">{{ .Title }}</a>

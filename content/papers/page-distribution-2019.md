@@ -9,6 +9,5 @@ journal: Aquatic Invasions
 doi: 10.3391/ai.2019.14.4.04
 paper_url: https://www.reabic.net/aquaticinvasions/2019/issue4.aspx
 tags:
-- type.Paper
 - year.2019
 ---

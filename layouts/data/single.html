@@ -6,7 +6,7 @@
     <div class="page-header__inner">
       <span class="eyebrow eyebrow--rule eyebrow--ondark">Dataset</span>
       <h1>{{ .Title }}</h1>
-      {{ with .Params.tags }}<div class="card__tags" style="margin-top:var(--space-3);">{{ range . }}{{ partial "tag.html" . }}{{ end }}</div>{{ end }}
+      {{ with .Params.tags }}<div class="card__tags" style="margin-top:var(--space-3);">{{ range . }}{{ partial "tag.html" (dict "value" . "link" true) }}{{ end }}</div>{{ end }}
     </div>
   </section>
 
@@ -40,6 +40,15 @@
           </a>
           {{ end }}
         </div>
+        {{/* internal link to each portal's own tool page (the "everything OBIS" hub) */}}
+        {{ $abouts := slice }}
+        {{ range $s := . }}{{ with site.GetPage (printf "/tools/%s" (lower $s.portal)) }}{{ $abouts = $abouts | append . }}{{ end }}{{ end }}
+        {{ with $abouts | uniq }}
+        <div class="ds-portals-about" style="display:flex;gap:var(--space-3);flex-wrap:wrap;align-items:center;margin-top:var(--space-4);">
+          <span style="font-size:var(--text-xs);color:var(--text-muted);font-family:var(--font-mono);letter-spacing:var(--ls-wide);text-transform:uppercase;">About the portal{{ if ne (len .) 1 }}s{{ end }}</span>
+          {{ range . }}<a class="btn btn--ghost btn--sm" href="{{ .RelPermalink }}">{{ upper .File.ContentBaseName }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>{{ end }}
+        </div>
+        {{ end }}
         {{ if $.Params.not_in_obis }}<p class="ds-note"><i class="fas fa-circle-info" aria-hidden="true"></i> Tagged in the OBIS network via GBIF, but not yet ingested into OBIS.</p>{{ end }}
       </div>
       {{ end }}
@@ -51,6 +60,9 @@
       <p style="margin-top:var(--space-7);"><a href="{{ "data" | relURL }}" class="btn btn--ghost"><i class="fas fa-arrow-left" aria-hidden="true"></i> All datasets</a></p>
     </div>
   </section>
+
+  {{/* related-by-tag across the network (build-time, shared tags) */}}
+  {{ partial "related.html" . }}
 
   {{/* ---- pagefind tag filters ---- */}}
   {{ if .Params.tags }}

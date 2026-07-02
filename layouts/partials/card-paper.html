@@ -3,15 +3,15 @@
 <a class="card card--paper" href="{{ .RelPermalink }}">
   <div class="card__media card__media--placeholder">
     {{ with .Params.year }}<div class="card__badge"><span class="badge badge--solid badge--type">{{ . }}</span></div>{{ end }}
-    <span class="card__kind"><i class="fas fa-file-lines" aria-hidden="true"></i> Paper</span>
   </div>
   <div class="card__body">
+    {{ partial "card-kind.html" . }}
     <h3 class="card__title">{{ .Title }}</h3>
     <p class="card__summary">
       {{ with .Params.authors }}{{ index . 0 }}{{ if gt (len .) 1 }} et al.{{ end }}{{ end }}
       {{ with .Params.journal }} · <em>{{ . }}</em>{{ end }}
     </p>
-    {{ with .Params.tags }}<div class="card__tags">{{ range first 3 . }}{{ partial "tag.html" . }}{{ end }}</div>{{ end }}
+    {{ with .Params.tags }}<div class="card__tags">{{ range first 4 . }}{{ partial "tag.html" . }}{{ end }}</div>{{ end }}
     <span class="card__foot">Read paper <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
   </div>
 </a>

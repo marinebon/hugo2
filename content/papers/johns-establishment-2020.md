@@ -19,6 +19,5 @@ journal: Progress in Oceanography
 doi: 10.1016/j.pocean.2020.102269
 paper_url: https://linkinghub.elsevier.com/retrieve/pii/S0079661120300070
 tags:
-- type.Paper
 - year.2020
 ---

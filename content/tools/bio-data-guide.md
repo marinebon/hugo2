@@ -11,7 +11,7 @@ summary: Community guide and standards for mobilizing marine biological data to 
 tags:
 - tool.Protocol
 - tool.Training
-- org.OBIS
+- portal.OBIS
 - place.Global
 title: Bio Data Guide
 weight: 48

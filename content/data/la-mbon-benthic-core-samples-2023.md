@@ -9,7 +9,6 @@ publisher: GCOOS
 tags:
 - method.Benthic
 - portal.ERDDAP
-- type.Dataset
 sources:
 - portal: ERDDAP
   url: https://gcoos4.tamu.edu/erddap/info/mbon_la_2023_benthic_core/index.html

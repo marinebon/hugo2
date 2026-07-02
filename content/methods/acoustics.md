@@ -4,7 +4,9 @@ weight: 3
 summary: Passive acoustic monitoring listens to the soundscape of the sea; active
   acoustics enumerates fish and zooplankton. Together they cover the water column
   continuously, day and night.
-banner: img/working-groups/biosound-hero.jpg
+banner: img/methods/acoustics.jpeg
+related:
+- /working-groups/biosound
 tags:
 - method.Acoustics
 ---

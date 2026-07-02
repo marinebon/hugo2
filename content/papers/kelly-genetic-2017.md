@@ -14,6 +14,5 @@ journal: Frontiers in Marine Science
 doi: 10.3389/fmars.2016.00283
 paper_url: http://journal.frontiersin.org/article/10.3389/fmars.2016.00283/full
 tags:
-- type.Paper
 - year.2017
 ---

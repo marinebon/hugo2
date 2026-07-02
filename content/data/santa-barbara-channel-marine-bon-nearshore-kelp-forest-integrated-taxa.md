@@ -13,7 +13,6 @@ temporal_end: '2023-07-31'
 tags:
 - method.Benthic
 - portal.EDI
-- type.Dataset
 sources:
 - portal: EDI
   url: https://portal.edirepository.org/nis/mapbrowse?packageid=edi.7.5

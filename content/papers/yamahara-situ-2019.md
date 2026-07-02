@@ -25,7 +25,6 @@ journal: Frontiers in Marine Science
 doi: 10.3389/fmars.2019.00373
 paper_url: https://www.frontiersin.org/article/10.3389/fmars.2019.00373/full
 tags:
-- type.Paper
 - method.Genomics
 - year.2019
 ---

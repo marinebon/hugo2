@@ -12,6 +12,5 @@ journal: Ecography
 doi: 10.1111/ecog.04290
 paper_url: https://onlinelibrary.wiley.com/doi/abs/10.1111/ecog.04290
 tags:
-- type.Paper
 - year.2019
 ---

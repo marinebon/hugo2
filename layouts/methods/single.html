@@ -1,4 +1,10 @@
 {{ define "main" }}
+{{/* match this method page to its facet value (slug == lower value, e.g.
+     remote-sensing -> Remote-Sensing) so "View related tools" opens the Tools
+     index with that method pre-applied (?method=Remote-Sensing) */}}
+{{ $methodVal := "" }}
+{{ range hugo.Data.tags }}{{ if eq .facet "method" }}{{ range .values }}{{ if eq (lower .value) $.File.ContentBaseName }}{{ $methodVal = .value }}{{ end }}{{ end }}{{ end }}{{ end }}
+{{ $toolsURL := "tools/" | relURL }}{{ with $methodVal }}{{ $toolsURL = printf "%s?method=%s" $toolsURL . }}{{ end }}
 <main>
   <section class="page-header">
     <div class="page-header__inner">
@@ -9,7 +15,7 @@
       <p class="page-header__lead">{{ .Params.summary }}</p>
       <div class="card__tags" style="margin-top:var(--space-4);">
         {{ range .Params.tags }}
-        {{ partial "tag.html" . }}
+        {{ partial "tag.html" (dict "value" . "link" true) }}
         {{ end }}
       </div>
     </div>
@@ -24,7 +30,7 @@
           <img src="{{ . | relURL }}" alt="" style="width:100%;height:220px;object-fit:cover;">
         </div>
         {{ end }}
-        <a class="btn btn--action btn--full" href="{{ "tools" | relURL }}" style="margin-bottom:var(--space-3);">
+        <a class="btn btn--action btn--full" href="{{ $toolsURL }}" style="margin-bottom:var(--space-3);">
           View related tools <i class="fas fa-arrow-right" aria-hidden="true"></i>
         </a>
         <a class="btn btn--outline btn--full" href="{{ "methods" | relURL }}">
@@ -51,6 +57,9 @@
     </div>
   </section>
   {{ end }}
+  {{/* related-by-tag across the network (build-time, shared tags) */}}
+  {{ partial "related.html" . }}
+
   {{/* pagefind tag filters */}}
   {{ if .Params.tags }}
   <div style="display:none" aria-hidden="true">

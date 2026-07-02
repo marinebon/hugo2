@@ -11,7 +11,6 @@ journal: 'Journal of Geophysical Research: Oceans'
 doi: 10.1002/2017JC013195
 paper_url: http://doi.wiley.com/10.1002/2017JC013195
 tags:
-- type.Paper
 - method.Remote-Sensing
 - year.2018
 ---

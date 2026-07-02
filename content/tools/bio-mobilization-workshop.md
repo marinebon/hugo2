@@ -11,7 +11,7 @@ summary: Marine biological data mobilization workshop for Biology & Ecosystem Es
   formatting and publishing to OBIS/GBIF.
 tags:
 - tool.Training
-- org.OBIS
+- portal.OBIS
 - place.Global
 title: Bio Data Mobilization Workshop
 weight: 49

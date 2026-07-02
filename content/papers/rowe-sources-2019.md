@@ -15,6 +15,5 @@ journal: Isotopes in Environmental and Health Studies
 doi: 10.1080/10256016.2019.1620742
 paper_url: https://www.tandfonline.com/doi/full/10.1080/10256016.2019.1620742
 tags:
-- type.Paper
 - year.2019
 ---

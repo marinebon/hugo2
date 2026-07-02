@@ -13,7 +13,6 @@ journal: Environmental Science & Technology
 doi: 10.1021/acs.est.6b03114
 paper_url: https://pubs.acs.org/doi/10.1021/acs.est.6b03114
 tags:
-- type.Paper
 - method.Genomics
 - year.2016
 ---

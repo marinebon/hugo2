@@ -12,6 +12,5 @@ journal: Limnology and Oceanography
 doi: 10.1002/lno.10753
 paper_url: http://doi.wiley.com/10.1002/lno.10753
 tags:
-- type.Paper
 - year.2018
 ---

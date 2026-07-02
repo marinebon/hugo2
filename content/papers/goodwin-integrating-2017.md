@@ -11,6 +11,5 @@ journal: Proceedings of TDWG
 doi: 10.3897/tdwgproceedings.1.20521
 paper_url: https://tdwgproceedings.pensoft.net/articles.php?id=20521
 tags:
-- type.Paper
 - year.2017
 ---

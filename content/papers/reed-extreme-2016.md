@@ -14,7 +14,6 @@ journal: Nature Communications
 doi: 10.1038/ncomms13757
 paper_url: http://www.nature.com/articles/ncomms13757
 tags:
-- type.Paper
 - method.Indicators
 - year.2016
 ---

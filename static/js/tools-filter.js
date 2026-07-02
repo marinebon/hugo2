@@ -2,7 +2,8 @@
    MBON tools filter — vanilla JS. Filter cards by faceted tags.
    Each [data-tool] card carries data-tags="place.Global tool.Portal".
    Each .filter-btn carries data-facet + data-value. AND across facets,
-   OR within a facet. URL param ?tool=Portal pre-activates that filter.
+   OR within a facet. URL params pre-activate any facet, e.g.
+   ?tool=Portal or ?method=Remote-Sensing (comma-separated for multiple).
    ========================================================================== */
 (function () {
   function init() {
@@ -50,16 +51,24 @@
       sel = {}; btns.forEach(function (b) { b.classList.remove('is-active'); }); apply();
     });
 
-    // Pre-activate from URL param: ?tool=Portal
-    var urlTool = new URLSearchParams(window.location.search).get('tool');
-    if (urlTool) {
-      var preBtn = bar.querySelector('[data-facet="tool"][data-value="' + urlTool + '"]');
-      if (preBtn) {
-        if (!sel['tool']) sel['tool'] = new Set();
-        sel['tool'].add(urlTool);
+    // Pre-activate from URL params for any facet with buttons, e.g.
+    // ?tool=Portal, ?method=Remote-Sensing, ?place=US (comma-separated for multiple).
+    var params = new URLSearchParams(window.location.search);
+    var facetsPresent = {};
+    btns.forEach(function (b) { facetsPresent[b.getAttribute('data-facet')] = true; });
+    Object.keys(facetsPresent).forEach(function (facet) {
+      var raw = params.get(facet);
+      if (!raw) return;
+      raw.split(',').forEach(function (val) {
+        val = val.trim();
+        if (!val) return;
+        var preBtn = bar.querySelector('[data-facet="' + facet + '"][data-value="' + val + '"]');
+        if (!preBtn) return;
+        if (!sel[facet]) sel[facet] = new Set();
+        sel[facet].add(val);
         preBtn.classList.add('is-active');
-      }
-    }
+      });
+    });
     apply();
   }
 

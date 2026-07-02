@@ -7,9 +7,10 @@
     <div class="card__media"><img src="{{ . | relURL }}" alt="{{ $.Title }}"></div>
   {{ end }}{{ end }}
   <div class="card__body">
+    {{ partial "card-kind.html" . }}
     {{ with .Params.tags }}
       <div class="card__tags">
-        {{ range first 3 . }}{{ partial "tag.html" . }}{{ end }}
+        {{ range first 4 . }}{{ partial "tag.html" . }}{{ end }}
       </div>
     {{ end }}
     <h3 class="card__title">{{ .Title }}</h3>

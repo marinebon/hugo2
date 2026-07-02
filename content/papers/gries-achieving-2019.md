@@ -15,6 +15,5 @@ journal: Biodiversity Information Science and Standards
 doi: 10.3897/biss.3.37047
 paper_url: https://biss.pensoft.net/article/37047/
 tags:
-- type.Paper
 - year.2019
 ---

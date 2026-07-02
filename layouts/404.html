@@ -34,10 +34,8 @@
 {{ end }}
 
 {{ define "scripts" }}
-<link href="{{ "pagefind/pagefind-ui.css" | relURL }}" rel="stylesheet">
-<script src="{{ "pagefind/pagefind-ui.js" | relURL }}"></script>
 <script>
-(function () {
+(async function () {
   // ── Bioluminescent particles (no external deps — runs first) ──
   var pContainer = document.getElementById('err404-particles');
   if (pContainer) {
@@ -79,25 +77,30 @@
       : 'Explore MBON content below.';
   }
 
-  // ── Pagefind search (guarded — index may not exist in dev) ──
+  // ── Pagefind core API — same type-aware result cards as /search/
+  //    (the Default UI, pagefind-ui.js, is deprecated as of 1.5.0). Guarded:
+  //    the index may not exist in dev until `scripts/reindex.sh` runs. ──
   try {
-    new PagefindUI({
-      element: "#search",
-      showSubResults: true,
-      showImages: false,
-      excerptLength: 20,
-      filters: { method: "Method", place: "Region", org: "Organization", type: "Type", topic: "Topic" },
-    });
-
-    if (terms) {
-      var poll = setInterval(function () {
-        var input = document.querySelector('#search input[type=text]');
-        if (input) {
-          clearInterval(poll);
-          input.value = terms;
-          input.dispatchEvent(new Event('input', { bubbles: true }));
-        }
-      }, 50);
+    var pf = await import('{{ "pagefind/pagefind.js" | relURL }}');
+    await pf.options({ baseUrl: '{{ "/" | relURL }}' });
+    var BASE = '{{ "" | relURL }}'.replace(/\/+$/, '');
+    function withBase(u) { if (!u) return u; if (u.charAt(0) !== '/') u = '/' + u; if (BASE && u.indexOf(BASE + '/') === 0) return u; return BASE + u; }
+    var cap = function (s) { return s.charAt(0).toUpperCase() + s.slice(1); };
+    var res = await pf.search(terms || null);
+    var loaded = await Promise.all((res ? res.results : []).slice(0, 6).map(function (r) { return r.data(); }));
+    var box = document.getElementById('search');
+    if (box) {
+      box.innerHTML = loaded.length ? '<ul class="search-widget__results">' + loaded.map(function (d) {
+        var m = d.meta || {}, type = (m.type || 'page').toLowerCase(), badge = m.badge || cap(type);
+        var thumb = m.image
+          ? '<span class="search-result__media"><img src="' + m.image + '" alt="" loading="lazy"><span class="badge badge--solid badge--accent search-result__badge">' + badge + '</span></span>'
+          : '<span class="search-result__kind">' + badge + '</span>';
+        return '<li class="search-result search-result--' + type + (m.image ? ' search-result--media' : '') + '">' +
+          (m.image ? thumb : '') +
+          '<span class="search-result__main">' + (m.image ? '' : thumb) +
+          '<a class="search-result__title" href="' + withBase(d.url) + '">' + m.title + '</a>' +
+          '<p class="search-result__excerpt">' + d.excerpt + '</p></span></li>';
+      }).join('') + '</ul>' : '';
     }
   } catch (e) {}
 })();

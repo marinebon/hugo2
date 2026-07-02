@@ -7,6 +7,4 @@ authors:
 - F.J. Mueter
 - K. Iken
 journal: Marine Ecology Progress Series
-tags:
-- type.Paper
 ---

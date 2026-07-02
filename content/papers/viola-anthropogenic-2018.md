@@ -16,6 +16,5 @@ journal: Journal of Applied Ecology
 doi: 10.1111/1365-2664.13104
 paper_url: http://doi.wiley.com/10.1111/1365-2664.13104
 tags:
-- type.Paper
 - year.2018
 ---

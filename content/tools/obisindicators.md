@@ -11,7 +11,7 @@ summary: R package for generating biodiversity indicators — including ES(50) e
 tags:
 - tool.Package
 - method.Indicators
-- org.OBIS
+- portal.OBIS
 title: obisindicators
 weight: 23
 ---

@@ -38,6 +38,5 @@ journal: Frontiers in Marine Science
 doi: 10.3389/fmars.2019.00451
 paper_url: https://www.frontiersin.org/article/10.3389/fmars.2019.00451/full
 tags:
-- type.Paper
 - year.2019
 ---

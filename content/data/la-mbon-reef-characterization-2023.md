@@ -10,7 +10,6 @@ publisher: GCOOS
 tags:
 - method.Benthic
 - portal.ERDDAP
-- type.Dataset
 sources:
 - portal: ERDDAP
   url: https://gcoos4.tamu.edu/erddap/info/la_mbon_2023_reefcharacterization/index.html

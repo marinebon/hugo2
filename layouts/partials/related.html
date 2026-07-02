@@ -1,0 +1,82 @@
+{{/* "Related across the network" — curated content references first, then backlinks,
+     then tag-based fallback. Built at build time; nothing baked into content.
+
+     Order (deduped by .RelPermalink, capped at count):
+       1. CURATED  — the pages listed in this page's `related:` front matter
+                     (content paths like /working-groups/indicators), resolved via GetPage.
+       2. BACKLINKS — other pages whose `related:` points AT this page (so you declare a
+                     link once and both ends show it; a referenced page becomes a hub).
+       3. TAG-BASED — fills remaining slots by weighted shared-tag overlap. Generic tags
+                     are ignored (facets year/tool, value place.Global); an entity overlap
+                     (org/portal — "same OBIS") counts 3× so it outranks a shared method/place.
+
+     Argument is EITHER a Page (.) or a dict {page, excludeSection, heading, count}.
+     excludeSection drops same-type pages from the TAG-BASED fill (network nodes use it,
+     since "Connected nodes" already lists other nodes); curated + backlinks always show.
+     Renders nothing when there are no matches. */}}
+{{ $page := . }}{{ $excludeSection := false }}{{ $heading := "Related across the network" }}{{ $count := 6 }}
+{{ if reflect.IsMap . }}
+  {{ $page = .page }}
+  {{ with .excludeSection }}{{ $excludeSection = . }}{{ end }}
+  {{ with .heading }}{{ $heading = . }}{{ end }}
+  {{ with .count }}{{ $count = . }}{{ end }}
+{{ end }}
+
+{{ $self := $page.RelPermalink }}
+{{ $seen := slice $self }}
+{{ $out := slice }}
+
+{{/* 1. curated references */}}
+{{ range ($page.Params.related | default slice) }}
+  {{ with site.GetPage (lower .) }}
+    {{ if not (in $seen .RelPermalink) }}{{ $out = $out | append . }}{{ $seen = $seen | append .RelPermalink }}{{ end }}
+  {{ end }}
+{{ end }}
+
+{{/* 2. backlinks — pages whose related: resolves to this page */}}
+{{ range site.RegularPages }}
+  {{ $cand := . }}
+  {{ range ($cand.Params.related | default slice) }}
+    {{ with site.GetPage (lower .) }}
+      {{ if and (eq .RelPermalink $self) (not (in $seen $cand.RelPermalink)) }}{{ $out = $out | append $cand }}{{ $seen = $seen | append $cand.RelPermalink }}{{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{/* 3. tag-based fallback to fill remaining slots */}}
+{{ if lt (len $out) $count }}
+  {{ $genericFacets := slice "year" "tool" }}
+  {{ $entityFacets := slice "org" "portal" }}
+  {{ $mine := slice }}
+  {{ range ($page.Params.tags | default slice) }}
+    {{ $facet := index (split . ".") 0 }}
+    {{ if and (not (in $genericFacets $facet)) (ne . "place.Global") }}{{ $mine = $mine | append . }}{{ end }}
+  {{ end }}
+  {{ with $mine }}
+    {{ $tmp := slice }}
+    {{ range site.RegularPages }}
+      {{ if and (not (in $seen .RelPermalink)) .Params.tags (or (not $excludeSection) (ne .Type $page.Type)) }}
+        {{ $score := 0 }}
+        {{ range (intersect $mine .Params.tags) }}
+          {{ $score = add $score (cond (in $entityFacets (index (split . ".") 0)) 3 1) }}
+        {{ end }}
+        {{ if gt $score 0 }}{{ $tmp = $tmp | append (dict "page" . "n" $score) }}{{ end }}
+      {{ end }}
+    {{ end }}
+    {{ range sort $tmp "n" "desc" }}
+      {{ if and (lt (len $out) $count) (not (in $seen .page.RelPermalink)) }}{{ $out = $out | append .page }}{{ $seen = $seen | append .page.RelPermalink }}{{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ $out = first $count $out }}
+{{ with $out }}
+<section class="section section--tint">
+  <div class="container">
+    <span class="eyebrow eyebrow--rule">{{ $heading }}</span>
+    <div class="grid-3" style="margin-top:var(--space-6);">
+      {{ range . }}{{ partial "card.html" . }}{{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

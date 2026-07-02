@@ -13,7 +13,6 @@ temporal_end: '2016-09-21'
 tags:
 - method.Benthic
 - portal.EDI
-- type.Dataset
 sources:
 - portal: EDI
   url: https://portal.edirepository.org/nis/mapbrowse?packageid=edi.702.1

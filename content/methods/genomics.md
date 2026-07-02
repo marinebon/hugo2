@@ -4,7 +4,9 @@ weight: 5
 summary: Environmental DNA extracted from water and sediment samples reveals the full
   community of organisms present — from bacteria to whales — with a speed and breadth
   impossible through visual surveys alone.
-banner: img/photos/edna.jpg
+banner: img/methods/genomics.jpeg
+related:
+- /working-groups/edna
 tags:
 - method.Genomics
 ---

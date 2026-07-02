@@ -13,6 +13,5 @@ journal: Oikos
 doi: 10.1111/oik.03997
 paper_url: http://doi.wiley.com/10.1111/oik.03997
 tags:
-- type.Paper
 - year.2017
 ---

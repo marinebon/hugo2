@@ -12,10 +12,14 @@
     {{ $typeLabels := dict "papers" "Paper" "tools" "Tool" "methods" "Method" "data" "Dataset" "news" "News" "events" "Event" "network" "Node" "working-groups" "Working Group" }}
     {{ $badge := index $typeLabels .Type | default (humanize .Type) }}
     {{ $img := .Params.image | default .Params.banner }}
+    {{/* titles of related: pages, so search matches on what a page links to */}}
+    {{ $relTitles := slice }}
+    {{ range (.Params.related | default slice) }}{{ with site.GetPage (lower .) }}{{ $relTitles = $relTitles | append .Title }}{{ end }}{{ end }}
     <div hidden aria-hidden="true" data-pagefind-ignore>
       <span data-pagefind-meta="type">{{ .Type }}</span>
       <span data-pagefind-meta="badge">{{ $badge }}</span>
       {{ with $img }}<span data-pagefind-meta="image">{{ . | relURL }}</span>{{ end }}
+      {{ with $relTitles }}<span data-pagefind-meta="related">{{ delimit . ", " }}</span>{{ end }}
     </div>
   {{ end }}
   {{ if eq .Kind "page" }}{{ partial "edit-link.html" . }}{{ end }}

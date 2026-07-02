@@ -3,7 +3,7 @@ title: Benthic Surveys
 weight: 7
 summary: Rocky-shore and sandy-beach transects, photo quadrats, and intertidal surveys
   record coastal biodiversity — connecting the land-sea interface to the global observation network.
-banner: img/photos/kelp.jpg
+banner: img/methods/benthic.jpeg
 tags:
 - method.Benthic
 ---

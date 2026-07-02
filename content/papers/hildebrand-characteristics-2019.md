@@ -8,6 +8,5 @@ journal: The Journal of the Acoustical Society of America
 doi: 10.1121/1.5101968
 paper_url: http://asa.scitation.org/doi/10.1121/1.5101968
 tags:
-- type.Paper
 - year.2019
 ---

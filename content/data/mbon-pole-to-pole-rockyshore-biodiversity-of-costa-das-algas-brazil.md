@@ -13,7 +13,6 @@ not_in_obis: true
 tags:
 - method.Benthic
 - portal.GBIF
-- type.Dataset
 sources:
 - portal: GBIF
   url: https://www.gbif.org/dataset/b70fe614-89fd-4c24-9e8d-e3797cc0c736

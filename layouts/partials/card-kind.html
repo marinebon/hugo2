@@ -1,0 +1,14 @@
+{{/* Content-type label for a card — icon + singular type name, so every card in a
+     mixed list (e.g. "Related across the network") announces what it is: Tool /
+     Working Group / Method / Node / Dataset / Paper / News / Event. Colour + icon
+     come from .Type. Call with a Page (.). */}}
+{{ $map := dict
+    "tools"          (dict "label" "Tool"          "icon" "fa-toolbox")
+    "working-groups" (dict "label" "Working Group" "icon" "fa-users")
+    "methods"        (dict "label" "Method"        "icon" "fa-microscope")
+    "network"        (dict "label" "Node"          "icon" "fa-diagram-project")
+    "data"           (dict "label" "Dataset"       "icon" "fa-database")
+    "papers"         (dict "label" "Paper"         "icon" "fa-file-lines")
+    "news"           (dict "label" "News"          "icon" "fa-newspaper")
+    "events"         (dict "label" "Event"         "icon" "fa-calendar-day") }}
+{{ with index $map .Type }}<span class="card__type card__type--{{ $.Type }}"><i class="fas {{ .icon }}" aria-hidden="true"></i> {{ .label }}</span>{{ end }}

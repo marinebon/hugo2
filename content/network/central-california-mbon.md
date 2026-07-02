@@ -8,7 +8,8 @@ lng: -122
 since: '2014'
 summary: Monterey Bay sanctuary observing and Seascapes.
 tags:
-- topic.Regional
+- place.US
+- place.Monterey-Bay
 title: Central California MBON
 ---
 

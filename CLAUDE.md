@@ -15,7 +15,14 @@ hugo server                  # live-reloading preview at http://localhost:1313
 hugo --gc --minify           # production build into ./public (what CI runs)
 npx --yes pagefind --site public   # build the search index over the built site
 python3 scripts/check_links.py public   # fail on any broken internal link (CI runs this)
+./scripts/reindex.sh         # rebuild the LOCAL search index so hugo server's /search/ isn't stale
 ```
+
+**Search is a build step, not live.** `hugo server` serves the Pagefind index from
+`static/pagefind/` (git-ignored) and never rebuilds it, so `/search/` goes stale as
+content changes — `scripts/reindex.sh` runs `hugo --gc --minify` → `pagefind` → copies
+`public/pagefind` into `static/pagefind/`. Search meta (`type`/`badge`/`image`/`related`)
+is emitted per page by `baseof.html`; grouping/cards live in `layouts/search.html`.
 
 Requires Hugo **extended** ≥ 0.163 (CI pins `HUGO_VERSION: 0.163.3` in
 `.github/workflows/deploy.yml`). There is no test suite; the build is the check —
@@ -48,27 +55,63 @@ and `params.github_repo` (which backs the contribution links).
 
 Two things require reading multiple files to understand:
 
-### The faceted tag system
+### Tags, content type, and `related:` links
 
-Tags are written `facet.Value` with `ProperCase` (hyphenated) values, e.g.
-`method.Remote-Sensing`, `tool.Portal`, `tool.Training`, `place.US`, `org.OBIS`,
-`topic.Research`, `year.2021`, `type.Paper`. The facet drives the tag color
-(`.tag--<facet>` in CSS) and the on-page JS filters.
+**Three separate mechanisms — keep them apart (conflating them caused a lot of churn):**
 
-**`data/tags.yaml` is the single source of truth** for every facet: its filter-bar
-`values` (buttons) and an `aliases` map giving open-set values proper labels (so
-`org.GEOBON` → "GEO BON", not the humanized "Geobon"). `layouts/partials/tag.html`
-resolves a label there **case-insensitively** — important because Hugo lowercases
-taxonomy terms, so the same lookup must work on `/tags/` term pages and on
-original-case front-matter tags. `tools/list.html` and `papers/list.html` build
-their filter bars from the facets whose `filters:` list names that section (the
-Papers **Year** buttons are generated from the papers themselves, not the file).
+1. **Content type = structural.** A page's type is the section it lives in (`.Type` ∈
+   network, working-groups, methods, tools, data, papers, news, events) — it drives the
+   layout, card, and URL. It is **not** a tag (there is no `type.*`), and `/tags` does not
+   list it (the top nav / section index pages cover that).
+
+2. **Tags = faceted labels for filter & search only.** Written `facet.Value` in
+   `ProperCase` (e.g. `method.Remote-Sensing`, `tool.Portal`, `place.US`, `portal.OBIS`,
+   `topic.Research`, `year.2021`). `data/tags.yaml` is the single source of truth per
+   facet (its `role`, filter-bar `values`, and label `aliases` so `org.GEOBON` → "GEO
+   BON"); `layouts/partials/tag.html` resolves labels there **case-insensitively** (Hugo
+   lowercases taxonomy terms). The `tools`/`papers`/`data` list filter bars render buttons
+   for the facets whose `filters:` names that section. Only two `role`s: `subtype`
+   (`tool.*`) and `attribute` (everything else). **`org` = who *built* a tool (developer);
+   `portal` = whose *data* a tool uses / where a dataset is served (OBIS/GBIF/EDI/ERDDAP).**
+   `portal` filters both `/data/` and `/tools/`. **OBIS is a portal, not an org.** Prefer a
+   specific facet over a vague one (no `topic.*` duplicating a `method`/`place`); `topic`
+   stays flat — no hierarchy.
+
+3. **`related:` = page-to-page links.** A front-matter list of **content-page paths**
+   (e.g. `related: [/working-groups/indicators, /network/pole-to-pole-americas]`). This —
+   not a tag — is how you link to one *specific* page. Do **not** invent a tag that mirrors
+   a page slug (the old `node.*` facet was retired for exactly this).
+
+**Interlinking is all build-time; nothing is baked into content.**
+- **Clickable chips** — `tag.html` renders a `<span>` for a string arg (safe inside card
+  `<a>`s) or an `<a>` to the term page for `(dict "value" . "link" true)`; single-page tag
+  lists use the linked form.
+- **Related section** — `layouts/partials/related.html` (on every single template) builds
+  "Related across the network" from, in order: (1) the page's curated `related:` pages,
+  (2) **backlinks** — pages whose `related:` points *at* this page (declare a link once,
+  both ends show it, so a referenced page becomes a hub), (3) a weighted shared-tag
+  fallback (generic `year`/`tool`/`place.Global` ignored; an `org`/`portal` overlap counts
+  3×). Dedup by `.RelPermalink`, cap 6. Pass `(dict "page" . "excludeSection" true …)` to
+  drop same-type tag matches (network nodes do this — "Connected nodes" already lists other
+  nodes). `related:` page titles are also emitted as Pagefind meta so search matches them.
+- **/tags index** (`layouts/tags/terms.html`) is one flat list of tag facets, built from
+  the live taxonomy terms (`.Data.Terms.Alphabetical`, bucketed by the prefix before `.`)
+  with usage counts. No content-type or "references" rows.
+- **Portal hub** — a portal tool page (`tools/single.html`, tagged `tool.Portal`) shows "N
+  datasets available via <CODE>" → `/data/?portal=<CODE>`, and each **dataset page** links
+  its portals (from `sources[]`) back to the tool page; with `related:` backlinks,
+  `tools/obis` is the single "everything OBIS" hub.
+- **Network nodes carry `place.*`** so their page's related section surfaces the region's
+  datasets/tools/news; content that *belongs to* a node uses `related: /network/<node>`
+  (e.g. the Pole-to-Pole news + atlas ↔ `network/pole-to-pole-americas`).
 
 **Adding a new tag value requires two places to agree:** add it to `data/tags.yaml`
 (under `values` for a filter button, or `aliases` for a label only) AND add the
 human label to the dropdown `options:` in the matching
 `.github/ISSUE_TEMPLATE/add-*.yml`. If a label doesn't kebab-case cleanly to its
-`Value`, also add it to `TAG_ALIASES` in `scripts/issue_to_content.py`.
+`Value`, also add it to `TAG_ALIASES` in `scripts/issue_to_content.py`. **A `related:`
+link needs no registry** — it's just a content path; the issue forms expose it via a
+"Related pages" field (parsed by `collect_related` in `issue_to_content.py`).
 
 ### The contribution pipeline (no-Git path)
 

@@ -77,6 +77,16 @@ def collect_tags(data: dict, facets: list) -> list:
             seen.add(t); out.append(t)
     return out
 
+def collect_related(data: dict) -> list:
+    """Parse the optional `related` field (comma/newline-separated content-page
+       paths like /working-groups/indicators) into a clean, deduped list."""
+    out = []
+    for p in re.split(r"[,\n]", clean(data.get("related")) or ""):
+        p = p.strip()
+        if p.startswith("/"):
+            out.append(p.rstrip("/"))
+    return dedup(out)
+
 # ── method auto-tagging (mirrors scripts/import_papers.py) ─────────────────────
 METHOD_RULES = [
     ("method.Genomics",       r"edna|e\.dna|metabarcode|metagenom|genomic|\bDNA\b"),
@@ -166,6 +176,8 @@ def build_news(d):
         ("tags_topic", "topic"), ("tags_method", "method"),
         ("tags_place", "place"), ("tags_org", "org"),
     ])
+    if collect_related(d):
+        fm["related"] = collect_related(d)
     return "news", slug, fm, clean(d.get("body"))
 
 def build_event(d):
@@ -178,6 +190,8 @@ def build_event(d):
             fm[key] = clean(d.get(key))
     fm["summary"] = clean(d.get("summary"))
     fm["tags"] = collect_tags(d, [("tags_topic", "topic"), ("tags_method", "method")])
+    if collect_related(d):
+        fm["related"] = collect_related(d)
     return "events", slug, fm, clean(d.get("body"))
 
 def build_paper(d):
@@ -227,12 +241,14 @@ def build_paper(d):
         fm["paper_url"] = paper_url
     if abstract:
         fm["abstract"] = abstract
-    tags = ["type.Paper"]
+    tags = []  # content type is structural (the papers section), not a tag
     tags += [tag("method", l) for l in multi(d.get("tags_method"))]
     tags += auto_method_tags(f"{title} {abstract}")
     if year:
         tags.append(f"year.{year}")
     fm["tags"] = dedup(tags)
+    if collect_related(d):
+        fm["related"] = collect_related(d)
 
     base = ""
     if authors:
@@ -263,6 +279,8 @@ def build_tool(d):
         ("tags_tool", "tool"), ("tags_place", "place"),
         ("tags_org", "org"), ("tags_method", "method"),
     ])
+    if collect_related(d):
+        fm["related"] = collect_related(d)
     fm["weight"] = 99  # new tools sort last until a maintainer assigns a weight
     return "tools", slug, fm, clean(d.get("body"))
 

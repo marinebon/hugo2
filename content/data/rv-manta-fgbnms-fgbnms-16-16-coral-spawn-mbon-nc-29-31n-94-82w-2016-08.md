@@ -9,7 +9,6 @@ portal_primary: ERDDAP
 publisher: Texas A&M University/ Department of Ocecanography
 tags:
 - portal.ERDDAP
-- type.Dataset
 sources:
 - portal: ERDDAP
   url: https://gcoos5.geos.tamu.edu/erddap/info/FGBNMS_FGBNMS-16-16-Coral_Spawn_MBON/index.html

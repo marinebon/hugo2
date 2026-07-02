@@ -16,6 +16,5 @@ journal: Marine Ecology Progress Series
 doi: 10.3354/meps13119
 paper_url: https://www.int-res.com/abstracts/meps/v631/p81-97/
 tags:
-- type.Paper
 - year.2019
 ---

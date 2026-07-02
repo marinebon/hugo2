@@ -1,6 +1,7 @@
 {{/* Event card. Call with a Page (.) */}}
 <a class="card card--event" href="{{ .RelPermalink }}">
   <div class="card__body">
+    {{ partial "card-kind.html" . }}
     <div class="event-card__head">
       <span class="badge badge--solid badge--accent">{{ partial "event-date.html" . }}</span>
       {{ with .Params.location }}<span class="event-card__loc"><i class="fas fa-location-dot" aria-hidden="true"></i> {{ . }}</span>{{ end }}

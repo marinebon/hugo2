@@ -16,6 +16,5 @@ journal: Remote Sensing
 doi: 10.3390/rs12111740
 paper_url: https://www.mdpi.com/2072-4292/12/11/1740
 tags:
-- type.Paper
 - year.2020
 ---

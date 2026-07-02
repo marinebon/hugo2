@@ -4,7 +4,11 @@ weight: 6
 summary: Raw observations become decision-relevant information through synthesis into
   Essential Ocean Variables, open data pipelines, and indicators that managers and
   policymakers can act on.
-banner: img/photos/pole-to-pole-map.png
+banner: img/methods/indicators.jpeg
+related:
+- /working-groups/indicators
+- /working-groups/eco-indicators
+- /working-groups/data-mgmt
 tags:
 - method.Indicators
 - method.Data-Mgmt

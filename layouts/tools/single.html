@@ -4,7 +4,7 @@
     <div class="page-header__inner">
       <span class="eyebrow eyebrow--rule eyebrow--ondark">Tool</span>
       <h1>{{ .Title }}</h1>
-      {{ with .Params.tags }}<div class="card__tags" style="margin-top:var(--space-3);">{{ range . }}{{ partial "tag.html" . }}{{ end }}</div>{{ end }}
+      {{ with .Params.tags }}<div class="card__tags" style="margin-top:var(--space-3);">{{ range . }}{{ partial "tag.html" (dict "value" . "link" true) }}{{ end }}</div>{{ end }}
     </div>
   </section>
 
@@ -22,6 +22,31 @@
       <p style="margin-top:var(--space-7);"><a href="{{ "tools" | relURL }}" class="btn btn--ghost"><i class="fas fa-arrow-left" aria-hidden="true"></i> All tools</a></p>
     </div>
   </section>
+
+  {{/* portal tool pages become a hub: datasets served by this portal (from the
+       portal.<CODE> tag, matched to the tool slug uppercased, e.g. tools/obis -> portal.OBIS) */}}
+  {{ if in .Params.tags "tool.Portal" }}
+    {{ $portal := upper .File.ContentBaseName }}
+    {{ $dsets := where (where site.RegularPages "Section" "data") "Params.tags" "intersect" (slice (printf "portal.%s" $portal)) }}
+    {{ with $dsets }}
+    {{/* OBIS-first: how many of this portal's datasets are also mirrored to OBIS (the canonical/preferred portal) */}}
+    {{ $alsoObis := len (where . "Params.tags" "intersect" (slice "portal.OBIS")) }}
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow eyebrow--rule">In this portal</span>
+        <h2 style="margin:var(--space-2) 0 var(--space-4);">{{ len . }} dataset{{ if ne (len .) 1 }}s{{ end }} available via {{ $portal }}{{ if and (ne $portal "OBIS") (gt $alsoObis 0) }} — {{ $alsoObis }} also in OBIS (preferred){{ end }}</h2>
+        <p style="margin-bottom:var(--space-6);"><a class="btn btn--action" href="{{ relURL "data/" }}?portal={{ $portal }}">Browse all {{ $portal }} datasets <i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
+        <div class="grid-auto">
+          {{ range first 6 (sort . "Params.records" "desc") }}{{ partial "card-dataset.html" . }}{{ end }}
+        </div>
+      </div>
+    </section>
+    {{ end }}
+  {{ end }}
+
+  {{/* related-by-tag across the network (build-time, shared tags) */}}
+  {{ partial "related.html" . }}
+
   {{/* pagefind tag filters */}}
   {{ if .Params.tags }}
   <div style="display:none" aria-hidden="true">

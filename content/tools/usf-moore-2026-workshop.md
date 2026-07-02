@@ -10,7 +10,7 @@ summary: Workshop materials for mobilizing taxonomic occurrence data to Darwin C
   and OBIS (USF, June 2026).
 tags:
 - tool.Training
-- org.OBIS
+- portal.OBIS
 title: USF Moore Taxa Data Mobilization Workshop (2026)
 weight: 50
 ---

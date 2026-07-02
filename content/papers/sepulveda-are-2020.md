@@ -11,7 +11,6 @@ journal: Trends in Ecology & Evolution
 doi: 10.1016/j.tree.2020.03.011
 paper_url: https://linkinghub.elsevier.com/retrieve/pii/S0169534720300896
 tags:
-- type.Paper
 - method.Genomics
 - year.2020
 ---

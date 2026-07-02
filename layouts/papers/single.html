@@ -7,7 +7,7 @@
       </a>
       <h1 style="max-width:72ch;">{{ .Title }}</h1>
       <div class="card__tags" style="margin-top:var(--space-4);">
-        {{ range .Params.tags }}{{ partial "tag.html" . }}{{ end }}
+        {{ range .Params.tags }}{{ partial "tag.html" (dict "value" . "link" true) }}{{ end }}
       </div>
     </div>
   </section>
@@ -51,5 +51,8 @@
 
     </div>
   </section>
+
+  {{/* related-by-tag across the network (build-time, shared tags) */}}
+  {{ partial "related.html" . }}
 </main>
 {{ end }}

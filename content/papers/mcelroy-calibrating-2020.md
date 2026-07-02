@@ -27,7 +27,6 @@ journal: Frontiers in Ecology and Evolution
 doi: 10.3389/fevo.2020.00276
 paper_url: https://www.frontiersin.org/articles/10.3389/fevo.2020.00276/full
 tags:
-- type.Paper
 - method.Genomics
 - year.2020
 ---

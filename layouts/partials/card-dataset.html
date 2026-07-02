@@ -9,9 +9,10 @@
     {{ if gt $records 0 }}<span class="card__records"><i class="fas fa-database" aria-hidden="true"></i> {{ partial "num.html" $records }} records</span>{{ end }}
   </div>
   <div class="card__body">
+    {{ partial "card-kind.html" . }}
     {{ with .Params.tags }}
       <div class="card__tags">
-        {{ range first 3 . }}{{ partial "tag.html" . }}{{ end }}
+        {{ range first 4 . }}{{ partial "tag.html" . }}{{ end }}
       </div>
     {{ end }}
     <h3 class="card__title">{{ .Title }}</h3>

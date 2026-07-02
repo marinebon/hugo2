@@ -11,6 +11,4 @@ authors:
 - F.J. Mueter
 - J.T. Duffy-Anderson
 journal: Polar Biology
-tags:
-- type.Paper
 ---

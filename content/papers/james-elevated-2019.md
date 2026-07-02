@@ -15,6 +15,5 @@ journal: Environmental Microbiology
 doi: 10.1111/1462-2920.14484
 paper_url: http://doi.wiley.com/10.1111/1462-2920.14484
 tags:
-- type.Paper
 - year.2019
 ---

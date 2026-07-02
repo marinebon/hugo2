@@ -7,6 +7,7 @@
     <div class="card__badge"><span class="badge badge--solid badge--accent">{{ .Date.Format "Jan 2006" }}</span></div>
   </div>
   <div class="card__body">
+    {{ partial "card-kind.html" . }}
     {{ with .Params.tags }}<div class="card__tags">{{ partial "tag.html" (index . 0) }}</div>{{ end }}
     <h3 class="card__title">{{ .Title }}</h3>
     <p class="card__summary">{{ .Params.summary | default (.Summary | plainify | truncate 160) }}</p>

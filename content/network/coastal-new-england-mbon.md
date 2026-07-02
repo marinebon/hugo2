@@ -8,7 +8,7 @@ lng: -70.6
 since: '2018'
 summary: Nearshore observing from Long Island to Cape Cod.
 tags:
-- topic.Regional
+- place.US
 title: Coastal New England MBON
 ---
 

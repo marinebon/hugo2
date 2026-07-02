@@ -13,7 +13,6 @@ temporal_start: '2007-02-01'
 temporal_end: '2018-06-01'
 tags:
 - portal.EDI
-- type.Dataset
 sources:
 - portal: EDI
   url: https://portal.edirepository.org/nis/mapbrowse?packageid=edi.257.2

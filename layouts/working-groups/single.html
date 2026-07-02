@@ -34,12 +34,15 @@
         {{ end }}
         {{ with .Params.tags }}
         <div class="card__tags" style="margin-bottom:var(--space-5);">
-          {{ range . }}{{ partial "tag.html" . }}{{ end }}
+          {{ range . }}{{ partial "tag.html" (dict "value" . "link" true) }}{{ end }}
         </div>
         {{ end }}
         <a class="btn btn--outline btn--full" href="{{ "methods" | relURL }}">Explore related methods <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
       </aside>
     </div>
   </section>
+
+  {{/* related-by-tag across the network (build-time, shared tags) */}}
+  {{ partial "related.html" . }}
 </main>
 {{ end }}

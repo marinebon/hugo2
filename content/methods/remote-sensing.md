@@ -3,7 +3,7 @@ title: Remote Sensing
 weight: 1
 summary: Satellites and aerial sensors resolve ocean color, temperature, and habitat
   extent across millions of square kilometers — scales no ship survey can match.
-banner: img/photos/seascapes.jpg
+banner: img/methods/remote-sensing.jpeg
 tags:
 - method.Remote-Sensing
 ---

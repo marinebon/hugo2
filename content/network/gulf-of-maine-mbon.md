@@ -8,7 +8,7 @@ lng: -68.5
 since: '2016'
 summary: Cold-water shelf ecosystem and fisheries.
 tags:
-- topic.Regional
+- place.US
 title: Gulf of Maine MBON
 ---
 

@@ -16,7 +16,6 @@ journal: 'Limnology and Oceanography: Methods'
 doi: 10.1002/lom3.10237
 paper_url: http://doi.wiley.com/10.1002/lom3.10237
 tags:
-- type.Paper
 - method.Genomics
 - year.2018
 ---
