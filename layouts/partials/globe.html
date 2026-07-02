@@ -28,7 +28,7 @@
           {{ end }}
         </div>
         <div class="node-chips__col">
-          <span class="node-chip-label">International</span>
+          <span class="node-chip-label">Worldwide</span>
           {{ range $intl.ByTitle }}
             <button class="node-chip" data-node-id="{{ .File.ContentBaseName }}">{{ replace .Title " MBON" "" }}</button>
           {{ end }}
@@ -44,7 +44,7 @@
   <div class="globe-partners">
     <span class="eyebrow eyebrow--rule eyebrow--ondark">Strategic collaborators</span>
     <div class="partner-strip" style="margin-top:var(--space-4);">
-      {{ range hugo.Data.partners }}
+      {{ range where hugo.Data.partners "tier" "partner" }}
         <a class="partner-chip" href="{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener">
           <img src="{{ .logo | relURL }}" alt="{{ .name }}">
         </a>

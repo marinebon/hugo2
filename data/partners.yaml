@@ -1,40 +1,95 @@
-- name: IOOS
-  logo: img/partners/ioos.jpg
-  url: https://ioos.noaa.gov/
-  description: The U.S. Integrated Ocean Observing System — the national framework for sustained ocean observations that MBON regional nodes connect through.
-- name: GEOBON
-  logo: img/partners/geobon.jpg
+# MBON partners, collaborators and affiliated projects — mirrored from the
+# marinebon.org network menu. tier: partner (formal MoU) | collaborator | affiliated.
+# Rendered by layouts/network/partners.html (grouped by tier, logos link out).
+- name: GEO BON
+  tier: partner
+  logo: img/partners/geobon.png
   url: https://geobon.org/
-  description: Group on Earth Observations Biodiversity Observation Network — MBON is the marine thematic node of GEO BON, linking ocean biodiversity to the global framework.
-- name: GOOS
-  logo: img/partners/goos.png
-  url: https://www.goosocean.org/
-  description: The Global Ocean Observing System coordinates sustained observations of the ocean; MBON contributes marine biodiversity data streams to GOOS through the BioEco panel.
-- name: GEO
-  logo: img/partners/geo.png
-  url: https://earthobservations.org/
-  description: Group on Earth Observations — the intergovernmental partnership that hosts GEO BON and coordinates satellite, in situ, and citizen-science observation networks worldwide.
-- name: OBIS
-  logo: img/partners/obis.png
-  url: https://obis.org/
-  description: The Ocean Biodiversity Information System — the primary open repository for MBON node data; all MBON observations are published to OBIS following Darwin Core standards.
-- name: AIR Centre
-  logo: img/partners/aircentre.jpg
-  url: https://www.aircentre.org/
-  description: The Atlantic International Research Centre (Azores) hosts the MBON Secretariat and anchors partnerships across the Atlantic basin and Portuguese-speaking nations.
-- name: GCRMN
-  logo: img/partners/gcrmn.png
-  url: https://www.gcrmn.net/
-  description: The Global Coral Reef Monitoring Network provides harmonized reef biodiversity data that complement MBON's tropical node observations.
-- name: MarineGEO
-  logo: img/partners/marinegeo.png
-  url: https://marinegeo.si.edu/
-  description: The Smithsonian Institution's Marine Global Earth Observatory — a partner long-term monitoring network sharing standardized coastal survey protocols with MBON.
-- name: SCAR
-  logo: img/partners/scar.png
-  url: https://www.scar.org/
-  description: The Scientific Committee on Antarctic Research coordinates polar marine biodiversity observations that feed into MBON's Southern Ocean coverage.
-- name: LifeWatch
+- name: LifeWatch ERIC
+  tier: partner
   logo: img/partners/lifewatch.png
   url: https://www.lifewatch.eu/
-  description: LifeWatch ERIC is Europe's e-Science infrastructure for biodiversity research, providing data services and analytical tools used by MBON's European regional nodes.
+- name: GOOS
+  tier: partner
+  logo: img/partners/goos.png
+  url: https://www.goosocean.org/
+- name: OBIS
+  tier: partner
+  logo: img/partners/obis.png
+  url: https://obis.org/
+- name: SCAR
+  tier: partner
+  logo: img/partners/scar.png
+  url: https://www.scar.org/
+- name: ProtectedSeas
+  tier: partner
+  logo: img/partners/protectedseas.png
+  url: https://protectedseas.net/
+- name: Seabed 2030
+  tier: partner
+  logo: img/partners/seabed2030.png
+  url: https://seabed2030.org/
+- name: IOCCP
+  tier: collaborator
+  logo: img/partners/ioccp.png
+  url: http://www.ioccp.org/
+- name: GCRMN
+  tier: collaborator
+  logo: img/partners/gcrmn.png
+  url: https://gcrmn.net/
+- name: IOCCG
+  tier: collaborator
+  logo: img/partners/ioccg.png
+  url: https://ioccg.org/
+- name: MarineGEO
+  tier: collaborator
+  logo: img/partners/marinegeo.svg
+  url: https://marinegeo.si.edu/
+- name: Black in Marine Science
+  tier: collaborator
+  logo: img/partners/black-in-marine-science.png
+  url: https://www.blackinmarinescience.org/
+- name: Ocean Best Practices
+  tier: collaborator
+  logo: img/partners/ocean-best-practices.png
+  url: https://www.oceanbestpractices.org/
+- name: EMSO ERIC
+  tier: collaborator
+  logo: img/partners/emso.png
+  url: https://emso.eu/
+- name: IABO
+  tier: collaborator
+  logo: img/partners/iabo.png
+  url: http://www.iabo.org/
+- name: IOOS
+  tier: collaborator
+  logo: img/partners/ioos.png
+  url: https://ioos.noaa.gov/
+- name: CAFF
+  tier: collaborator
+  logo: img/partners/caff.png
+  url: https://www.caff.is/monitoring
+- name: AIR Centre
+  tier: collaborator
+  logo: img/partners/aircentre.jpg
+  url: https://www.aircentre.org/
+- name: ARMS-MBON
+  tier: affiliated
+  logo: img/partners/arms-mbon.svg
+  url: http://www.arms-mbon.eu/
+- name: BioEcoOcean
+  tier: affiliated
+  logo: img/partners/bioecoocean.png
+  url: https://bioecoocean.org/
+- name: MARCO-BOLO
+  tier: affiliated
+  logo: img/partners/marco-bolo.png
+  url: https://marcobolo-project.eu/
+- name: BioSound
+  tier: affiliated
+  logo: img/partners/biosound.jpg
+  url: /working-groups/biosound
+- name: BioTrack
+  tier: affiliated
+  logo: img/partners/biotrack.jpg
+  url: /working-groups/biotrack

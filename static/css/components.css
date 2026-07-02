@@ -91,6 +91,15 @@ a.tag:hover{ background:color-mix(in srgb, var(--_c) 18%, var(--white)); }
 .stat--ondark .stat__value{ color:#fff; }
 .stat--ondark .stat__label{ color:var(--teal-300); }
 
+/* homepage FAQ accordion (details/summary) */
+.faq-item{ border-top:1px solid var(--border); }
+.faq-item:last-child{ border-bottom:1px solid var(--border); }
+.faq-item summary{ cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:var(--space-4); padding:var(--space-4) 0; font-size:var(--text-lg); font-weight:var(--fw-semibold); color:var(--text-heading); }
+.faq-item summary::-webkit-details-marker{ display:none; }
+.faq-item summary::after{ content:"+"; font-family:var(--font-mono); font-weight:var(--fw-normal); color:var(--accent-hover); flex-shrink:0; }
+.faq-item[open] summary::after{ content:"\2013"; }
+.faq-item__a{ padding:0 0 var(--space-5); max-width:64ch; color:var(--text-body); line-height:1.7; }
+
 /* ---- Card: content / product / news ----------------------------------- */
 .card{
   display:flex; flex-direction:column; background:var(--bg-surface);

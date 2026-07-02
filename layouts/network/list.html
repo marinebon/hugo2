@@ -10,7 +10,7 @@
 
   {{ partial "globe.html" (dict
       "eyebrow" "Explore the nodes"
-      "heading" "USA and international regional nodes"
+      "heading" "USA and worldwide regional nodes"
       "lead" "Each node monitors its own waters and contributes biodiversity data to shared, open standards — connecting science across every ocean basin. Select a region to spin the globe.") }}
 
   {{ $all  := where site.RegularPages "Section" "network" }}
@@ -19,7 +19,7 @@
 
   <section id="regional-usa" class="section">
     <div class="container">
-      <span class="eyebrow eyebrow--rule">USA Nodes</span>
+      <span class="eyebrow eyebrow--rule">USA MBON</span>
       <h2 style="margin:var(--space-2) 0 var(--space-6);">{{ len $usa }} regional networks</h2>
       <div class="grid-auto">
         {{ range $usa.ByTitle }}
@@ -32,20 +32,17 @@
     </div>
   </section>
 
-  <section id="regional-intl" class="section section--tint">
-    <div class="container">
-      <span class="eyebrow eyebrow--rule">International Nodes</span>
-      <h2 style="margin:var(--space-2) 0 var(--space-6);">{{ len $intl }} international networks</h2>
-      <div class="grid-auto">
-        {{ range $intl.ByTitle }}
-          <a class="node-link" href="{{ .RelPermalink }}">
-            <div class="node-link__title"><span class="dot"></span><strong>{{ .Title }}</strong></div>
-            <p>{{ .Params.summary }}</p>
-          </a>
-        {{ end }}
-      </div>
+  {{/* each worldwide node is its own regional network-of-networks — give each its
+       own named section (peer to "USA MBON" and "Working Groups"), no "International" umbrella */}}
+  {{ range $i, $node := $intl.ByTitle }}
+  <section id="regional-{{ $node.File.ContentBaseName }}" class="section{{ if eq (math.Mod $i 2) 0 }} section--tint{{ end }}">
+    <div class="container" style="max-width:820px;">
+      <span class="eyebrow eyebrow--rule">{{ $node.Title }}</span>
+      <p style="font-size:var(--text-lg);color:var(--text-body);margin:var(--space-3) 0 var(--space-5);">{{ $node.Params.summary }}</p>
+      <a class="btn btn--outline" href="{{ $node.RelPermalink }}">Explore {{ $node.Title }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
     </div>
   </section>
+  {{ end }}
 
   <section id="working-groups" class="section">
     <div class="container" style="max-width:760px;">

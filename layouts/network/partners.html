@@ -3,26 +3,37 @@
   <section class="page-header">
     <div class="page-header__inner">
       <a href="{{ "network" | relURL }}" style="display:inline-flex;gap:8px;align-items:center;color:var(--teal-300);font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:var(--ls-wide);text-transform:uppercase;text-decoration:none;margin-bottom:var(--space-5);"><i class="fas fa-arrow-left"></i> Network</a>
-      <span class="eyebrow eyebrow--rule eyebrow--ondark">Strategic collaborators</span>
+      <span class="eyebrow eyebrow--rule eyebrow--ondark">Working together</span>
       <h1>{{ .Title }}</h1>
       <p class="page-header__lead">{{ .Params.summary }}</p>
     </div>
   </section>
+
   <section class="section">
     <div class="container">
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:var(--space-6);">
-        {{ range hugo.Data.partners }}
-        <a href="{{ .url }}" target="_blank" rel="noopener"
-           style="display:flex;gap:var(--space-5);align-items:flex-start;padding:var(--space-5);border:1px solid var(--border);border-radius:var(--radius-lg);text-decoration:none;color:inherit;transition:box-shadow var(--dur-base) var(--ease-out),border-color var(--dur-base) var(--ease-out);"
-           onmouseover="this.style.boxShadow='var(--shadow-lg)';this.style.borderColor='var(--teal-300)'" onmouseout="this.style.boxShadow='';this.style.borderColor='var(--border)'">
-          <img src="{{ .logo | relURL }}" alt="{{ .name }}" style="width:72px;height:48px;object-fit:contain;flex-shrink:0;">
-          <div>
-            <h3 style="font-size:var(--text-base);margin:0 0 var(--space-2);color:var(--text-heading);">{{ .name }}</h3>
-            <p style="font-size:var(--text-sm);color:var(--text-muted);margin:0;line-height:1.5;">{{ .description }}</p>
+      {{ $tiers := slice
+          (dict "key" "partner"      "label" "Partners"            "note" "Organizations with a formal Memorandum of Understanding (MoU) with MBON.")
+          (dict "key" "collaborator" "label" "Collaborators"       "note" "Informal partners advancing shared marine-biodiversity goals.")
+          (dict "key" "affiliated"   "label" "Affiliated Projects" "note" "Projects that have agreed to be affiliated with MBON.") }}
+      {{ range $t := $tiers }}
+        {{ $items := where hugo.Data.partners "tier" $t.key }}
+        {{ with $items }}
+        <div style="margin-top:var(--space-7);">
+          <span class="eyebrow eyebrow--rule">{{ $t.label }} <span style="opacity:.6;">· {{ len . }}</span></span>
+          <p class="tags-note" style="max-width:70ch;margin:var(--space-2) 0 0;font-size:var(--text-sm);color:var(--text-muted);">{{ $t.note }}</p>
+          <div class="partner-grid">
+            {{ range . }}
+              {{ $internal := hasPrefix .url "/" }}
+              <a class="partner-tile" title="{{ .name }}"
+                 href="{{ if $internal }}{{ .url | relURL }}{{ else }}{{ .url }}{{ end }}"{{ if not $internal }} target="_blank" rel="noopener"{{ end }}>
+                <img src="{{ .logo | relURL }}" alt="{{ .name }} logo" loading="lazy">
+                <span>{{ .name }}</span>
+              </a>
+            {{ end }}
           </div>
-        </a>
+        </div>
         {{ end }}
-      </div>
+      {{ end }}
     </div>
   </section>
 </main>

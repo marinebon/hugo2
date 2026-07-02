@@ -98,6 +98,6 @@
     {{ end }}
     {{ $ld = merge $ld (dict "distribution" $dist "sameAs" $same) }}
   {{ end }}
-  <script type="application/ld+json">{{ $ld | jsonify }}</script>
+  <script type="application/ld+json">{{ $ld | jsonify | safeJS }}</script>
 </main>
 {{ end }}
