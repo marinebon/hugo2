@@ -1,6 +1,7 @@
 ---
 summary: Get in touch with the MBON team.
 title: Contact
+layout: contact
 ---
 
 | Name | Role |

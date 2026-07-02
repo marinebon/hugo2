@@ -1,0 +1,49 @@
+{{ define "main" }}
+<main>
+  <section class="page-header">
+    <div class="page-header__inner">
+      <span class="eyebrow eyebrow--rule eyebrow--ondark">Get in touch</span>
+      <h1>{{ .Title }}</h1>
+      <p class="page-header__lead">{{ .Params.summary }}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width:760px;">
+      {{ .Content }}
+
+      {{/* contact form → Google Apps Script web app (scripts/contact-form.gs).
+           Recipient emails live in that script, never in this page. */}}
+      <div style="margin-top:var(--space-7);">
+        <span class="eyebrow eyebrow--rule">Send us a message</span>
+        {{ with site.Params.contact_endpoint }}
+        <form id="contact-form" class="contact-form" data-endpoint="{{ . }}" style="margin-top:var(--space-4);">
+          <div class="contact-form__row">
+            <label>Name<span aria-hidden="true">*</span>
+              <input type="text" name="name" required autocomplete="name">
+            </label>
+            <label>Email<span aria-hidden="true">*</span>
+              <input type="email" name="email" required autocomplete="email">
+            </label>
+          </div>
+          <label>Subject
+            <input type="text" name="subject">
+          </label>
+          <label>Message<span aria-hidden="true">*</span>
+            <textarea name="message" rows="6" required></textarea>
+          </label>
+          <label>Attachment <span class="contact-form__hint">(optional, max 10&nbsp;MB)</span>
+            <input type="file" name="file">
+          </label>
+          <button type="submit" class="btn btn--action">Send message <i class="fas fa-paper-plane" aria-hidden="true"></i></button>
+          <p id="contact-status" class="contact-status" role="status" aria-live="polite"></p>
+        </form>
+        <script src="{{ "js/contact.js" | relURL }}" defer></script>
+        {{ else }}
+        <p style="margin-top:var(--space-3);color:var(--text-muted);">The message form isn’t set up yet — for now, please <a href="https://github.com/{{ site.Params.github_repo }}/issues">open a GitHub issue</a> or reach out through one of the contacts above.</p>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+</main>
+{{ end }}
