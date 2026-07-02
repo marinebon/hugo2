@@ -1,17 +1,19 @@
 # screenshots.R — full-page screenshots of main hugo2 pages
 # requires: librarian, webshot2, chromote
 # usage: source("static/img/_screenshots/screenshots.R")
+# cd /Users/bbest/Github/marinebon/hugo2; Rscript static/img/_screenshots/screenshots.R
 # prereq: hugo server must be running on localhost:1313
 #         run in terminal: hugo server
 
 librarian::shelf(webshot2, quiet = TRUE)
 
 base_url <- "http://localhost:1313"
+# base_url <- "https://marinebon.org/hugo2"
 
 pages <- list(
-  
   home = "",
   network = "network",
+  network_partners = "network/partners",
   methods = "methods",
   papers = "papers",
   data = "data",
